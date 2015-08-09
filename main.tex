@@ -1,0 +1,116 @@
+\documentclass[12pt,a4paper]{book}
+\usepackage{lmodern}
+\usepackage[svgnames]{xcolor} % Required to specify font color
+\input{styles/couleurs.tex}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{verbatim}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, linkcolor=vert1, urlcolor=bleu, colorlinks=true]{hyperref}
+\usepackage{tikz} %Vectoriel
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{titlebox}
+\usepackage[francais]{minitoc}
+\usepackage[final]{pdfpages} 
+\usepackage{graphicx} % Required for box manipulation
+\usepackage{epstopdf}
+
+\newcommand{\titre}{Développement d'une plateforme de Tests automatiques}
+\newcommand{\subtitle}{GreenT}
+\newcommand{\auteur}{Antoine de \bsc{Roquemaurel}}
+\newcommand{\formation}{L3 Informatique}
+\newcommand{\semestre}{6}
+\newcommand{\annee}{2014}
+\newcommand{\putminitoc}{%
+\begin{wrapfigure}{r}{0.60\textwidth}
+\vspace{-15px}
+\begin{tocBox}
+\hspace{-30px}
+\begin{minipage}{1.1\textwidth}
+\minitoc~
+\end{minipage}
+\end{tocBox}
+\end{wrapfigure}
+}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage[some]{background}
+\usepackage{lipsum}
+
+\newcommand{\pole}{}
+
+\input{styles/listings.tex}
+\input{styles/remarquesExempleAttention.tex}
+\input{styles/polices.tex}
+\input{styles/affichageChapitre.tex}
+\input{styles/headers.tex}
+
+\mtcsettitle{minitoc}{\hfill Sommaire}
+\mtcsetrules{minitoc}{off}
+\mtcsetfeature{minitoc}{before}{\vspace{0pt}}% à ajuster
+\mtcsetfeature{minitoc}{after}{\vspace{-25pt}}% à ajuster
+
+\makeatother
+\includeonly {
+	contents/intro,
+	contents/conti/conti,
+	contents/problem/problem,
+	contents/organization/organization,
+	contents/greent/greent,
+	contents/bilan/bilan,
+%
+	annexes/glossary,
+	annexes/references,	
+	annexes/templates,
+	annexes/generatesFiles
+}
+\begin{document}
+	\setcounter{tocdepth}{1}
+	\setcounter{secnumdepth}{2}
+	\setcounter{minitocdepth}{1}
+	
+	\input{styles/frontPage.tex}
+	~\newpage
+	\addcontentsline{toc}{chapter}{Remerciements} 
+	~
+	\vfill
+	\begin{flushright}
+		\begin{minipage}{0.7\textwidth}
+			\input{contents/thanks.tex}
+		\end{minipage}
+	\end{flushright}
+	\vfill
+	~
+	\include{contents/intro}
+		\dominitoc
+
+	\tableofcontents
+%	\faketableofcontents
+\setcounter{mtc}{2}
+	\input{contents/conti/conti}
+\setcounter{mtc}{3}
+	\include{contents/organization/organization}	
+	\setcounter{mtc}{4}
+	\include{contents/problem/problem}
+	\setcounter{mtc}{5}
+	\include{contents/greent/greent}
+	\setcounter{mtc}{6}
+	\include{contents/bilan/bilan}
+	
+	\appendix
+	\include{annexes/glossary}
+	\include{annexes/references}
+	\include{annexes/templates}
+	\include{annexes/generatesFiles}
+	\lstlistoflistings
+	\listoffigures
+
+\end{document}
