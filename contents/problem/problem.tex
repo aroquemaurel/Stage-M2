@@ -1,11 +1,5 @@
 \chapter{Le problème} \label{chapPb}
-\begin{wrapfigure}{r}{0.60\textwidth}
-\vspace{-25px}
-\hspace{-30px}
-\begin{minipage}{0.67\textwidth}
-\minitoc
-\end{minipage}
-\end{wrapfigure}
+\putminitoc
 Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'intégrations, notamment pour les projets à destination de Ford. Les tests demandaient du temps et de l'argent à l'équipe en charge de ces tests. Ainsi, deux ans avant mon stage de M1, une solution à été trouvée : le développement d'une nouvelle plateforme, \textit{GreenT}.
 
 \vspace{-32px}
@@ -14,31 +8,48 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 
 	\subsection{Le plugin}
 	Dans le cadre de projets pour Ford, Continental ne développe pas l'intégralité du logiciel, en effet une partie est fournie par le client sous forme de << plugin >>. Le plugin est supposé correct, et ce n'est pas de notre ressort de le tester. Cependant, celui-ci va être interfacé avec les logiciels Continental : il est indispensable de vérifier que les deux parties fonctionnent ensemble lors de l'intégration.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=10cm]{contents/images/plugin.eps}
+		\caption{Interfaces du plugin avec le logiciel de Continental}
+		\label{fig:plugin}
+	\end{figure}
 
-	Pour cela, le client fourni un fichier appelé \texttt{Walkthrough}\footnote{Ce fichier est expliqué plus en détail section \ref{wt}} contenant la liste des variables du plugin avec toutes leur spécifications, ce fichier est au format \textit{Excel} : et il contient environ 900 variables différentes. Il est impensable de tester le fonctionnement d'autant de paramètres manuellement, ainsi l'équipe en charge de tester cette intégration effectue des tests de différence d'une version à l'autre : seules les variables ayant pu être impactées par une \textit{release} seront testées, il est supposé que les fonctionnement des variables restera inchangé.
+	Pour cela, le client fourni un fichier appelé \texttt{Walkthrough}\footnote{Ce fichier est expliqué plus en détail section \ref{wt}}
+	contenant la liste des variables du plugin avec toutes leur spécifications, ce fichier est au format \textit{Excel} : il contient
+	environ 900 variables différentes. Il est impensable de tester le fonctionnement d'autant de paramètres manuellement, ainsi l'équipe en
+	charge de tester cette intégration effectue des tests de différence d'une version à l'autre : seules les variables ayant pu être
+	impactées par une \textit{release} seront testées, il est supposé que le fonctionnement des autres variables reste inchangé.
 
 	Trois problèmes se posent à cette méthode : 
 	\begin{description}
-		\item[La fiabilité des tests] Le test des seules différences ne permet pas nécessairement de détecter tous les problèmes (notamment avec des effets de bords…). De plus, une tâche répétitive peut entrainer des erreurs humaines.
+		\item[La fiabilité des tests manuels] Le test des seules différences ne permet pas nécessairement de détecter tous les problèmes (notamment avec des effets de bords…). De plus, une tâche répétitive peut entrainer des erreurs humaines.
 		\item[Le temps de tests] Même en ne testant qu'une partie des variables, cela prend un temps considérable, il faut compter environ une semaine.
-		\item[La disponibilité des bancs de tests]	Les tests s'effectuent sur des bancs de tests\footnote{Une photo d'un banc est disponible figure \ref{fig:photoHil}}, ces équipements permettent de simuler un environnement voiture autour du contrôleur moteur comme l'utilisation de la clé de démarrage, la tension de la batterie, la vitesse de rotation du moteur, ... Ces bancs sont peu nombreux dans l'entreprise, en raison de leur cout, leur disponibilité est compliquée. Il serait intéressant de pouvoir lancer des tests automatisés durant la nuit par exemple.
-		
+			Or, les tests s'effectuent sur des bancs de tests\footnote{Le fonctionnement d'un banc est disponible figure
+			\ref{fig:photoHil}}, ces équipements permettent de simuler un environnement voiture autour du contrôleur moteur comme
+			l'utilisation de la clé de démarrage, la tension de la batterie, la vitesse de rotation du moteur, ... Ces bancs sont peu
+			nombreux dans l'entreprise en raison de leur cout, leur disponibilité est compliquée. Il serait intéressant de pouvoir lancer
+			des tests automatisés durant la nuit par exemple afin de les décharger de ce travail.
 	\end{description}
+
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=7cm]{contents/images/hil.jpg}
-		\caption{Exemple de banc de tests -- HIL DSpace}
+		\includegraphics[width=14cm]{contents/images/WB.eps}
+		\caption{Fonctionnement d'une table de tests : HIL DSpace, Debugger et ECU}
 		\label{fig:photoHil}
 	\end{figure}
 
 	\subsection{La plateforme TA3}
+\begin{wrapfigure}{l}{2.5cm}
+	\includegraphics[width=2.5cm]{contents/images/python.png}
+\end{wrapfigure}
 	Actuellement, les équipes de tests disposent d'une plateforme appelée TA3. Celle-ci est une bibliothèque de classes écrites en Python. Jusqu'à présent, pour chaque objectif de test, il fallait écrire un script python utilisant la TA3. Ces scripts pilotent le banc Hil et le l'outil de debug afin d'envoyer des stimulis à l'Unité de contrôle moteur(Noté ECU pour \textit{Electronic Control Unit}) et de vérifier que les réactions de celui-ci sont conforme aux spécifications de test.
-	\begin{figure}[H]		
-		\centering
-		\includegraphics[width=7cm]{contents/images/trace32.png}
-		\caption{Exemple de Debugger -- Trace32}
-		\label{fig:photoHil}
-	\end{figure}
+%	\begin{figure}[H]		
+%		\centering
+%		\includegraphics[width=7cm]{contents/images/trace32.png}
+%		\caption{Exemple de Debugger -- Trace32}
+%		\label{fig:photoHil}
+%	\end{figure}
 
 	Cependant, cette plateforme pose un certain nombre de problèmes qui rend son utilisation difficile. D'une part, elle renvoie un trop grand pourcentage de faux-positifs, faisant perdre du temps au testeur. D'autres part, elle ne prend pas en compte certains besoins apparu récemments Comme par exemple un système permettant de flasher automatiquement les ECU, ou la possibilité de vérifier la fréquence de mise-à-jour de la production de variables.
 \\~

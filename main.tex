@@ -65,11 +65,12 @@
 	contents/problem/problem,
 	contents/organization/organization,
 	contents/greent/greent,
+	contents/greent/collaboration,
 	contents/bilan/bilan,
 %
 	annexes/glossary,
 	annexes/references,	
-	annexes/templates,
+	annexes/devices,	
 	annexes/generatesFiles
 }
 \begin{document}
@@ -103,12 +104,14 @@
 	\setcounter{mtc}{5}
 	\include{contents/greent/greent}
 	\setcounter{mtc}{6}
+	\include{contents/greent/collaboration}
+	\setcounter{mtc}{7}
 	\include{contents/bilan/bilan}
 	
 	\appendix
 	\include{annexes/glossary}
 	\include{annexes/references}
-	\include{annexes/templates}
+	\include{annexes/devices}
 	\include{annexes/generatesFiles}
 	\lstlistoflistings
 	\listoffigures

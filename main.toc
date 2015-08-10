@@ -12,38 +12,45 @@
 \contentsline {section}{\numberline {2.1}L'\IeC {\'e}quipe de d\IeC {\'e}veloppement}{13}{section.2.1}
 \contentsline {section}{\numberline {2.2}Documentation : les minutes d'\IeC {\'e}tudes}{13}{section.2.2}
 \contentsline {section}{\numberline {2.3}Outils de d\IeC {\'e}veloppement}{14}{section.2.3}
-\contentsline {chapter}{\numberline {3}Le probl\IeC {\`e}me}{17}{chapter.3}
-\contentsline {section}{\numberline {3.1}Les tests}{17}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Le plugin}{17}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}La plateforme TA3}{18}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}La solution : \textit {GreenT}}{19}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}G\IeC {\'e}n\IeC {\'e}ration de tests automatiques}{19}{subsection.3.2.1}
-\contentsline {subsubsection}{Les tests d'int\IeC {\'e}gration du plugin Ford}{19}{section*.3}
-\contentsline {subsubsection}{Les autres projets}{19}{section*.4}
-\contentsline {subsection}{\numberline {3.2.2}L'utilisation de \textit {GreenT} comme une biblioth\IeC {\`e}que}{19}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}L'ex\IeC {\'e}cution des tests}{20}{subsection.3.2.3}
-\contentsline {chapter}{\numberline {4}D\IeC {\'e}veloppement de \textit {\textit {GreenT}}}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Fonctionnement g\IeC {\'e}n\IeC {\'e}ral}{21}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Le fichier Walkthrough}{21}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Fonctionnalit\IeC {\'e}s principales}{22}{subsection.4.1.2}
-\contentsline {subsubsection}{Parsing et G\IeC {\'e}n\IeC {\'e}ration}{23}{section*.5}
-\contentsline {subsubsection}{Stimulation}{23}{section*.6}
-\contentsline {subsubsection}{Les traces et leurs \IeC {\'e}valuations}{24}{section*.7}
-\contentsline {subsubsection}{Le module TestManager}{24}{section*.8}
-\contentsline {subsubsection}{Production de rapport d\IeC {\'e}taill\IeC {\'e}}{24}{section*.9}
-\contentsline {subsubsection}{Mise \IeC {\`a} jour du Walkthrough}{25}{section*.10}
-\contentsline {chapter}{\numberline {5}Bilans}{27}{chapter.5}
+\contentsline {chapter}{\numberline {3}Le probl\IeC {\`e}me}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}Les tests}{15}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Le plugin}{15}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}La plateforme TA3}{17}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}La solution : \textit {GreenT}}{17}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}G\IeC {\'e}n\IeC {\'e}ration de tests automatiques}{17}{subsection.3.2.1}
+\contentsline {subsubsection}{Les tests d'int\IeC {\'e}gration du plugin Ford}{17}{section*.3}
+\contentsline {subsubsection}{Les autres projets}{18}{section*.4}
+\contentsline {subsection}{\numberline {3.2.2}L'utilisation de \textit {GreenT} comme une biblioth\IeC {\`e}que}{18}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}L'ex\IeC {\'e}cution des tests}{18}{subsection.3.2.3}
+\contentsline {chapter}{\numberline {4}\textit {GreenT} : fonctionnement g\IeC {\'e}n\IeC {\'e}ral}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Le fichier Walkthrough}{19}{section.4.1}
+\contentsline {section}{\numberline {4.2}Fonctionnement Global}{20}{section.4.2}
+\contentsline {section}{\numberline {4.3}Les diff\IeC {\'e}rentes fonctionnalit\IeC {\'e}s du Client, GreenT}{21}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Parsing et G\IeC {\'e}n\IeC {\'e}ration}{22}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Stimulation}{22}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Les traces et leurs \IeC {\'e}valuations}{22}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Le module TestManager}{22}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Production de rapport d\IeC {\'e}taill\IeC {\'e}}{23}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}Mise \IeC {\`a} jour du Walkthrough}{23}{subsection.4.3.6}
+\contentsline {section}{\numberline {4.4}Fonctionnement des serveurs}{24}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Le serveur Debugger, Trace32}{24}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Le serveur HIL, DSpace}{24}{subsection.4.4.2}
+\contentsline {chapter}{\numberline {5}Ma collaboration au projet}{25}{chapter.5}
+\contentsline {section}{\numberline {5.1}Les calibrations}{25}{section.5.1}
+\contentsline {section}{\numberline {5.2}Le << patch calib >>}{25}{section.5.2}
+\contentsline {section}{\numberline {5.3}Les << tableaux calibrables >>}{25}{section.5.3}
+\contentsline {chapter}{\numberline {6}Bilans}{27}{chapter.6}
 \contentsline {chapter}{\numberline {A}Acronymes et Glossaire}{29}{appendix.A}
 \contentsline {chapter}{\numberline {B}R\IeC {\'e}f\IeC {\'e}rences}{31}{appendix.B}
 \contentsline {section}{\numberline {B.1}Documentations en-ligne}{31}{section.B.1}
 \contentsline {section}{\numberline {B.2}Livres}{31}{section.B.2}
 \contentsline {section}{\numberline {B.3}Cours magistraux}{31}{section.B.3}
 \contentsline {section}{\numberline {B.4}Sites Web et forums}{32}{section.B.4}
-\contentsline {chapter}{\numberline {C}Templates}{33}{appendix.C}
-\contentsline {section}{\numberline {C.1}Template des stimulations}{33}{section.C.1}
-\contentsline {section}{\numberline {C.2}Template d'un \texttt {GreenTTest}}{35}{section.C.2}
-\contentsline {chapter}{\numberline {D}Exemples de fichiers g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}s}{37}{appendix.D}
-\contentsline {section}{\numberline {D.1}Exemple de StimScenario}{37}{section.D.1}
-\contentsline {section}{\numberline {D.2}Exemple de \texttt {GreenTTest}}{39}{section.D.2}
-\contentsline {chapter}{\numberline {E}Liste des codes sources}{41}{appendix.E}
-\contentsline {chapter}{\numberline {F}Table des figures}{43}{appendix.F}
+\contentsline {chapter}{\numberline {C}Les diff\IeC {\'e}rents \textit {devices}}{33}{appendix.C}
+\contentsline {section}{\numberline {C.1}Le HIL DSpace}{33}{section.C.1}
+\contentsline {section}{\numberline {C.2}Le Debugger}{34}{section.C.2}
+\contentsline {chapter}{\numberline {D}Exemples de fichiers g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}s}{35}{appendix.D}
+\contentsline {section}{\numberline {D.1}Exemple de StimScenario}{35}{section.D.1}
+\contentsline {section}{\numberline {D.2}Exemple de \texttt {GreenTTest}}{37}{section.D.2}
+\contentsline {chapter}{\numberline {E}Liste des codes sources}{39}{appendix.E}
+\contentsline {chapter}{\numberline {F}Table des figures}{41}{appendix.F}

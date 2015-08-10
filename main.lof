@@ -8,24 +8,29 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Organisation du travail}{13}{chapter.2}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Le probl\IeC {\`e}me}{17}{chapter.3}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Exemple de banc de tests -- HIL DSpace}}{18}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Exemple de Debugger -- Trace32}}{18}{figure.3.2}
+\contentsline {xchapter}{Le probl\IeC {\`e}me}{15}{chapter.3}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Interfaces du plugin avec le logiciel de Continental}}{15}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Fonctionnement d'une table de tests : HIL DSpace, Debugger et ECU}}{16}{figure.3.2}
 \addvspace {10\p@ }
-\contentsline {xchapter}{D\IeC {\'e}veloppement de \textit {\textit {GreenT}}}{21}{chapter.4}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Aper\IeC {\c c}u d'un fichier Walkthrough}}{22}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Fonctionnement g\IeC {\'e}n\IeC {\'e}ral de la plateforme \textit {GreenT}}}{23}{figure.4.2}
+\contentsline {xchapter}{\textit {GreenT} : fonctionnement g\IeC {\'e}n\IeC {\'e}ral}{19}{chapter.4}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Aper\IeC {\c c}u d'un fichier Walkthrough}}{20}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Fonctionnement g\IeC {\'e}n\IeC {\'e}ral de la plateforme \textit {GreenT}}}{21}{figure.4.2}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Bilans}{27}{chapter.5}
+\contentsline {xchapter}{Ma collaboration au projet}{25}{chapter.5}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Bilans}{27}{chapter.6}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Acronymes et Glossaire}{29}{appendix.A}
 \addvspace {10\p@ }
 \contentsline {xchapter}{R\IeC {\'e}f\IeC {\'e}rences}{31}{appendix.B}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Templates}{33}{appendix.C}
+\contentsline {xchapter}{Les diff\IeC {\'e}rents \textit {devices}}{33}{appendix.C}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces HIL DSpace}}{33}{figure.C.1}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces HIL DSpace}}{33}{figure.C.2}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces HIL DSpace}}{34}{figure.C.3}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Exemples de fichiers g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}s}{37}{appendix.D}
+\contentsline {xchapter}{Exemples de fichiers g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}s}{35}{appendix.D}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Liste des codes sources}{41}{appendix.E}
+\contentsline {xchapter}{Liste des codes sources}{39}{appendix.E}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Table des figures}{43}{appendix.F}
+\contentsline {xchapter}{Table des figures}{41}{appendix.F}
