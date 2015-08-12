@@ -41,7 +41,7 @@ cette plateforme afin d'en avoir une vue d'ensemble.
 	Les principaux modules sont les suivants, avec leurs interactions schématisées figure \ref{fig:generalDiag} : 
 			Dans des objets ovales sont représentés des fichiers, les carrés représentent des modules de la plateforme et les flèches en pointillés un transfert réseau, les couleurs représentent les différents modules de la plateforme.
 
-			\begin{figure}[H]
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=16.5cm]{contents/images/generalDiag.eps}
 			\caption{Fonctionnement général de la plateforme \textit{GreenT}}
@@ -66,9 +66,9 @@ cette plateforme afin d'en avoir une vue d'ensemble.
 		\end{itemize}
 
 		\section{Les différentes fonctionnalités du Client, GreenT}
-		Nous allons voir ici les différentes fonctionnalités proposées par le client : ce sont les fonctionnalités demandées par l'équipe
-		cliente.
-			
+		Afin de répondre au mieux aux attentes du client, il a été choisi d'utiliser le Java pour développer notre client, ceci en raison de
+		diverses avantages comme le côté multi-plateforme, son typage fort et sa forte communauté qui permet ainsi une maintenance réduite. 
+
 	\subsection{Parsing et Génération}\label{generation}
 	Le but premier de la plateforme est d'effectuer des tests automatiques, il est ainsi indispensable d'avoir un système d'automatisation.
 
@@ -151,6 +151,28 @@ cette plateforme afin d'en avoir une vue d'ensemble.
 	\end{itemize}
 	
 	\subsection{Le serveur Debugger, Trace32}
-	\subsection{Le serveur HIL, DSpace}
+	Le serveur Debugger propose des services basiques permettant de répondre aux différentes stimulations : 
+	\begin{itemize}
+		\item Mettre l'ECU à on
+		\item Arrêter l'ECU
+		\item Lire une variable ou une calibration
+		\item Modifier une variable
+		\item Enregistrer des variables
+	\end{itemize}
 
+	Afin d'effectuer ces actions, le serveur s'appuie sur une API fournie par l'outil Trace32 permettant de contrôler le debugger. Ainsi
+	tous nos services vont s'appuyer sur cette API. C'est pour cette raison que ce serveur est développé en Java afin de pouvoir utiliser
+	facilement ces fonctions.
+
+	\subsection{Le serveur HIL, DSpace}
+	Le serveur DSpace va devoir lui aussi répondre aux différentes stimulations, ainsi ces services sont relativement similaire : 
+	\begin{itemize}
+		\item Modifier une valeur de la base de données
+		\item Lire une valeur de la base de données
+		\item Enregistrer des valeurs
+	\end{itemize}
+
+	Ce serveur a été développé en réutilisant une partie de ce qui avait été fait pour la TA3, présenté section \ref{ta3} afin de ne pas
+	<< réinventer la roue >>. À l'instar du serveur Debugger, nous utilisons une api fournie par l'outil permettant de contrôler le HIL : ControlDesk. 
+	C'est ainsi que ce serveur est développé en Python afin de répondre à cette contraintes : l'API du ControlDesk est en Python.
 	

@@ -1,7 +1,75 @@
 \chapter{Ma collaboration au projet}
 \putminitoc
-\lipsum[3]
+Après avoir défini plus en détails les besoins de notre plateforme et son fonctionnement général, nous allons maintenant voir en détail de quelle manière j'ai contribué à ce projet. En parallèle de la maintenance de notre plateforme, j'ai développé deux nouvelles fonctionnalités. Ces deux fonctionnalités ayant un rapport direct avec la notion de << calibration >>, nous allons tout d'abord définir celles-ci avant de voir en détail mon développement et la maintenance que j'ai développé.
 
 \section{Les calibrations}
-\section{Le << patch calib >>}
+\section{Le << patch calib >>}\label{patch}
 \section{Les << tableaux calibrables >>}
+\section{La maintenance}
+Comme expliqué plus haut, j'ai développé deux fonctionnalités durant ce stage. Cependant, en parallèle de ce développement j'ai également corrigés différents bugs, ou améliorer différentes partie de la plateforme.
+
+Ayant conçu cette plateforme lors de mon stage de fin de Licence, je connais l'intégralité de la plateforme; C'est ainsi que j'ai pu détecter et corriger un certains nombres de problèmes. Ces bugs ou ces améliorations ont été identifiées de trois façons différentes : 
+\begin{itemize}
+	\item Durant mon développement, il m'est arrivé de trouver du code incohérent ou bouchonné
+	\item Lors d'exécutions de la plateforme sur différentes versions du projet client
+	\item En regardant les différents tickets ouverts et devant être résolus
+\end{itemize}
+
+\subsection{Corrections}
+J'ai corrigé quelques problèmes trouvés sur la plateforme, principalement venant du client. Les problèmes venaient principalement du client dû à notre choix d'architecture : des serveurs les plus légers et un serveur effectuant le maximum d'actions.
+	\subsubsection{Stockage des erreurs d'exécutions}
+	\begin{description}
+		\item[Le problème] En cas d'erreur durant une exécution, si un serveur ne répond plus, si une variable est non trouvée, ... Une exception est levée. À ce moment là, GreenT doit attraper l'exception et la stocker en base de données pour pouvoir afficher ensuite le message à tous les tests du bundle, la génération des rapports ne pouvant pas se faire.
+		\item[La solution] Le stockage du message d'erreur n'était pas fait, ainsi que la requête SQL permettant d'obtenir les messages d'erreurs. Ces deux actions ont été corrigés, en lieu et place du rapport de test nous avons maintenant un message d'erreur clair.
+		\end{description}
+		
+	\subsubsection{Modification des variables Debugger}
+		\begin{description}
+			\item[Le problème] Lors d'un stimulus, il est possible de modifier une variable Debugger. Lors de la modification d'une variable le Trace32 renvoyait toujours une exception, sans appliquer la modification.
+			\item[La solution] Après lecture de la documentation de Trace32, il s'est avéré que le problème venait simplement du serveur qui appliquait une commande syntaxiquement incorrecte. La modification de la commande a corrigée le problème.
+	\end{description}
+	
+	\subsubsection{Ordre d'exécutions des scénarios}
+		\begin{description}
+			\item[Le problème] Un Test peut contenir plusieurs scénarios, ceux-ci nous servent principalement pour le << patch-calib >> comme expliqué section \ref{patch}. Or, si nous utilisions plusieurs scénarios, ceux-ci étaient exécutés dans un ordre aléatoire : si l'utilisateur voulait effectuer des actions dans un ordre donnée, ce n'était pas possible.
+			\item[La solution] Le problème avait deux parties : d'une part, l'exécution des scénarios dans un ordre donné, d'autre part, spécifier un ordre à chacun de nos scénarios. En effet, tout d'abord, j'ai nommé les scénarios de sortes qu'ils soient classé par ordre alphabétique. Ensuite, il a fallu spécifier à la plateforme d'exécuter les différents scénarios dans un ordre alphabétique, pour cela il a suffit d'utiliser une collection Java effectuant cette action, la \texttt{TreeMap}.
+	\end{description}
+	
+	\subsubsection{Reset ECU à l'exécution}
+	\begin{description}
+		\item[Le problème] Lors de l'exécution de notre plateforme sur la dernière version du projet client, nous avions systématiquement un \textit{reset} ECU. C'est-à-dire que notre ECU s'arrêtait et ne redémarrait pas pour une raison inconnue.
+		\item[La solution] Le problème ne venait pas directement de la plateforme, mais d'une mauvais configuration de notre part. En effet, nous ne spécifions pas les bons fichiers du logiciel, celui-ci étant mal flashé, l'ECU refusait de démarrer.
+	\end{description}
+	
+	\subsubsection{Absence d'injection}
+	\begin{description}
+		\item[Le problème] Lorsque j'essayais de simuler un démarrage du moteur sur la dernière version du logiciel, aucune injection ne se faisait : après le starter, le moteur retournait à 0 tour.
+		\item[La solution] Après s'être renseigné auprès de personnes compétentes, il s'est avéré que cela venait d'un nouveau fichier à flasher dont nous n'avions pas connaissance. Un fichier contenant des calibrations permettant le démarrage du moteur dans le labo. Ce fichier n'ayant pas été pris en compte durant la conception, j'ai ajouté un nouveau paramètre au fichier de configuration permettant de renseigner des fichiers à flasher additionnels.
+	\end{description}
+	
+\subsection{Améliorations}
+	\subsubsection{Exécution différée} %
+	\begin{description}
+		\item[Le besoin] Lors de mon développement, j'ai eu souvent des problèmes pour réservés des tables de tests. Celles-ci étant régulièrement prise par les équipes projets. 
+		\item[La solution] Afin de ne pas bloquer de tables, et de ne pas bloquer notre travail en raison de l'absence de celles-ci, une solution nous est venue : la possibilité de lancer l'outil durant la nuit. En effet, actuellement une exécution dure environ 45 minutes, après laquelle nous pouvons analyser les rapports et voir les problèmes qui nous sont retournés. Ainsi, j'ai ajouté un nouveau paramètre à l'application permettant de spécifier à laquelle la génération, la compilation, l'exécution et la génération des rapports va se faire. On peut maintenant lancer une exécution le soir et observer les résultats le lendemain matin.
+	\end{description}
+	
+	\subsubsection{Passage à Java 8}
+		\begin{description}
+			\item[Le besoin] La plateforme fonctionnait sous Java 6. Ainsi, nous allions mettre en production une plateforme déjà obsolète à sa sortie. De plus, les deux versions suivantes de Java propose un certain nombre de fonctionnalité aidant au développement, comme des simplifications d'écriture en Java 7 (\textit{Multi-Catch}, Inférence de type, \texttt{switch} sur les strings, ...) ou les lambdas-calculs en Java 8. Enfin, dans un future proche nous aurons besoin d'une interface pour \textit{GreenT}, \textit{JavaFx} serait une bonne solutions, mais celle-ci nécessite Java 8.
+			\item[La solution] Avant de passer à Java 8, il a d'abord fallut vérifier qu'aucune incompatibilité avec les bibliothèques que nous utilisons n'allait apparaître. Ensuite, il était nécessaire de télécharger un compilateur ainsi qu'une JVM, configurer les différents environnements et vérifier qu'une exécution se passait de la même manière que précédemment. Après ce succès, le passage à Java 8 a été concrétisé et permet à notre plateforme de rester moderne ! 
+		\end{description}
+		
+	\subsubsection{<< \textit{Clean-Code} >>}
+		\begin{description}
+			\item[Le besoin] \textit{GreenT} ayant deux ans, et ayant connue 4 développeurs différents, il est parfois nécessaire d'améliorer le code existant ou de le rendre plus lisible. 
+			\item[La solution] Lorsqu'en développant mes fonctionnalités ou en corrigeant des bugs je tombais sur du code incompréhensible ou du << code mort >>, je modifiais celui-ci afin de corriger ces défauts. Ceci permet ainsi de garder un code toujours propre et facile à lire.
+		\end{description}
+		
+	\subsubsection{Affichage des \textit{logs}}
+		\begin{description}
+			\item[Le besoin] La plateforme effectue beaucoup d'actions, allant du parsing jusqu'à la génération des rapports comme montré chapitre \ref{chapGreent}. Toutes ces actions doivent être tracés, aussi bien en tant réel, en regardant l'exécution que plus tard en observant un fichier.
+			\item[La solution] Les logs fonctionnait déjà, en utilisant \texttt{log4j}, cependant celui-ci affichait beaucoup trop d'informations en temps réel, et n'affichait pas les informations les plus utiles. Ainsi, j'ai passé en revue la plateforme pour afficher les bonnes actions (Initialisation des bancs, stimulis effectués, affichage des exceptions, \ldots). Toutes les erreurs sont redirigé vers la sortie des erreurs (\texttt{stderr}), et seules les informations les plus importantes sont sur la sortie console (\texttt{stdout}). Tous les autres logs, qui peuvent être utile à la compréhension d'un problème et nous aider ne sont accessible que dans nos fichiers de logs. J'ai par ailleurs ajouté un « buffer tournant » permettant aux fichiers de logs de ne jamais dépasser une certaines taille (5Mio), afin de ne pas consommer trop d'espace.
+		\end{description}
+		
+
