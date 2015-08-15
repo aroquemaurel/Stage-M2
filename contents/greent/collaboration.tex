@@ -1,10 +1,23 @@
-\chapter{Ma collaboration au projet}
+\chapter{Ma collaboration au projet}\label{collab}
 \putminitoc
 Après avoir défini plus en détails les besoins de notre plateforme et son fonctionnement général, nous allons maintenant voir en détail de quelle manière j'ai contribué à ce projet. En parallèle de la maintenance de notre plateforme, j'ai développé deux nouvelles fonctionnalités. Ces deux fonctionnalités ayant un rapport direct avec la notion de << calibration >>, nous allons tout d'abord définir celles-ci avant de voir en détail mon développement et la maintenance que j'ai développé.
 
 \section{Les calibrations}
+Une calibration est une constante stockée en flash, c'est-à-dire en mémoire non volatile. Ainsi le logiciel du contrôle moteur peut accéder à toutes ces calibrations en lecture uniquement.
+
+Ces calibrations permettent de configurer un véhicule avant sa mise en production. Cette configuration peut se faire en fonction de plusieurs critères : 
+\begin{itemize}
+	\item Le matériel en face du calculateur, comme le nombre d'injecteurs
+	\item La version du logiciel du contrôle moteur
+	\item Leur modification permet de faire une mise au point, permettant d'améliorer la consommation par exemple.
+\end{itemize}
+
+Une fois le logiciel pour un calculateur fourni, et mis en production, ces calibrations ne doivent pas évoluer, les modifier ne sert donc qu'à la mise au point et à la généricité du logiciel.
+
 \section{Le << patch calib >>}\label{patch}
+
 \section{Les << tableaux calibrables >>}
+
 \section{La maintenance}
 Comme expliqué plus haut, j'ai développé deux fonctionnalités durant ce stage. Cependant, en parallèle de ce développement j'ai également corrigés différents bugs, ou améliorer différentes partie de la plateforme.
 

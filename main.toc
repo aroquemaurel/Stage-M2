@@ -45,14 +45,16 @@
 \contentsline {subsubsection}{Stockage des erreurs d'ex\IeC {\'e}cutions}{26}{section*.5}
 \contentsline {subsubsection}{Modification des variables Debugger}{26}{section*.6}
 \contentsline {subsubsection}{Ordre d'ex\IeC {\'e}cutions des sc\IeC {\'e}narios}{26}{section*.7}
-\contentsline {subsubsection}{Reset ECU \IeC {\`a} l'ex\IeC {\'e}cution}{26}{section*.8}
+\contentsline {subsubsection}{Reset ECU \IeC {\`a} l'ex\IeC {\'e}cution}{27}{section*.8}
 \contentsline {subsubsection}{Absence d'injection}{27}{section*.9}
 \contentsline {subsection}{\numberline {5.4.2}Am\IeC {\'e}liorations}{27}{subsection.5.4.2}
 \contentsline {subsubsection}{Ex\IeC {\'e}cution diff\IeC {\'e}r\IeC {\'e}e}{27}{section*.10}
 \contentsline {subsubsection}{Passage \IeC {\`a} Java 8}{27}{section*.11}
-\contentsline {subsubsection}{<< \textit {Clean-Code} >>}{27}{section*.12}
+\contentsline {subsubsection}{<< \textit {Clean-Code} >>}{28}{section*.12}
 \contentsline {subsubsection}{Affichage des \textit {logs}}{28}{section*.13}
 \contentsline {chapter}{\numberline {6}Bilans}{29}{chapter.6}
+\contentsline {section}{\numberline {6.1}Bilan pour Continental}{29}{section.6.1}
+\contentsline {section}{\numberline {6.2}Bilan personnel}{29}{section.6.2}
 \contentsline {chapter}{\numberline {A}Acronymes et Glossaire}{31}{appendix.A}
 \contentsline {chapter}{\numberline {B}R\IeC {\'e}f\IeC {\'e}rences}{33}{appendix.B}
 \contentsline {section}{\numberline {B.1}Documentations en-ligne}{33}{section.B.1}
