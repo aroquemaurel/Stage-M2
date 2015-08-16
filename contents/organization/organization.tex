@@ -1,50 +1,53 @@
 \chapter{Organisation du travail}\label{chapOrganization}
-\putminitoc \'Etant donné la complexité du projet et son importance, une organisation réfléchie est indispensable. Autant d'un point de vue humain, avec une gestion de projet et une gestion de l'équipe que technique en utilisant certaines technologies nous aidant dans la tache.  Nous allons voir l'organisation qui a été mise en place afin d'être le plus efficace possible.
+\putminitoc \'Etant donné la complexité du projet et son importance, une organisation réfléchie est indispensable. Autant d'un point de vue humain, avec une gestion de projet et une gestion de l'équipe, que technique en utilisant certaines technologies nous aidant dans la tache.  Nous allons voir l'organisation qui a été mise en place afin d'être le plus efficace possible.
 \vspace{-32px}
 
 \section{L'équipe de développement}
 Au cours de mon stage, trois développeurs travaillaient sur le projet \textit{GreenT} : Alain \bsc{Fernandez}, chef d’équipe et membre de
-l’équipe Tests \& Automation Service, Benjamin \bsc{Guerin}, apprenti et moi-même, stagiaire au sein de l’équipe Tests \& Automation Service.
+l’équipe \textit{Tests \& Automation Service}, Benjamin \bsc{Guerin}, apprenti, et moi-même, stagiaire au sein de la même équipe.
 
-%En tant que chef d’équipe, Alain \bsc{Fernandez} organisait les réunions et supervisait notre travail tout en développant les tests managers\footnote{Cf \ref{testManager}}. Olivier \bsc{Ramel} se chargeait particulièrement de la partie serveur. Quant à moi je m’occupais de la partie parsing et génération\footnote{Cf \ref{generation}}.
+En tant que chef d’équipe, Alain \bsc{Fernandez} organisait les réunions et supervisait notre travail tout en corrigeant des bogues, et validait manuellement les rapports de tests\footnote{La validation manuelle des rapports est indispensable afin de vérifier que notre plateforme fournit des rapports fiables}. Benjamin \bsc{Guerin} se chargeait d'effectuer une étude de faisabilité sur l'amélioration visuelle des rapports de tests. Quant à moi je m'occupais de développer deux nouvelles fonctionnalités, à savoir les tableaux calibrables et le patch de calibration, tout en corrigeant différents bogues.\footnote{Cf chapitre \ref{collab}}.
 
-% À mon arrivée la conception du logiciel avait été commencée par mes deux collègues qui m’ont tous les deux formé afin que je puisse rapidement être opérationnel.
 
-% Ensemble nous avons convenu d’une réunion hebdomadaire tous les lundis matin afin de pouvoir faire un point sur nos avancements ou problèmes. Cela nous a permis d’avoir toujours une bonne vision du projet et de régler, ensemble, les problèmes au fur et à mesure. Pour autant, des réunions ponctuelles ont dû être organisées pour compléter ou revoir la conception en fonction des difficultés rencontrées durant la phase de développement.
+À mon arrivée, la plateforme était quasiment opérationnelle, grâce à notre travail lors de mon précédent stage, et de l'avancement qui avait été fait durant cette année de césure. Je me suis donc d'abord renseigné sur les différentes améliorations et avancées du développement afin d'être rapidement opérationnel.  
 
-\section{Documentation : les minutes d'études}
-Je suis arrivé en Mai sur un projet ayant été commencé 18 mois auparavant, ainsi beaucoup de choses existait déjà : il était nécessaire de
-garder l'existant. Afin de documenter notre travail, il a été décidé que pour chaque développement, que ça soit du bogue, de la fonctionnalité ou de la réorganisation du code, il était nécessaire de remplir un document Word de \textit{Minute étude}. Ce document comportait 4 grandes parties : 
+Ensemble, nous avons convenu de documenter au maximum notre travail, afin de conserver une plateforme toujours à jour au niveau de sa documentation. Ainsi pour chaque modification, chacun de nous devait remplir un document de \textit{minutes d'étude}.
+
+\section{La documentation : les \textit{minutes étude}}
+Je suis arrivé en Mai sur un projet ayant été commencé 18 mois auparavant, ainsi beaucoup de choses existaient déjà : il était nécessaire de
+garder l'existant. Afin de documenter notre travail, il a été décidé que pour chaque développement, que ça soit du bogue, de la fonctionnalité ou de la réorganisation du code, il était nécessaire de remplir un document Word de \textit{Minutes étude}. Ce document comportait 4 grandes parties : 
 \begin{description}
-	\item[Analyse du besoin] Pourquoi ce développement est nécessaire, les cas d'utilisations pris en charge, ou non, les éventuels discussions avec l'équipe cliente.
+	\item[Analyse du besoin] Pourquoi ce développement est nécessaire, les cas d'utilisation pris en charge, ou non, les éventuelles discussions avec l'équipe cliente.
 	\item[Analyse de l'existant] Retro-engineering permettant de comprendre le fonctionnement actuel du module que nous allons modifier, cette conception doit être statique, et dynamique, appuyé sur des schémas UML 2.
 	\item[La solution] Conception de notre solution, ses limites, ses avantages. De la même manière que la partie précédente, la conception est statique et dynamique, avec des schémas UML 2.
-	\item[Les tests] De quelle manière nous allons tester notre solution, aussi bien en test unitaire qu'en test d'intégration.
+	\item[Les tests] De quelle manière nous allons tester notre solution, aussi bien en tests unitaire qu'en tests d'intégration.
 \end{description}
 
 Ces différents documents pourront nous resservir plus tard pendant la maintenance, si un modèle doit être amélioré, ou comporte des
-problèmes, la relecture de ce document nous fera gagner beaucoup de temps.
+problèmes, la relecture de la minute étude correspondante nous fera gagner beaucoup de temps.
 
 \section{Outils de développement}
 Afin de travailler de façon efficace, nous avons utilisés des outils aidant au développement.
 
+\subsection{Java}
 \begin{wrapfigure}{r}{2cm}
 	\includegraphics[width=2cm]{contents/images/logoJava.png}
 \end{wrapfigure}
-`A mon arrivée, la partie client de notre plateforme était développée en Java dans sa version 6.0, Java nous permettant d'avoir un langage fortement typé, très puissant au niveau du paradigme Objet, connu de l'équipe, assez simple de déploiement et multiplateforme. 
+À mon arrivée, la partie client de notre plateforme était développée en Java dans sa version 6.0, Java nous permettant d'avoir un langage fortement typé, très puissant au niveau du paradigme Objet, connu de l'équipe, assez simple de déploiement et multiplateforme. 
 
-Une de mes collaboration a été le passage à Java 8 nous permettant d'utiliser toute la puissance de Java, et d'avoir une plateforme qui soit
-à jour au niveau technologiques.
+Une de mes collaboration a été le passage à Java 8 nous permettant d'utiliser toute la puissance de Java, et d'avoir une plateforme qui soit à jour au niveau technologique.
 
+\subsection{Git}
 \begin{wrapfigure}{l}{2.5cm}
 	\includegraphics[width=2.5cm]{contents/images/logoGit.png}
 \end{wrapfigure}
 Nous avons utilisé \textit{Git} afin de faciliter le travail collaboratif d'une part, et de versionner le code du logiciel d'autres part. Git permet de fusionner les
 modifications de plusieurs développeurs, tant que nous ne modifions pas le même fichier en même temps. Ainsi, la fusion de nos modifications était faite automatiquement. 
 
-De plus, à chaque fois modification, un << commit >>, permet de créer un point de restauration : il est alors possible de
-récupérer n'importe quelle version de logiciel depuis son commencement. Nous y insérons un message clair expliquant ce qui a fait, cela permet aux autres développeurs de l'équipe de se tenir au courant de l'avancement.
+De plus, à chaque nouvelle modification, un << commit >>, permet de créer un point de restauration : il est alors possible de
+récupérer n'importe quelle version du logiciel depuis son commencement. Nous y insérons un message clair expliquant ce qui a été fait, cela permet aux autres développeurs de l'équipe de se tenir au courant de l'avancement.
 
+\subsection{Eclipse}
 \begin{wrapfigure}{r}{2.5cm}
 	\includegraphics[width=2.5cm]{contents/images/logoEclipse.png}
 \end{wrapfigure}
@@ -52,18 +55,21 @@ Nous développions tous sous le même environnement de développement Eclipse, a
 plugin Git permet d'avoir des outils aidant à la résolution d'éventuels conflits et le plugin PyDev permet de développer avec l'interpréteur
 et la coloration syntaxique Python. 
 
+\subsection{Thrift et client-serveur}
 Notre plateforme fonctionne avec une architecture client-serveur, un client et deux serveurs. Le client écrit en Java, un serveur utilise
-Python et le second est lui aussi en Java. Afin de faire communiquer les deux parties de notre application, nous avons utilisé \textit{Apache Thrift}. Une bibliothèque ayant pour but les communications réseau inter-langage, dans le même principe que le protocole RMI\footnote{Remote Method Invocation}.
+Python et le second est lui aussi en Java. Afin de faire communiquer les deux parties de notre application, nous avons utilisé \textit{Apache Thrift}. Il s'agit d'une bibliothèque ayant pour but les communications réseau inter-langage, dans le même principe que le protocole RMI\footnote{Remote Method Invocation}.
 
+\subsection{UML et \textit{Entreprise Architect}}
 \begin{wrapfigure}{l}{2.5cm}
 	\includegraphics[width=2.5cm]{contents/images/logoEnterpriseArchitect.png}
 \end{wrapfigure}
 Nous avons travaillé avec la norme UML\footnote{Unified Modelling Language}~2 afin de concevoir la plateforme, en utilisant particulièrement des diagrammes de classes, mais aussi des diagrammes de cas d'utilisation ou d'activité. 
 
-Pour dessiner ces diagrammes, et les noter dans la documentation, nous les pensions d'abord sur tableau blanc, mais ensuite nous avions besoin d'un outil puissant afin de les dessiner sur informatique. Pour cela nous avons utilisés Enterprise Architect, un logiciel propriétaire permettant de créer tous les diagrammes de la norme UML~2.\\~
+Pour dessiner ces diagrammes, et les noter dans la documentation, nous les pensions d'abord sur tableau blanc, mais ensuite nous avions besoin d'un outil puissant afin de les dessiner sur informatique. Pour cela nous avons utilisé \textit{Enterprise Architect}, un logiciel propriétaire permettant de créer tous les diagrammes de la norme UML~2.\\~
 
+\subsection{\LaTeX}
 \begin{wrapfigure}{r}{2.5cm}
 	\includegraphics[width=2.5cm]{contents/images/logoLatex.png}
 \end{wrapfigure}
 Afin de rédiger ce rapport, et le diaporama de soutenance, j'ai utilisé \LaTeX{}, un langage et un système de composition de documents fonctionnant à l'aide de
-macro-commandes. Son principal avantage est de privilégier le contenu à la mise en forme, celle-ci étant réalisée automatiquement par le système une fois un style définit. 
+macro-commandes. Son principal avantage est de privilégier le contenu à la mise en forme, celle-ci étant réalisée automatiquement par le système une fois un style défini. 

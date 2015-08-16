@@ -3,70 +3,77 @@
 Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'intégrations, notamment pour les projets à destination de Ford. Les tests demandaient du temps et de l'argent à l'équipe en charge de ces tests. Ainsi, deux ans avant mon stage de M1, une solution à été trouvée : le développement d'une nouvelle plateforme, \textit{GreenT}.
 
 \vspace{-32px}
-	\section{Les tests} \label{pbTests}
+	\section{Les tests actuels} \label{pbTests}
 	Comme expliqué dans la section \ref{besoinTests}, le calculateur moteur est un système critique, il est donc indispensable de tester correctement celui-ci.
 
-	\subsection{Le plugin}
+	\subsection{Les bancs de tests}\label{wb}
+	Afin de tester au mieux les programmes du contrôle moteur développés, ceux-ci sont d'abord testé via des simulateurs d'environnement véhicule. Ce simulateur permettent d'une part de vérifier la bonne conformité entre le matériel et le logiciel, mais permettent également de vérifier le programme avant d'effectuer des tests sur véhicule.
+		
+	Comme vous pouvez le voir figure \ref{fig:wb}, un banc de tests est composé d'un ordinateur, du calculateur appelé ECU pour \textit{\textbf{E}lectronic \textbf{C}ontrol \textbf{U}nit} et d'au moins deux équipements aidant aux tests. 
+	
+	Les deux \textit{équipements} étant les suivants : 
+	\begin{description}
+		\item[Le HIL] Le \textit{\textbf{H}ardware \textbf{I}n the \textbf{L}oop} est un simulateur d'environnement véhicule. Ainsi l'ECU est branché sur le HIL et se comporte de la même manière que s'il était embarqué dans une voiture. Le HIL quant à lui est chargé d'envoyer les bons stimulus sur les pins de l'ECU, tel que l'injection, la vitesse de rotation du moteur, le starter \ldots
+		\item[Debugger] Cet \textit{appareil} est branché sur l'ECU est va être capable d'effectuer un certain nombre d'actions directement sur l'ECU. Tel que flasher le logiciel à tester, mettre des points d'arrêts sur le code, lire des variables, les modifier, changer des calibrations, \ldots
+	\end{description}
+
+	\begin{remarque}
+		Un certain nombre d'équipes projet chez Continental utilise un troisième outil qui n'est pas représenté ici, parce que notre plateforme ne s'en sert pas. Cet outil, nommé INCA, va interagir sur l'ECU via un bus CAN\footnote{Controller Area Network}. Cet outil étant sujet à contreverses, il a été choisi de ne pas l'intégrer à notre plateforme.
+	\end{remarque}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=10cm]{contents/images/WB.eps}
+			\caption{Fonctionnement d'une table de tests : HIL DSpace, Debugger et ECU}
+			\label{fig:wb}
+		\end{figure}
+		
+	\subsection{Le plugin Ford}
 	Dans le cadre de projets pour Ford, Continental ne développe pas l'intégralité du logiciel, en effet une partie est fournie par le client sous forme de << plugin >>. Le \textit{plugin} est supposé correct, et le tester n'est pas de notre ressort. Cependant, celui-ci va être interfacé avec les logiciels Continental : il est indispensable de vérifier que les deux parties fonctionnent ensemble lors de l'intégration.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=10cm]{contents/images/plugin.eps}
+		\includegraphics[width=5cm]{contents/images/plugin.eps}
 		\caption{Interfaces du plugin avec le logiciel de Continental}
 		\label{fig:plugin}	
 	\end{figure}
 	
-	\begin{exemple}
+	\begin{remarque}
 		Continental n'a pas accès au code source de ce plugin, l'équipe n'aura que le binaire du logiciel ainsi que sa spécification.	
-	\end{exemple}
+	\end{remarque}
 	
 	Pour cela, le client fourni un fichier appelé \texttt{Walkthrough}\footnote{Ce fichier est expliqué plus en détail section \ref{wt}}
 	contenant la liste des variables du plugin avec toutes leur spécifications, ce fichier est au format \textit{Excel} : il contient
-	environ 900 variables différentes. Il est impensable de tester le fonctionnement d'autant de paramètres manuellement, ainsi l'équipe en
+	environ 900 variables différentes. Il est impensable de tester le fonctionnement d'autant de paramètres manuellement. Ainsi l'équipe en
 	charge de tester cette intégration effectue des tests de différence d'une version à l'autre : seules les variables ayant pu être
 	impactées par une \textit{release} seront testées, il est supposé que le fonctionnement des autres variables reste inchangé.
 
 	Trois problèmes se posent à cette méthode : 
 	\begin{description}
 		\item[La fiabilité des tests manuels] Le test des seules différences ne permet pas nécessairement de détecter tous les problèmes (notamment avec des effets de bords\ldots). De plus, une tâche répétitive peut entrainer des erreurs humaines.
-		\item[Le temps de tests] Même en ne testant qu'une partie des variables, cela prend un temps considérable, il faut compter environ une semaine.
-			Or, les tests s'effectuent sur des bancs de tests\footnote{Le fonctionnement d'un banc est disponible figure
-			\ref{fig:photoHil}}, ces équipements permettent de simuler un environnement voiture autour du contrôleur moteur comme
+		\item[Le temps de tests] Même en ne testant qu'une partie des variables, cela prend un temps considérable, il faut compter environ une semaine.\newline
+			Or, les tests s'effectuent sur les bancs de tests comme expliqué section \ref{wb}, ces équipements permettent de simuler un environnement voiture autour du contrôleur moteur comme
 			l'utilisation de la clé de démarrage, la tension de la batterie, la vitesse de rotation du moteur, ... Ces bancs sont peu
 			nombreux dans l'entreprise en raison de leur cout, leur disponibilité est compliquée. Il serait intéressant de pouvoir lancer
 			des tests automatisés durant la nuit par exemple afin de les décharger de ce travail.
 	\end{description}
 
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=14cm]{contents/images/WB.eps}
-		\caption{Fonctionnement d'une table de tests : HIL DSpace, Debugger et ECU}
-		\label{fig:photoHil}
-	\end{figure}
-
 	\subsection{La plateforme TA3}\label{ta3}
 \begin{wrapfigure}{l}{2.5cm}
 	\includegraphics[width=2.5cm]{contents/images/python.png}
 \end{wrapfigure}
-	Actuellement, les équipes de tests disposent d'une plateforme appelée TA3. Celle-ci est une bibliothèque de classes écrites en Python. Jusqu'à présent, pour chaque objectif de test, il fallait écrire un script python utilisant la TA3. Ces scripts pilotent le banc HIL et le l'outil de debug afin d'envoyer des stimulis à l'Unité de contrôle moteur(Noté ECU pour \textit{Electronic Control Unit}) et de vérifier que les réactions de celui-ci sont conforme aux spécifications de test.
-%	\begin{figure}[H]		
-%		\centering
-%		\includegraphics[width=7cm]{contents/images/trace32.png}
-%		\caption{Exemple de Debugger -- Trace32}
-%		\label{fig:photoHil}
-%	\end{figure}
+	Actuellement, les équipes de tests disposent d'une plateforme appelée TA3. Celle-ci est une bibliothèque de classes écrites en Python. Jusqu'à présent, pour chaque objectif de test, il fallait écrire un script python utilisant la TA3. Ces scripts pilotent le banc HIL et le debugger afin d'envoyer des stimulis à l'unité de contrôle moteur et de vérifier que les réactions de celui-ci sont conforme aux spécifications de test.
 
-	Cependant, cette plateforme pose un certain nombre de problèmes qui rend son utilisation difficile. D'une part, elle renvoie un trop grand pourcentage de faux-positifs, faisant perdre du temps au testeur. D'autres part, elle ne prend pas en compte certains besoins apparu récemment Comme par exemple un système permettant de flasher automatiquement les ECU, ou la possibilité de vérifier la fréquence de mise-à-jour de la production de variables.
+	Cependant, cette plateforme pose un certain nombre de problèmes qui rend son utilisation difficile. D'une part, elle renvoie un trop grand pourcentage de faux-positifs, faisant perdre du temps au testeur. D'autres part, elle ne prend pas en compte certains besoins apparu récemment comme par exemple un système permettant de flasher automatiquement les ECU\footnote{Cela permettrai de scripter un test qu'on lancerai plus tard et de gagner du temps}, ou la possibilité de vérifier la fréquence de mise-à-jour de la production de variables\footnote{Ceci afin de contrôler le temps réel du calculateur}.
 
-	Afin d'améliorer cette situation, l'équipe \textit{Tests Automated Service} développe une nouvelle plateforme.
+	Afin d'améliorer cette situation, l'équipe \textit{Tests \& Automation Service} développe une nouvelle plateforme.
 
 	\section{La solution : \textit{GreenT}}
 	Afin de résoudre les problèmes présentés dans la section \ref{pbTests}, une solution a été pensée en étudiant les besoins de l'équipe en charge des tests du plugin : le développement d'une plateforme de tests, appelé \textit{GreenT}.~\\
 
-	\begin{exemple}
+	\begin{remarque}
 		Le nom de \textit{GreenT} provient de la contraction de \textit{Green} et \textit{Test}.
 		
 		En effet, un test est signalé correct si celui-ci est vert, or le but de notre plateforme est d'automatiser des tests et qu'à la fin de l'exécution, tout ceux-ci soient verts.
-	\end{exemple}
+	\end{remarque}
 	\subsection{Génération de tests automatiques}
 	\subsubsection{Les tests d'intégration du plugin Ford}
 	À court terme, cette solution devrait permettre de tester le plugin pour les projets Ford facilement et de façon efficace. Pour cela, les testeurs Continental vont ajouter des colonnes dans le document \textit{Walkthrough}, afin de spécifier la manière de tester les variables. La plateforme, sera capable d'analyser le document \textit{Walkthrough}, et de générer les tests automatiques. Le testeur n'aura plus qu'à lancer l'exécutable le soir, il reviendra le lendemain, tous les tests auront été exécutés avec un rapport détaillé pour chaque test.\\
@@ -76,7 +83,7 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 	Cette plateforme permettra donc de tester facilement la dizaine de projets Ford, et une fois le test d'une variable spécifiée, il n'est plus nécessaire de le réécrire. À chaque nouvelle \textit{release} il suffira de relancer les tests : l'équipe n'aura à faire le travail qu'une fois, ensuite la réutilisation sera possible, les projets seront testés plus rapidement, plus efficacement, et plus souvent.
 
 	\subsubsection{Les autres projets}
-	À moyen terme, cette plateforme pourrait être utilisée pour les projets d'autres clients tel que Renault, afin d'effectuer là aussi des tests d'intégration, il était nécessaire de concevoir une plateforme qui puisse évoluer facilement, et avoir un fichier de spécifications en entrée qui soit légèrement différent d'un client à l'autre.
+	À moyen terme, cette plateforme pourrait être utilisée pour les projets d'autres clients tel que Renault, afin d'effectuer là aussi des tests d'intégration. Il était nécessaire de concevoir une plateforme qui puisse évoluer facilement, et avoir un fichier de spécifications en entrée qui soit légèrement différent d'un client à l'autre.
 
 	En effet, les autres clients peuvent aussi fournir une partie du logiciel, avec un document de spécification des variables, celui-ci ne serait pas totalement identique, mais l'approche des tests s'en approchera.
 
@@ -87,12 +94,12 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 
 		Celui-ci apprendra à se servir de la plateforme, écrira en règle générale des tests assez courts et moins complexes que ceux que nous générerons, ceux-ci doivent être faciles à écrire.
 
-	\subsection{L'exécution des tests}
-	À long terme, l'objectif serait de pouvoir effectuer de l'intégration continue. 
+%	\subsection{L'exécution des tests}
+%	À long terme, l'objectif serait de pouvoir effectuer de l'intégration continue. 
+%
+%	Il faut savoir que l'exécution de ces tests pourrait durer une quinzaine d'heures, en espérant qu'elle tienne sur une nuit. Cependant, il va arriver que les tests débordent et que lorsque le testeur revient, les tests ne soient pas terminés : le banc va être occupé alors que d'autres personnes en ont besoin, et le testeur n'a toujours pas les verdicts.
 
-	Il faut savoir que l'exécution de ces tests pourrait durer une quinzaine d'heures, en espérant qu'elle tienne sur une nuit. Cependant, il va arriver que les tests débordent et que lorsque le testeur revient, les tests ne soient pas terminés : le banc va être occupé alors que d'autres personnes en ont besoin, et le testeur n'a toujours pas les verdicts.
+%	 Nous souhaitons concevoir un système permettant l'exécution des tests sur des bancs en parallèle : on pourrait ainsi diviser le temps d'exécution par 2 ou 3, les tests tiendront sur une nuit et l'objectif principal serait tenu.
 
-	 Nous souhaitons concevoir un système permettant l'exécution des tests sur des bancs en parallèle : on pourrait ainsi diviser le temps d'exécution par 2 ou 3, les tests tiendront sur une nuit et l'objectif principal serait tenu.
-
-	 Mais le plus intéressant, serait d'utiliser le décalage horaire à notre avantage : lancer l'exécution des tests sur des bancs non utilisés dans d'autres pays, ainsi à toute heure de la journée il serait possible de lancer les tests. En effet, Continental étant présent dans la plupart des continents, il fait toujours nuit sur un site sur la planète. Après chaque étape d'intégration, on pourrait relancer les tests afin de vérifier qu'aucun bug n'a été introduit : le problème de la disponibilité des bancs serait alors résolu, et nous atteindrons une excellente sécurité.
+%	 Mais le plus intéressant, serait d'utiliser le décalage horaire à notre avantage : lancer l'exécution des tests sur des bancs non utilisés dans d'autres pays, ainsi à toute heure de la journée il serait possible de lancer les tests. En effet, Continental étant présent dans la plupart des continents, il fait toujours nuit sur un site sur la planète. Après chaque étape d'intégration, on pourrait relancer les tests afin de vérifier qu'aucun bug n'a été introduit : le problème de la disponibilité des bancs serait alors résolu, et nous atteindrons une excellente sécurité.
 

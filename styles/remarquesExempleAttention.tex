@@ -52,6 +52,7 @@
 \newtheorem{exampleT}{Example}[chapter]
 \newtheorem{vocabulary}{Vocabulary}[chapter]
 \newtheorem{definitionT}{Definition}[chapter]
+\newtheorem{remarqueT}{}[chapter]
 \newtheorem{exempleT}{}[chapter]
 
 
@@ -153,26 +154,43 @@ rightmargin=0cm,
 linewidth=1pt,
 innerbottommargin=5pt]{rBox}				  
 		  
+% Corollary box
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+backgroundcolor=vertfonce!7,
+linecolor=vertfonce,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+innerbottommargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt]{gBox}			  
 
 % Creates an environment for each type of theorem and assigns it a theorem text style from the "Theorem Styles" section above and a colored box from above
 \newenvironment{theorem}{\begin{tBox}\begin{theoremeT}}{\end{theoremeT}\end{tBox}}
 \newenvironment{example}{\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}}
 \newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}
 \newenvironment{attention}{\begin{eBox}\small}{\end{eBox}}				  	
-\newenvironment{exemple}{\begin{cBox}\small}{\end{cBox}}	
+\newenvironment{remarque}{\begin{cBox}\small}{\end{cBox}}	
+\newenvironment{exemple}{\begin{gBox}\textbf{\color{vert}Exemple}\small}{\end{gBox}}	
 
 %----------------------------------------------------------------------------------------
 %	REMARK ENVIRONMENT
 %----------------------------------------------------------------------------------------
 
-\newenvironment{remarque}{\par\vskip10pt\small
-\begin{rBox}
-\begin{list}{}{
-\leftmargin=35pt % Indentation on the left
-\rightmargin=25pt}\item\ignorespaces % Indentation on the right
-%\makebox[-2.5pt]{\begin{tikzpicture}[overlay]
-%\node[draw=ocre!60,line width=1pt,circle,fill=ocre!25,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-15pt,0pt){\textcolor{ocre}{R}};\end{tikzpicture}} % Orange R in a circle
-\advance\baselineskip -1pt}
-{\end{list}\vskip1mm\end{rBox}\vskip5pt} % Tighter line spacing and white space after remark
+%\newenvironment{remarque}{\par\vskip10pt\small
+%\begin{rBox}
+%\begin{list}{}{
+%\leftmargin=35pt % Indentation on the left
+%\rightmargin=25pt}\item\ignorespaces % Indentation on the right
+%%\makebox[-2.5pt]{\begin{tikzpicture}[overlay]
+%%\node[draw=ocre!60,line width=1pt,circle,fill=ocre!25,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at %(-15pt,0pt){\textcolor{ocre}{R}};\end{tikzpicture}} % Orange R in a circle
+%\advance\baselineskip -1pt}
+%{\end{list}\vskip1mm\end{rBox}\vskip5pt} % Tighter line spacing and white space after remark
 
 

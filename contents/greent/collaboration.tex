@@ -1,10 +1,23 @@
-\chapter{Ma collaboration au projet}
+\chapter{Ma collaboration au projet}\label{collab}
 \putminitoc
-Après avoir défini plus en détails les besoins de notre plateforme et son fonctionnement général, nous allons maintenant voir en détail de quelle manière j'ai contribué à ce projet. En parallèle de la maintenance de notre plateforme, j'ai développé deux nouvelles fonctionnalités. Ces deux fonctionnalités ayant un rapport direct avec la notion de << calibration >>, nous allons tout d'abord définir celles-ci avant de voir en détail mon développement et la maintenance que j'ai développé.
+Après avoir défini plus en détails les besoins de notre plateforme et son fonctionnement général, nous allons maintenant voir en détail de quelle manière j'ai contribué à ce projet. En parallèle de la maintenance de notre plateforme, j'ai développé deux nouvelles fonctionnalités. Ces deux fonctionnalités ayant un rapport direct avec la notion de << calibration >>, nous allons tout d'abord définir celles-ci avant de voir en détail mon développement et la maintenance que j'ai effectué.
 
 \section{Les calibrations}
+Une calibration est une constante stockée en flash, c'est-à-dire en mémoire non volatile. Ainsi le logiciel du contrôle moteur peut accéder à toutes ces calibrations en lecture uniquement.
+
+Ces calibrations permettent de configurer un véhicule avant sa mise en production. Cette configuration peut se faire en fonction de plusieurs critères : 
+\begin{itemize}
+	\item Le matériel en face du calculateur, comme le nombre d'injecteurs
+	\item La version du logiciel du contrôle moteur
+	\item Leur modification permet de faire une mise au point, permettant d'améliorer la consommation par exemple.
+\end{itemize}
+
+Une fois le logiciel pour un calculateur fourni, et mis en production, ces calibrations ne doivent pas évoluer, les modifier ne sert donc qu'à la mise au point et à la généricité du logiciel.
+
 \section{Le << patch calib >>}\label{patch}
+
 \section{Les << tableaux calibrables >>}
+
 \section{La maintenance}
 Comme expliqué plus haut, j'ai développé deux fonctionnalités durant ce stage. Cependant, en parallèle de ce développement j'ai également corrigés différents bugs, ou améliorer différentes partie de la plateforme.
 
@@ -16,16 +29,16 @@ Ayant conçu cette plateforme lors de mon stage de fin de Licence, je connais l'
 \end{itemize}
 
 \subsection{Corrections}
-J'ai corrigé quelques problèmes trouvés sur la plateforme, principalement venant du client. Les problèmes venaient principalement du client dû à notre choix d'architecture : des serveurs les plus légers et un serveur effectuant le maximum d'actions.
+J'ai corrigé quelques problèmes trouvés sur la plateforme, principalement venant du client \textit{GreenT}. Ceci étant dû à notre choix d'architecture : des serveurs les plus légers et un client effectuant le maximum d'actions.
 	\subsubsection{Stockage des erreurs d'exécutions}
 	\begin{description}
-		\item[Le problème] En cas d'erreur durant une exécution, si un serveur ne répond plus, si une variable est non trouvée, ... Une exception est levée. À ce moment là, GreenT doit attraper l'exception et la stocker en base de données pour pouvoir afficher ensuite le message à tous les tests du bundle, la génération des rapports ne pouvant pas se faire.
+		\item[Le problème] En cas d'erreur durant une exécution, si un serveur ne répond plus, si une variable est non trouvée, ... Une exception est levée. À ce moment là, \textit{GreenT} doit attraper l'exception et la stocker en base de données pour pouvoir afficher ensuite le message à tous les tests du bundle, la génération des rapports ne pouvant pas se faire.
 		\item[La solution] Le stockage du message d'erreur n'était pas fait, ainsi que la requête SQL permettant d'obtenir les messages d'erreurs. Ces deux actions ont été corrigés, en lieu et place du rapport de test nous avons maintenant un message d'erreur clair.
 		\end{description}
 		
 	\subsubsection{Modification des variables Debugger}
 		\begin{description}
-			\item[Le problème] Lors d'un stimulus, il est possible de modifier une variable Debugger. Lors de la modification d'une variable le Trace32 renvoyait toujours une exception, sans appliquer la modification.
+			\item[Le problème] Lors d'un stimulus, il est possible de modifier une variable Debugger. Lors de la modification d'une variable, le Trace32 renvoyait toujours une exception, sans appliquer la modification.
 			\item[La solution] Après lecture de la documentation de Trace32, il s'est avéré que le problème venait simplement du serveur qui appliquait une commande syntaxiquement incorrecte. La modification de la commande a corrigée le problème.
 	\end{description}
 	
@@ -44,7 +57,7 @@ J'ai corrigé quelques problèmes trouvés sur la plateforme, principalement ven
 	\subsubsection{Absence d'injection}
 	\begin{description}
 		\item[Le problème] Lorsque j'essayais de simuler un démarrage du moteur sur la dernière version du logiciel, aucune injection ne se faisait : après le starter, le moteur retournait à 0 tour.
-		\item[La solution] Après s'être renseigné auprès de personnes compétentes, il s'est avéré que cela venait d'un nouveau fichier à flasher dont nous n'avions pas connaissance. Un fichier contenant des calibrations permettant le démarrage du moteur dans le labo. Ce fichier n'ayant pas été pris en compte durant la conception, j'ai ajouté un nouveau paramètre au fichier de configuration permettant de renseigner des fichiers à flasher additionnels.
+		\item[La solution] Après s'être renseigné auprès de personnes compétentes, il s'est avéré que cela venait d'un nouveau fichier à flasher dont nous n'avions pas connaissance. Un fichier contenant des calibrations permettant le démarrage du moteur sur table. Ce fichier n'ayant pas été pris en compte durant la conception, j'ai ajouté un nouveau paramètre au fichier de configuration permettant de renseigner des fichiers à flasher additionnels.
 	\end{description}
 	
 \subsection{Améliorations}

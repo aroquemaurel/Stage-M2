@@ -5,21 +5,21 @@ Comme nous l'avons montré dans le chapitre \ref{chapPb}, l'entreprise a besoin 
 
 Nous allons donc voir le développement et la conception de cette plateforme de tests.
 
-Au début de mon stage, le projet ayant un an, les fonctionnalités développées ci-dessous était déjà développer. J'ai cependant intervenus
-sur la pluspart d'entre elles soit pour des corrections de bugs d'une part, soit à des fin d'améliorations d'autres part.
+Au début de mon stage, le projet ayant un an, les fonctionnalités développées ci-dessous était déjà faites. Je suis cependant intervenu
+sur la plupart d'entre elles soit pour des corrections de bugs d'une part, soit à des fin d'améliorations d'autres part.
 
 Afin de présenter mon travail que vous trouverez chapitre \ref{collaboration}, il est nécessaire de présenter le fonctionnement général de
 cette plateforme afin d'en avoir une vue d'ensemble.
 
 \section{Le fichier Walkthrough}\label{wt}
 Le fichier Walkthrough est un fichier qui sera fourni par la personne en charge des tests, c'est un fichier au format Excel qui contient les informations
-de chacune des variables à tester. Il contient ainsi un très grand nombre de colonnes, bien que seule une partie des colonnes nous
+de chacune des variables à tester. Il contient ainsi un très grand nombre de colonnes, bien que seule une partie de celles-ci nous
 intéresse, certaines colonnes ont été remplies par le fournisseur du plugin, d'autres colonnes sont ajoutées dans le seul but de la
 génération de tests automatiques par \textit{GreenT}. Voici les colonnes les plus intéressantes : 
 
 \begin{description} 
 	\item[Nom de la variable] Le nom de la variable testée : il existe un nom court et un nom long.
-	\item[Informations aidant à la conversion des données] Certains \textit{devices} tel que le debugger ne fonctionne qu'avec des
+	\item[Informations aidant à la conversion des données] Certains équipements\footnote{Vous trouverez plus d'informations sur le fonctionnement d'une table de tests section \ref{wb}, et dans l'annexe \ref{devices}} tel que le \textit{debugger} ne fonctionne qu'avec des
 	valeurs Hexadécimales. À la charge de \textit{GreenT} de convertir ces données vers des valeurs physiques exploitables par
 	le testeur. Ces colonnes contiennent les informations nécessaires au calcul de conversion\footnote{Informations tel que le
 		domaine de définition physique et le domaine de définition hexadécimal}.
@@ -33,7 +33,6 @@ génération de tests automatiques par \textit{GreenT}. Voici les colonnes les p
 	\item[Variable à enregistrer (cf section \ref{expectedBehavior})] Contient les variables devant être enregistrées durant un
 	scénario, en plus des variables présentes dans l'expected behavior. Celles-ci peuvent servir en tant que données
 	contextuelles permettant de mieux cerner le résultat d'un test.
-	\item[Alias locaux (cf section \ref{alias})] Ce sont des alias déclarés uniquement pour le test courant.
 	\item[Informations du test (cf section \ref{report})] Plusieurs colonnes tel que la sévérité, le responsable du test, les commentaires, \ldots
 \end{description}
 
@@ -41,7 +40,7 @@ génération de tests automatiques par \textit{GreenT}. Voici les colonnes les p
 	% TODO CHange WT version
 	\centering
 	\includegraphics[width=18.5cm]{contents/images/walkthrough.png}
-	\caption{Aperçu d'un fichier Walkthrough}
+	\caption{Aperçu d'un fichier Walkthrough -- TODO changer la version}
 \end{figure}
 \section{Fonctionnement Global}
 Le développement de \textit{GreenT} inclu un certain nombre de fonctionnalités attendues par le client et indispensable à son fonctionnement. D'autres fonctionnalités pourront apparaître plus tard en fonction des besoins.
@@ -51,12 +50,12 @@ Dans des objets ovales sont représentés des fichiers, les carrés représenten
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=16.5cm]{contents/images/generalDiag.eps}
+	\includegraphics[width=19.5cm]{contents/images/generalDiag.eps}
 	\caption{Fonctionnement général de la plateforme \textit{GreenT}}
-	\label{fig:generalDig}
+	\label{fig:generalDiag}
 \end{figure}	
 
-Dans la figure \ref{fig:generalDig}, vous pouvez voir des flèches en pointillés représentant des échanges réseau. En effet
+Dans la figure \ref{fig:generalDiag}, vous pouvez voir des flèches en pointillés représentant des échanges réseau. En effet
 l'exécution des stimulations et l'enregistrement des traces se fait par un contrôle distant des bancs de tests\footnote{La
 	schématisation du fonctionnement d'un banc est disponible section \ref{chapPb} figure \ref{fig:photoHil}}.
 
@@ -77,12 +76,59 @@ Alors que d'autres fonctionnalités vont nécessiter la présence de serveurs et
 Afin de répondre au mieux aux attentes du client, il a été choisi d'utiliser le Java pour développer notre client, ceci en raison de
 diverses avantages comme le côté multi-plateforme, son typage fort et sa forte communauté qui permet ainsi une maintenance réduite. 
 
-\subsection{Parsing et Génération}\label{generation}
+\begin{exemple}
+Afin de comprendre au maximum les tenants et aboutissant de notre plateforme, nous allons utiliser le même exemple tout au long de cette section.
+
+Le testeur souhaite vérifier le bon fonctionnement des ventilateurs de refroidissement du moteur. Nous allons voir de quelle manière il pourrait utiliser \textit{GreenT} afin de vérifier cela.
+\end{exemple}
+
+\subsection{\textit{Parsing} et Génération}\label{generation}
 Le but premier de la plateforme est d'effectuer des tests automatiques, il est ainsi indispensable d'avoir un système d'automatisation.
 
 Pour cela, nous avons un parser : il analyse un certain type de fichier\footnote{Nous ne commencerons qu'avec le Walkthrough pour débuter, mais dans le futur nous pourrions avoir des fichiers XML, des bases de données, \ldots} et en retire pour chaque test, le scénario de pré condition, les différents scénarios de stimulations, leurs \textit{Expected Behavior}, les données qui devront être enregistrées ainsi que différentes information sur le test\footnote{Responsable du test, sévérité, commentaires, nom de la variable, \ldots}.
 
 Une fois toutes ces données acquises, il les transmet à un générateur qui est en charge d'écrire les fichiers Java de chaque test, tous sont organisés dans un dossier temporaire avec un dossier par test. Le \texttt{TestManager} peut ensuite traiter ces données.
+
+\begin{exemple}
+Ci-dessous les différentes cellules qui pourrait être renseigné par le testeur pour notre cas d'étude. Nous verrons ce qu'effectuent précisément ces actions dans la suite de la section.	
+
+\begin{tabular}{p{4cm}|p{6.5cm}|p{5.4cm}}
+	\textbf{Précondition} & \textbf{Scénario de Stimulation} & \textbf{Expected Behavior}\\
+	\hline
+	\begin{minipage}{0.1\linewidth}
+		\begin{lstlisting}[framerule=0pt]
+// Tension batterie
+HIL_VB = 13;
+// Clé moteur
+HIL_KEY = 1;
+// Vérifications
+CHECK(HIL_KEY = 1 
+	&& HIL_VB = 13);
+	\end{lstlisting}
+	\end{minipage} & 
+	\begin{minipage}{0.1\linewidth}
+		\begin{lstlisting}[framerule=0pt]
+// Rampe de vitesse véhicule
+// de 0 à 50km/h par pas de 1		
+RAMP(HIL_VS, 0, 50, 0.1, 1);
+TODO vérifier syntaxe de RAMP		
+		\end{lstlisting}
+	\end{minipage} 
+	&
+		\begin{minipage}{0.1\linewidth}
+			\begin{lstlisting}[language=ada,framerule=0pt]	
+if temperature > max then
+	-- Ventilateur allumé
+	EVAL(cfa_on = 1); 
+else
+	-- Ventilateur éteint
+	EVAL(cfa_on = 0); 
+end if
+			\end{lstlisting}
+		\end{minipage} 
+	\\
+\end{tabular}
+\end{exemple}
 
 \subsection{Stimulation} \label{stim}
 Afin de tester une variable du plugin, les développeurs vont utiliser des alias présents sur un device : actuellement, un HIL ou un debugger, prochainement nous pourrions en utiliser d'autres que ces deux derniers.
@@ -93,12 +139,22 @@ Un scénario particulier doit être spécifié : une pré condition qui a pour b
 
 Durant l'exécution d'une stimulation, les variables nécessaires sont enregistrées afin de pouvoir produire des rapports et des
 verdicts ensuite.
+\begin{exemple}
+	Comme nous l'avons vu section \ref{generation}, le testeur nos a donné un scénario de stimulation ainsi qu'un scénario de précondition. Le code généré va ainsi communiquer avec le serveur HIL afin qu'il envoie les bons stimulis à l'ECU.
+
+	Ainsi, comme mis en commentaires, le scénario de précondition va mettre la batterie à 13 Volts, et mettre la clé, nous allons ensuite vérifier que cette action a bien été fait. Si tel est le cas, le scénario de stimulations va être effectué. Ce scénario va effectuer une rampe de vitesse, notre véhicule va aller de zéro à cinquante kilomètre-heure avant de retourner à l'arrêt.	
+\end{exemple}
 
 \subsection{Les traces et leurs évaluations}\label{expectedBehavior}
 Lorsqu'un scénario de stimulation s'exécute, un certain nombre de variables sont enregistrées : ces variables sont stockées sous la forme d'une trace au format CSV, qui pourra plus tard être représentée sous forme de courbe. 
 
 Une fois que la trace est complète, il est nécessaire de l'évaluer : le spécifieur a décrit le comportement attendu dans la colonne \textit{Expected Behavior} détaillant dans quel cas le test est correct, ainsi cette expression va être transformée en arbre logique afin de l'évaluer à tout instant de la trace. 
 
+\begin{exemple}
+	Durant notre rampe véhicule, le debugger à enregistré différentes variables, en l'occurence nous avons enregistré les trois variables présentes dans notre Expected Behavior : la température	du moteur -- \texttt{temperature}, la temperature maximum sans ventilateur -- \texttt{max}, ainsi que l'état de notre ventilateur -- \texttt{cfa\_on}.
+	
+	Ces variables ont été enregistrés durant l'intégralité de la rampe véhicule qui à eu une durée de 40 secondes. À la fin de la stimulation, le serveur retourne ainsi une trace de 40 secondes contenant toutes les variables. \textit{GreenT} peut ensuite évaluer notre \textit{expected behavior} sur l'intégralité de l'enregistrement.
+\end{exemple}
 \subsection{Le module TestManager}\label{testManager}
 Le \texttt{TestManager} est le chef d'orchestre de \textit{GreenT}, il a donc un certain nombre de responsabilités. 
 
@@ -131,15 +187,17 @@ La plateforme a en charge la production d'un rapport détaillé pour chaque test
 \end{itemize}
 
 Actuellement, les rapports se font au format Excel avec l'intégralité de notre enregistrement et pour chaque timestamp, un verdict. Un
-exemple de rapport est accessible en Annexe TODO page TODO. 
-% TODO TODO TODO TODO Add report in appendix 
+exemple de rapport est accessible en Annexe \ref{apendixReport} page \pageref{apendixReport}. 
 
 Dans un futur proche, ces rapports pourraient être générés dans un format Web avec une possibilité de naviguer entre plusieurs tests, et
 d'avoir un affichage des courbes de manière graphique.
 
 \subsection{Mise à jour du Walkthrough}
-Une fois un test exécuté, un résultat est mis dans le fichier Excel, en fonction de l'analyse précédemment de la trace : un verdict rouge renverra un résultat rouge, si tout est vert le résultat vert et enfin, celui-ci pourra être gris si nous n'avons pas été capable d'evaluer de résultats.
+Une fois l'analyse d'un test exécuté, un résultat est mis dans le fichier Excel, en fonction de l'analyse de la trace : un verdict rouge renverra un résultat rouge, si tout est vert le résultat sera vert et enfin, celui-ci pourra être gris si nous n'avons pas été capable d'évaluer de résultats.
 
+\begin{remarque}
+	Si il y a eu une erreur à la génération\footnote{Mauvaise syntaxe, variables inexistantes, \ldots} ou à l'exécution\footnote{Problèmes réseaux, variable non trouvée, communication entre l'ECU et le debugger, \ldots}, la plateforme doit remettre le message d'erreur clair au niveau du test afin que l'utilisateur soit conscient du fait que le test n'a pas pu être exécuté, et pour quelle raison. Libre à lui de corriger le test si nécessaire, ou de le signaler si cela semble être un bogue.
+\end{remarque}
 
 \section{Fonctionnement des serveurs}
 Comme expliqué précédemment, GreenT va avoir en charge l'exécution de stimulation. Ces stimulations vont communiquer avec une table de
@@ -149,11 +207,11 @@ tests. Actuellement une table est composée de deux \textit{devices} différents
 	\item Un Debugger permettant de voir l'état du programme présent dans l'ECU
 \end{itemize}
 
+TODO : ajouter un schéma Réseau avec GreenT, Serveur DSPace, Serveur T32 et HIL/Trace32
 Au début du développement de la plateforme, il a été décidé que les serveurs devront être le plus simple possible pour plusieurs raisons
 : 
 \begin{itemize}
-	\item Rabattre le maximum de fonctionnement métier près du client pour centraliser au maximum le fonctionnement et éviter la
-	maintenance superflue
+	\item Rabattre le maximum de fonctions métier près du client pour centraliser au maximum le fonctionnement et éviter la maintenance superflue
 	\item Avoir la possibilité de réutiliser les serveurs pour d'autres projets
 	\item Pouvoir ajouter facilement un nouveau device, qui ne nécessiterai que l'ajout d'un nouveau serveur relativement simple
 \end{itemize}
@@ -161,16 +219,17 @@ Au début du développement de la plateforme, il a été décidé que les serveu
 \subsection{Le serveur Debugger, contrôle de Trace32}
 Le serveur Debugger propose des services basiques permettant de répondre aux différentes stimulations : 
 \begin{itemize}
-	\item Mettre l'ECU à on
+	\item Flasher le logiciel dans la flash de l'ECU
+	\item Démarrer l'ECU
 	\item Arrêter l'ECU
 	\item Lire une variable ou une calibration
 	\item Modifier une variable
 	\item Enregistrer des variables
 \end{itemize}~
 
-\begin{wrapfigure}{l}{2cm}
+\begin{wrapfigure}{l}{3cm}
 	\vspace{-40px}
-	\includegraphics[width=2cm]{contents/images/logoJava.png}
+	\includegraphics[width=2.5cm]{contents/images/logoJava.png}
 \end{wrapfigure}
 Afin d'effectuer ces actions, le serveur s'appuie sur une API fournie par l'outil Trace32 permettant de contrôler le debugger. Ainsi tous nos services vont s'appuyer sur cette API. C'est pour cette raison que ce serveur est développé en Java afin de pouvoir utiliser
 facilement ces fonctions.
@@ -183,8 +242,8 @@ Le serveur DSpace va devoir lui aussi répondre aux différentes stimulations, a
 	\item Enregistrer des valeurs
 \end{itemize}~
 
-\begin{wrapfigure}{r}{2cm}
-	\includegraphics[width=2cm]{contents/images/python.png}
+\begin{wrapfigure}{r}{3cm}
+	\includegraphics[width=2.5cm]{contents/images/python.png}
 \end{wrapfigure}
 Ce serveur a été développé en réutilisant une partie de ce qui avait été fait pour la TA3, présenté section \ref{ta3} afin de ne pas
 << réinventer la roue >>. 
