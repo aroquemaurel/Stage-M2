@@ -13,6 +13,7 @@
 \contentsline {section}{\numberline {2.1}L'\IeC {\'e}quipe de d\IeC {\'e}veloppement}{13}{section.2.1}
 \contentsline {section}{\numberline {2.2}La documentation : les \textit {minutes \IeC {\'e}tude}}{13}{section.2.2}
 \contentsline {section}{\numberline {2.3}Outils de d\IeC {\'e}veloppement}{14}{section.2.3}
+<<<<<<< HEAD
 \contentsline {subsection}{\numberline {2.3.1}Java}{14}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Git}{14}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Eclipse}{15}{subsection.2.3.3}
@@ -78,3 +79,61 @@
 \contentsline {chapter}{\numberline {F}Liste des codes sources}{49}{appendix.F}
 \contentsline {chapter}{\numberline {G}Table des figures}{51}{appendix.G}
 \contentsfinish 
+=======
+\contentsline {chapter}{\numberline {3}Le probl\IeC {\`e}me}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}Les tests}{15}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Le plugin}{15}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}La plateforme TA3}{17}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}La solution : \textit {GreenT}}{17}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}G\IeC {\'e}n\IeC {\'e}ration de tests automatiques}{17}{subsection.3.2.1}
+\contentsline {subsubsection}{Les tests d'int\IeC {\'e}gration du plugin Ford}{17}{section*.3}
+\contentsline {subsubsection}{Les autres projets}{18}{section*.4}
+\contentsline {subsection}{\numberline {3.2.2}L'utilisation de \textit {GreenT} comme une biblioth\IeC {\`e}que}{18}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}L'ex\IeC {\'e}cution des tests}{18}{subsection.3.2.3}
+\contentsline {chapter}{\numberline {4}\textit {GreenT} : fonctionnement g\IeC {\'e}n\IeC {\'e}ral}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Le fichier Walkthrough}{19}{section.4.1}
+\contentsline {section}{\numberline {4.2}Fonctionnement Global}{20}{section.4.2}
+\contentsline {section}{\numberline {4.3}Les diff\IeC {\'e}rentes fonctionnalit\IeC {\'e}s du Client}{21}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Parsing et G\IeC {\'e}n\IeC {\'e}ration}{22}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Stimulation}{22}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Les traces et leurs \IeC {\'e}valuations}{22}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Le module TestManager}{22}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Production de rapport d\IeC {\'e}taill\IeC {\'e}}{23}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}Mise \IeC {\`a} jour du Walkthrough}{23}{subsection.4.3.6}
+\contentsline {section}{\numberline {4.4}Fonctionnement des serveurs}{24}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Le serveur Debugger, contr\IeC {\^o}le de Trace32}{24}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Le serveur HIL, contr\IeC {\^o}le du DSpace}{24}{subsection.4.4.2}
+\contentsline {chapter}{\numberline {5}Ma collaboration au projet}{25}{chapter.5}
+\contentsline {section}{\numberline {5.1}Les calibrations}{25}{section.5.1}
+\contentsline {section}{\numberline {5.2}Le << patch calib >>}{25}{section.5.2}
+\contentsline {section}{\numberline {5.3}Les << tableaux calibrables >>}{25}{section.5.3}
+\contentsline {section}{\numberline {5.4}La maintenance}{25}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Corrections}{26}{subsection.5.4.1}
+\contentsline {subsubsection}{Stockage des erreurs d'ex\IeC {\'e}cutions}{26}{section*.5}
+\contentsline {subsubsection}{Modification des variables Debugger}{26}{section*.6}
+\contentsline {subsubsection}{Ordre d'ex\IeC {\'e}cutions des sc\IeC {\'e}narios}{26}{section*.7}
+\contentsline {subsubsection}{Reset ECU \IeC {\`a} l'ex\IeC {\'e}cution}{27}{section*.8}
+\contentsline {subsubsection}{Absence d'injection}{27}{section*.9}
+\contentsline {subsection}{\numberline {5.4.2}Am\IeC {\'e}liorations}{27}{subsection.5.4.2}
+\contentsline {subsubsection}{Ex\IeC {\'e}cution diff\IeC {\'e}r\IeC {\'e}e}{27}{section*.10}
+\contentsline {subsubsection}{Passage \IeC {\`a} Java 8}{27}{section*.11}
+\contentsline {subsubsection}{<< \textit {Clean-Code} >>}{28}{section*.12}
+\contentsline {subsubsection}{Affichage des \textit {logs}}{28}{section*.13}
+\contentsline {chapter}{\numberline {6}Bilans}{29}{chapter.6}
+\contentsline {section}{\numberline {6.1}Bilan pour Continental}{29}{section.6.1}
+\contentsline {section}{\numberline {6.2}Bilan personnel}{29}{section.6.2}
+\contentsline {chapter}{\numberline {A}Acronymes et Glossaire}{31}{appendix.A}
+\contentsline {chapter}{\numberline {B}R\IeC {\'e}f\IeC {\'e}rences}{33}{appendix.B}
+\contentsline {section}{\numberline {B.1}Documentations en-ligne}{33}{section.B.1}
+\contentsline {section}{\numberline {B.2}Livres}{33}{section.B.2}
+\contentsline {section}{\numberline {B.3}Cours magistraux}{33}{section.B.3}
+\contentsline {section}{\numberline {B.4}Sites Web et forums}{34}{section.B.4}
+\contentsline {chapter}{\numberline {C}Les diff\IeC {\'e}rents \textit {devices}}{35}{appendix.C}
+\contentsline {section}{\numberline {C.1}Le HIL DSpace}{35}{section.C.1}
+\contentsline {section}{\numberline {C.2}Le Debugger}{36}{section.C.2}
+\contentsline {chapter}{\numberline {D}Exemples de fichiers g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}s}{37}{appendix.D}
+\contentsline {section}{\numberline {D.1}Exemple de StimScenario}{37}{section.D.1}
+\contentsline {section}{\numberline {D.2}Exemple de \texttt {GreenTTest}}{39}{section.D.2}
+\contentsline {chapter}{\numberline {E}Liste des codes sources}{41}{appendix.E}
+\contentsline {chapter}{\numberline {F}Table des figures}{43}{appendix.F}
+>>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
