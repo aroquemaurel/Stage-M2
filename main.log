@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.8.10)  16 AUG 2015 23:10
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.8.10)  14 AUG 2015 00:37
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.8.10)  16 AUG 2015 23:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1663,22 +1659,14 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 10.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<<<<<<< HEAD
 <styles/images/logos/ups.jpg, id=167, 963.6pt x 324.21124pt>
-=======
-<styles/images/logos/ups.jpg, id=163, 963.6pt x 324.21124pt>
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 File: styles/images/logos/ups.jpg Graphic file (type jpg)
 
 <use styles/images/logos/ups.jpg>
 Package pdftex.def Info: styles/images/logos/ups.jpg used on input line 14.
 (pdftex.def)             Requested size: 227.62204pt x 76.5854pt.
 
-<<<<<<< HEAD
 <styles/images/logos/mdl.png, id=168, 308.15125pt x 50.1875pt>
-=======
-<styles/images/logos/mdl.png, id=164, 308.15125pt x 50.1875pt>
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 File: styles/images/logos/mdl.png Graphic file (type png)
 
 <use styles/images/logos/mdl.png>
@@ -1694,11 +1682,7 @@ Overfull \hbox (11.3844pt too wide) in paragraph at lines 13--16
 [] 
  []
 
-<<<<<<< HEAD
 <styles/images/logos/conti.png, id=170, 202.5969pt x 62.27264pt>
-=======
-<styles/images/logos/conti.png, id=166, 202.5969pt x 62.27264pt>
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 File: styles/images/logos/conti.png Graphic file (type png)
 
 <use styles/images/logos/conti.png>
@@ -1852,11 +1836,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ] (./main.toc [7]
-<<<<<<< HEAD
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 77.
-=======
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 69.
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
  (/usr/share/texlive/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ))
@@ -1910,26 +1890,18 @@ File: t1pag.fd 2001/06/04 font definitions for T1/pag.
 LaTeX Font Warning: Font shape `T1/pag/bc/n' undefined
 (Font)              using `T1/pag/m/n' instead on input line 7.
 
-<<<<<<< HEAD
 <contents/images/caConti.png, id=265, 1065.9825pt x 421.575pt>
-=======
-<contents/images/caConti.png, id=260, 1065.9825pt x 421.575pt>
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 File: contents/images/caConti.png Graphic file (type png)
 
 <use contents/images/caConti.png>
 Package pdftex.def Info: contents/images/caConti.png used on input line 15.
 (pdftex.def)             Requested size: 540.60236pt x 213.80391pt.
 
-<<<<<<< HEAD
 Overfull \hbox (39.83365pt too wide) in paragraph at lines 15--16
  [][] 
  []
 
 <contents/images/repartitionConti.png, id=270, 688.5725pt x 238.8925pt>
-=======
-<contents/images/repartitionConti.png, id=265, 688.5725pt x 238.8925pt>
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 File: contents/images/repartitionConti.png Graphic file (type png)
 
 <use contents/images/repartitionConti.png>
@@ -1950,11 +1922,7 @@ has been already used, duplicate ignored
                                                   \fi \fi 
 l.26 		 \end{figure}
                      <./contents/images/caConti.png>]
-<<<<<<< HEAD
 <contents/images/logoConti.png, id=281, 198.7425pt x 212.795pt>
-=======
-<contents/images/logoConti.png, id=280, 198.7425pt x 212.795pt>
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 File: contents/images/logoConti.png Graphic file (type png)
 
 <use contents/images/logoConti.png>
@@ -1987,11 +1955,7 @@ Overfull \hbox (11.69447pt too wide) in paragraph at lines 47--48
 et asiatique, l'entreprise fait l'acquisition
  []
 
-<<<<<<< HEAD
 <contents/images/structureConti.jpg, id=295, 662.475pt x 501.875pt>
-=======
-<contents/images/structureConti.jpg, id=291, 662.475pt x 501.875pt>
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 File: contents/images/structureConti.jpg Graphic file (type jpg)
 
 <use contents/images/structureConti.jpg>
@@ -2054,7 +2018,6 @@ Underfull \hbox (badness 1946) in paragraph at lines 2--4
 \T1/lmr/m/n/12 certaines technologies nous aidant
  []
 
-<<<<<<< HEAD
 
 LaTeX Font Warning: Font shape `T1/pag/bc/it' undefined
 (Font)              using `T1/pag/bc/n' instead on input line 16.
@@ -2063,33 +2026,20 @@ LaTeX Font Warning: Font shape `T1/pag/bc/it' undefined
 
 
 ] <contents/images/logoJava.png, id=334, 359.09157pt x 324.46219pt>
-=======
-<contents/images/logoJava.png, id=317, 359.09157pt x 324.46219pt>
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 File: contents/images/logoJava.png Graphic file (type png)
 
 <use contents/images/logoJava.png>
 Package pdftex.def Info: contents/images/logoJava.png used on input line 34.
 (pdftex.def)             Requested size: 56.9055pt x 51.41496pt.
 
-<<<<<<< HEAD
 <contents/images/logoGit.png, id=335, 384.43625pt x 384.43625pt>
-=======
-
-]
-<contents/images/logoGit.png, id=324, 384.43625pt x 384.43625pt>
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 File: contents/images/logoGit.png Graphic file (type png)
 
 <use contents/images/logoGit.png>
 Package pdftex.def Info: contents/images/logoGit.png used on input line 42.
 (pdftex.def)             Requested size: 71.13188pt x 71.13132pt.
 
-<<<<<<< HEAD
 <contents/images/logoEclipse.png, id=336, 123.3408pt x 123.3408pt>
-=======
-<contents/images/logoEclipse.png, id=325, 123.3408pt x 123.3408pt>
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 File: contents/images/logoEclipse.png Graphic file (type png)
 
 <use contents/images/logoEclipse.png>
@@ -2097,7 +2047,6 @@ Package pdftex.def Info: contents/images/logoEclipse.png used on input line 52.
 
 (pdftex.def)             Requested size: 71.13188pt x 71.13306pt.
 
-<<<<<<< HEAD
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -2106,9 +2055,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [14 <./contents/images/logoJava.png> <./contents/images/logoGit.png>]
 <contents/images/logoEnterpriseArchitect.png, id=346, 513.92pt x 513.92pt>
-=======
-<contents/images/logoEnterpriseArchitect.png, id=327, 513.92pt x 513.92pt>
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 File: contents/images/logoEnterpriseArchitect.png Graphic file (type png)
 
 <use contents/images/logoEnterpriseArchitect.png>
@@ -2120,7 +2066,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
-<<<<<<< HEAD
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <14.4> on input line 70.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -2128,9 +2073,6 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 70.
 <contents/images/logoLatex.png, id=348, 1204.5pt x 501.875pt>
-=======
-<contents/images/logoLatex.png, id=329, 1204.5pt x 501.875pt>
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 File: contents/images/logoLatex.png Graphic file (type png)
 
 <use contents/images/logoLatex.png>
@@ -2177,47 +2119,10 @@ Package mdframed Info: mdframed inside float
  mdframed uses option nobreak mdframed on input line 2.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 2.
-<<<<<<< HEAD
 Package mdframed Info: mdframed works in twoside mode on input line 20.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 20.
-=======
-Package epstopdf Info: Source file: <contents/images/plugin.eps>
-(epstopdf)                    date: 2015-08-12 17:57:31
-(epstopdf)                    size: 26303 bytes
-(epstopdf)             Output file: <contents/images/plugin-eps-converted-to.pd
-f>
-(epstopdf)                    date: 2015-08-12 17:57:39
-(epstopdf)                    size: 11096 bytes
-(epstopdf)             Command: <repstopdf --outfile=contents/images/plugin-eps
--converted-to.pdf contents/images/plugin.eps>
-(epstopdf)             \includegraphics on input line 13.
-Package epstopdf Info: Output file is already uptodate.
-
-<contents/images/plugin-eps-converted-to.pdf, id=344, 308.15125pt x 298.11375pt
->
-File: contents/images/plugin-eps-converted-to.pdf Graphic file (type pdf)
- <use contents/images/plugin-eps-converted-to.pdf>
-Package pdftex.def Info: contents/images/plugin-eps-converted-to.pdf used on in
-put line 13.
-(pdftex.def)             Requested size: 170.71652pt x 165.15941pt.
-Package mdframed Info: mdframed works in twoside mode on input line 18.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 18.
- [15
-
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.27 
-      <./contents/images/plugin-eps-converted-to.pdf>]
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 Package epstopdf Info: Source file: <contents/images/WB.eps>
 (epstopdf)                    date: 2015-08-09 23:00:47
 (epstopdf)                    size: 165963 bytes
@@ -2228,17 +2133,11 @@ Package epstopdf Info: Source file: <contents/images/WB.eps>
 verted-to.pdf contents/images/WB.eps>
 (epstopdf)             \includegraphics on input line 25.
 Package epstopdf Info: Output file is already uptodate.
-<<<<<<< HEAD
 <contents/images/WB-eps-converted-to.pdf, id=371, 420.57124pt x 503.8825pt>
-=======
-
-<contents/images/WB-eps-converted-to.pdf, id=357, 420.57124pt x 503.8825pt>
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 File: contents/images/WB-eps-converted-to.pdf Graphic file (type pdf)
 
 <use contents/images/WB-eps-converted-to.pdf>
 Package pdftex.def Info: contents/images/WB-eps-converted-to.pdf used on input 
-<<<<<<< HEAD
 line 25.
 (pdftex.def)             Requested size: 284.52756pt x 340.89024pt.
  [17]
@@ -2253,13 +2152,6 @@ f>
 -converted-to.pdf contents/images/plugin.eps>
 (epstopdf)             \includegraphics on input line 34.
 Package epstopdf Info: Output file is already uptodate.
-=======
-line 41.
-(pdftex.def)             Requested size: 341.43306pt x 409.07292pt.
-
-<contents/images/python.png, id=358, 602.25pt x 602.25pt>
-File: contents/images/python.png Graphic file (type png)
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 
 <contents/images/plugin-eps-converted-to.pdf, id=379, 308.15125pt x 298.11375pt
 >
@@ -2368,13 +2260,9 @@ Overfull \hbox (6.6348pt too wide) in paragraph at lines 6--7
  []
 
 
-LaTeX Warning: Reference `collaboration' on page 21 undefined on input line 11.
-
-
-
-Overfull \hbox (16.53078pt too wide) in paragraph at lines 22--26
-[]\T1/lmr/m/n/12 Certains équipements[][][][][] tel que le \T1/lmr/m/it/12 debu
-gger
+Overfull \hbox (9.63077pt too wide) in paragraph at lines 22--26
+[]\T1/lmr/m/n/12 Certains équipements[][][][][] tel que le \T1/lmr/m/it/12 debg
+ger
  []
 
 [21
@@ -2398,48 +2286,16 @@ Overfull \hbox (4.37796pt too wide) in paragraph at lines 36--37
 []\T1/lmr/m/n/12 Plusieurs colonnes tel que la sévérité, le responsable
  []
 
-<<<<<<< HEAD
-<contents/images/walkthrough.png, id=442, 963.6pt x 590.95781pt>
-=======
-<contents/images/walkthrough.png, id=409, 963.6pt x 590.95781pt>
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
+<contents/images/walkthrough.png, id=443, 963.6pt x 590.95781pt>
 File: contents/images/walkthrough.png Graphic file (type png)
 
 <use contents/images/walkthrough.png>
-Package pdftex.def Info: contents/images/walkthrough.png used on input line 42.
+Package pdftex.def Info: contents/images/walkthrough.png used on input line 43.
 
-(pdftex.def)             Requested size: 526.37598pt x 322.82758pt.
+(pdftex.def)             Requested size: 569.05511pt x 348.99571pt.
 
-Overfull \hbox (25.60727pt too wide) in paragraph at lines 42--43
- [][] 
- []
-
-Package epstopdf Info: Source file: <contents/images/generalDiag.eps>
-(epstopdf)                    date: 2014-10-08 19:06:56
-(epstopdf)                    size: 25757 bytes
-(epstopdf)             Output file: <contents/images/generalDiag-eps-converted-
-to.pdf>
-(epstopdf)                    date: 2014-10-08 19:06:56
-(epstopdf)                    size: 11112 bytes
-(epstopdf)             Command: <repstopdf --outfile=contents/images/generalDia
-g-eps-converted-to.pdf contents/images/generalDiag.eps>
-(epstopdf)             \includegraphics on input line 53.
-Package epstopdf Info: Output file is already uptodate.
-
-<<<<<<< HEAD
-<contents/images/generalDiag-eps-converted-to.pdf, id=444, 1155.31625pt x 756.8
-=======
-<contents/images/generalDiag-eps-converted-to.pdf, id=410, 1155.31625pt x 756.8
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
-275pt>
-File: contents/images/generalDiag-eps-converted-to.pdf Graphic file (type pdf)
- <use contents/images/generalDiag-eps-converted-to.pdf>
-Package pdftex.def Info: contents/images/generalDiag-eps-converted-to.pdf used 
-on input line 53.
-(pdftex.def)             Requested size: 554.82874pt x 363.45784pt.
-
-Overfull \hbox (54.06003pt too wide) in paragraph at lines 53--54
- [][] 
+Overfull \hbox (35.7661pt too wide) in paragraph at lines 42--44
+[]  []
  []
 
 
@@ -2453,13 +2309,37 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.56 \end{figure}
-                  <./contents/images/walkthrough.png>]
+l.51 
+      <./contents/images/walkthrough.png>]
+Package epstopdf Info: Source file: <contents/images/generalDiag.eps>
+(epstopdf)                    date: 2014-10-08 19:06:56
+(epstopdf)                    size: 25757 bytes
+(epstopdf)             Output file: <contents/images/generalDiag-eps-converted-
+to.pdf>
+(epstopdf)                    date: 2014-10-08 19:06:56
+(epstopdf)                    size: 11112 bytes
+(epstopdf)             Command: <repstopdf --outfile=contents/images/generalDia
+g-eps-converted-to.pdf contents/images/generalDiag.eps>
+(epstopdf)             \includegraphics on input line 54.
+Package epstopdf Info: Output file is already uptodate.
 
-LaTeX Warning: Reference `fig:photoHil' on page 23 undefined on input line 60.
+<contents/images/generalDiag-eps-converted-to.pdf, id=456, 1155.31625pt x 756.8
+275pt>
+File: contents/images/generalDiag-eps-converted-to.pdf Graphic file (type pdf)
+ <use contents/images/generalDiag-eps-converted-to.pdf>
+Package pdftex.def Info: contents/images/generalDiag-eps-converted-to.pdf used 
+on input line 54.
+(pdftex.def)             Requested size: 569.05511pt x 372.77728pt.
+
+Overfull \hbox (45.80363pt too wide) in paragraph at lines 53--55
+[]  []
+ []
 
 
-Underfull \vbox (badness 7649) has occurred while \output is active []
+LaTeX Warning: Reference `fig:photoHil' on page 23 undefined on input line 61.
+
+
+Underfull \vbox (badness 4181) has occurred while \output is active []
 
 
 
@@ -2473,25 +2353,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.78 
+l.79 
       <./contents/images/generalDiag-eps-converted-to.pdf>]
-Package mdframed Info: mdframed works in twoside mode on input line 79.
+Package mdframed Info: mdframed works in twoside mode on input line 80.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 79.
-Package mdframed Info: mdframed works in twoside mode on input line 92.
+(mdframed)              on input line 80.
+Package mdframed Info: mdframed works in twoside mode on input line 93.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 92.
+(mdframed)              on input line 93.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 100.
+(Font)              <5> on input line 101.
 
-Overfull \hbox (398.10335pt too wide) in paragraph at lines 98--108
+Overfull \hbox (398.10335pt too wide) in paragraph at lines 99--109
 []$[]$| 
  []
 
 
-Overfull \hbox (326.97147pt too wide) in paragraph at lines 109--117
+Overfull \hbox (326.97147pt too wide) in paragraph at lines 110--118
 []$[]$| 
  []
 
@@ -2504,12 +2384,12 @@ File: lstlang1.sty 2014/03/04 1.5c listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
-Overfull \hbox (358.26967pt too wide) in paragraph at lines 118--130
+Overfull \hbox (358.26967pt too wide) in paragraph at lines 119--131
 []$[]$| 
  []
 
 
-Overfull \hbox (1.62991pt too wide) in paragraph at lines 95--131
+Overfull \hbox (1.62991pt too wide) in paragraph at lines 96--132
 [][] 
  []
 
@@ -2520,20 +2400,20 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [24]
-Package mdframed Info: mdframed works in twoside mode on input line 142.
+Package mdframed Info: mdframed works in twoside mode on input line 143.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 142.
+(mdframed)              on input line 143.
 
-Overfull \hbox (3.23816pt too wide) in paragraph at lines 151--152
+Overfull \hbox (3.23816pt too wide) in paragraph at lines 152--153
 []\T1/lmr/m/n/12 Une fois que la trace est complète, il est nécessaire de l'éva
 luer : le spécifieur a décrit le comportement
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 153.
+Package mdframed Info: mdframed works in twoside mode on input line 154.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 153.
+(mdframed)              on input line 154.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -2541,12 +2421,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [25]
-Package mdframed Info: mdframed works in twoside mode on input line 198.
+Package mdframed Info: mdframed works in twoside mode on input line 199.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 198.
+(mdframed)              on input line 199.
 
-Overfull \hbox (18.8655pt too wide) in paragraph at lines 203--205
+Overfull \hbox (18.8655pt too wide) in paragraph at lines 204--206
 []\T1/lmr/m/n/12 Comme expliqué précédemment, GreenT va avoir en charge l'exécu
 tion de stimulation. Ces stimulations
  []
@@ -2562,27 +2442,59 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [26]
-Overfull \hbox (20.14229pt too wide) in paragraph at lines 220--221
+Package epstopdf Info: Source file: <contents/images/network.eps>
+(epstopdf)                    date: 2015-08-16 23:53:07
+(epstopdf)                    size: 231808 bytes
+(epstopdf)             Output file: <contents/images/network-eps-converted-to.p
+df>
+(epstopdf)                    date: 2015-08-16 23:52:13
+(epstopdf)                    size: 136497 bytes
+(epstopdf)             Command: <repstopdf --outfile=contents/images/network-ep
+s-converted-to.pdf contents/images/network.eps>
+(epstopdf)             \includegraphics on input line 213.
+runsystem(repstopdf --outfile=contents/images/network-eps-converted-to.pdf cont
+ents/images/network.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <contents/images/network-eps-converted-to.p
+df>
+(epstopdf)                    date: 2015-08-16 23:53:21
+(epstopdf)                    size: 136037 bytes.
+
+<contents/images/network-eps-converted-to.pdf, id=527, 725.71124pt x 533.995pt>
+File: contents/images/network-eps-converted-to.pdf Graphic file (type pdf)
+<use contents/images/network-eps-converted-to.pdf>
+Package pdftex.def Info: contents/images/network-eps-converted-to.pdf used on i
+nput line 213.
+(pdftex.def)             Requested size: 455.24408pt x 334.98456pt.
+
+Overfull \hbox (20.14229pt too wide) in paragraph at lines 226--227
 []\T1/lmr/m/n/12 Le serveur Debugger propose des services basiques permettant d
 e répondre aux différentes stimulations : 
  []
 
-File: contents/images/logoJava.png Graphic file (type png)
-<use contents/images/logoJava.png>
-Package pdftex.def Info: contents/images/logoJava.png used on input line 232.
-(pdftex.def)             Requested size: 71.13188pt x 64.27242pt.
-File: contents/images/python.png Graphic file (type png)
- <use contents/images/python.png>
-Package pdftex.def Info: contents/images/python.png used on input line 246.
-(pdftex.def)             Requested size: 71.13188pt x 71.12737pt.
-)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[27]
+[27pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.233 	\item E
+              nregistrer des variables <./contents/images/network-eps-converted
+-to.pdf>]
+File: contents/images/logoJava.png Graphic file (type png)
+ <use contents/images/logoJava.png>
+Package pdftex.def Info: contents/images/logoJava.png used on input line 238.
+(pdftex.def)             Requested size: 71.13188pt x 64.27242pt.
+File: contents/images/python.png Graphic file (type png)
+ <use contents/images/python.png>
+Package pdftex.def Info: contents/images/python.png used on input line 252.
+(pdftex.def)             Requested size: 71.13188pt x 71.12737pt.
+)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -2617,7 +2529,6 @@ Overfull \hbox (11.93018pt too wide) in paragraph at lines 8--9
  mise en production. Cette configuration
  []
 
-<<<<<<< HEAD
 
 Overfull \hbox (5.10162pt too wide) in paragraph at lines 12--13
 []\T1/lmr/m/n/12 Leur modification permet de faire une mise au point, permettan
@@ -2625,15 +2536,6 @@ t d'améliorer la consommation
  []
 
 [29
-=======
-
-Overfull \hbox (5.10162pt too wide) in paragraph at lines 12--13
-[]\T1/lmr/m/n/12 Leur modification permet de faire une mise au point, permettan
-t d'améliorer la consommation
- []
-
-[25
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 
 
 
@@ -2653,11 +2555,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
 [30]
-=======
-[26]
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 Overfull \hbox (6.18349pt too wide) in paragraph at lines 60--61
 \T1/lmr/m/n/12 venait d'un nouveau fichier à flasher dont nous n'avions pas con
 naissance. Un fichier contenant
@@ -2669,11 +2567,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
 [31]
-=======
-[27]
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 Overfull \hbox (3.2213pt too wide) in paragraph at lines 85--86
 []\T1/lmr/m/n/12 Les logs fonctionnait déjà, en utilisant \T1/lmtt/m/n/12 log4j
 \T1/lmr/m/n/12 , cependant celui-ci affichait beaucoup
@@ -2696,8 +2590,6 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 2.
 \openout4 = `main.mtc'.
-<<<<<<< HEAD
-=======
 
 \openout4 = `main.mtc'.
 
@@ -2710,40 +2602,30 @@ Package mdframed Info: mdframed inside float
  mdframed uses option nobreak mdframed on input line 2.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 2.
-) [29
+[33
 
 
 
 ]
-\openout2 = `annexes/glossary.aux'.
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
-
-\openout4 = `main.mtc'.
-
-(./main.mtc8)
-Overfull \hbox (2.4667pt too wide) in paragraph at lines 2--2
-[]  $[]$ 
+Overfull \hbox (3.76242pt too wide) in paragraph at lines 23--25
+[]\T1/lmr/m/n/12 Mais j'ai aussi acquis des connaissances humaines avec notamme
+nt le travail en équipe, communiquer
  []
 
-Package mdframed Info: mdframed inside float 
- mdframed uses option nobreak mdframed on input line 2.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 2.
-) [33
 
+Overfull \hbox (17.40746pt too wide) in paragraph at lines 26--27
+\T1/lmr/m/n/12 toujours transmettre leurs connaissances et leur expériences, no
+tamment dans le monde de l'automobile
+ []
 
-
-]
+)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[34
-
-
-]
+[34]
 Underfull \hbox (badness 3240) in paragraph at lines 115--115
 []\T1/lmr/m/n/12 Ci-après vous trouverez un certain nombre
  []
@@ -2758,7 +2640,10 @@ Underfull \hbox (badness 7099) in paragraph at lines 115--115
 \T1/lmr/m/n/12 Vous y trouverez ainsi un glossaire, des
  []
 
-[35] [36]
+[35
+
+
+] [36]
 \openout2 = `annexes/glossary.aux'.
 
  (./annexes/glossary.tex
@@ -2789,13 +2674,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \openout2 = `annexes/devices.aux'.
 
  (./annexes/devices.tex
-<<<<<<< HEAD
 Annexe B.
-<contents/images/hil.jpg, id=603, 250.9375pt x 286.06876pt>
-=======
-Annexe C.
-<contents/images/hil.jpg, id=538, 250.9375pt x 286.06876pt>
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
+<contents/images/hil.jpg, id=621, 250.9375pt x 286.06876pt>
 File: contents/images/hil.jpg Graphic file (type jpg)
 
 <use contents/images/hil.jpg>
@@ -2985,11 +2865,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 125.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 125.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 125.
 Package rerunfilecheck Info: File `main.out' has not changed.
-<<<<<<< HEAD
 (rerunfilecheck)             Checksum: 085B0B2DAFF54A3D2A99FB8F4C8C656A;2613.
-=======
-(rerunfilecheck)             Checksum: BE95061BBEFDA574EB37102F58C4BCA6;2535.
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -3000,19 +2876,11 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 125.
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
- 31242 strings out of 494990
- 552826 string characters out of 6180639
+ 31247 strings out of 494990
+ 553027 string characters out of 6180639
  801463 words of memory out of 5000000
- 33117 multiletter control sequences out of 15000+600000
+ 33120 multiletter control sequences out of 15000+600000
  150110 words of font info for 105 fonts, out of 8000000 for 9000
-=======
- 30721 strings out of 494990
- 546241 string characters out of 6180639
- 791235 words of memory out of 5000000
- 32669 multiletter control sequences out of 15000+600000
- 132765 words of font info for 95 fonts, out of 8000000 for 9000
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
  34 hyphenation exceptions out of 8191
  61i,16n,120p,10463b,2061s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/t
@@ -3036,19 +2904,10 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share
 dist/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/avantgar/
 uagk8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-<<<<<<< HEAD
-Output written on main.pdf (51 pages, 1503037 bytes).
+Output written on main.pdf (51 pages, 1638342 bytes).
 PDF statistics:
- 966 PDF objects out of 1000 (max. 8388607)
- 848 compressed objects within 9 object streams
- 318 named destinations out of 1000 (max. 500000)
- 423 words of extra memory for PDF output out of 10000 (max. 10000000)
-=======
-Output written on main.pdf (43 pages, 1492542 bytes).
-PDF statistics:
- 869 PDF objects out of 1000 (max. 8388607)
- 760 compressed objects within 8 object streams
- 274 named destinations out of 1000 (max. 500000)
- 415 words of extra memory for PDF output out of 10000 (max. 10000000)
->>>>>>> 655be4622f2caab84a5714f03d7f42a82d6c2233
+ 986 PDF objects out of 1000 (max. 8388607)
+ 860 compressed objects within 9 object streams
+ 319 named destinations out of 1000 (max. 500000)
+ 428 words of extra memory for PDF output out of 10000 (max. 10000000)
 

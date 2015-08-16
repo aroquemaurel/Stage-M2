@@ -8,7 +8,7 @@ Nous allons donc voir le développement et la conception de cette plateforme de 
 Au début de mon stage, le projet ayant un an, les fonctionnalités développées ci-dessous était déjà faites. Je suis cependant intervenu
 sur la plupart d'entre elles soit pour des corrections de bugs d'une part, soit à des fin d'améliorations d'autres part.
 
-Afin de présenter mon travail que vous trouverez chapitre \ref{collaboration}, il est nécessaire de présenter le fonctionnement général de
+Afin de présenter mon travail que vous trouverez chapitre \ref{collab}, il est nécessaire de présenter le fonctionnement général de
 cette plateforme afin d'en avoir une vue d'ensemble.
 
 \section{Le fichier Walkthrough}\label{wt}
@@ -19,7 +19,7 @@ génération de tests automatiques par \textit{GreenT}. Voici les colonnes les p
 
 \begin{description} 
 	\item[Nom de la variable] Le nom de la variable testée : il existe un nom court et un nom long.
-	\item[Informations aidant à la conversion des données] Certains équipements\footnote{Vous trouverez plus d'informations sur le fonctionnement d'une table de tests section \ref{wb}, et dans l'annexe \ref{devices}} tel que le \textit{debugger} ne fonctionne qu'avec des
+	\item[Informations aidant à la conversion des données] Certains équipements\footnote{Vous trouverez plus d'informations sur le fonctionnement d'une table de tests section \ref{wb}, et dans l'annexe \ref{devices}} tel que le \textit{debgger} ne fonctionne qu'avec des
 	valeurs Hexadécimales. À la charge de \textit{GreenT} de convertir ces données vers des valeurs physiques exploitables par
 	le testeur. Ces colonnes contiennent les informations nécessaires au calcul de conversion\footnote{Informations tel que le
 		domaine de définition physique et le domaine de définition hexadécimal}.
@@ -36,10 +36,11 @@ génération de tests automatiques par \textit{GreenT}. Voici les colonnes les p
 	\item[Informations du test (cf section \ref{report})] Plusieurs colonnes tel que la sévérité, le responsable du test, les commentaires, \ldots
 \end{description}
 
+
 \begin{figure}[H]
 	% TODO CHange WT version
-	\centering
-	\includegraphics[width=18.5cm]{contents/images/walkthrough.png}
+	\hspace{-35px}
+	\includegraphics[width=20cm]{contents/images/walkthrough.png}
 	\caption{Aperçu d'un fichier Walkthrough -- TODO changer la version}
 \end{figure}
 \section{Fonctionnement Global}
@@ -49,8 +50,8 @@ Les principaux modules sont les suivants, avec leurs interactions schématisées
 Dans des objets ovales sont représentés des fichiers, les carrés représentent des modules de la plateforme et les flèches en pointillés un transfert réseau, les couleurs représentent les différents modules de la plateforme.
 
 \begin{figure}[H]
-	\centering
-	\includegraphics[width=19.5cm]{contents/images/generalDiag.eps}
+	\hspace{-25px}
+	\includegraphics[width=20cm]{contents/images/generalDiag.eps}
 	\caption{Fonctionnement général de la plateforme \textit{GreenT}}
 	\label{fig:generalDiag}
 \end{figure}	
@@ -151,9 +152,9 @@ Lorsqu'un scénario de stimulation s'exécute, un certain nombre de variables so
 Une fois que la trace est complète, il est nécessaire de l'évaluer : le spécifieur a décrit le comportement attendu dans la colonne \textit{Expected Behavior} détaillant dans quel cas le test est correct, ainsi cette expression va être transformée en arbre logique afin de l'évaluer à tout instant de la trace. 
 
 \begin{exemple}
-	Durant notre rampe véhicule, le debugger à enregistré différentes variables, en l'occurence nous avons enregistré les trois variables présentes dans notre Expected Behavior : la température	du moteur -- \texttt{temperature}, la temperature maximum sans ventilateur -- \texttt{max}, ainsi que l'état de notre ventilateur -- \texttt{cfa\_on}.
+	Durant notre rampe véhicule, le \textit{debugger} a enregistré différentes variables, en l'occurence nous avons enregistré les trois variables présentes dans notre \textit{Expected Behavior} : la température	du moteur -- \texttt{temperature}, la température maximum sans ventilateur -- \texttt{max}, ainsi que l'état de notre ventilateur -- \texttt{cfa\_on}.
 	
-	Ces variables ont été enregistrés durant l'intégralité de la rampe véhicule qui à eu une durée de 40 secondes. À la fin de la stimulation, le serveur retourne ainsi une trace de 40 secondes contenant toutes les variables. \textit{GreenT} peut ensuite évaluer notre \textit{expected behavior} sur l'intégralité de l'enregistrement.
+	Ces variables ont été enregistrées durant l'intégralité de la rampe véhicule qui à eu une durée de 40 secondes. À la fin de la stimulation, le serveur retourne ainsi une trace de 40 secondes contenant toutes les variables. \textit{GreenT} peut ensuite évaluer notre \textit{expected behavior} sur l'intégralité de l'enregistrement.
 \end{exemple}
 \subsection{Le module TestManager}\label{testManager}
 Le \texttt{TestManager} est le chef d'orchestre de \textit{GreenT}, il a donc un certain nombre de responsabilités. 
@@ -207,7 +208,12 @@ tests. Actuellement une table est composée de deux \textit{devices} différents
 	\item Un Debugger permettant de voir l'état du programme présent dans l'ECU
 \end{itemize}
 
-TODO : ajouter un schéma Réseau avec GreenT, Serveur DSPace, Serveur T32 et HIL/Trace32
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{contents/images/network.eps}
+	\caption{Communications de la plateforme}
+\end{figure}
+
 Au début du développement de la plateforme, il a été décidé que les serveurs devront être le plus simple possible pour plusieurs raisons
 : 
 \begin{itemize}
