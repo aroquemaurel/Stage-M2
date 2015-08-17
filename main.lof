@@ -1,10 +1,10 @@
 \select@language {french}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Continental}{9}{chapter.1}
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Chiffre d'affaire et nombre d'employ\IeC {\'e}s (Ann\IeC {\'e}e 2014)}}{9}{figure.1.1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces R\IeC {\'e}partition du groupe Continental dans le monde}}{10}{figure.1.2}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Chiffre d'affaire et nombre d'employ\IeC {\'e}s (Ann\IeC {\'e}e 2011)}}{9}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces R\IeC {\'e}partition du groupe continental dans le monde}}{10}{figure.1.2}
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Logo de Continental}}{10}{figure.1.3}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Structure de Continental}}{11}{figure.1.4}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Structure de continental}}{11}{figure.1.4}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Organisation du travail}{13}{chapter.2}
 \addvspace {10\p@ }
@@ -18,23 +18,25 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Communications de la plateforme}}{27}{figure.4.3}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Ma collaboration au projet}{29}{chapter.5}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Diagramme de cas d'utilisations du patch de calibrations}}{30}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagramme d'activit\IeC {\'e} du patch calib}}{31}{figure.5.2}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Bilans}{33}{chapter.6}
+\contentsline {xchapter}{Bilans}{37}{chapter.6}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Acronymes et Glossaire}{37}{appendix.A}
+\contentsline {xchapter}{Acronymes et Glossaire}{39}{appendix.A}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Les diff\IeC {\'e}rents \IeC {\'e}quipements}{39}{appendix.B}
-\contentsline {figure}{\numberline {B.1}{\ignorespaces HIL DSpace}}{39}{figure.B.1}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces HIL DSpace}}{39}{figure.B.2}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces HIL DSpace}}{40}{figure.B.3}
+\contentsline {xchapter}{Les diff\IeC {\'e}rents \IeC {\'e}quipements}{41}{appendix.B}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces HIL DSpace}}{41}{figure.B.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces HIL DSpace}}{41}{figure.B.2}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces HIL DSpace}}{42}{figure.B.3}
 \addvspace {10\p@ }
-\contentsline {xchapter}{R\IeC {\'e}f\IeC {\'e}rences}{41}{appendix.C}
+\contentsline {xchapter}{R\IeC {\'e}f\IeC {\'e}rences}{43}{appendix.C}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Exemple de rapport g\IeC {\'e}n\IeC {\'e}r\IeC {\'e} par GreenT}{43}{appendix.D}
+\contentsline {xchapter}{Exemple de rapport g\IeC {\'e}n\IeC {\'e}r\IeC {\'e} par GreenT}{45}{appendix.D}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Exemples de fichiers g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}s}{45}{appendix.E}
+\contentsline {xchapter}{Exemples de fichiers g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}s}{47}{appendix.E}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Liste des codes sources}{49}{appendix.F}
+\contentsline {xchapter}{Liste des codes sources}{51}{appendix.F}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Table des figures}{51}{appendix.G}
+\contentsline {xchapter}{Table des figures}{53}{appendix.G}
 \contentsfinish 
