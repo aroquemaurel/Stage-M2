@@ -12,16 +12,61 @@ Ces calibrations permettent de configurer un véhicule avant sa mise en producti
 	\item Leur modification permet de faire une mise au point, permettant d'améliorer la consommation par exemple.
 \end{itemize}
 
-Une fois le logiciel pour un calculateur fourni, et mis en production, ces calibrations ne doivent pas évoluer, les modifier ne sert donc qu'à la mise au point et à la généricité du logiciel.
+Une fois le logiciel d'un calculateur mis en production, ces calibrations ne doivent pas évoluer, les modifier ne sert donc qu'à la mise au point et à la généricité du logiciel.
 
 \section{Le << patch calib >>}\label{patch}
+Pour un certain nombre de scénario de stimulation, il est nécessaire de modifier des valeurs de calibrations. Cette action demande d'ajouter une grammaire spécifique : \texttt{PATCH\_CAL(calibration, valeur)}. En interne, cela générera du code permettant de flasher la nouvelle valeur.
+
+\subsection{Expression du besoin}\label{besoinArray}
+\subsubsection{Les cas d'utilisation}
+
+\begin{figure}[H]
+\includegraphics[width=16cm]{contents/images/patch-calib.jpg}
+\end{figure}
+
+\subsubsection{Les limitations de la fonctionalité}
+Afin de pouvoir patcher des calibrations, j'ai du me renseigner auprès de personnes compétentes et sachant comment cela pouvait se faire. Il s'est trouvé que nous allons devoir adapter un script déjà existant.
+
+Cepepdant, afin de pouvoir modifier la flash, il est indispensable que notre ECU soit arrêté, ainsi il ne sera possible de ne modifier des calibrations qu'en début de scénario. L'utilisateur modifie ces éventuels calibrations puis effectue son scénario de stimulation. Cette restriction n'est pas incensée, en effet, afin de tester correctement le programme il doit être dans des conditions les plus proches du réel. Or, sur une voiture, il n'est pas possible de modifier des calibrations avec l'ECU démarré.
+
+Si pour un test, l'utilisateur veut vérifier que tout s'exécute correctement avec différentes calibrations, il pourra utiliser plusieurs scénarios : un scénario par groupe de calibrations. 
+
+\subsection{Fonctionnement à l'utilisation}
+Comme vu section \ref{besoinArray}, le << patch calib >> ne peut être utilisé que si l'ECU est arrêté. Afin de forcer ce fonctionnement, et d'éviter une mauvaise utilisation, il a été choisi d'utiliser la grammaire du langage. En effet, une mauvaise utilisation de la fonctionnalité nous renverra une \textit{syntax error}, forçant l'utilisateur à corriger cela. 
+
+\begin{lstlisting}[language=gtl,numbers=left,caption=Scénario de stimulation contenant des patchs de calibration]
+SCENARIO NomDuScenario
+  PATCH SECTION
+    patch_cal(cal1, value1);
+    patch_cal(cal2, value2);
+  END SECTION
+  // Stimulation proprement dite
+  // Rampe, wait, ...
+END SCENARIO
+\end{lstlisting}
+L'utilisateur à la possibilité d'écrire plusieurs scénarios dans un même test, avec cette même syntaxe.
+
+\subsection{Conception de la solution}
 
 \section{Les << tableaux calibrables >>}
+Certaines variables côtés ECU sont des variables de types tableau, l’utilisateur peut actuellement y accéder via la syntaxe \texttt{var[indice]}.
+
+Le but de mon développement, était d’améliorer ce système. Actuellement, seul un indice en dur peut être renseigné à cette variable, l’idée est de pouvoir renseignée un indice en dur, mais aussi une calibration.
+
+\subsection{Expression du besoin}\label{besoinTab}
+Cette fonctionnalité permettrai d’avoir des calibrations d’un projet à l’autre, et de pouvoir réutiliser le \textit{Walkthrough} en ne changeant que les calibrations.\\
+Un autre intérêt de cette fonctionnalité, est de pouvoir recopier les spécifications, celles-ci étant renseignée via des calibrations.
+
+Avec cette fonctionnalité, l'utilisateur pourra donc avoir des fichiers \textit{Walkthrough} génériques et réutilisable entre chaque versions d'un même projet. Cela limiterai également le risque d'erreur dûe à une mauvaise recopie de la spécification. En effet, avant cette fonctionnalité, l'utilisateur devait regarder la spécification, aller voir le contenu de la calibration, et la mettre en dur dans le test. Cela peut provoquer des erreurs, d'une part lors de la recopie de la valeur, mais également si la valeur change à la version suivante et que l'utilisateur ne pense pas à faire suivre son document. 
+
+\subsubsection{Les cas d'utilisation}
+\subsubsection{Les limitations de la fonctionalité}
+
 
 \section{La maintenance}
-Comme expliqué plus haut, j'ai développé deux fonctionnalités durant ce stage. Cependant, en parallèle de ce développement j'ai également corrigés différents bugs, ou améliorer différentes partie de la plateforme.
+Comme expliqué plus haut, j'ai développé deux fonctionnalités durant ce stage. Cependant, en parallèle de ce développement j'ai également corrigés différents bogues, ou améliorer différentes partie de la plateforme.
 
-Ayant conçu cette plateforme lors de mon stage de fin de Licence, je connais l'intégralité de la plateforme; C'est ainsi que j'ai pu détecter et corriger un certains nombres de problèmes. Ces bugs ou ces améliorations ont été identifiées de trois façons différentes : 
+Ayant conçu cette plateforme lors de mon stage de fin de Licence, je connais l'intégralité de la plateforme. C'est ainsi que j'ai pu détecter et corriger un certains nombres de problèmes. Ces bogues ou ces améliorations ont été identifiées de trois façons différentes : 
 \begin{itemize}
 	\item Durant mon développement, il m'est arrivé de trouver du code incohérent ou bouchonné
 	\item Lors d'exécutions de la plateforme sur différentes versions du projet client
@@ -39,7 +84,7 @@ J'ai corrigé quelques problèmes trouvés sur la plateforme, principalement ven
 	\subsubsection{Modification des variables Debugger}
 		\begin{description}
 			\item[Le problème] Lors d'un stimulus, il est possible de modifier une variable Debugger. Lors de la modification d'une variable, le Trace32 renvoyait toujours une exception, sans appliquer la modification.
-			\item[La solution] Après lecture de la documentation de Trace32, il s'est avéré que le problème venait simplement du serveur qui appliquait une commande syntaxiquement incorrecte. La modification de la commande a corrigée le problème.
+			\item[La solution] Après lecture de la documentation de Trace32, il s'est avéré que le problème venait simplement du serveur qui appliquait une commande syntaxiquement incorrecte. La modification de la commande a corrigé le problème.
 	\end{description}
 	
 	\subsubsection{Ordre d'exécutions des scénarios}
@@ -56,7 +101,7 @@ J'ai corrigé quelques problèmes trouvés sur la plateforme, principalement ven
 	
 	\subsubsection{Absence d'injection}
 	\begin{description}
-		\item[Le problème] Lorsque j'essayais de simuler un démarrage du moteur sur la dernière version du logiciel, aucune injection ne se faisait : après le starter, le moteur retournait à 0 tour.
+		\item[Le problème] Lorsque j'essayais de simuler un démarrage du moteur sur la dernière version du logiciel, aucune injection ne se faisait : après le starter, le moteur retournait à zéro tour.
 		\item[La solution] Après s'être renseigné auprès de personnes compétentes, il s'est avéré que cela venait d'un nouveau fichier à flasher dont nous n'avions pas connaissance. Un fichier contenant des calibrations permettant le démarrage du moteur sur table. Ce fichier n'ayant pas été pris en compte durant la conception, j'ai ajouté un nouveau paramètre au fichier de configuration permettant de renseigner des fichiers à flasher additionnels.
 	\end{description}
 	
@@ -64,24 +109,24 @@ J'ai corrigé quelques problèmes trouvés sur la plateforme, principalement ven
 	\subsubsection{Exécution différée} %
 	\begin{description}
 		\item[Le besoin] Lors de mon développement, j'ai eu souvent des problèmes pour réservés des tables de tests. Celles-ci étant régulièrement prise par les équipes projets. 
-		\item[La solution] Afin de ne pas bloquer de tables, et de ne pas bloquer notre travail en raison de l'absence de celles-ci, une solution nous est venue : la possibilité de lancer l'outil durant la nuit. En effet, actuellement une exécution dure environ 45 minutes, après laquelle nous pouvons analyser les rapports et voir les problèmes qui nous sont retournés. Ainsi, j'ai ajouté un nouveau paramètre à l'application permettant de spécifier à laquelle la génération, la compilation, l'exécution et la génération des rapports va se faire. On peut maintenant lancer une exécution le soir et observer les résultats le lendemain matin.
+		\item[La solution] Afin de ne pas bloquer de tables, et de ne pas bloquer notre travail en raison de l'absence de celles-ci, une solution nous est venue : la possibilité de lancer l'outil durant la nuit. En effet, actuellement une exécution dure environ 45 minutes, après laquelle nous pouvons analyser les rapports et voir les problèmes qui nous sont retournés. Ainsi, j'ai ajouté un nouveau paramètre à l'application permettant de spécifier l'heure à laquelle la génération des \texttt{.jar}, la compilation, l'exécution et la génération des rapports va se faire. On peut maintenant lancer une exécution le soir et observer les résultats le lendemain matin.
 	\end{description}
 	
 	\subsubsection{Passage à Java 8}
 		\begin{description}
-			\item[Le besoin] La plateforme fonctionnait sous Java 6. Ainsi, nous allions mettre en production une plateforme déjà obsolète à sa sortie. De plus, les deux versions suivantes de Java propose un certain nombre de fonctionnalité aidant au développement, comme des simplifications d'écriture en Java 7 (\textit{Multi-Catch}, Inférence de type, \texttt{switch} sur les strings, ...) ou les lambdas-calculs en Java 8. Enfin, dans un future proche nous aurons besoin d'une interface pour \textit{GreenT}, \textit{JavaFx} serait une bonne solutions, mais celle-ci nécessite Java 8.
+			\item[Le besoin] La plateforme fonctionnait sous Java 6. Ainsi, nous allions mettre en production une plateforme déjà obsolète à sa sortie. De plus, les deux versions suivantes de Java propose un certain nombre de fonctionnalités aidant au développement, comme des simplifications d'écriture en Java 7 (\textit{Multi-Catch}, Inférence de type, \texttt{switch} sur les strings, ...) ou les lambdas-calculs en Java 8. Enfin, dans un future proche nous aurons besoin d'une interface pour \textit{GreenT}, \texttt{JavaFx} serait une bonne solutions, mais celle-ci nécessite Java 8.
 			\item[La solution] Avant de passer à Java 8, il a d'abord fallut vérifier qu'aucune incompatibilité avec les bibliothèques que nous utilisons n'allait apparaître. Ensuite, il était nécessaire de télécharger un compilateur ainsi qu'une JVM, configurer les différents environnements et vérifier qu'une exécution se passait de la même manière que précédemment. Après ce succès, le passage à Java 8 a été concrétisé et permet à notre plateforme de rester moderne ! 
 		\end{description}
 		
 	\subsubsection{<< \textit{Clean-Code} >>}
 		\begin{description}
-			\item[Le besoin] \textit{GreenT} ayant deux ans, et ayant connue 4 développeurs différents, il est parfois nécessaire d'améliorer le code existant ou de le rendre plus lisible. 
+			\item[Le besoin] \textit{GreenT} ayant deux ans, et ayant connue quatre développeurs différents, il est parfois nécessaire d'améliorer le code existant ou de le rendre plus lisible. 
 			\item[La solution] Lorsqu'en développant mes fonctionnalités ou en corrigeant des bugs je tombais sur du code incompréhensible ou du << code mort >>, je modifiais celui-ci afin de corriger ces défauts. Ceci permet ainsi de garder un code toujours propre et facile à lire.
 		\end{description}
 		
 	\subsubsection{Affichage des \textit{logs}}
 		\begin{description}
-			\item[Le besoin] La plateforme effectue beaucoup d'actions, allant du parsing jusqu'à la génération des rapports comme montré chapitre \ref{chapGreent}. Toutes ces actions doivent être tracés, aussi bien en tant réel, en regardant l'exécution que plus tard en observant un fichier.
+			\item[Le besoin] La plateforme effectue beaucoup d'actions, allant du parsing jusqu'à la génération des rapports comme montré chapitre \ref{chapGreent}. Toutes ces actions doivent être tracés, aussi bien en temps réel, en regardant l'exécution, que plus tard en observant un fichier.
 			\item[La solution] Les logs fonctionnait déjà, en utilisant \texttt{log4j}, cependant celui-ci affichait beaucoup trop d'informations en temps réel, et n'affichait pas les informations les plus utiles. Ainsi, j'ai passé en revue la plateforme pour afficher les bonnes actions (Initialisation des bancs, stimulis effectués, affichage des exceptions, \ldots). Toutes les erreurs sont redirigé vers la sortie des erreurs (\texttt{stderr}), et seules les informations les plus importantes sont sur la sortie console (\texttt{stdout}). Tous les autres logs, qui peuvent être utile à la compréhension d'un problème et nous aider ne sont accessible que dans nos fichiers de logs. J'ai par ailleurs ajouté un « buffer tournant » permettant aux fichiers de logs de ne jamais dépasser une certaines taille (5Mio), afin de ne pas consommer trop d'espace.
 		\end{description}
 		

@@ -41,9 +41,9 @@ génération de tests automatiques par \textit{GreenT}. Voici les colonnes les p
 	% TODO CHange WT version
 	\hspace{-35px}
 	\includegraphics[width=20cm]{contents/images/walkthrough.png}
-	\caption{Aperçu d'un fichier Walkthrough -- TODO changer la version}
+	\caption{Aperçu d'un fichier Walkthrough}
 \end{figure}
-\section{Fonctionnement Global}
+\section{Le fonctionnement Global}
 Le développement de \textit{GreenT} inclu un certain nombre de fonctionnalités attendues par le client et indispensable à son fonctionnement. D'autres fonctionnalités pourront apparaître plus tard en fonction des besoins.
 
 Les principaux modules sont les suivants, avec leurs interactions schématisées figure \ref{fig:generalDiag} : 
@@ -73,7 +73,7 @@ Alors que d'autres fonctionnalités vont nécessiter la présence de serveurs et
 	\item Les enregistrement des traces (section \ref{stim})
 \end{itemize}
 
-\section{Les différentes fonctionnalités du Client}
+\section{Les fonctionnalités du Client}
 Afin de répondre au mieux aux attentes du client, il a été choisi d'utiliser le Java pour développer notre client, ceci en raison de
 diverses avantages comme le côté multi-plateforme, son typage fort et sa forte communauté qui permet ainsi une maintenance réduite. 
 
@@ -110,8 +110,8 @@ CHECK(HIL_KEY = 1
 	\begin{minipage}{0.1\linewidth}
 		\begin{lstlisting}[framerule=0pt]
 // Rampe de vitesse véhicule
-// de 0 à 50km/h par pas de 1		
-RAMP(HIL_VS, 0, 50, 0.1, 1);
+// de 0 à 50km/h par pas de 1 toutes les secondes	
+RAMP(HIL_VS, 0, 50, 1, 1);
 TODO vérifier syntaxe de RAMP		
 		\end{lstlisting}
 	\end{minipage} 
@@ -143,18 +143,18 @@ verdicts ensuite.
 \begin{exemple}
 	Comme nous l'avons vu section \ref{generation}, le testeur nos a donné un scénario de stimulation ainsi qu'un scénario de précondition. Le code généré va ainsi communiquer avec le serveur HIL afin qu'il envoie les bons stimulis à l'ECU.
 
-	Ainsi, comme mis en commentaires, le scénario de précondition va mettre la batterie à 13 Volts, et mettre la clé, nous allons ensuite vérifier que cette action a bien été fait. Si tel est le cas, le scénario de stimulations va être effectué. Ce scénario va effectuer une rampe de vitesse, notre véhicule va aller de zéro à cinquante kilomètre-heure avant de retourner à l'arrêt.	
+	Le scénario de précondition va mettre la batterie à 13 Volts, et mettre la clé, nous allons ensuite vérifier que cette action a bien été fait. Si tel est le cas, le scénario de stimulations va être effectué. Ce scénario va effectuer une rampe de vitesse, notre véhicule va aller de zéro à cinquante kilomètre-heure avant de retourner à l'arrêt.	
 \end{exemple}
 
 \subsection{Les traces et leurs évaluations}\label{expectedBehavior}
 Lorsqu'un scénario de stimulation s'exécute, un certain nombre de variables sont enregistrées : ces variables sont stockées sous la forme d'une trace au format CSV, qui pourra plus tard être représentée sous forme de courbe. 
 
-Une fois que la trace est complète, il est nécessaire de l'évaluer : le spécifieur a décrit le comportement attendu dans la colonne \textit{Expected Behavior} détaillant dans quel cas le test est correct, ainsi cette expression va être transformée en arbre logique afin de l'évaluer à tout instant de la trace. 
+Une fois que la trace est complète, il est nécessaire de l'évaluer : le spécifieur a décrit le comportement attendu dans la colonne \textit{Expected Behavior} détaillant dans quel cas le test est correct. Cette expression va être transformée en arbre logique afin de l'évaluer à tout instant de la trace. 
 
 \begin{exemple}
 	Durant notre rampe véhicule, le \textit{debugger} a enregistré différentes variables, en l'occurence nous avons enregistré les trois variables présentes dans notre \textit{Expected Behavior} : la température	du moteur -- \texttt{temperature}, la température maximum sans ventilateur -- \texttt{max}, ainsi que l'état de notre ventilateur -- \texttt{cfa\_on}.
 	
-	Ces variables ont été enregistrées durant l'intégralité de la rampe véhicule qui à eu une durée de 40 secondes. À la fin de la stimulation, le serveur retourne ainsi une trace de 40 secondes contenant toutes les variables. \textit{GreenT} peut ensuite évaluer notre \textit{expected behavior} sur l'intégralité de l'enregistrement.
+	Ces variables ont été enregistrées durant l'intégralité de la rampe véhicule qui à eu une durée de cinquante secondes. À la fin de la stimulation, le serveur retourne ainsi une trace de cinquante secondes contenant toutes les variables. \textit{GreenT} peut ensuite évaluer notre \textit{expected behavior} sur l'intégralité de l'enregistrement.
 \end{exemple}
 \subsection{Le module TestManager}\label{testManager}
 Le \texttt{TestManager} est le chef d'orchestre de \textit{GreenT}, il a donc un certain nombre de responsabilités. 
@@ -200,7 +200,7 @@ Une fois l'analyse d'un test exécuté, un résultat est mis dans le fichier Exc
 	Si il y a eu une erreur à la génération\footnote{Mauvaise syntaxe, variables inexistantes, \ldots} ou à l'exécution\footnote{Problèmes réseaux, variable non trouvée, communication entre l'ECU et le debugger, \ldots}, la plateforme doit remettre le message d'erreur clair au niveau du test afin que l'utilisateur soit conscient du fait que le test n'a pas pu être exécuté, et pour quelle raison. Libre à lui de corriger le test si nécessaire, ou de le signaler si cela semble être un bogue.
 \end{remarque}
 
-\section{Fonctionnement des serveurs}
+\section{Le fonctionnalités des serveurs}
 Comme expliqué précédemment, GreenT va avoir en charge l'exécution de stimulation. Ces stimulations vont communiquer avec une table de
 tests. Actuellement une table est composée de deux \textit{devices} différents, comportant chacun leur serveur : 
 \begin{itemize}
@@ -223,7 +223,7 @@ Au début du développement de la plateforme, il a été décidé que les serveu
 \end{itemize}
 
 \subsection{Le serveur Debugger, contrôle de Trace32}
-Le serveur Debugger propose des services basiques permettant de répondre aux différentes stimulations : 
+Le serveur Debugger propose des services basiques permettant de répondre aux besoins :
 \begin{itemize}
 	\item Flasher le logiciel dans la flash de l'ECU
 	\item Démarrer l'ECU

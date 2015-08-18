@@ -48,6 +48,20 @@
       emph={[4]entree, maj, sortie, entrée},	
       emphstyle=[4]\color{gris1},
 }
+
+\lstdefinelanguage{gtl}{%
+   morekeywords={%
+    %%% couleur 1
+		if, then, else, patch, section, begin, scenario, end, 
+%		
+		eval, patch_cal,
+	},
+  sensitive=false,
+  morecomment=[l]{//},
+  morestring=[b]',
+}
+
+
 \lstdefinelanguage{wl}{%
    morekeywords={%
     %%% couleur 1
@@ -191,7 +205,7 @@
 
 \lstset{ % general style for listings 
 %   numbers=left 
-   , literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\`a}}1 {ê}{{\^e}}1 {É}{{\'E}}1 {ô}{{\^o}}1 {€}{{\euro}}1{°}{{$^{\circ}$}}1 {ç}{ {c}}1 {ù}{u}1
+   , literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\`a}}1 {ê}{{\^e}}1 {É}{{\'E}}1 {ô}{{\^o}}1 {€}{{\euro}}1{°}{{$^{\circ}$}}1 {ç}{ {c}}1 {ù}{u}1
 	, extendedchars=\true
    , tabsize=2 
    , stepnumber=2
@@ -216,3 +230,13 @@
 } 
 %	\lstlistoflistings
 %	\addcontentsline{toc}{part}{List of code examples}
+\lstset{language=gtl,
+    %%% BOUCLE, TEST & Co.
+      emph={[1]if, then, else, patch, section, begin, scenario, end},
+      emphstyle=[1]\color{bleu5},
+    %%% IMPORT & Co.  
+	emph={[2]
+		eval, patch_cal
+	},
+      emphstyle=[2]\color{bleu4},
+}	

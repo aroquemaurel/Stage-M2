@@ -7,14 +7,14 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 	Comme expliqué dans la section \ref{besoinTests}, le calculateur moteur est un système critique, il est donc indispensable de tester correctement celui-ci.
 
 	\subsection{Les bancs de tests}\label{wb}
-	Afin de tester au mieux les programmes du contrôle moteur développés, ceux-ci sont d'abord testé via des simulateurs d'environnement véhicule. Ce simulateur permettent d'une part de vérifier la bonne conformité entre le matériel et le logiciel, mais permettent également de vérifier le programme avant d'effectuer des tests sur véhicule.
+	Afin de tester au mieux les programmes du contrôle moteur développés, ceux-ci sont d'abord testé via des simulateurs d'environnement véhicule. Ce simulateur permettent d'une part de vérifier la bonne conformité entre le matériel et le logiciel, mais permet également de vérifier le programme avant d'effectuer des tests sur véhicule.
 		
 	Comme vous pouvez le voir figure \ref{fig:wb}, un banc de tests est composé d'un ordinateur, du calculateur appelé ECU pour \textit{\textbf{E}lectronic \textbf{C}ontrol \textbf{U}nit} et d'au moins deux équipements aidant aux tests. 
 	
 	Les deux \textit{équipements} étant les suivants : 
 	\begin{description}
-		\item[Le HIL] Le \textit{\textbf{H}ardware \textbf{I}n the \textbf{L}oop} est un simulateur d'environnement véhicule. Ainsi l'ECU est branché sur le HIL et se comporte de la même manière que s'il était embarqué dans une voiture. Le HIL quant à lui est chargé d'envoyer les bons stimulus sur les pins de l'ECU, tel que l'injection, la vitesse de rotation du moteur, le starter \ldots
-		\item[Debugger] Cet \textit{appareil} est branché sur l'ECU est va être capable d'effectuer un certain nombre d'actions directement sur l'ECU. Tel que flasher le logiciel à tester, mettre des points d'arrêts sur le code, lire des variables, les modifier, changer des calibrations, \ldots
+		\item[Le HiL] Le \textit{\textbf{H}ardware \textbf{i}n the \textbf{L}oop} est un simulateur d'environnement véhicule. Ainsi l'ECU est branché sur le HiL et se comporte de la même manière que s'il était embarqué dans une voiture. Le HiL quant à lui est chargé d'envoyer les bons stimulus sur les pins de l'ECU, tel que l'injection, la vitesse de rotation du moteur, le starter \ldots
+		\item[Debugger] Cet {appareil} est branché sur l'ECU est va être capable d'effectuer un certain nombre d'actions directement sur l'ECU. Tel que flasher le logiciel à tester, mettre des points d'arrêts sur le code, lire des variables, les modifier, changer des calibrations, \ldots
 	\end{description}
 
 	\begin{remarque}
@@ -51,7 +51,7 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 		\item[La fiabilité des tests manuels] Le test des seules différences ne permet pas nécessairement de détecter tous les problèmes (notamment avec des effets de bords\ldots). De plus, une tâche répétitive peut entrainer des erreurs humaines.
 		\item[Le temps de tests] Même en ne testant qu'une partie des variables, cela prend un temps considérable, il faut compter environ une semaine.\newline
 			Or, les tests s'effectuent sur les bancs de tests comme expliqué section \ref{wb}, ces équipements permettent de simuler un environnement voiture autour du contrôleur moteur comme
-			l'utilisation de la clé de démarrage, la tension de la batterie, la vitesse de rotation du moteur, ... Ces bancs sont peu
+			l'utilisation de la clé de démarrage, la tension de la batterie, la vitesse de rotation du moteur, \ldots Ces bancs sont peu
 			nombreux dans l'entreprise en raison de leur cout, leur disponibilité est compliquée. Il serait intéressant de pouvoir lancer
 			des tests automatisés durant la nuit par exemple afin de les décharger de ce travail.
 	\end{description}
