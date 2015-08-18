@@ -7,18 +7,18 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 	Comme expliqué dans la section \ref{besoinTests}, le calculateur moteur est un système critique, il est donc indispensable de tester correctement celui-ci.
 
 	\subsection{Les bancs de tests}\label{wb}
-	Afin de tester au mieux les programmes du contrôle moteur développés, ceux-ci sont d'abord testé via des simulateurs d'environnement véhicule. Ce simulateur permettent d'une part de vérifier la bonne conformité entre le matériel et le logiciel, mais permet également de vérifier le programme avant d'effectuer des tests sur véhicule.
+	Afin de tester au mieux les programmes du contrôle moteur développés, ceux-ci sont d'abord testé via des simulateurs d'environnement véhicule. Ce simulateur permet d'une part de vérifier la bonne conformité entre le matériel et le logiciel, mais permet également de vérifier le programme avant d'effectuer des tests sur véhicule.
 		
 	Comme vous pouvez le voir figure \ref{fig:wb}, un banc de tests est composé d'un ordinateur, du calculateur appelé ECU pour \textit{\textbf{E}lectronic \textbf{C}ontrol \textbf{U}nit} et d'au moins deux équipements aidant aux tests. 
 	
-	Les deux \textit{équipements} étant les suivants : 
+	Les deux équipements étant les suivants : 
 	\begin{description}
 		\item[Le HiL] Le \textit{\textbf{H}ardware \textbf{i}n the \textbf{L}oop} est un simulateur d'environnement véhicule. Ainsi l'ECU est branché sur le HiL et se comporte de la même manière que s'il était embarqué dans une voiture. Le HiL quant à lui est chargé d'envoyer les bons stimulus sur les pins de l'ECU, tel que l'injection, la vitesse de rotation du moteur, le starter \ldots
-		\item[Debugger] Cet {appareil} est branché sur l'ECU est va être capable d'effectuer un certain nombre d'actions directement sur l'ECU. Tel que flasher le logiciel à tester, mettre des points d'arrêts sur le code, lire des variables, les modifier, changer des calibrations, \ldots
+		\item[Debugger] Cet {appareil} est branché sur l'ECU est va être capable d'effectuer un certain nombre d'actions. Tel que flasher le logiciel à tester, mettre des points d'arrêts sur le code, lire des variables, les modifier, changer des calibrations, \ldots
 	\end{description}
 
 	\begin{remarque}
-		Un certain nombre d'équipes projet chez Continental utilise un troisième outil qui n'est pas représenté ici, parce que notre plateforme ne s'en sert pas. Cet outil, nommé INCA, va interagir sur l'ECU via un bus CAN\footnote{Controller Area Network}. Cet outil étant sujet à contreverses, il a été choisi de ne pas l'intégrer à notre plateforme.
+		Un certain nombre d'équipes projet chez Continental utilise un troisième outil qui n'est pas représenté ici, parce que notre plateforme ne s'en sert pas. Cet outil, nommé INCA, va interagir sur l'ECU via un bus CAN\footnote{Controller Area Network}.
 	\end{remarque}
 		\begin{figure}[H]
 			\centering

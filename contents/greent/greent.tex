@@ -98,7 +98,7 @@ Ci-dessous les différentes cellules qui pourrait être renseigné par le testeu
 	\textbf{Précondition} & \textbf{Scénario de Stimulation} & \textbf{Expected Behavior}\\
 	\hline
 	\begin{minipage}{0.1\linewidth}
-		\begin{lstlisting}[framerule=0pt]
+		\begin{lstlisting}[framerule=0pt,language=gtl]
 // Tension batterie
 HIL_VB = 13;
 // Clé moteur
@@ -109,21 +109,21 @@ CHECK(HIL_KEY = 1
 	\end{lstlisting}
 	\end{minipage} & 
 	\begin{minipage}{0.1\linewidth}
-		\begin{lstlisting}[framerule=0pt]
+		\begin{lstlisting}[framerule=0pt,language=gtl]
 // Rampe de vitesse véhicule
-// de 0 à 50km/h par pas de 1 toutes les secondes	
+// de 0 à 50km/h par pas de 1 
+// toutes les secondes	
 RAMP(HIL_VS, 0, 50, 1, 1);
-TODO vérifier syntaxe de RAMP		
 		\end{lstlisting}
 	\end{minipage} 
 	&
 		\begin{minipage}{0.1\linewidth}
-			\begin{lstlisting}[language=ada,framerule=0pt]	
+			\begin{lstlisting}[language=ada,framerule=0pt,language=gtl]	
 if temperature > max then
-	-- Ventilateur allumé
+	// Ventilateur allumé
 	EVAL(cfa_on = 1); 
 else
-	-- Ventilateur éteint
+	// Ventilateur éteint
 	EVAL(cfa_on = 0); 
 end if
 			\end{lstlisting}
@@ -137,7 +137,7 @@ Afin de tester une variable du plugin, les développeurs vont utiliser des alias
 
 Le spécifieur va rédiger des scénarios de stimulation, ceci afin de mettre le contrôleur dans certaines conditions. Son but sera ensuite de vérifier que ces variables restent cohérentes vis-à-vis du scénario effectué. 
 
-Un scénario particulier doit être spécifié : une pré condition qui a pour but d'initialiser les \textit{devices} et certains alias afin d'avoir un état de stimulation qui soit cohérent et identique à chaque lancement du scénario. Ce scénario sera effectué avant le lancement de chacun des scénarios de stimulation.
+Un scénario particulier doit être spécifié : une pré condition qui a pour but d'initialiser les équipements et certains alias afin d'avoir un état de stimulation qui soit cohérent et identique à chaque lancement du scénario. Ce scénario sera effectué avant le lancement de chacun des scénarios de stimulation.
 
 Durant l'exécution d'une stimulation, les variables nécessaires sont enregistrées afin de pouvoir produire des rapports et des
 verdicts ensuite.
@@ -203,7 +203,7 @@ Une fois l'analyse d'un test exécuté, un résultat est mis dans le fichier Exc
 
 \section{Le fonctionnalités des serveurs}
 Comme expliqué précédemment, GreenT va avoir en charge l'exécution de stimulation. Ces stimulations vont communiquer avec une table de
-tests. Actuellement une table est composée de deux \textit{devices} différents, comportant chacun leur serveur : 
+tests. Actuellement une table est composée de deux équipements différents, comportant chacun leur serveur : 
 \begin{itemize}
 	\item Un HIL, Hardware In the Loop, simulateur d'environnement véhicule
 	\item Un Debugger permettant de voir l'état du programme présent dans l'ECU
@@ -223,7 +223,7 @@ Au début du développement de la plateforme, il a été décidé que les serveu
 	\item Pouvoir ajouter facilement un nouveau device, qui ne nécessiterai que l'ajout d'un nouveau serveur relativement simple
 \end{itemize}
 
-\subsection{Le serveur Debugger, contrôle de Trace32}
+\subsection{Le serveur Debugger, contrôle de Trace32}\label{T32server}
 Le serveur Debugger propose des services basiques permettant de répondre aux besoins :
 \begin{itemize}
 	\item Flasher le logiciel dans la flash de l'ECU

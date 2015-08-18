@@ -13,109 +13,140 @@ Ces calibrations permettent de configurer un véhicule avant sa mise en producti
 \end{itemize}
 
 Une fois le logiciel d'un calculateur mis en production, ces calibrations ne doivent pas évoluer, les modifier ne sert donc qu'à la mise au point et à la généricité du logiciel.
-
+\vfill
 \section{Le << patch calib >>}\label{patch}
-Pour un certain nombre de scénario de stimulation, il est nécessaire de modifier des valeurs de calibrations. Cette action demande d'ajouter une grammaire spécifique : \texttt{PATCH\_CAL(calibration, valeur)}. En interne, cela générera du code permettant de flasher la nouvelle valeur.
-
-\subsection{Expression du besoin}\label{besoinArray}
-\subsubsection{Les cas d'utilisation}
-
-		Comme nous pouvons le voir figure \ref{fig:patch-cal-usecase}, le patch de calibrations est répertorié en deux grandes parties : le parser et la génération des instructions permettant de changer la valeur d'une calibration, et l'exécution du patch proprement dit.
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=18cm]{contents/images/patch-cal_usecase.eps}
-			\caption{Diagramme de cas d'utilisations du patch de calibrations}
-			\label{fig:patch-cal-usecase}
-		\end{figure}
-
-		\subsubsection{Limitations du \textit{patch calib}}
-		Afin de concevoir au mieux la solution répondant aux besoins du client, j'ai tout d'abord du me renseigner sur la manière dont je pouvais effectuer cette action sur l'ECU, c'est-à-dire l'implémentation du serveur. Après discussions avec les personnes compétentes, une restriction impactant mon développement a été mis au clair.
-		
-		Afin de modifier une calibration, il est nécessaire de modifier la mémoire flash. Cette modification va nous obliger à éteindre l'ECU, la modification de la flash étant impossible ECU on. Il ne sera donc pas possible de modifier une calibration au milieu d'un scénario de stimulation, le scénario n'aurait aucun sens si nous éteignons et rallumons l'ECU pendant celui-ci.
-		
-		Cette restriction n'a cependant pas d'impact sur les tests qui seront rédigés, un scénario de stimulation a pour but de se rapprocher du fonctionnement nominal d'une voiture, or il est inconcevable de modifier une calibration pendant que la voiture tourne. Du point de vue des tests, ce choix reste cohérent. 
-
-\subsection{Fonctionnement à l'utilisation}
-Comme vu section \ref{besoinArray}, le << patch calib >> ne peut être utilisé que si l'ECU est arrêté. Afin de forcer ce fonctionnement, et d'éviter une mauvaise utilisation, il a été choisi d'utiliser la grammaire du langage. En effet, une mauvaise utilisation de la fonctionnalité nous renverra une \textit{syntax error}, forçant l'utilisateur à corriger cela. 
-
-\begin{lstlisting}[language=gtl,numbers=left,caption=Scénario de stimulation contenant des patchs de calibration]
-SCENARIO NomDuScenario
-  PATCH SECTION
-    patch_cal(cal1, value1);
-    patch_cal(cal2, value2);
-  END SECTION
-  // Stimulation proprement dite
-  // Rampe, wait, ...
-END SCENARIO
-\end{lstlisting}
-L'utilisateur à la possibilité d'écrire plusieurs scénarios dans un même test, avec cette même syntaxe.
-
+%Pour un certain nombre de scénario de stimulation, il est nécessaire de modifier des valeurs de calibrations. Cette action demande d'ajouter une grammaire spécifique : \texttt{PATCH\_CAL(calibration, valeur)}. En interne, cela générera du code permettant de flasher la nouvelle valeur.
+%
+\subsection{Expression du besoin}\label{besoin-patch}
+%\subsubsection{Les cas d'utilisation}
+%		Comme nous pouvons le voir figure \ref{fig:patch-cal-usecase}, le patch de calibrations est répertorié en deux grandes parties : le parser et la génération des instructions permettant de changer la valeur d'une calibration, et l'exécution du patch proprement dit.
+%		\begin{figure}[H]
+%			\centering
+%			\includegraphics[width=12cm]{contents/images/patch-cal_usecase.eps}
+%			\caption{Diagramme de cas d'utilisations du patch de calibrations}
+%			\label{fig:patch-cal-usecase}
+%		\end{figure}
+%
+%		\subsubsection{Limitations du \textit{patch calib}}\label{ecustop}
+%		Afin de concevoir au mieux la solution répondant aux besoins du client, j'ai tout d'abord du me renseigner sur la manière dont je pouvais effectuer cette action sur l'ECU, c'est-à-dire l'implémentation du serveur. Après discussions avec les personnes compétentes, une restriction impactant mon développement a été mis au clair.
+%		
+%		Afin de modifier une calibration, il est nécessaire de modifier la mémoire flash. Cette modification va nous obliger à éteindre l'ECU, la modification de la flash étant impossible ECU on. Il ne sera donc pas possible de modifier une calibration au milieu d'un scénario de stimulation, le scénario n'aurait aucun sens si nous éteignons et rallumons l'ECU pendant celui-ci.
+%		
+%		Cette restriction n'a cependant pas d'impact sur les tests qui seront rédigés, un scénario de stimulation a pour but de se rapprocher du fonctionnement nominal d'une voiture, or il est inconcevable de modifier une calibration pendant que la voiture tourne. Du point de vue des tests, ce choix reste cohérent. 
+%
+\subsection{Fonctionnement à l'utilisation}\label{usePatch}
+%Comme vu section \ref{ecustop}, le << patch calib >> ne peut être utilisé que si l'ECU est arrêté. Afin de forcer ce fonctionnement, et d'éviter une mauvaise utilisation, il a été choisi d'utiliser la grammaire du langage. En effet, une mauvaise utilisation de la fonctionnalité nous renverra une \textit{syntax error}, forçant l'utilisateur à corriger cela. 
+%
+%\begin{lstlisting}[language=gtl,numbers=left,caption=Scénario de stimulation contenant des patchs de calibration]
+%SCENARIO NomDuScenario
+%  PATCH SECTION
+%    patch_cal(cal1, value1);
+%    patch_cal(cal2, value2);
+%  END SECTION
+%  // Stimulation proprement dite
+%  // Rampe, wait, ...
+%END SCENARIO
+%\end{lstlisting}
+%L'utilisateur à la possibilité d'écrire plusieurs scénarios dans un même test, avec cette même syntaxe.
+%
 \subsection{Conception de la solution}
-	Nous avons vu dans la section \ref{besoin-patch} que la fonctionnalité était répartie en deux grandes parties, le parser et l'exécution. Ces deux parties peuvent également s'apparenter à deux modules bien distincts de \textit{GreenT} : le client, pour le parser, et le serveur Debugger, pour l'exécution. Dans la suite de ce document, nous feront abstraction de l'utilisation de Thrift pour la communication réseau, celle-ci étant généré comme expliqué section TODO SECTION TOOLS.
-	
-	\subsubsection{Le serveur T32 : Exécution}
-		\begin{wrapfigure}{r}{5.5cm}
-			\vspace{-30px}
-			\includegraphics[height=17cm]{contents/images/script_activite.jpg}
-			\caption{Diagramme d'activité du patch calib}
-			\label{fig:scriptBatch} 
-						\vspace{-7cm}
-		\end{wrapfigure}
-	Comme expliqué section TODO REF, le serveur du debugger utilise l'outil Trace32. C'est cet outil qui nous permet d’interagir avec le calculateur embarqué. Cet outil possède fonctionne principalement en utilisant des scripts batch.\\
-	Depuis l'interface de cet outil, il est possible de patcher une calibration comme le montre la figure TODO test.
-	%
-	% INSERER ICI UNE CAPTURE D'ÉCRAN
-
-	\begin{description}
-		\item[Le script existant] Ce script a été pensé pour le mode graphique. L'utilisateur appelle le script, modifie les valeurs des calibrations voulues via l'interface , et cliquait sur « patch calibration ». À ce moment là, le patch en flash s'effectuait.
-		\item[Le nouveau script] Le nouveau script va effectuer les même actions que le script existant, mais sans aucune attente d'actions utilisateurs. Pour cela, plutôt que d'attendre que l'utilisateur modifies les calibrations, nous aurons une liste calibration à modifier.
-	\end{description}
-
-	Afin de modifier une calibration, présente en flash, un certain nombre d'actions sont nécessaires. Ces actions sont montrés dans le diagramme d'activité figure \ref{fig:scriptBatch}.
-	
-	Le service du serveur va ainsi appeler le nouveau script de patch, le code Java concerné sera donc minime. Le prototype de la méthode est la suivante : 
-	\begin{lstlisting}[language=Java, numbers=none]
-public void patchCalibs(Map<String, Long> calibs);
-	\end{lstlisting}
-\newpage
-	\subsubsection{Le client : Parser \& générateur}
-	Afin de gérer le parsing et la génération de notre patch calib, j'ai du créer une nouvelle règle de grammaire comme montré section \ref{usePatch}. 
-	
-	Avec cette nouvelle grammaire, j'ai forcé l'utilisateur à ne modifier des calibrations que si l'ECU est éteint, cette action n'étant possible que dans une \texttt{patch section}. Une fois la liste de calibration à patchée parsée, il m'a suffit de générer l'instruction d'appel du Debugger.
-	
-	\begin{lstlisting}[language=Java]
-Map<String, Long> calibrations = new HashMap<String, Long>();
-calibrations.put("calib1", 0x0);
-calibrations.put("calib2", 0x1);
-dbg.patchCalibs(calibrations);
-// Stimulation instructions
-	\end{lstlisting}
-	
-	Cependant, afin de répondre à un besoin de l'équipe cliente, j'ai ajouté une sauvegarde de la valeur des calibrations avant le premier scénario, et une restauration à la fin du dernier scenario. Ceci pour garantir une bonne cohérence, en effet, si l'utilisateur modifie une calibration, celle-ci doit être à la bonne valeur pour les tests suivants. Cette restauration se fait de façon implicite afin de limiter le travail des testeurs, qui pourrait être source d'erreur.
-	
+%	Nous avons vu dans la section \ref{besoin-patch} que la fonctionnalité était répartie en deux grandes parties, le parser et l'exécution. Ces deux parties peuvent également s'apparenter à deux modules bien distincts de \textit{GreenT} : le client, pour le parser, et le serveur Debugger, pour l'exécution. Dans la suite de ce document, nous feront abstraction de l'utilisation de Thrift pour la communication réseau, celle-ci étant généré comme expliqué section \ref{thrift}.
+%	
+%	\subsubsection{Le serveur T32 : Exécution}
+%		\begin{wrapfigure}{r}{5.5cm}
+%			\vspace{-65px}
+%			\includegraphics[height=14.2cm]{contents/images/script_activite.jpg}
+%			\caption{Diagramme d'activité du patch calib}
+%			\label{fig:scriptBatch} 
+%						\vspace{-3cm}
+%		\end{wrapfigure}
+%	Comme vu section \ref{T32server}, le serveur du debugger utilise l'outil Trace32. C'est cet outil qui nous permet d’interagir avec le calculateur embarqué. Cet outil possède fonctionne principalement en utilisant des scripts batch.\\
+%	Depuis l'interface de cet outil, il est possible de patcher une calibration comme le montre la figure TODO test.
+%	
+%	 INSERER ICI UNE CAPTURE D'ÉCRAN
+%
+%	\begin{description}
+%		\item[Le script existant] Ce script a été pensé pour le mode graphique. L'utilisateur appelle le script, modifie les valeurs des calibrations voulues via l'interface , et clique sur «~patch intern flash~». À ce moment là, le patch en flash s'effectuait.
+%		\item[Le nouveau script] Le nouveau script va effectuer les même actions que le script existant, mais sans aucune attente d'actions utilisateurs. Pour cela, plutôt que d'attendre que l'utilisateur modifies les calibrations, nous aurons une liste calibration à modifier en paramètre.
+%	\end{description}
+%
+%	Afin de modifier une calibration, présente en flash, un certain nombre d'actions sont nécessaires. Ces actions sont montrés dans le diagramme d'activité figure \ref{fig:scriptBatch}.
+%	
+%	Le service du serveur va ainsi appeler le nouveau script de patch, le code Java concerné sera donc minime. Le prototype de la méthode est la suivante : 
+%	\begin{lstlisting}[language=Java, numbers=none]
+%public void patchCalibs(Map<String, Long> calibs);
+%	\end{lstlisting}
+%
+%	\subsubsection{Le client : Parser \& générateur}
+%	Afin de gérer le parsing et la génération de notre patch calib, j'ai du créer une nouvelle règle de grammaire comme montré section \ref{usePatch}. 
+%	
+%	Avec cette nouvelle grammaire, j'ai forcé l'utilisateur à ne modifier des calibrations que si l'ECU est éteint, cette action n'étant possible que dans une \texttt{patch section}. Une fois la liste de calibration à patchée parsée, il m'a suffit de générer l'instruction d'appel du Debugger.
+%	
+%	\begin{lstlisting}[language=Java]
+%Map<String, Long> calibrations = new HashMap<String, Long>();
+%calibrations.put("calib1", 0x0);
+%calibrations.put("calib2", 0x1);
+%dbg.patchCalibs(calibrations);
+%// Stimulation instructions
+%	\end{lstlisting}
+%	
+%	Cependant, afin de répondre à un besoin de l'équipe cliente, j'ai ajouté une sauvegarde de la valeur des calibrations avant le premier scénario, et une restauration à la fin du dernier scenario. Ceci pour garantir une bonne cohérence, en effet, si l'utilisateur modifie une calibration, celle-ci doit être à la bonne valeur pour les tests suivants. Cette restauration se fait de façon implicite afin de limiter le travail des testeurs, qui pourrait être source d'erreur.
+%	
+%	Cette sauvegarde se fait simplement, en début de test, je lis la valeur de chacune des calibrations qui seront modifiées par la suite, à la fin du test, je patch chacune des valeurs de sauvegardes en appelant le service.
+%	
 	\subsection{Les difficultés rencontrées}
-	\subsubsection{La robustesse}
-	\subsubsection{Le batch}
+%	Afin de développer cette fonctionnalité, j'ai eu quelques problèmes que j'ai pu résoudre de différentes manières. Nous allons voir ici comment j'ai pu passer outre mes problèmes. 
+%	\subsubsection{Le batch}
+%	Tout d'abord, j'ai du modifier un script batch, dans un langage que je connaissais pas, manipulant un outil que je connaissais pas. Afin de pouvoir effectuer mon nouveau script, j'ai donc lu la documentation de l'outil Trac32 expliquant le fonctionnement de leurs scripts, et la manière de les faire. J'ai étalement étudié le fonctionnement du script existant afin de l'adapater. J'ai eu la chance d'étudier un script qui était assez bien construit, et clair. J'ai donc été rapidement opérationnel pour comprendre ce que faisait le script, et ce que j'allais devoir faire.
+%	
+%	\subsubsection{La robustesse}
+%Un problème plus important à cependant été soulevé assez rapidement. Nous avons choisis d'adapter un script Trace32 afin d'être le plus rapide possible, cependant celui-ci nous à soulevé un certain nombre de problèmes.
+%
+%En effet, lorsque l'on effectue un patch, que nous coupons l'allimentation de l'ECU, et que nous essayons de nouveau de patcher une calibration, une erreur est levée, des bits d'erreurs mis à un, et l'ECU passe dans un état incohérent. 
+%
+%Après investigation, nous avons pu cerner plusieurs sources éventuels de ce problème : 
+%Il se pourrait donc qu'au flash après la coupure de l'allimentation, celui-ci soit refusé en raison d'état de la RAM ou de la flash qui ne soit pas correct. 
+%
+%Ce problème pourrait être localisé dans plusieurs endroits.
+%\begin{description}
+%\item[Le script existant] Ce script est peu utilisé par l'équipe projet, ainsi, il n'est que peu testé. Il se pourrait que nous nous soyions basé sur un script possédant des bogues.
+%\item[Le driver flash propriétaire] Ce script utilise un driver flash propriétaire, dont nous ne connaissons pas exactement les actions. Il se pourrait que le problème vienne également de lui.
+%\end{description}
+%
+%Ce problème semble donc compliqué à résoudre, une des solutions étant de développer notre propre driver flash afin d'avoir un contrôle de bout en bout. Cette solution étant particulièrement compliquée et couteuse, j'ai trouvé une autre solution beaucoup plus simple.\newline La coupure de l'allimentation de l'ECU provoque un état incohérent de la RAM, cependant, si nous redémarrons manuellement l'outil Trace32 entre deux patch, sans coupure brusque, le problème est résolu. Certainement car le démarrage de celui-ci doit nous nettoyer certains secteurs. Cette solution n'est pas parfaite, mais a pu être effectuée rapidement et fonctionne correctement. Le jour ou de la robustesse sera particulièrement nécessaire, nous devrons développer notre propre driver.
+
 \section{Les << tableaux calibrables >>}
-Certaines variables côtés ECU sont des variables de types tableau, l’utilisateur peut actuellement y accéder via la syntaxe \texttt{var[indice]}.
-
-Le but de mon développement, était d’améliorer ce système. Actuellement, seul un indice en dur peut être renseigné à cette variable, l’idée est de pouvoir renseignée un indice en dur, mais aussi une calibration.
-
+%Certaines variables côtés ECU sont des variables de types tableau, l’utilisateur peut actuellement y accéder via la syntaxe \texttt{var[indice]}.
+%
+%Le but de mon développement, était d’améliorer ce système. Actuellement, seul un indice en dur peut être renseigné à cette variable, l’idée est de pouvoir renseignée un indice en dur, mais aussi une calibration.
+%
 \subsection{Expression du besoin}\label{besoinTab}
-Cette fonctionnalité permettrai d’avoir des calibrations d’un projet à l’autre, et de pouvoir réutiliser le \textit{Walkthrough} en ne changeant que les calibrations.\\
-Un autre intérêt de cette fonctionnalité, est de pouvoir recopier les spécifications, celles-ci étant renseignée via des calibrations.
+%L'intérêt de renseigner une calibration comme indice de tableau est d’avoir des calibrations d’un projet à l’autre, et de pouvoir réutiliser le \textit{Walkthrough} en ne changeant que les calibrations.\\
+%Un autre intérêt de cette fonctionnalité, est de pouvoir recopier les spécifications, celles-ci étant renseignée via des calibrations.
+%
+%Avec cette fonctionnalité, l'utilisateur pourra donc avoir des fichiers \textit{Walkthrough} génériques et réutilisable entre chaque versions d'un même projet. Cela limiterai également le risque d'erreur dûe à une mauvaise recopie de la spécification. En effet, avant cette fonctionnalité, l'utilisateur devait regarder la spécification, aller voir le contenu de la calibration, et la mettre en dur dans le test. Cela peut provoquer des erreurs, d'une part lors de la recopie de la valeur, mais également si la valeur change à la version suivante et que l'utilisateur ne pense pas à faire suivre son document. 
+%
+%\subsubsection{Les cas d'utilisation}
+%Comme on peut le voir, la fonctionnalité qui peut paraître simple au premier abord possède un grand nombre de cas d'utilisation. 
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=18cm]{contents/images/arrayUseCase.jpg}
+%\caption{Diagramme de cas d'utilisation}
+%\end{figure}
+%\begin{remarque}
+%\textbf{Cas d'erreur} 
+%Cette fonctionnalité possède un cas d'erreurs qui devra être gérés convenablement : 
+%\begin{itemize}
+%\item Si l'utilisateur renseigne un indice en dehors de la taille du tableau, une exception devra être levée
+% \end{itemize}
+% \end{remarque}
+\subsection{Conception de la solution}
 
-Avec cette fonctionnalité, l'utilisateur pourra donc avoir des fichiers \textit{Walkthrough} génériques et réutilisable entre chaque versions d'un même projet. Cela limiterai également le risque d'erreur dûe à une mauvaise recopie de la spécification. En effet, avant cette fonctionnalité, l'utilisateur devait regarder la spécification, aller voir le contenu de la calibration, et la mettre en dur dans le test. Cela peut provoquer des erreurs, d'une part lors de la recopie de la valeur, mais également si la valeur change à la version suivante et que l'utilisateur ne pense pas à faire suivre son document. 
 
-\subsubsection{Les cas d'utilisation}
-\subsubsection{Les limitations de la fonctionalité}
-
-
-% =================================================================================================
 \section{La maintenance}
 Comme expliqué plus haut, j'ai développé deux fonctionnalités durant ce stage. Cependant, en parallèle de ce développement j'ai également corrigés différents bogues, ou améliorer différentes partie de la plateforme.
 
-Ayant conçu cette plateforme lors de mon stage de fin de Licence, je connais l'intégralité de la plateforme. C'est ainsi que j'ai pu détecter et corriger un certains nombres de problèmes. Ces bogues ou ces améliorations ont été identifiées de trois façons différentes : 
+Ayant conçu cette plateforme lors de mon stage de fin de Licence, je connais l'intégralité de la plateforme. C'est ainsi que j'ai pu détecter et corriger un certains nombres de problèmes. Ceux-ci ont été identifiés de trois façons différentes : 
 \begin{itemize}
 	\item Durant mon développement, il m'est arrivé de trouver du code incohérent ou bouchonné
 	\item Lors d'exécutions de la plateforme sur différentes versions du projet client
@@ -123,7 +154,7 @@ Ayant conçu cette plateforme lors de mon stage de fin de Licence, je connais l'
 \end{itemize}
 
 \subsection{Corrections}
-J'ai corrigé quelques problèmes trouvés sur la plateforme, principalement venant du client \textit{GreenT}. Ceci étant dû à notre choix d'architecture : des serveurs les plus légers et un client effectuant le maximum d'actions.
+J'ai corrigé quelques problèmes trouvés sur la plateforme, principalement venant du client \textit{GreenT}. Ceci étant dû à notre choix d'architecture : des serveurs les plus légers possibles et un client effectuant le maximum d'actions.
 	\subsubsection{Stockage des erreurs d'exécutions}
 	\begin{description}
 		\item[Le problème] En cas d'erreur durant une exécution, si un serveur ne répond plus, si une variable est non trouvée, ... Une exception est levée. À ce moment là, \textit{GreenT} doit attraper l'exception et la stocker en base de données pour pouvoir afficher ensuite le message à tous les tests du bundle, la génération des rapports ne pouvant pas se faire.
@@ -132,13 +163,13 @@ J'ai corrigé quelques problèmes trouvés sur la plateforme, principalement ven
 		
 	\subsubsection{Modification des variables Debugger}
 		\begin{description}
-			\item[Le problème] Lors d'un stimulus, il est possible de modifier une variable Debugger. Lors de la modification d'une variable, le Trace32 renvoyait toujours une exception, sans appliquer la modification.
+			\item[Le problème] Lors d'une stimulation, il est possible de modifier une variable Debugger. Lors de la modification d'une variable, le Trace32 renvoyait toujours une exception, sans appliquer la modification.
 			\item[La solution] Après lecture de la documentation de Trace32, il s'est avéré que le problème venait simplement du serveur qui appliquait une commande syntaxiquement incorrecte. La modification de la commande a corrigé le problème.
 	\end{description}
 	
 	\subsubsection{Ordre d'exécutions des scénarios}
 		\begin{description}
-			\item[Le problème] Un Test peut contenir plusieurs scénarios, ceux-ci nous servent principalement pour le << patch-calib >> comme expliqué section \ref{patch}. Or, si nous utilisions plusieurs scénarios, ceux-ci étaient exécutés dans un ordre aléatoire : si l'utilisateur voulait effectuer des actions dans un ordre donnée, ce n'était pas possible.
+			\item[Le problème] Un Test peut contenir plusieurs scénarios, ceux-ci nous servent principalement pour le << patch-calib >> comme expliqué section \ref{patch}. Or, si nous utilisions plusieurs scénarios, ceux-ci étaient exécutés dans un ordre aléatoire : il n'était pas possible de les exécuter dans un ordre donné.
 			\item[La solution] Le problème avait deux parties : d'une part, l'exécution des scénarios dans un ordre donné, d'autre part, spécifier un ordre à chacun de nos scénarios. En effet, tout d'abord, j'ai nommé les scénarios de sortes qu'ils soient classé par ordre alphabétique. Ensuite, il a fallu spécifier à la plateforme d'exécuter les différents scénarios dans un ordre alphabétique, pour cela il a suffit d'utiliser une collection Java effectuant cette action, la \texttt{TreeMap}.
 	\end{description}
 	
