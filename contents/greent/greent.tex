@@ -5,35 +5,35 @@ Comme nous l'avons montré dans le chapitre \ref{chapPb}, l'entreprise a besoin 
 
 Nous allons donc voir le développement et la conception de cette plateforme de tests.
 
-Au début de mon stage, le projet ayant un an, les fonctionnalités développées ci-dessous était déjà faites. Je suis cependant intervenu
-sur la plupart d'entre elles soit pour des corrections de bugs d'une part, soit à des fin d'améliorations d'autres part.
+Au début de mon stage, le projet ayant un an, les fonctionnalités développées ci-dessous étaient déjà faites. Je suis cependant intervenu
+sur la plupart d'entre elles soit pour des corrections de bugs d'une part, soit à des fin d'améliorations d'autre parts.
 
-Afin de présenter mon travail que vous trouverez chapitre \ref{collab}, il est nécessaire de présenter le fonctionnement général de
+Afin de présenter mon travail, que vous trouverez chapitre \ref{collab}, il est nécessaire de présenter le fonctionnement général de
 cette plateforme afin d'en avoir une vue d'ensemble.
 
 \section{Le fichier Walkthrough}\label{wt}
 Le fichier Walkthrough est un fichier qui sera fourni par la personne en charge des tests, c'est un fichier au format Excel qui contient les informations
 de chacune des variables à tester. Il contient ainsi un très grand nombre de colonnes, bien que seule une partie de celles-ci nous
-intéresse, certaines colonnes ont été remplies par le fournisseur du plugin, d'autres colonnes sont ajoutées dans le seul but de la
-génération de tests automatiques par \textit{GreenT}. Voici les colonnes les plus intéressantes : 
+intéressent. Certaines colonnes ont été remplies par le fournisseur du plugin, d'autres colonnes sont ajoutées dans le seul but de la
+génération de tests automatiques par \textit{GreenT}. Voici les informations les plus intéressantes : 
 
 \begin{description} 
 	\item[Nom de la variable] Le nom de la variable testée : il existe un nom court et un nom long.
-	\item[Informations aidant à la conversion des données] Certains équipements\footnote{Vous trouverez plus d'informations sur le fonctionnement d'une table de tests section \ref{wb}, et dans l'annexe \ref{devices}} tel que le \textit{debgger} ne fonctionne qu'avec des
+	\item[Informations aidant à la conversion des données] Certains équipements\footnote{Vous trouverez plus d'informations sur le fonctionnement d'une table de tests section \ref{wb}, et dans l'annexe \ref{devices}} tel que le \textit{debugger} ne fonctionne qu'avec des
 	valeurs Hexadécimales. À la charge de \textit{GreenT} de convertir ces données vers des valeurs physiques exploitables par
 	le testeur. Ces colonnes contiennent les informations nécessaires au calcul de conversion\footnote{Informations tel que le
 		domaine de définition physique et le domaine de définition hexadécimal}.
-	\item[Nécessité d'un test automatique] un \texttt{GreenTTest} ne sera généré que si la colonne vaut \textit{Yes}.
-	\item[Statut du test] Nous éditerons cette colonne afin de reporter le statut du test\footnote{Un test pouvant être Green ou Red
+	\item[Nécessité d'un test automatique] Un \texttt{GreenTTest} ne sera généré que si la colonne vaut \textit{Yes}.
+	\item[Statut du test] La plateforme éditera automatiquement cette colonne afin de reporter le statut du test\footnote{Un test pouvant être Green ou Red
 		mais peut aussi comporter une erreur, tel qu'un problème d'exécution ou de génération, \ldots}.
-	\item[Precondition (cf section \ref{stim})] Contient un scénario d'initialisation du \textit{workbench} : tension de départ,
+	\item[Précondition (cf section \ref{stim})] Contient un scénario d'initialisation du \textit{workbench} : tension de départ,
 	démarrage de l'ECU, \ldots
 	\item[Scénario de stimulation (cf section \ref{stim})] Contient un ou plusieurs scénarios de stimulations
-	\item[\texttt{ExpectedBehavior} (comportement attendu, cf section \ref{expectedBehavior})] Contient une expression évaluant les variables ayant été enregistrées durant la stimulation : \textit{GreenT} devra vérifier que cette expression est correct à toute instant de la stimulation.
+	\item[\texttt{ExpectedBehavior} (comportement attendu, cf section \ref{expectedBehavior})] Contient une expression évaluant les variables ayant été enregistrées durant la stimulation : \textit{GreenT} devra vérifier que cette expression est correcte à toute instant de la stimulation.
 	\item[Variable à enregistrer (cf section \ref{expectedBehavior})] Contient les variables devant être enregistrées durant un
 	scénario, en plus des variables présentes dans l'expected behavior. Celles-ci peuvent servir en tant que données
 	contextuelles permettant de mieux cerner le résultat d'un test.
-	\item[Informations du test (cf section \ref{report})] Plusieurs colonnes tel que la sévérité, le responsable du test, les commentaires, \ldots
+	\item[Informations du test (cf section \ref{report})] Plusieurs colonnes telles que la sévérité, le responsable du test, les commentaires, \ldots
 \end{description}
 
 
@@ -43,11 +43,12 @@ génération de tests automatiques par \textit{GreenT}. Voici les colonnes les p
 	\includegraphics[width=20cm]{contents/images/walkthrough.png}
 	\caption{Aperçu d'un fichier Walkthrough}
 \end{figure}
-\section{Le fonctionnement Global}
-Le développement de \textit{GreenT} inclu un certain nombre de fonctionnalités attendues par le client et indispensable à son fonctionnement. D'autres fonctionnalités pourront apparaître plus tard en fonction des besoins.
+
+\section{Fonctionnement Global}
+Le développement de \textit{GreenT} inclut un certain nombre de fonctionnalités attendues par le client et indispensable à son fonctionnement. D'autres fonctionnalités pourront apparaître plus tard en fonction des besoins.
 
 Les principaux modules sont les suivants, avec leurs interactions schématisées figure \ref{fig:generalDiag} : 
-Dans des objets ovales sont représentés des fichiers, les carrés représentent des modules de la plateforme et les flèches en pointillés un transfert réseau, les couleurs représentent les différents modules de la plateforme.
+dans des objets ovales sont représentés des fichiers, les carrés représentent des modules de la plateforme et les flèches en pointillés un transfert réseau, les couleurs représentent les différents modules de la plateforme.
 
 \begin{figure}[H]
 	\hspace{-25px}
@@ -58,7 +59,7 @@ Dans des objets ovales sont représentés des fichiers, les carrés représenten
 
 Dans la figure \ref{fig:generalDiag}, vous pouvez voir des flèches en pointillés représentant des échanges réseau. En effet
 l'exécution des stimulations et l'enregistrement des traces se fait par un contrôle distant des bancs de tests\footnote{La
-	schématisation du fonctionnement d'un banc est disponible section \ref{chapPb} figure \ref{fig:photoHil}}.
+	schématisation du fonctionnement d'un banc est disponible section \ref{chapPb} figure \ref{fig:wb}}.
 
 Les principales fonctionnalités demandées par le client sont disponibles sur le client, la majorité peuvent s'effectuer en local : 
 \begin{itemize}
@@ -74,19 +75,19 @@ Alors que d'autres fonctionnalités vont nécessiter la présence de serveurs et
 \end{itemize}
 
 \section{Les fonctionnalités du Client}
-Afin de répondre au mieux aux attentes du client, il a été choisi d'utiliser le Java pour développer notre client, ceci en raison de
-diverses avantages comme le côté multi-plateforme, son typage fort et sa forte communauté qui permet ainsi une maintenance réduite. 
+Afin de répondre au mieux aux attentes du client, il a été choisi d'utiliser le langage Java pour développer notre client, ceci en raison de
+divers avantages comme le côté multi-plateforme, son typage fort et sa forte communauté qui permet ainsi une maintenance facilitée. 
 
 \begin{exemple}
-Afin de comprendre au maximum les tenants et aboutissant de notre plateforme, nous allons utiliser le même exemple tout au long de cette section.
+Afin de comprendre au maximum les tenants et aboutissants de notre plateforme, nous allons utiliser le même exemple tout au long de cette section.
 
-Le testeur souhaite vérifier le bon fonctionnement des ventilateurs de refroidissement du moteur. Nous allons voir de quelle manière il pourrait utiliser \textit{GreenT} afin de vérifier cela.
+Le testeur souhaite vérifier le bon fonctionnement des ventilateurs de refroidissement du moteur. Nous allons voir de quelle manière il pourrait utiliser \textit{GreenT} afin de tester cela.
 \end{exemple}
 
 \subsection{\textit{Parsing} et Génération}\label{generation}
 Le but premier de la plateforme est d'effectuer des tests automatiques, il est ainsi indispensable d'avoir un système d'automatisation.
 
-Pour cela, nous avons un parser : il analyse un certain type de fichier\footnote{Nous ne commencerons qu'avec le Walkthrough pour débuter, mais dans le futur nous pourrions avoir des fichiers XML, des bases de données, \ldots} et en retire pour chaque test, le scénario de pré condition, les différents scénarios de stimulations, leurs \textit{Expected Behavior}, les données qui devront être enregistrées ainsi que différentes information sur le test\footnote{Responsable du test, sévérité, commentaires, nom de la variable, \ldots}.
+Pour cela, nous avons un parser : il analyse un certain type de fichier\footnote{Nous ne commencerons qu'avec le Walkthrough pour débuter, mais dans le futur nous pourrions avoir des fichiers XML, des bases de données, \ldots} et en retire pour chaque test, le scénario de pré condition, les différents scénarios de stimulations, leur \textit{Expected Behavior}, les données qui devront être enregistrées ainsi que différentes informations sur le test\footnote{Responsable du test, sévérité, commentaires, nom de la variable, \ldots}.
 
 Une fois toutes ces données acquises, il les transmet à un générateur qui est en charge d'écrire les fichiers Java de chaque test, tous sont organisés dans un dossier temporaire avec un dossier par test. Le \texttt{TestManager} peut ensuite traiter ces données.
 
@@ -141,9 +142,9 @@ Un scénario particulier doit être spécifié : une pré condition qui a pour b
 Durant l'exécution d'une stimulation, les variables nécessaires sont enregistrées afin de pouvoir produire des rapports et des
 verdicts ensuite.
 \begin{exemple}
-	Comme nous l'avons vu section \ref{generation}, le testeur nos a donné un scénario de stimulation ainsi qu'un scénario de précondition. Le code généré va ainsi communiquer avec le serveur HIL afin qu'il envoie les bons stimulis à l'ECU.
+	Comme nous l'avons vu section \ref{generation}, le testeur nous a donné un scénario de stimulation ainsi qu'un scénario de précondition. Le code généré va ainsi communiquer avec le serveur HIL afin qu'il envoie les bons stimulis à l'ECU.
 
-	Le scénario de précondition va mettre la batterie à 13 Volts, et mettre la clé, nous allons ensuite vérifier que cette action a bien été fait. Si tel est le cas, le scénario de stimulations va être effectué. Ce scénario va effectuer une rampe de vitesse, notre véhicule va aller de zéro à cinquante kilomètre-heure avant de retourner à l'arrêt.	
+	Ainsi, comme mis en commentaires, le scénario de précondition va mettre la batterie à 13 Volts, et mettre la clé, nous allons ensuite vérifier que cette action a bien été fait. Si tel est le cas, le scénario de stimulation va être effectué. Ce scénario va effectuer une rampe de vitesse, notre véhicule va aller de zéro à cinquante kilomètre-heure avant de retourner à l'arrêt.	
 \end{exemple}
 
 \subsection{Les traces et leurs évaluations}\label{expectedBehavior}
