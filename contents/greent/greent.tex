@@ -22,13 +22,13 @@ génération de tests automatiques par \textit{GreenT}. Voici les informations l
 	\item[Informations aidant à la conversion des données] Certains équipements\footnote{Vous trouverez plus d'informations sur le fonctionnement d'une table de tests section \ref{wb}, et dans l'annexe \ref{devices}} tel que le \textit{debugger} ne fonctionne qu'avec des
 	valeurs Hexadécimales. À la charge de \textit{GreenT} de convertir ces données vers des valeurs physiques exploitables par
 	le testeur. Ces colonnes contiennent les informations nécessaires au calcul de conversion\footnote{Informations tel que le
-		domaine de définition physique et le domaine de définition hexadécimal}.
+		domaine de définition physique et le domaine de définition hexadécimal, avec ces deux informations il est possible d'effectuer les conversions physique vers hexadécimal}.
 	\item[Nécessité d'un test automatique] Un \texttt{GreenTTest} ne sera généré que si la colonne vaut \textit{Yes}.
-	\item[Statut du test] La plateforme éditera automatiquement cette colonne afin de reporter le statut du test\footnote{Un test pouvant être Green ou Red
+	\item[Statut du test] La plateforme éditera automatiquement cette colonne afin de reporter le statut du test\footnote{Un test pouvant être \textit{Green} ou \textit{Red}
 		mais peut aussi comporter une erreur, tel qu'un problème d'exécution ou de génération, \ldots}.
 	\item[Précondition (cf section \ref{stim})] Contient un scénario d'initialisation du \textit{workbench} : tension de départ,
 	démarrage de l'ECU, \ldots
-	\item[Scénario de stimulation (cf section \ref{stim})] Contient un ou plusieurs scénarios de stimulations
+	\item[Scénario de stimulation (cf section \ref{stim})] Contient un ou plusieurs scenarii de stimulations destinés à faire générer au HiL un certain nombre de stimuli.
 	\item[\texttt{ExpectedBehavior} (comportement attendu, cf section \ref{expectedBehavior})] Contient une expression évaluant les variables ayant été enregistrées durant la stimulation : \textit{GreenT} devra vérifier que cette expression est correcte à toute instant de la stimulation.
 	\item[Variable à enregistrer (cf section \ref{expectedBehavior})] Contient les variables devant être enregistrées durant un
 	scénario, en plus des variables présentes dans l'expected behavior. Celles-ci peuvent servir en tant que données
@@ -64,7 +64,7 @@ l'exécution des stimulations et l'enregistrement des traces se fait par un cont
 Les principales fonctionnalités demandées par le client sont disponibles sur le client, la majorité peuvent s'effectuer en local : 
 \begin{itemize}
 	\item Le parsing et la génération (section \ref{generation})
-	\item L'organisation en Bundle (section \ref{testManager})
+	\item L'organisation en Bundle afin d'optimiser le temps d'exécution des tests (section \ref{testManager})
 	\item La production de rapports détaillés (section \ref{expectedBehavior})
 \end{itemize}~\newline
 Alors que d'autres fonctionnalités vont nécessiter la présence de serveurs et de connexion réseau permettant d'effectuer ces actions
@@ -73,7 +73,7 @@ Alors que d'autres fonctionnalités vont nécessiter la présence de serveurs et
 	\item Les stimulations (section \ref{stim})
 	\item Les enregistrement des traces (section \ref{stim})
 \end{itemize}
-
+\vspace{-10px}
 \section{Les fonctionnalités du Client}
 Afin de répondre au mieux aux attentes du client, il a été choisi d'utiliser le langage Java pour développer notre client, ceci en raison de
 divers avantages comme le côté multi-plateforme, son typage fort et sa forte communauté qui permet ainsi une maintenance facilitée. 
@@ -81,7 +81,7 @@ divers avantages comme le côté multi-plateforme, son typage fort et sa forte c
 \begin{exemple}
 Afin de comprendre au maximum les tenants et aboutissants de notre plateforme, nous allons utiliser le même exemple tout au long de cette section.
 
-Le testeur souhaite vérifier le bon fonctionnement des ventilateurs de refroidissement du moteur. Nous allons voir de quelle manière il pourrait utiliser \textit{GreenT} afin de tester cela.
+
 \end{exemple}
 
 \subsection{\textit{Parsing} et Génération}\label{generation}
@@ -92,7 +92,7 @@ Pour cela, nous avons un parser : il analyse un certain type de fichier\footnote
 Une fois toutes ces données acquises, il les transmet à un générateur qui est en charge d'écrire les fichiers Java de chaque test, tous sont organisés dans un dossier temporaire avec un dossier par test. Le \texttt{TestManager} peut ensuite traiter ces données.
 
 \begin{exemple}
-Ci-dessous les différentes cellules qui pourrait être renseigné par le testeur pour notre cas d'étude. Nous verrons ce qu'effectuent précisément ces actions dans la suite de la section.	
+Le testeur souhaite vérifier le bon fonctionnement des ventilateurs de refroidissement du moteur. Ci-dessous les différentes cellules qui pourrait être renseigné par le testeur pour ce cas de tests. Nous verrons ce qu'effectuent précisément ces actions dans la suite de la section.	
 
 \begin{tabular}{p{4cm}|p{6.5cm}|p{5.4cm}}
 	\textbf{Précondition} & \textbf{Scénario de Stimulation} & \textbf{Expected Behavior}\\
@@ -120,11 +120,11 @@ RAMP(HIL_VS, 0, 50, 1, 1);
 		\begin{minipage}{0.1\linewidth}
 			\begin{lstlisting}[language=ada,framerule=0pt,language=gtl]	
 if temperature > max then
-	// Ventilateur allumé
-	EVAL(cfa_on = 1); 
+ // Ventilateur allumé
+ EVAL(ventilateur_on = 1); 
 else
-	// Ventilateur éteint
-	EVAL(cfa_on = 0); 
+ // Ventilateur éteint
+ EVAL(ventilateur_on = 0); 
 end if
 			\end{lstlisting}
 		\end{minipage} 
@@ -133,6 +133,7 @@ end if
 \end{exemple}
 
 \subsection{Stimulation} \label{stim}
+\vspace{-20px}
 Afin de tester une variable du plugin, les développeurs vont utiliser des alias présents sur un device : actuellement, un HIL ou un debugger, prochainement nous pourrions en utiliser d'autres que ces deux derniers.
 
 Le spécifieur va rédiger des scénarios de stimulation, ceci afin de mettre le contrôleur dans certaines conditions. Son but sera ensuite de vérifier que ces variables restent cohérentes vis-à-vis du scénario effectué. 
@@ -158,9 +159,13 @@ Une fois que la trace est complète, il est nécessaire de l'évaluer : le spéc
 	Ces variables ont été enregistrées durant l'intégralité de la rampe véhicule qui à eu une durée de cinquante secondes. À la fin de la stimulation, le serveur retourne ainsi une trace de cinquante secondes contenant toutes les variables. \textit{GreenT} peut ensuite évaluer notre \textit{expected behavior} sur l'intégralité de l'enregistrement.
 \end{exemple}
 \subsection{Le module TestManager}\label{testManager}
-Le \texttt{TestManager} est le chef d'orchestre de \textit{GreenT}, il a donc un certain nombre de responsabilités. 
+Comme le montre la figure \ref{fig:generalDiag}, la classe \texttt{TestManager} est le chef d'orchestre de \textit{GreenT}, il a donc un certain nombre de responsabilités. 
 
-Il va d'abord organiser les différents tests en un concept que nous avons appelé \textit{Bundle} : afin de limiter le temps d'exécution qui atteindra plusieurs dizaines d'heures, il est intéressant de regrouper les tests possédant les mêmes scénarios de stimulations et les mêmes pré conditions. Seules leur \textit{Expected Behavior} changent, mais celles-ci pourront être évaluées sur la même Trace.
+Il va d'abord organiser les différents tests en un concept que nous avons appelé \textit{Bundle}, ceci dans un but d'optimisation du temps d'exécution. En effet, si nous avons 1000 tests de 2 minutes, cela ferait plus de trente heures d'exécution. Pour palier à ce problèmes, deux stratégies :
+\begin{itemize}
+	\item Nous regroupons les même scénarios ensembles afin de n'exécuter qu'une seule fois le scénario, et d'évaluer tous les tests correspondant sur les même traces. Cela évite d'exécuter plusieurs fois les même scénarios, tel qu'une rampe de vitesse. Ce regroupement est appelé << Bundle >>.
+	\item Même grâce à notre stratégie des Bundles, l'exécution pourrait être encore trop longue. Ainsi, il est possible d'utiliser plusieurs tables en simultanées, afin de diminuer le temps d'exécution par le nombre de tables.
+\end{itemize}
 
 Une fois les tests organisés en \textit{Bundle}, il va les compiler et les donner à un \texttt{WorkbenchManager} : toujours pour une
 raison d'optimisation, il sera intéressant de pouvoir exécuter les enregistrements sur plusieurs bancs simultanément, pour cela le
@@ -170,10 +175,10 @@ Chaque \texttt{WorkbenchManager} sera en charge d'exécuter le code généré pl
 
 Afin d'être le plus souple possible, il existe plusieurs modes d'exécution du \texttt{TestManager} : 
 \begin{description}
-	\item[Check only] Essaye de parser les différents fichiers, et vérifie que ceux-ci ne comportent aucune erreur de grammaire, d'alias introuvable, d'écriture sur un alias en lecture seule etc...
+	\item[Check only] Essaye de parser les différents fichiers, et vérifie que ceux-ci ne comportent aucune erreur de grammaire, d'alias introuvable, d'écriture sur un alias en lecture seule etc... Cela permet à l'auteur des cas de test de se vérifier sans avoir besoin de table de test.
 	\item[Parse and generate bundles] Parse les fichiers et génère des jars exécutables répartis en bundle
 	\item[Parse and execute] Parse les fichiers, génère les jars pour les bundles et les exécute : c'est le mode << classique >>.
-	\item[Restart test execution] Redémarre une exécution qui se serait mal terminée.
+	\item[Restart test execution] Redémarre une exécution qui se serait mal terminée. Ceci à l'aide d'une base de données SQLite. Cette base de données contient toutes les informations des différents scénarios et sera capable de redémarrer à l'endroit où une coupure à eu lieu. Cela évite de devoir effectuer de nouveau trente heure d'exécutions si le problème à eu lieu sur la fin.
 \end{description}
 
 \subsection{Production de rapport détaillé}\label{report}
@@ -188,14 +193,14 @@ La plateforme a en charge la production d'un rapport détaillé pour chaque test
 	\item Les colonnes utiles du \texttt{Walkthrough}
 \end{itemize}
 
-Actuellement, les rapports se font au format Excel avec l'intégralité de notre enregistrement et pour chaque timestamp, un verdict. Un
+Actuellement, les rapports se font au format Excel avec l'intégralité de notre enregistrement et pour chaque instant d'enregistrement(timestamp), un verdict. Un
 exemple de rapport est accessible en Annexe \ref{apendixReport} page \pageref{apendixReport}. 
 
 Dans un futur proche, ces rapports pourraient être générés dans un format Web avec une possibilité de naviguer entre plusieurs tests, et
 d'avoir un affichage des courbes de manière graphique.
 
 \subsection{Mise à jour du Walkthrough}
-Une fois l'analyse d'un test exécuté, un résultat est mis dans le fichier Excel, en fonction de l'analyse de la trace : un verdict rouge renverra un résultat rouge, si tout est vert le résultat sera vert et enfin, celui-ci pourra être gris si nous n'avons pas été capable d'évaluer de résultats.
+Une fois l'analyse d'un test exécuté, un résultat est mis dans le fichier \textit{Walthrought}, en fonction de l'analyse de la trace : un verdict rouge renverra un résultat rouge, si tout est vert le résultat sera vert et enfin, celui-ci pourra être gris si nous n'avons pas été capable d'évaluer de résultats.
 
 \begin{remarque}
 	Si il y a eu une erreur à la génération\footnote{Mauvaise syntaxe, variables inexistantes, \ldots} ou à l'exécution\footnote{Problèmes réseaux, variable non trouvée, communication entre l'ECU et le debugger, \ldots}, la plateforme doit remettre le message d'erreur clair au niveau du test afin que l'utilisateur soit conscient du fait que le test n'a pas pu être exécuté, et pour quelle raison. Libre à lui de corriger le test si nécessaire, ou de le signaler si cela semble être un bogue.
@@ -211,16 +216,17 @@ tests. Actuellement une table est composée de deux équipements différents, co
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=16cm]{contents/images/network.eps}
+	\includegraphics[width=17cm]{contents/images/network.eps}
 	\caption{Communications de la plateforme}
 \end{figure}
 
 Au début du développement de la plateforme, il a été décidé que les serveurs devront être le plus simple possible pour plusieurs raisons
 : 
 \begin{itemize}
+	\item Donner accès à un maximum de fonctionnalités en mode << offline >>, c'est-à-dire sans accès à une table de test
 	\item Rabattre le maximum de fonctions métier près du client pour centraliser au maximum le fonctionnement et éviter la maintenance superflue
 	\item Avoir la possibilité de réutiliser les serveurs pour d'autres projets
-	\item Pouvoir ajouter facilement un nouveau device, qui ne nécessiterai que l'ajout d'un nouveau serveur relativement simple
+	\item Pouvoir ajouter facilement un nouveau \textit{device}, qui ne nécessiterai que l'ajout d'un nouveau serveur relativement simple
 \end{itemize}
 
 \subsection{Le serveur Debugger, contrôle de Trace32}\label{T32server}
@@ -241,11 +247,13 @@ Le serveur Debugger propose des services basiques permettant de répondre aux be
 Afin d'effectuer ces actions, le serveur s'appuie sur une API fournie par l'outil Trace32 permettant de contrôler le debugger. Ainsi tous nos services vont s'appuyer sur cette API. C'est pour cette raison que ce serveur est développé en Java afin de pouvoir utiliser
 facilement ces fonctions.
 
-\subsection{Le serveur HIL, contrôle du DSpace}
+\subsection{Le serveur HiL, contrôle du DSpace}
+Le serveur HiL du DSpace contient une base de données, représentant un modèle simulant l'environnement véhicule. Ce modèle à pour but de se rapprocher au maximum du fonctionnement réel de notre moteur.
+
 Le serveur DSpace va devoir lui aussi répondre aux différentes stimulations, ainsi ces services sont relativement similaire : 
 \begin{itemize}
-	\item Modifier une valeur de la base de données
-	\item Lire une valeur de la base de données
+	\item Modifier une valeur du modèle
+	\item Lire une valeur du modèle
 	\item Enregistrer des valeurs
 \end{itemize}~
 
@@ -256,6 +264,6 @@ Ce serveur a été développé en réutilisant une partie de ce qui avait été 
 << réinventer la roue >>. 
 
 À l'instar du serveur Debugger, nous utilisons une API fournie par l'outil permettant de contrôler le HIL : ControlDesk. 
-C'est ainsi que ce serveur est développé en Python afin de répondre à cette contraintes : l'API du ControlDesk est en Python.
+C'est ainsi que ce serveur est développé en Python afin de répondre à cette contraintes : l'API du ControlDesk est en Python. Ainsi, l'utilisation de Thrift afin de faire dialoguer du Java côté client et du Python côté serveur facilement nous aura particulièrement aidé.
 
 

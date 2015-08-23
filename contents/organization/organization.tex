@@ -1,11 +1,11 @@
-\chapter{Organisation du travail}\label{chapOrganization}
+\chapter{Organisation du développement}\label{chapOrganization}
 \putminitoc \'Etant donné la complexité du projet et son importance, une organisation réfléchie est indispensable. Autant d'un point de vue humain, avec une gestion de projet et une gestion de l'équipe, que technique en utilisant certaines technologies nous aidant dans la tache.  Nous allons voir l'organisation qui a été mise en place afin d'être le plus efficace possible.
 
 \section{L'équipe de développement}
 Au cours de mon stage, trois développeurs travaillaient sur le projet \textit{GreenT} : Alain \bsc{Fernandez}, chef d’équipe et membre de
 l’équipe \textit{Tests \& Automation Service}, Benjamin \bsc{Guerin}, apprenti, et moi-même, stagiaire au sein de la même équipe.
 
-En tant que chef d’équipe, Alain \bsc{Fernandez} organisait les réunions et supervisait notre travail tout en corrigeant des bogues, et validait manuellement les rapports de tests\footnote{La validation manuelle des rapports est indispensable afin de vérifier que notre plateforme fournit des rapports fiables}. Benjamin \bsc{Guerin} se chargeait d'effectuer une étude de faisabilité sur l'amélioration visuelle des rapports de tests. Quant à moi je m'occupais de développer deux nouvelles fonctionnalités, à savoir les tableaux calibrables et le patch de calibration, tout en corrigeant différents bogues.\footnote{Cf chapitre \ref{collab}}.
+En tant que chef d’équipe, Alain \bsc{Fernandez} organisait les réunions et supervisait notre travail tout en corrigeant des bogues, et validait manuellement les rapports de tests\footnote{La validation manuelle des rapports est indispensable afin de vérifier que notre plateforme fournit des rapports fiables}. Benjamin \bsc{Guerin} se chargeait d'effectuer une étude de faisabilité sur l'amélioration visuelle des rapports de tests. Quant à moi je m'occupais de développer deux nouvelles fonctionnalités.\footnote{Cf chapitre \ref{collab}}.
 
 
 À mon arrivée, la plateforme était quasiment opérationnelle, grâce à notre travail lors de mon précédent stage, et de l'avancement qui avait été fait durant cette année de césure. Je me suis donc d'abord renseigné sur les différentes améliorations et avancées du développement afin d'être rapidement opérationnel.  
@@ -14,7 +14,7 @@ Ensemble, nous avons convenu de documenter au maximum notre travail, afin de con
 
 \section{La documentation : les \textit{minutes étude}}
 Je suis arrivé en Mai sur un projet ayant été commencé 18 mois auparavant, ainsi beaucoup de choses existaient déjà : il était nécessaire de
-garder l'existant. Afin de documenter notre travail, il a été décidé que pour chaque développement, que ça soit du bogue, de la fonctionnalité ou de la réorganisation du code, il était nécessaire de remplir un document Word de \textit{Minutes étude}. 
+garder l'existant. Afin de documenter notre travail, il a été décidé que pour chaque développement, que ça soit du bogue, de la fonctionnalité ou de la réorganisation du code, il était nécessaire de remplir un document Word.
 
 Ce document comportait quatre grandes parties : 
 \begin{description}
@@ -24,8 +24,7 @@ Ce document comportait quatre grandes parties :
 	\item[Les tests] De quelle manière nous allons tester notre solution, aussi bien en tests unitaire qu'en tests d'intégration.
 \end{description}
 
-Ces différents documents pourront nous resservir plus tard pendant la maintenance, si un modèle doit être amélioré, ou comporte des
-problèmes, la relecture de la minute étude correspondante nous fera gagner beaucoup de temps.
+Ces différents documents pourront nous resservir plus tard pendant la maintenance, si un modèle doit être amélioré, ou comporte des problèmes, la relecture de la minute étude correspondante nous fera gagner beaucoup de temps.
 
 \section{Outils de développement}
 Afin de travailler de façon efficace, nous avons utilisés des outils aidant au développement. Ces outils ont été définis au début du projet, et n'ont pas évolués depuis.
@@ -49,26 +48,26 @@ modifications de plusieurs développeurs, tant que nous ne modifions pas le mêm
 De plus, à chaque nouvelle modification, un << commit >>, permet de créer un point de restauration : il est alors possible de
 récupérer n'importe quelle version du logiciel depuis son commencement. Nous y insérons un message clair expliquant ce qui a été fait, cela permet aux autres développeurs de l'équipe de se tenir au courant de l'avancement.
 
+\subsection{Thrift et client-serveur}\label{thrift}
+Notre plateforme fonctionne avec une architecture client-serveur, un client et deux serveurs. Le client écrit en Java, un serveur utilise
+Python et le second est lui aussi en Java. Afin de faire communiquer les deux parties de notre application, nous avons utilisé \textit{Apache Thrift}. Il s'agit d'une bibliothèque ayant pour but les communications réseau inter-langage, dans le même principe que le protocole RMI\footnote{Remote Method Invocation}.
+
+Ainsi, nous avons rédigé un fichier spécifiant les interfaces de notre serveur, c'est-à-dire les méthodes que nous souhaitions appeler en réseau. Une fois ce << contrat >> rédigé, il faut demander à Thrift de générer le code du serveur\footnote{Il est possible de demander la génération en C, C++, Python, Java, C\#, PHP, Ruby, \ldots}, et du client. Côté client, le service s'utilise directement, côté serveur, il faut implémenter une interface afin que notre service effectue les bonnes instructions. C'est donc le code généré qui va se charger de l'abstraction réseau.
+
 \subsection{Eclipse}
 \begin{wrapfigure}{r}{2.5cm}
-\vspace{-30px}
+	\vspace{-30px}
 	\includegraphics[width=2.5cm]{contents/images/logoEclipse.png}
 \end{wrapfigure}
 Nous développions tous sous le même environnement de développement Eclipse, avec le plugin \textit{Git} et le plugin \textit{PyDev}. Le
 plugin Git permet d'avoir des outils aidant à la résolution d'éventuels conflits et le plugin PyDev permet de développer avec l'interpréteur
 et la coloration syntaxique Python. 
 
-\subsection{Thrift et client-serveur}\label{thrift}
-Notre plateforme fonctionne avec une architecture client-serveur, un client et deux serveurs. Le client écrit en Java, un serveur utilise
-Python et le second est lui aussi en Java. Afin de faire communiquer les deux parties de notre application, nous avons utilisé \textit{Apache Thrift}. Il s'agit d'une bibliothèque ayant pour but les communications réseau inter-langage, dans le même principe que le protocole RMI\footnote{Remote Method Invocation}.
-
-Ainsi, nous allons rédiger un fichier spécifiant les interfaces de notre serveur, c'est-à-dire les méthodes que nous souhaiterons appeler en réseau. Une fois ce << contrat >> rédigé, nous pouvons demander à Thrift de générer le code du serveur\footnote{Il est possible de demander la génération en C, C++, Python, Java, C\#, PHP, Ruby, \ldots}, et du client. Côté client, nous pourrons directement utiliser le service, côté serveur, il faudra implémenter une interface afin que notre service effectue les bonnes instructions. C'est donc le code généré qui va se charger de l'abstraction réseau.
-
 \subsection{Antlr}
 \begin{wrapfigure}{l}{2.5cm}
 	\includegraphics[width=2.5cm]{contents/images/antlr.jpg}
 \end{wrapfigure}
-Pour les besoins de notre plateforme, nous avons créé notre propre langage de test. Ce langage était assez riche, et la création d'un parser adéquate aurait pu être particulièrement long. Afin de nous faire gagner le maximum de temps, nous avons utilisé Antlr4.  \textit{Another Tool For Language Recognition} est un programme permettant de générer automatiquement un parser pour un langage donné. Ainsi, nous avions rédigés notre grammaire, Antlr quant à lui s'est chargé de nous générer un arbre de parcours syntaxique. À notre charge d'effectuer les bonnes actions durant le parcours de notre langage.
+Pour les besoins de notre plateforme, nous avons créé notre propre langage de test. Ce langage était assez riche, et la création d'un parser adéquate aurait pu être particulièrement long. Afin de nous faire gagner le maximum de temps, nous avons utilisé Antlr4.  \textit{Another Tool For Language Recognition} est un programme permettant de générer automatiquement un parser pour un langage donné. Ainsi, nous avions rédigés notre grammaire, Antlr quant à lui s'est chargé de nous générer un arbre de parcours syntaxique. À notre charge d'effectuer les bonnes actions durant le parcours de notre langage en spécialisant les classes générées par Antlr.
 \newpage
 \subsection{UML et \textit{Entreprise Architect}}
 \begin{wrapfigure}{r}{3cm}
@@ -78,8 +77,17 @@ Nous avons travaillé avec la norme UML\footnote{Unified Modelling Language}~2 a
 
 Pour dessiner ces diagrammes, et les noter dans la documentation, nous les pensions d'abord sur tableau blanc, mais ensuite nous avions besoin d'un outil puissant afin de les dessiner sur informatique. Pour cela nous avons utilisé \textit{Enterprise Architect}, un logiciel propriétaire permettant de créer tous les diagrammes de la norme UML~2.\\~
 
-\subsection{\LaTeX}
+\subsection{SQLite}
 \begin{wrapfigure}{l}{2.5cm}
+	\vspace{-20px}
+	\includegraphics[width=2.5cm]{contents/images/sqlite.png}
+\end{wrapfigure}
+SQLite est un moteur de base de données relationnelle. Sa particularité est de ne pas reproduire le schéma habituel client-serveur mais d'être directement intégré aux programmes, la base de données étant stockée dans un simple fichier.
+
+Nous nous en sommes servis afin de pouvoir stocker les différentes informations d'un test, ceci afin de pouvoir redémarrer une exécution grâce à cet état intermédiaire conservé en base de données.
+
+\subsection{\LaTeX}
+\begin{wrapfigure}{r}{2.5cm}
 	\includegraphics[width=2.5cm]{contents/images/logoLatex.png}
 \end{wrapfigure}
 Afin de rédiger ce rapport, et le diaporama de soutenance, j'ai utilisé \LaTeX{}, un langage et un système de composition de documents fonctionnant à l'aide de
