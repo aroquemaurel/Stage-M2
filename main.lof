@@ -18,10 +18,13 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Communications de la plateforme}}{29}{figure.4.3}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Ma collaboration au projet}{31}{chapter.5}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Diagramme de cas d'utilisations du patch de calibrations}}{32}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagramme d'activit\IeC {\'e} du patch calib}}{33}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagramme de cas d'utilisation}}{36}{figure.5.3}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Bilans}{35}{chapter.6}
+\contentsline {xchapter}{Bilans}{41}{chapter.6}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Acronymes et Glossaire}{39}{appendix.A}
+\contentsline {xchapter}{Acronymes et Glossaire}{45}{appendix.A}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Les diff\IeC {\'e}rents \IeC {\'e}quipements}{39}{appendix.B}
 \contentsline {figure}{\numberline {B.1}{\ignorespaces HIL DSpace}}{39}{figure.B.1}

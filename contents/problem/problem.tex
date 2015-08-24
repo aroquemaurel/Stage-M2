@@ -4,14 +4,14 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 	\section{\textit{Third-Party Software Component}}
 	Étant donné la taille grandissante des programmes informatique, il est de plus en plus rare qu'une seule et unique entité effectue le développement d'un logiciel.
 	
-	C'est ainsi que chez Continental, un certain nombre de composant des calculateurs ne sont pas développés chez Continental. Ce concept est appelé \textit{Third-Party Software}. 
+	C'est ainsi que chez Continental, un certain nombre de composant des calculateurs ne sont pas développés en interne. Ce concept est appelé \textit{Third-Party Software}. 
 	
-	La principale difficulté de ce mode de fonctionnement est l'intégration, c'est ainsi qu'une spécification exhaustive est indispensable afin de pouvoir connecter les différentes interfaces du composant avec le reste du module. 
+	La principale difficulté de ce mode de fonctionnement est l'intégration, une spécification exhaustive est indispensable afin de pouvoir connecter les différentes interfaces du composant avec le reste du projet. 
 	
 	C'est avec ces contraintes que travaillent l'équipe en charge du développement des différents logiciels de contrôle moteur à destination de Ford.
 	
 	\section{Les tests du << plugin >> Ford}\label{plugin}
-	Dans le cadre de projets pour Ford, Continental ne développe pas l'intégralité du logiciel, en effet une partie est fournie par le client sous forme de << plugin >>. Ce plugin est un fichier binaire qui est chargé directement dans la mémoire flash de l'ECU sans que Continental n'ait accès au code source. Seule une description des interfaces est fournie. Le \textit{plugin} est supposé correct, et le tester n'est pas de notre ressort. Cependant, celui-ci va être interfacé avec les logiciels Continental : il est indispensable de vérifier que les deux parties fonctionnent ensemble lors de l'intégration.
+	Dans le cadre de projets pour Ford, Continental ne développe pas l'intégralité du logiciel, une partie étant fournie par le client sous forme de << plugin >>. Ce plugin est un fichier binaire qui est chargé directement dans la mémoire flash de l'ECU sans que Continental n'ait accès au code source. Seule une description des interfaces est fournie. Le \textit{plugin} est supposé correct, et le tester n'est pas de notre ressort. Cependant, celui-ci va être interfacé avec les logiciels Continental : il est indispensable de vérifier que les deux parties fonctionnent ensemble lors de l'intégration.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=8.0cm]{contents/images/plugin.eps}
