@@ -20,24 +20,21 @@
 \contentsline {xchapter}{Ma collaboration au projet}{31}{chapter.5}
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Diagramme de cas d'utilisations du patch de calibrations}}{32}{figure.5.1}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Diagramme d'activit\IeC {\'e} du patch calib}}{33}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagramme de cas d'utilisation}}{36}{figure.5.3}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagramme de cas d'utilisation des tableaux calibrables}}{36}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Diagramme de classe -- Gestion des Alias}}{37}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagramme de classes d'une \textit {Expected Behavior}}}{39}{figure.5.5}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Bilans}{41}{chapter.6}
+\contentsline {xchapter}{Bilans}{43}{chapter.6}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Acronymes et Glossaire}{45}{appendix.A}
+\contentsline {xchapter}{Acronymes et Glossaire}{47}{appendix.A}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Les diff\IeC {\'e}rents \IeC {\'e}quipements}{39}{appendix.B}
-\contentsline {figure}{\numberline {B.1}{\ignorespaces HIL DSpace}}{39}{figure.B.1}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces HIL DSpace}}{39}{figure.B.2}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces HIL DSpace}}{40}{figure.B.3}
+\contentsline {xchapter}{R\IeC {\'e}f\IeC {\'e}rences}{49}{appendix.B}
 \addvspace {10\p@ }
-\contentsline {xchapter}{R\IeC {\'e}f\IeC {\'e}rences}{41}{appendix.C}
+\contentsline {xchapter}{Exemple de rapport g\IeC {\'e}n\IeC {\'e}r\IeC {\'e} par GreenT}{51}{appendix.C}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Exemple de rapport g\IeC {\'e}n\IeC {\'e}r\IeC {\'e} par GreenT}{43}{appendix.D}
+\contentsline {xchapter}{Exemples de fichiers g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}s}{53}{appendix.D}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Exemples de fichiers g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}s}{45}{appendix.E}
+\contentsline {xchapter}{Liste des codes sources}{57}{appendix.E}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Liste des codes sources}{49}{appendix.F}
-\addvspace {10\p@ }
-\contentsline {xchapter}{Table des figures}{51}{appendix.G}
+\contentsline {xchapter}{Table des figures}{59}{appendix.F}
 \contentsfinish 

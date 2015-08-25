@@ -1,14 +1,14 @@
 \chapter{Le problème} \label{chapPb}
 \putminitoc
 Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'intégrations, notamment pour les projets à destination de Ford. Les tests demandaient du temps et de l'argent à l'équipe en charge de ces tests. Ainsi, deux ans avant mon stage de M1, une solution à été trouvée : le développement d'une nouvelle plateforme, \textit{GreenT}.
-	\section{\textit{Third-Party Software Component}}
+	\section{Composant logiciel tiers}
 	Étant donné la taille grandissante des programmes informatique, il est de plus en plus rare qu'une seule et unique entité effectue le développement d'un logiciel.
 	
-	C'est ainsi que chez Continental, un certain nombre de composant des calculateurs ne sont pas développés en interne. Ce concept est appelé \textit{Third-Party Software}. 
+	C'est ainsi que chez Continental, un certain nombre de composant des calculateurs ne sont pas développés en interne. Ce concept est appelé composant logiciel tiers, ou \textit{Third-Party Software}. 
 	
 	La principale difficulté de ce mode de fonctionnement est l'intégration, une spécification exhaustive est indispensable afin de pouvoir connecter les différentes interfaces du composant avec le reste du projet. 
 	
-	C'est avec ces contraintes que travaillent l'équipe en charge du développement des différents logiciels de contrôle moteur à destination de Ford.
+	C'est avec ces contraintes que travaillent plusieurs équipes chez Continental et notamment l'équipe en charge du développement des différents logiciels de contrôle moteur à destination de Ford.
 	
 	\section{Les tests du << plugin >> Ford}\label{plugin}
 	Dans le cadre de projets pour Ford, Continental ne développe pas l'intégralité du logiciel, une partie étant fournie par le client sous forme de << plugin >>. Ce plugin est un fichier binaire qui est chargé directement dans la mémoire flash de l'ECU sans que Continental n'ait accès au code source. Seule une description des interfaces est fournie. Le \textit{plugin} est supposé correct, et le tester n'est pas de notre ressort. Cependant, celui-ci va être interfacé avec les logiciels Continental : il est indispensable de vérifier que les deux parties fonctionnent ensemble lors de l'intégration.
@@ -29,7 +29,7 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 	\vspace{20px}
 	Deux problèmes se posent à cette méthode : 
 	\begin{description}
-		\item[La fiabilité des tests manuels] Le test des seules différences ne permet pas nécessairement de détecter tous les problèmes (notamment avec des effets de bords\ldots). De plus, une tâche répétitive peut entrainer des erreurs humaines.
+		\item[La fiabilité des tests manuels] Le test des seules différences ne permet pas nécessairement de détecter tous les problèmes (notamment en cas d'effets de bords\ldots). De plus, une tâche répétitive peut entrainer des erreurs humaines.
 		\item[Le temps de tests] Même en ne testant qu'une partie des variables, cela prend un temps considérable, il faut compter environ une semaine.\newline
 			Or, les tests s'effectuent sur les bancs de tests comme expliqué section \ref{wb}, ces équipements permettent de simuler un environnement voiture autour du contrôleur moteur comme
 			l'utilisation de la clé de démarrage, la tension de la batterie, la vitesse de rotation du moteur, \ldots Ces bancs sont peu
@@ -39,7 +39,7 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 	
 \newpage
 	\section{La solution : \textit{GreenT}}
-	Pour répondre aux besoins de l'équipe Ford, une solution a été pensée en étudiant les besoins de l'équipe en charge des tests du plugin : le développement de \textit{GreenT}
+	Pour répondre aux besoins de l'équipe Ford, une solution a été pensée en étudiant leurs besoins : le développement de \textit{GreenT}
 	\begin{remarque}
 		Le nom de \textit{GreenT} provient de la contraction de \textit{Green} et \textit{Test}.
 		
@@ -52,7 +52,7 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 	
 	Ces tests s'effectueront sur des variables enregistrées lors de stimulation de l'ECU, afin de vérifier que celui-ci réagit de façon approprié.
 
-	Cette plateforme permettra donc de tester facilement la dizaine de projets Ford, et une fois le test d'une variable spécifiée, il n'est plus nécessaire de le réécrire. À chaque nouvelle \textit{release} il suffira de relancer les tests : l'équipe n'aura à faire le travail qu'une fois, ensuite la réutilisation sera possible, les projets seront testés plus rapidement, plus efficacement, et plus souvent.
+	Cette plateforme permettra donc de tester facilement la dizaine de projets Ford, et une fois le test d'une variable spécifiée, il n'est plus nécessaire de le réécrire. À chaque nouvelle version du logiciel, ou \textit{release}, il suffira de relancer les tests : l'équipe n'aura à faire le travail qu'une fois, ensuite la réutilisation sera possible, les projets seront testés plus rapidement, plus efficacement, et plus souvent.
 
 	\subsubsection{Les autres projets}
 	À moyen terme, cette plateforme pourrait être utilisée pour les projets d'autres clients tel que Renault, afin d'effectuer là aussi des tests d'intégration. Il était nécessaire de concevoir une plateforme qui puisse évoluer facilement, et avoir un fichier de spécifications en entrée qui soit légèrement différent d'un client à l'autre.
@@ -66,3 +66,8 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 
 	Celui-ci apprendra à se servir de la plateforme, écrira en règle générale des tests assez courts et moins complexes que ceux que nous générerons, ceux-ci doivent être faciles à écrire.
 
+\begin{remarque}
+	\textit{GreenT} fonctionne avec un modèle client-serveur comme cela sera détaillé chapitre \ref{chapGreent}.
+	
+	 Afin de commencer à effectuer une livraison dans l'optique de l'utilisation de \textit{GreenT} en tant que bibliothèque, nous avons déjà fourni les premières versions des serveurs à plusieurs personnes. Celles-ci utilisent nos serveurs en effectuant des scripts simples depuis un an sans problème.
+\end{remarque}

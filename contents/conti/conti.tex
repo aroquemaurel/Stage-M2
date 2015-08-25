@@ -8,7 +8,7 @@ Ce chapitre présente rapidement le groupe Continental et plus particulièrement
 		\subsection{Le groupe Continental}
 
 Continental est une entreprise allemande fondée en 1871 dont le siège se situe à Hanovre. Il s'agit d'une Société Anonyme (SA) dont le président du comité de
-direction est le Dr. Elmar \bsc{Degenhart} depuis le 12 août 2009. Le groupe Continental est constitué de cinq divisions intervenant sur le marché des pneus (\textit{Rubben}) et de l'électronique automobile (\textit{Automotive}), ces divisions vous sont détaillés figure \ref{fig:repartitionConti}.
+direction est le Dr. Elmar \bsc{Degenhart} depuis le 12 août 2009. Le groupe Continental est constitué de cinq divisions intervenant sur le marché des pneus (\textit{Rubber}) et de l'électronique automobile (\textit{Automotive}), ces divisions vous sont détaillés figure \ref{fig:structConti}.
 	 
 		 \begin{figure}[H]
 		 	\centering
@@ -17,7 +17,7 @@ direction est le Dr. Elmar \bsc{Degenhart} depuis le 12 août 2009. Le groupe Co
 		 	\label{fig:caConti}
 		 \end{figure}
 	 	\footnotetext{NAFTA : North American Free Trade Agreement}
-		 En 2014, l'entreprise comptait plus de $189\;000$ employés dans le monde, comme le montre la figure\ref{fig:caConti} répartis dans 317 sites et 50 pays différents, dont la répartition est détaillée figure \ref{fig:repartitionConti}. Avec un chiffre d'affaire de 34.5 milliards d'euros au total, Continental est le numéro un du marché de production de pneus en Allemagne et est également un important équipementier automobile.
+		 En 2014, l'entreprise comptait plus de $189\;000$ employés dans le monde, comme le montre la figure \ref{fig:caConti} répartis dans 317 sites et 50 pays différents, dont la répartition est détaillée figure \ref{fig:repartitionConti}. Avec un chiffre d'affaire de 34.5 milliards d'euros au total, Continental est le numéro un du marché de production de pneus en Allemagne et est également un important équipementier automobile.
 
 		 \begin{figure}[H]
 		 	\centering
@@ -49,7 +49,7 @@ En 2001, pour renforcer sa position sur les marchés américain et asiatique, l'
 
 En 2004, le plus grand spécialiste mondial de la technologie du caoutchouc et des plastiques naît de la fusion entre \textit{Phoenix AG} et \textit{Conti'Tech}.
 
-Enfin en juillet 2007, Continental réalise sa plus grosse opération en rachetant le fournisseur automobile \textit{Siemens VDO Automotive}. Ce rachat a permis à l'entreprise de multiplier son chiffre d'affaire par deux, passant ainsi de 13 milliards d'euros à plus de 34.5 milliards d'euros (chiffre de 2014).
+Enfin en juillet 2007, Continental réalise sa plus grosse opération en rachetant le fournisseur automobile \textit{Siemens VDO Automotive}. Ce rachat a permis à l'entreprise de multiplier son chiffre d'affaire par 2.5, passant ainsi de 13 milliards d'euros à plus de 34.5 milliards d'euros (chiffre de 2014).
 		
 		\subsection{Activités des différentes branches}
 		\begin{figure}[H]
@@ -81,7 +81,7 @@ Le test des logiciel de contrôle moteur se fait aujourd'hui :
 Cependant, la taille des logiciels à tester est devenu particulièrement importante(Plusieurs milliers de variables, dans plus de 10 000 pages de spécifications\ldots). Cela appel à une automatisation plus forte des tests afin d'augmenter fortement la vitesse et la quantité de tests afin d'éliminer le maximum de bogue.
 
 C'est dans ce contexte que l'équipe TAS intervient, c'est ainsi que je participe au développement d'un outil permettant d'automatiser des tests d'intégrations pour les équipes projet travaillant pour Ford.
- 		\subsection{L'équipe Tests \& Automation Service}
+ 		\subsection{Les tests automatisés}
 
  		% P : Powertrain
  		% ES : Engine System
@@ -93,7 +93,7 @@ C'est dans ce contexte que l'équipe TAS intervient, c'est ainsi que je particip
  		Pour ma part, j'opérais dans la partie test automatique. Cette << sous-équipe >> possède deux missions : 
  		\begin{itemize}
  			\item Le développement et l'exécution de scripts de tests de non-régression\footnote{Aussi appelés FaST : \textbf{F}unctions \textbf{a}nd \textbf{S}oftware \textbf{T}esting}. Ces scripts de tests s'exécutent sur bancs HiL\footnote{\textbf{H}ardware \textbf{I}n the \textbf{L}oop. Vous trouverez plus d'explications sur ce dispositif section \ref{wb}} avant la livraison des projets
- 			\item Le développement et la maintenance d'outils permettant d'améliorer la couverture et la qualité des tests. Ces outils doivent permettre aux développeurs de vérifier facilement et correctement leur travail, particulièrement pour des tests de non-régression bien que l'outil sur lequel je travail soit à destination de tests d'intégration.
+ 			\item Le développement et la maintenance d'outils logiciels notamment en utilisant la TA3 présenté section \ref{ta3}. Ceux-ci permettent d'améliorer la couverture et la qualité des tests. Ils doivent permettre aux développeurs de vérifier facilement et correctement leur travail, particulièrement pour des tests de non-régression bien que l'outil sur lequel je travail soit à destination de tests d'intégration.
  		\end{itemize}
 	\subsection{Les outils de tests}
 	Afin d'effectuer son travail, l'équipe TAS possède différents outils de tests. D'une part au niveau matériel avec des bancs de tests, mais aussi logiciel avec une plateforme écrite en Python.
@@ -130,7 +130,7 @@ C'est dans ce contexte que l'équipe TAS intervient, c'est ainsi que je particip
 			\end{wrapfigure}
 			Actuellement, les équipes de tests disposent d'une plateforme appelée TA3. Celle-ci est une bibliothèque de classes écrites en Python. Jusqu'à présent, pour chaque objectif de test, il fallait écrire un script python utilisant la TA3. Ces scripts pilotent le banc HIL et le debugger afin d'envoyer des stimulis à l'unité de contrôle moteur et de vérifier que les réactions de celui-ci sont conforme aux spécifications de test.
 			
-			Cependant, cette plateforme pose un certain nombre de problèmes qui rend son utilisation difficile. D'une part, elle renvoie un trop grand pourcentage de faux-positifs, faisant perdre du temps au testeur. D'autres part, elle ne prend pas en compte certains besoins apparu récemment comme par exemple un système permettant de flasher automatiquement les ECU\footnote{Cela permettrai de scripter un test qu'on lancerai plus tard et de gagner du temps}, ou la possibilité de vérifier la fréquence de mise-à-jour de la production de variables\footnote{Ceci afin de contrôler le temps réel du calculateur}.
+			Cependant, cette plateforme pose un certain nombre de problèmes qui rend son utilisation difficile. D'une part, elle renvoie un trop grand pourcentage de faux-positifs\footnote{Lorsque l'on effectue des tests, le but du testeur est de trouver des bugs. Ainsi, un positif est l'apparition d'un bug, et donc un faux positif signifie que la plateforme montre des bugs, qui sont inexistants}, faisant perdre du temps au testeur. D'autres part, elle ne prend pas en compte certains besoins apparu récemment comme par exemple un système permettant de flasher automatiquement les ECU\footnote{Cela permettrai de scripter un test qu'on lancerai plus tard et de gagner du temps}, ou la possibilité de vérifier la fréquence de mise-à-jour de la production de variables\footnote{Ceci afin de contrôler le temps réel du calculateur}.
 			
 			Afin d'améliorer cette situation, l'équipe \textit{Tests \& Automation Service} développe une nouvelle plateforme.
 			

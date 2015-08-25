@@ -1,6 +1,7 @@
 \chapter{Organisation du développement}\label{chapOrganization}
 \putminitoc \'Etant donné la complexité du projet et son importance, une organisation réfléchie est indispensable. Autant d'un point de vue humain, avec une gestion de projet et une gestion de l'équipe, que technique en utilisant certaines technologies nous aidant dans la tache.  Nous allons voir l'organisation qui a été mise en place afin d'être le plus efficace possible.
 
+\vspace{-25px}
 \section{L'équipe de développement}
 Au cours de mon stage, trois développeurs travaillaient sur le projet \textit{GreenT} : Alain \bsc{Fernandez}, chef d’équipe et membre de
 l’équipe \textit{Tests \& Automation Service}, Benjamin \bsc{Guerin}, apprenti, et moi-même, stagiaire au sein de la même équipe.
@@ -67,7 +68,7 @@ et la coloration syntaxique Python.
 \begin{wrapfigure}{l}{2.5cm}
 	\includegraphics[width=2.5cm]{contents/images/antlr.jpg}
 \end{wrapfigure}
-Pour les besoins de notre plateforme, nous avons créé notre propre langage de test. Ce langage était assez riche, et la création d'un parser adéquate aurait pu être particulièrement long. Afin de nous faire gagner le maximum de temps, nous avons utilisé Antlr4.  \textit{Another Tool For Language Recognition} est un programme permettant de générer automatiquement un parser pour un langage donné. Ainsi, nous avions rédigés notre grammaire, Antlr quant à lui s'est chargé de nous générer un arbre de parcours syntaxique. À notre charge d'effectuer les bonnes actions durant le parcours de notre langage en spécialisant les classes générées par Antlr.
+Pour les besoins de notre plateforme, nous avons créé notre propre langage de test. Ce langage est assez riche, et la création d'un parser adéquate aurait pu être particulièrement long. Afin de nous faire gagner le maximum de temps, nous avons utilisé Antlr4.  \textit{Another Tool For Language Recognition} est un programme permettant de générer automatiquement un parser pour un langage donné. Ainsi, nous avions rédigés notre grammaire, Antlr quant à lui s'est chargé de nous générer un arbre de parcours syntaxique. À notre charge d'effectuer les bonnes actions durant le parcours de notre langage en spécialisant les classes générées par Antlr.
 \newpage
 \subsection{UML et \textit{Entreprise Architect}}
 \begin{wrapfigure}{r}{3cm}
