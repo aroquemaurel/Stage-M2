@@ -19,7 +19,7 @@ génération de tests automatiques par \textit{GreenT}. Voici les informations l
 
 \begin{description} 
 	\item[Nom de la variable] Le nom de la variable testée : il existe un nom court et un nom long.
-	\item[Informations aidant à la conversion des données] Certains équipements\footnote{Vous trouverez plus d'informations sur le fonctionnement d'une table de tests section \ref{wb}} tel que le \textit{debugger} ne fonctionne qu'avec des
+	\item[Informations aidant à la conversion des données] Certains équipements\footnote{Vous trouverez plus d'informations sur le fonctionnement d'une table de tests section \ref{wb}}, à l'instar du \textit{debugger} ne fonctionne qu'avec des
 	valeurs Hexadécimales. À la charge de \textit{GreenT} de convertir ces données vers des valeurs physiques exploitables par
 	le testeur. Ces colonnes contiennent les informations nécessaires au calcul de conversion\footnote{Informations tel que le
 		domaine de définition physique et le domaine de définition hexadécimal, avec ces deux informations il est possible d'effectuer les conversions physique vers hexadécimal}.
@@ -29,7 +29,7 @@ génération de tests automatiques par \textit{GreenT}. Voici les informations l
 	\item[Précondition (cf section \ref{stim})] Contient un scénario d'initialisation du \textit{workbench} : tension de départ,
 	démarrage de l'ECU, \ldots
 	\item[Scénario de stimulation (cf section \ref{stim})] Contient un ou plusieurs scenarii de stimulations destinés à faire générer au HiL un certain nombre de stimuli.
-	\item[\texttt{ExpectedBehavior} (comportement attendu, cf section \ref{expectedBehavior})] Contient une expression évaluant les variables ayant été enregistrées durant la stimulation : \textit{GreenT} devra vérifier que cette expression est correcte à toute instant de la stimulation.
+	\item[\texttt{ExpectedBehavior} (cf section \ref{expectedBehavior})] Contient une expression évaluant les variables ayant été enregistrées durant la stimulation : \textit{GreenT} devra vérifier que cette expression est correcte à toute instant de la stimulation.
 	\item[Variable à enregistrer (cf section \ref{expectedBehavior})] Contient les variables devant être enregistrées durant un
 	scénario, en plus des variables présentes dans l'expected behavior. Celles-ci peuvent servir en tant que données
 	contextuelles permettant de mieux cerner le résultat d'un test.
@@ -195,7 +195,7 @@ Une fois l'analyse d'un test exécuté, un verdict global est mis dans le fichie
 \end{remarque}
 
 \section{Le fonctionnalités des serveurs}\label{wbgt}
-Comme expliqué précédemment, \textit{GreenT} va avoir en charge l'exécution de stimulation. Ces stimulations vont communiquer avec une table de
+Comme expliqué précédemment, \textit{GreenT} va avoir en charge l'exécution de stimulations. Celles-ci vont communiquer avec une table de
 tests. Actuellement une table est composée de deux équipements différents, comportant chacun leur serveur : 
 \begin{itemize}
 	\item Un HIL, Hardware In the Loop, simulateur d'environnement véhicule
