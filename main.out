@@ -15,7 +15,7 @@
 \BOOKMARK [1][-]{section.4.1}{Le fichier Walkthrough}{chapter.4}% 15
 \BOOKMARK [1][-]{section.4.2}{Fonctionnement Global}{chapter.4}% 16
 \BOOKMARK [1][-]{section.4.3}{Les fonctionnalit\351s du Client}{chapter.4}% 17
-\BOOKMARK [1][-]{section.4.4}{Le fonctionnalit\351s des serveurs}{chapter.4}% 18
+\BOOKMARK [1][-]{section.4.4}{Les fonctionnalit\351s des serveurs}{chapter.4}% 18
 \BOOKMARK [0][-]{chapter.5}{Ma collaboration au projet}{}% 19
 \BOOKMARK [1][-]{section.5.1}{Les calibrations}{chapter.5}% 20
 \BOOKMARK [1][-]{section.5.2}{Le << patch calib >>}{chapter.5}% 21
@@ -34,5 +34,5 @@
 \BOOKMARK [0][-]{appendix.D}{Exemples de fichiers g\351n\351r\351s}{}% 34
 \BOOKMARK [1][-]{section.D.1}{Exemple de StimScenario}{appendix.D}% 35
 \BOOKMARK [1][-]{section.D.2}{Exemple de GreenTTest}{appendix.D}% 36
-\BOOKMARK [0][-]{appendix.E}{Liste des codes sources}{}% 37
-\BOOKMARK [0][-]{appendix.F}{Table des figures}{}% 38
+\BOOKMARK [0][-]{appendix.E}{Table des figures}{}% 37
+\BOOKMARK [0][-]{appendix.F}{Liste des codes sources}{}% 38

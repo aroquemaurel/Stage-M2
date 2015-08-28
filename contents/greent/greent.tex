@@ -19,7 +19,7 @@ génération de tests automatiques par \textit{GreenT}. Voici les informations l
 
 \begin{description} 
 	\item[Nom de la variable] Le nom de la variable testée : il existe un nom court et un nom long.
-	\item[Informations aidant à la conversion des données] Certains équipements\footnote{Vous trouverez plus d'informations sur le fonctionnement d'une table de tests section \ref{wb}}, à l'instar du \textit{debugger} ne fonctionne qu'avec des
+	\item[Informations aidant à la conversion des données] Certains équipements\footnote{Vous trouverez plus d'informations sur le fonctionnement d'une table de tests section \ref{wb}}, à l'instar du \textit{debugger} ne fonctionnent qu'avec des
 	valeurs Hexadécimales. À la charge de \textit{GreenT} de convertir ces données vers des valeurs physiques exploitables par
 	le testeur. Ces colonnes contiennent les informations nécessaires au calcul de conversion\footnote{Informations tel que le
 		domaine de définition physique et le domaine de définition hexadécimal, avec ces deux informations il est possible d'effectuer les conversions physique vers hexadécimal}.
@@ -28,10 +28,10 @@ génération de tests automatiques par \textit{GreenT}. Voici les informations l
 		mais peut aussi comporter une erreur, tel qu'un problème d'exécution ou de génération, \ldots}.
 	\item[Précondition (cf section \ref{stim})] Contient un scénario d'initialisation du \textit{workbench} : tension de départ,
 	démarrage de l'ECU, \ldots
-	\item[Scénario de stimulation (cf section \ref{stim})] Contient un ou plusieurs scenarii de stimulations destinés à faire générer au HiL un certain nombre de stimuli.
-	\item[\texttt{ExpectedBehavior} (cf section \ref{expectedBehavior})] Contient une expression évaluant les variables ayant été enregistrées durant la stimulation : \textit{GreenT} devra vérifier que cette expression est correcte à toute instant de la stimulation.
+	\item[Scénario de stimulation (cf section \ref{stim})] Contient un ou plusieurs scenarii de stimulation destinés à faire générer au HiL un certain nombre de stimuli.
+	\item[\texttt{ExpectedBehavior} (cf section \ref{expectedBehavior})] Contient une expression évaluant les variables ayant été enregistrées durant la stimulation : \textit{GreenT} devra vérifier que cette expression est correcte à tout instant de la stimulation.
 	\item[Variable à enregistrer (cf section \ref{expectedBehavior})] Contient les variables devant être enregistrées durant un
-	scénario, en plus des variables présentes dans l'expected behavior. Celles-ci peuvent servir en tant que données
+	scénario, en plus des variables présentes dans l'\textit{expected behavior}. Celles-ci peuvent servir en tant que données
 	contextuelles permettant de mieux cerner le résultat d'un test.
 	\item[Informations du test (cf section \ref{report})] Plusieurs colonnes telles que la sévérité, le responsable du test, des commentaires, \ldots
 \end{description}
@@ -71,7 +71,7 @@ Alors que d'autres fonctionnalités vont nécessiter la présence de serveurs et
 : 
 \begin{itemize}
 	\item Les stimulations (section \ref{stim})
-	\item Les enregistrement des traces (section \ref{stim})
+	\item Les enregistrements des traces (section \ref{stim})
 \end{itemize}
 \vspace{-10px}
 \section{Les fonctionnalités du Client}
@@ -81,12 +81,12 @@ divers avantages comme le côté multi-plateforme, son typage fort et sa forte c
 \subsection{\textit{Parsing} et Génération}\label{generation}
 Le but premier de la plateforme est d'effectuer des tests automatiques, il est ainsi indispensable d'avoir un système d'automatisation, au travers d'une génération.
 
-Pour cela, nous avons un parser : il analyse un certain type de fichier\footnote{Nous ne commencerons qu'avec le Walkthrough pour débuter, mais dans le futur nous pourrions avoir des fichiers XML, des bases de données, \ldots} et en retire pour chaque test, le scénario de pré condition, les différents scénarios de stimulations, leur \textit{Expected Behavior}, les données qui devront être enregistrées ainsi que différentes informations sur le test\footnote{Responsable du test, sévérité, commentaires, nom de la variable, \ldots}.
+Pour cela, nous avons un parser : il analyse un certain type de fichier\footnote{Nous ne commencerons qu'avec le \textit{Walkthrough} pour débuter, mais dans le futur nous pourrions avoir des fichiers XML, des bases de données, \ldots} et en retire pour chaque test, le scénario de précondition, les différents scénarii de stimulations, leur \textit{Expected Behavior}, les données qui devront être enregistrées ainsi que différentes informations sur le test\footnote{Responsable du test, sévérité, commentaires, nom de la variable, \ldots}.
 
 Une fois toutes ces données acquises, il les transmet à un générateur qui est en charge d'écrire les fichiers Java de chaque test, tous sont organisés dans un dossier temporaire avec un dossier par test. Le \texttt{TestManager} peut ensuite traiter ces données.
 
 \begin{exemple}
-Le testeur souhaite vérifier le bon fonctionnement des ventilateurs de refroidissement du moteur. Ci-dessous les différentes cellules qui pourrait être renseigné par le testeur pour ce cas de tests. Nous verrons ce qu'effectuent précisément ces actions dans la suite de la section.	
+Le testeur souhaite vérifier le bon fonctionnement des ventilateurs de refroidissement du moteur. Ci-dessous les différentes cellules qui pourraient être renseignées par le testeur pour ce cas de test. Nous verrons ce qu'effectuent précisément ces actions dans la suite de la section.	
 
 \begin{tabular}{p{4cm}|p{6.5cm}|p{5.4cm}}
 	\textbf{Précondition} & \textbf{Scénario de Stimulation} & \textbf{Expected Behavior}\\
@@ -128,18 +128,18 @@ end if
 
 \subsection{Stimulation} \label{stim}
 \vspace{-20px}
-Afin de tester une variable du plugin, les développeurs vont utiliser des alias présents sur un device : actuellement, un HIL ou un debugger, prochainement nous pourrions en utiliser d'autres. Ces alias permettent de simplifier le travail du spécifieur, il n'aura pas à retenir une adresse d'un élément sur le HiL, un simple alias permet de lui faire cette abstraction et ce raccourci.
+Afin de tester une variable du plugin, les développeurs vont utiliser des alias présents sur un device : actuellement, un HiL ou un debugger, prochainement nous pourrions en utiliser d'autres. Ces alias permettent de simplifier le travail du spécifieur, il n'aura pas à retenir une adresse d'un élément sur le HiL, un simple alias permet de lui faire cette abstraction et ce raccourci.
 
-Le spécifieur va rédiger des scénarios de stimulation, ceci afin de mettre le contrôleur dans certaines conditions. Son but sera ensuite de vérifier que ces variables restent cohérentes vis-à-vis du scénario effectué. 
+Le spécifieur va rédiger des scénarii de stimulation, ceci afin de mettre le contrôleur dans certaines conditions. Son but sera ensuite de vérifier que ces variables restent cohérentes vis-à-vis du scénario effectué. 
 
-Un scénario particulier doit être spécifié : une pré condition qui a pour but d'initialiser les équipements et certains alias afin d'avoir un état de stimulation qui soit cohérent et identique à chaque lancement du scénario. Ce scénario sera effectué avant le lancement de chacun des scénarios de stimulation.
+Un scénario particulier doit être spécifié : une précondition qui a pour but d'initialiser les équipements et certains alias afin d'avoir un état de stimulation qui soit cohérent et identique à chaque lancement du scénario. Ce scénario sera effectué avant le lancement de chacun des scénarii de stimulation.
 
 Durant l'exécution d'une stimulation, les variables nécessaires sont enregistrées afin de pouvoir produire des rapports et des
 verdicts ensuite.
 \begin{exemple}
-	Comme nous l'avons vu section \ref{generation}, le testeur nous a donné un scénario de stimulation ainsi qu'un scénario de précondition. Le code généré va ainsi communiquer avec le serveur HIL afin qu'il envoie les bons stimulis à l'ECU.
+	Comme nous l'avons vu section \ref{generation}, le testeur nous a donné un scénario de stimulation ainsi qu'un scénario de précondition. Le code généré va ainsi communiquer avec le serveur HiL afin qu'il envoie les bons stimuli à l'ECU.
 
-	Ainsi, comme mis en commentaires, le scénario de précondition va mettre la batterie à 13 Volts, et mettre la clé, nous allons ensuite vérifier que cette action a bien été fait. Si tel est le cas, le scénario de stimulation va être effectué. Ce scénario va effectuer une rampe de vitesse, notre véhicule va aller de zéro à cinquante kilomètre-heure avant de retourner à l'arrêt.	
+	Comme mis en commentaires, le scénario de précondition va mettre la batterie à 13 Volts, et mettre la clé, nous allons ensuite vérifier que cette action a bien été faite. Si tel est le cas, le scénario de stimulation va être effectué. Celui-ci va appliquer une rampe de vitesse, notre véhicule va aller de zéro à cinquante kilomètre-heure avant de retourner à l'arrêt.	
 \end{exemple}
 
 \subsection{Les traces et leurs évaluations}\label{expectedBehavior}
@@ -155,10 +155,10 @@ Une fois que la trace est complète, il est nécessaire de l'évaluer : le spéc
 \subsection{Le module TestManager}\label{testManager}
 Comme le montre la figure \ref{fig:generalDiag}, la classe \texttt{TestManager} est le chef d'orchestre de \textit{GreenT}, il a donc un certain nombre de responsabilités. 
 
-Il va d'abord organiser les différents tests en un concept que nous avons appelé \textit{Bundle}, ceci dans un but d'optimisation du temps d'exécution. En effet, si nous avons 1000 tests de 2 minutes, cela ferait plus de trente heures d'exécution. Pour palier à ce problèmes, nous avons deux stratégies :
+Il va d'abord organiser les différents tests en un concept que nous avons appelé \textit{Bundle}, ceci dans un but d'optimisation du temps d'exécution. En effet, si nous avons 1000 tests de 2 minutes, cela ferait plus de trente heures d'exécution. Pour palier à ce problème, nous avons deux stratégies :
 \begin{itemize}
 	\item Le regroupement de tests ensemble, si deux tests possèdent le même scénario de stimulation, alors nous n'executerons qu'une seule fois ce scénario, et évaluerons la trace pour chacun des tests. Ce regroupement est appelé <<Bundle>>.
-	\item Même avec notre stratégie des Bundles, l'exécution pourrait être encore trop longue. Ainsi, il est possible d'utiliser plusieurs tables en simultanées. Le temps d'exécution est ainsi divisé par le nombre de tables. 
+	\item Même avec notre stratégie des Bundles, l'exécution pourrait être encore trop longue. Ainsi, il est possible d'utiliser plusieurs tables en simultané. Le temps d'exécution est ainsi divisé par le nombre de tables. 
 \end{itemize}
 
 Afin d'être le plus souple possible, il existe plusieurs modes d'exécution de la classe \texttt{TestManager} : 
@@ -166,7 +166,7 @@ Afin d'être le plus souple possible, il existe plusieurs modes d'exécution de 
 	\item[Check only] Essaye de parser les différents fichiers, et vérifie que ceux-ci ne comportent aucune erreur de grammaire, d'alias introuvable, d'écriture sur un alias en lecture seule etc... Cela permet à l'auteur des cas de test de se vérifier sans avoir besoin de table de test.
 	\item[Parse and generate bundles] Parse les fichiers et génère des jars exécutables répartis en bundle
 	\item[Parse and execute] Parse les fichiers, génère les jars pour les bundles et les exécute : c'est le mode << classique >>.
-	\item[Restart test execution] Redémarre une exécution qui se serait mal terminée. Ceci à l'aide d'une base de données SQLite. Cette base de données contient toutes les informations des différents scénarios et sera capable de redémarrer à l'endroit où une coupure à eu lieu. Cela évite de devoir effectuer de nouveau trente heure d'exécutions si le problème à eu lieu sur la fin.
+	\item[Restart test execution] Redémarre une exécution qui se serait mal terminée. Ceci à l'aide d'une base de données SQLite. Cette base de données contient toutes les informations des différents scénarii et sera capable de redémarrer à l'endroit où une coupure à eu lieu. Cela évite de devoir effectuer de nouveau trente heures d'exécutions si le problème à eu lieu sur la fin.
 \end{description}
 
 \subsection{Production de rapport détaillé}\label{report}
@@ -176,9 +176,9 @@ La plateforme a en charge la production d'un rapport détaillé pour chaque test
 	\item Nom du test, de la variable à tester
 	\item Nom du responsable du test
 	\item Sévérité du test
-	\item Pourcentage de branches de l'expectedBehavior renvoyant faux(Test << Rouge >>), n'ayant pas pu être testé(Test << Gris >>) et étant correct(Test Vert)
+	\item Pourcentage de branches de l'\textit{Expected Behavior} renvoyant faux(Test << Rouge >>), n'ayant pas pu être testé(Test << Gris >>) et étant correct(Test Vert)
 	\item Le testeur aura à sa disposition les expressions concernées par un résultat Rouge ou Gris.
-	\item Les colonnes utiles du \texttt{Walkthrough}
+	\item Les colonnes utiles du \textit{Walkthrough}
 \end{itemize}
 
 Actuellement, les rapports se font au format Excel avec l'intégralité de notre enregistrement et pour chaque instant d'enregistrement(timestamp), un verdict. Un
@@ -191,14 +191,14 @@ d'avoir un affichage des courbes de manière graphique.
 Une fois l'analyse d'un test exécuté, un verdict global est mis dans le fichier \textit{Walthrought} : ce verdict est consolidé en fonction des rapports détaillés. Ainsi, un test sera vert si l'expression a été validée sur l'ensemble de la trace, le test sera rouge dans le cas contraire.
 
 \begin{remarque}
-	En cas d'erreur à la génération\footnote{Mauvaise syntaxe, variables inexistantes, \ldots} ou à l'exécution\footnote{Problèmes réseaux, variable non trouvée, communication entre l'ECU et le debugger, \ldots}, la plateforme doit afficher un message d'erreur clair au niveau du test afin que l'utilisateur soit conscient du problème. Libre à lui de corriger le test si nécessaire, ou de le signaler si cela semble être un bogue. Ce message d'erreur est reportée automatiquement dans le \textit{Walkthrough}.
+	En cas d'erreur à la génération\footnote{Mauvaise syntaxe, variables inexistantes, \ldots} ou à l'exécution\footnote{Problèmes réseaux, variable non trouvée, communication entre l'ECU et le debugger, \ldots}, la plateforme doit afficher un message d'erreur clair au niveau du test afin que l'utilisateur soit conscient du problème. Libre à lui de corriger le test si nécessaire, ou de le signaler si cela semble être un bogue. Ce message d'erreur est reporté automatiquement dans le \textit{Walkthrough}.
 \end{remarque}
 
-\section{Le fonctionnalités des serveurs}\label{wbgt}
+\section{Les fonctionnalités des serveurs}\label{wbgt}
 Comme expliqué précédemment, \textit{GreenT} va avoir en charge l'exécution de stimulations. Celles-ci vont communiquer avec une table de
-tests. Actuellement une table est composée de deux équipements différents, comportant chacun leur serveur : 
+test. Actuellement une table est composée de deux équipements différents, comportant chacun leur serveur : 
 \begin{itemize}
-	\item Un HIL, Hardware In the Loop, simulateur d'environnement véhicule
+	\item Un HiL, Hardware In the Loop, simulateur d'environnement véhicule
 	\item Un Debugger permettant de voir l'état du programme présent dans l'ECU
 \end{itemize}
 
@@ -253,6 +253,6 @@ Ce serveur a été développé en réutilisant une partie de ce qui avait été 
 << réinventer la roue >>. 
 
 À l'instar du serveur Debugger, nous utilisons une API fournie par l'outil permettant de contrôler le HIL : ControlDesk. 
-C'est ainsi que ce serveur est développé en Python afin de répondre à cette contraintes : l'API du ControlDesk est en Python. Ainsi, l'utilisation de Thrift, permettant de faire dialoguer du Java côté client et du Python côté serveur facilement, nous aura particulièrement aidé.
+C'est ainsi que ce serveur est développé en Python afin de répondre à cette contrainte : l'API du ControlDesk est en Python. Ainsi, l'utilisation de Thrift, permettant de faire dialoguer du Java côté client et du Python côté serveur facilement, nous aura particulièrement aidé.
 
 

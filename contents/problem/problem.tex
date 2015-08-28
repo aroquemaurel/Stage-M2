@@ -1,10 +1,10 @@
 \chapter{Le problème} \label{chapPb}
 \putminitoc
-Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'intégrations, notamment pour les projets à destination de Ford. Les tests demandaient du temps et de l'argent à l'équipe en charge de ces tests. Ainsi, deux ans avant mon stage de M1, une solution à été trouvée : le développement d'une nouvelle plateforme, \textit{GreenT}.
+Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'intégrations, notamment pour les projets à destination de Ford. Les tests demandaient du temps et de l'argent à l'équipe en charge de ces tests. Ainsi, deux ans avant mon stage de M1, une solution a été trouvée : le développement d'une nouvelle plateforme, \textit{GreenT}.
 	\section{Composant logiciel tiers}
-	Étant donné la taille grandissante des programmes informatique, il est de plus en plus rare qu'une seule et unique entité effectue le développement d'un logiciel.
+	Étant donné la taille grandissante des programmes informatiques, il est de plus en plus rare qu'une seule et unique entité effectue le développement d'un logiciel.
 	
-	C'est ainsi que chez Continental, un certain nombre de composant des calculateurs ne sont pas développés en interne. Ce concept est appelé composant logiciel tiers, ou \textit{Third-Party Software}. 
+	C'est ainsi que chez Continental, un certain nombre de composants des calculateurs ne sont pas développés en interne. Ce concept est appelé composant logiciel tiers, ou \textit{Third-Party Software}. 
 	
 	La principale difficulté de ce mode de fonctionnement est l'intégration, une spécification exhaustive est indispensable afin de pouvoir connecter les différentes interfaces du composant avec le reste du projet. 
 	
@@ -19,7 +19,7 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 		\label{fig:plugin}	
 	\end{figure}
 	
-	Le fichier de spécification est un fichier Excel, fourni par le client. Ce fichier, appelé \texttt{Walkthrough}\footnote{Ce fichier est expliqué plus en détail section \ref{wt}}, 
+	Le fichier de spécification est un fichier Excel, fourni par le client. Ce fichier, appelé \textit{Walkthrough}\footnote{Ce fichier est expliqué plus en détail section \ref{wt}}, 
 	contient la liste de toutes les variables du plugin avec toutes leur spécifications. Il contient
 	environ 900 variables différentes. 
 	
@@ -33,7 +33,7 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 		\item[Le temps de tests] Même en ne testant qu'une partie des variables, cela prend un temps considérable, il faut compter environ une semaine.\newline
 			Or, les tests s'effectuent sur les bancs de tests comme expliqué section \ref{wb}, ces équipements permettent de simuler un environnement véhicule du contrôleur moteur comme
 			l'utilisation de la clé de démarrage, la tension de la batterie, la vitesse de rotation du moteur, \ldots Ces bancs sont peu
-			nombreux dans l'entreprise en raison de leur cout, leur disponibilité est compliquée. Il serait intéressant de pouvoir lancer
+			nombreux dans l'entreprise en raison de leur coût, donc leur disponibilité est compliquée. Il serait intéressant de pouvoir lancer
 			des tests automatisés durant la nuit par exemple afin de les décharger de ce travail.
 	\end{description}
 	
@@ -52,10 +52,10 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 	
 	Ces tests s'effectueront sur des variables enregistrées lors de stimulation de l'ECU, afin de vérifier que celui-ci réagit de façon approprié.
 
-	Cette plateforme permettra donc de tester facilement la dizaine de projets Ford, et une fois le test d'une variable spécifiée, il n'est plus nécessaire de le réécrire. À chaque nouvelle version du logiciel, ou \textit{release}, il suffira de relancer les tests : l'équipe n'aura à faire le travail qu'une fois, ensuite la réutilisation sera possible, les projets seront testés plus rapidement, plus efficacement, et plus souvent.
+	Cette plateforme permettra donc de tester facilement la dizaine de projets Ford, et une fois le test d'une variable spécifié, il n'est plus nécessaire de le réécrire. À chaque nouvelle version du logiciel, ou \textit{release}, il suffira de relancer les tests : l'équipe n'aura à faire le travail qu'une fois, ensuite la réutilisation sera possible, les projets seront testés plus rapidement, plus efficacement, et plus souvent.
 
 	\subsubsection{Les autres projets}
-	À moyen terme, cette plateforme pourrait être utilisée pour les projets d'autres clients tel que Renault, afin d'effectuer là aussi des tests d'intégration. Il était nécessaire de concevoir une plateforme qui puisse évoluer facilement, et avoir un fichier de spécifications en entrée qui soit légèrement différent d'un client à l'autre.
+	À moyen terme, cette plateforme pourrait être utilisée pour les projets d'autres clients tel que Renault, afin d'effectuer là aussi des tests d'intégration. Il était nécessaire de concevoir une plateforme qui puisse évoluer facilement, et avoir un fichier de spécification en entrée qui soit légèrement différent d'un client à l'autre.
 
 	En effet, les autres clients peuvent aussi fournir une partie du logiciel, avec un document de spécification des variables, celui-ci ne serait pas totalement identique, mais il s'en approchera.
 

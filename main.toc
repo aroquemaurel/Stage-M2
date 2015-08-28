@@ -42,7 +42,7 @@
 \contentsline {subsection}{\numberline {4.3.4}Le module TestManager}{27}{subsection.4.3.4}
 \contentsline {subsection}{\numberline {4.3.5}Production de rapport d\IeC {\'e}taill\IeC {\'e}}{28}{subsection.4.3.5}
 \contentsline {subsection}{\numberline {4.3.6}Mise \IeC {\`a} jour du Walkthrough}{28}{subsection.4.3.6}
-\contentsline {section}{\numberline {4.4}Le fonctionnalit\IeC {\'e}s des serveurs}{29}{section.4.4}
+\contentsline {section}{\numberline {4.4}Les fonctionnalit\IeC {\'e}s des serveurs}{29}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Le serveur Debugger, contr\IeC {\^o}le de Trace32}{30}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Le serveur HiL, contr\IeC {\^o}le du ControlDesk DSPace}{30}{subsection.4.4.2}
 \contentsline {chapter}{\numberline {5}Ma collaboration au projet}{31}{chapter.5}
@@ -91,7 +91,7 @@
 \contentsline {chapter}{\numberline {C}Exemple de rapport g\IeC {\'e}n\IeC {\'e}r\IeC {\'e} par GreenT}{51}{appendix.C}
 \contentsline {chapter}{\numberline {D}Exemples de fichiers g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}s}{53}{appendix.D}
 \contentsline {section}{\numberline {D.1}Exemple de StimScenario}{53}{section.D.1}
-\contentsline {section}{\numberline {D.2}Exemple de \texttt {GreenTTest}}{55}{section.D.2}
-\contentsline {chapter}{\numberline {E}Liste des codes sources}{57}{appendix.E}
-\contentsline {chapter}{\numberline {F}Table des figures}{59}{appendix.F}
+\contentsline {section}{\numberline {D.2}Exemple de \texttt {GreenTTest}}{54}{section.D.2}
+\contentsline {chapter}{\numberline {E}Table des figures}{57}{appendix.E}
+\contentsline {chapter}{\numberline {F}Liste des codes sources}{59}{appendix.F}
 \contentsfinish 
