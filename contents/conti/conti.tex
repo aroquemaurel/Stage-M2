@@ -49,7 +49,11 @@ En 2001, pour renforcer sa position sur les marchés américain et asiatique, l'
 
 En 2004, le plus grand spécialiste mondial de la technologie du caoutchouc et des plastiques naît de la fusion entre \textit{Phoenix AG} et \textit{Conti'Tech}.
 
-Enfin en juillet 2007, Continental réalise sa plus grosse opération en rachetant le fournisseur automobile \textit{Siemens VDO Automotive}. Ce rachat a permis à l'entreprise de multiplier son chiffre d'affaire par 2.5, passant ainsi de 13 milliards d'euros à plus de 34.5 milliards d'euros (chiffre de 2014).
+En juillet 2007, Continental réalise sa plus grosse opération en rachetant le fournisseur automobile \textit{Siemens VDO Automotive}. Ce rachat a permis à l'entreprise de multiplier son chiffre d'affaire par 2.5, passant ainsi de 13 milliards d'euros à plus de 34.5 milliards d'euros (chiffre de 2014).
+
+En mai 2015, Continental annonce le rachat pour 600 millions d'euro de la branche automobile du groupe finlandais Elektrobit, afin de diversifier sa gamme.
+
+Enfin, en Septembre 2015, Continental rachète l'activité contrôle moteur de Valeo, correspondant à une centaines de personnes, ce rachat permettant à l'entreprise.
 		
 		\subsection{Activités des différentes branches}
 		\begin{figure}[H]
@@ -84,20 +88,13 @@ Cependant, la taille des logiciels à tester est devenue particulièrement impor
 C'est dans ce contexte que l'équipe TAS intervient, c'est ainsi que je participe au développement d'un outil permettant d'automatiser des tests d'intégration pour les équipes projet travaillant pour Ford.
  		\subsection{Les tests automatisés}
 
- 		% P : Powertrain
- 		% ES : Engine System
- 		% SE :
- 		% CV :
- 		% TAS : Test & Automation Service
- 		% TODO ajouter schéma de l'équipe dans Powertrain ?
- 		
  		Pour ma part, j'opérais dans la partie tests automatiques. Cette << sous-équipe >> possède deux missions : 
  		\begin{itemize}
  			\item Le développement et l'exécution de scripts de tests de non-régression\footnote{Aussi appelés FaST : \textbf{F}unctions \textbf{a}nd \textbf{S}oftware \textbf{T}esting}. Ces scripts de tests s'exécutent sur bancs HiL\footnote{\textbf{H}ardware \textbf{I}n the \textbf{L}oop. Vous trouverez plus d'explications sur ce dispositif section \ref{wb}} avant la livraison des projets
  			\item Le développement et la maintenance d'outils logiciels notamment en utilisant la TA3 présenté section \ref{ta3}. Ceux-ci permettent d'améliorer la couverture et la qualité des tests. Ils doivent permettre aux développeurs de vérifier facilement et correctement leur travail, particulièrement pour des tests de non-régression bien que l'outil sur lequel je travaille soit à destination de tests d'intégration.
  		\end{itemize}
 	\subsection{Les outils de tests}
-	Afin d'effectuer son travail, l'équipe TAS possède différents outils de tests. D'une part au niveau matériel avec des bancs de tests, mais aussi logiciel avec une plateforme écrite en Python.
+	Afin d'effectuer son travail, l'équipe TAS possède différents outils de tests. D'une part au niveau matériel avec des bancs de tests, mais aussi logiciel avec un outil écrite en Python.
 	
 		\subsubsection{Les bancs de tests}\label{wb}
 		Afin de tester au mieux les programmes du contrôle moteur développés, ceux-ci sont d'abord testé via des simulateurs d'environnement véhicule. Ce simulateur permet de vérifier le programme avant d'effectuer des tests sur véhicule. Ces tests se font sur table dans un premier temps, pour deux raisons principales : 
@@ -120,9 +117,9 @@ C'est dans ce contexte que l'équipe TAS intervient, c'est ainsi que je particip
 			\label{fig:wb}
 		\end{figure}
 				\begin{remarque}
-					Un certain nombre d'équipes projet chez Continental utilise un troisième équipement qui n'est pas représenté ici, parce que notre plateforme ne s'en sert pas. Cet outil, nommé INCA, va interagir sur l'ECU via un bus CAN\footnote{Controller Area Network}.
+					Un certain nombre d'équipes projet chez Continental utilise un troisième équipement qui n'est pas représenté ici, parce que notre outil ne s'en sert pas. Cet équipement, nommé INCA, va interagir sur l'ECU via un bus CAN\footnote{Controller Area Network}.
 				\end{remarque}
-		Les différents équipements, ou \textit{devices}, que nous pouvons voir sur cette figure sont ceux avec lesquelles notre nouvelle plateforme va communiquer dans le but d'effectuer des tests automatiques. 
+		Les différents équipements, ou \textit{devices}, que nous pouvons voir sur cette figure sont ceux avec lesquelles notre nouvelle outil va communiquer dans le but d'effectuer des tests automatiques. 
 		
 			\subsubsection{La plateforme TA3}\label{ta3}
 			\begin{wrapfigure}{l}{2.5cm}
@@ -132,6 +129,5 @@ C'est dans ce contexte que l'équipe TAS intervient, c'est ainsi que je particip
 			
 			Cependant, cette plateforme pose un certain nombre de problèmes qui rend son utilisation difficile. D'une part, elle renvoie un trop grand pourcentage de faux-positifs\footnote{Lorsque l'on effectue des tests, le but du testeur est de trouver des bugs. Ainsi, un positif est l'apparition d'un bug, et donc un faux positif signifie que la plateforme soulève des bugs, qui sont inexistants}, faisant perdre du temps au testeur. D'autre part, elle ne prend pas en compte certains besoins apparu récemment comme un système permettant de flasher automatiquement les ECU\footnote{Cela permettrai de scripter un test qu'on lancerai plus tard et de gagner du temps}, ou la possibilité de vérifier la fréquence de mise-à-jour de la production de variables\footnote{Ceci afin de contrôler le temps réel du calculateur}.
 			
-			Afin d'améliorer cette situation, l'équipe \textit{Tests \& Automation Service} développe une nouvelle plateforme.
+			Afin d'améliorer cette situation, l'équipe \textit{Tests \& Automation Service} développe un nouvel outil de tests.
 			
-%C'est dans ce contexte que l'équipe \textit{Tests \& Automation Service} intervient, elle doit fournir des outils aux développeurs afin de vérifier facilement et correctement leur travail, particulièrement pour des tests de non-régression, bien que l'outil sur lequel je travaille soit à destination de tests d'intégration.

@@ -1,6 +1,6 @@
 \chapter{Le problème} \label{chapPb}
 \putminitoc
-Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'intégrations, notamment pour les projets à destination de Ford. Les tests demandaient du temps et de l'argent à l'équipe en charge de ces tests. Ainsi, deux ans avant mon stage de M1, une solution a été trouvée : le développement d'une nouvelle plateforme, \textit{GreenT}.
+Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'intégrations, notamment pour les projets à destination de Ford. Les tests demandaient du temps et de l'argent à l'équipe en charge de ces tests. Ainsi, deux ans avant mon stage de M2, une solution a été trouvée : le développement d'un nouvelle outil, \textit{GreenT}.
 	\section{Composant logiciel tiers}
 	Étant donné la taille grandissante des programmes informatiques, il est de plus en plus rare qu'une seule et unique entité effectue le développement d'un logiciel.
 	
@@ -11,7 +11,7 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 	C'est avec ces contraintes que travaillent plusieurs équipes chez Continental et notamment l'équipe en charge du développement des différents logiciels de contrôle moteur à destination de Ford.
 	
 	\section{Les tests du << plugin >> Ford}\label{plugin}
-	Dans le cadre de projets pour Ford, Continental ne développe pas l'intégralité du logiciel, une partie étant fournie par le client sous forme de << plugin >>. Ce plugin est un fichier binaire qui est chargé directement dans la mémoire flash de l'ECU sans que Continental n'ait accès au code source. Seule une description des interfaces est fournie. Le \textit{plugin} est supposé correct, et le tester n'est pas de notre ressort. Cependant, celui-ci va être interfacé avec les logiciels Continental : il est indispensable de vérifier que les deux parties fonctionnent ensemble lors de l'intégration.
+	Comme dit précédemment, Continental ne développe pas l'intégralité du logiciel pour Ford, une partie étant fournie par le client sous forme de << plugin >>. Ce plugin est un fichier binaire qui est chargé directement dans la mémoire flash de l'ECU sans que Continental n'ait accès au code source. Seule une description des interfaces est fournie. Le \textit{plugin} est supposé correct, et le tester n'est pas de notre ressort. Cependant, celui-ci va être interfacé avec les logiciels Continental : il est indispensable de vérifier que les deux parties fonctionnent ensemble lors de l'intégration.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=8.0cm]{contents/images/plugin.eps}
@@ -21,7 +21,7 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 	
 	Le fichier de spécification est un fichier Excel, fourni par le client. Ce fichier, appelé \textit{Walkthrough}\footnote{Ce fichier est expliqué plus en détail section \ref{wt}}, 
 	contient la liste de toutes les variables du plugin avec toutes leur spécifications. Il contient
-	environ 900 variables différentes. 
+	environ 1200 variables différentes. 
 	
 	Il est impensable de tester le fonctionnement d'autant de paramètres manuellement. Ainsi l'équipe en
 	charge de tester cette intégration effectue des tests de différence d'une version à l'autre : seules les variables ayant pu être impactées par une \textit{release} seront testées, il est supposé que le fonctionnement des autres variables reste inchangé. Ce type de test est appelé \textit{Delta Test}.
@@ -29,12 +29,12 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 	\vspace{20px}
 	Deux problèmes se posent à cette méthode : 
 	\begin{description}
-		\item[La fiabilité des tests manuels] Le test des seules différences ne permet pas nécessairement de détecter tous les problèmes (notamment en cas d'effets de bords\ldots). De plus, une tâche répétitive peut entrainer des erreurs humaines.
+		\item[La fiabilité des tests manuels] Le test des seules différences ne permet pas nécessairement de détecter tous les problèmes. De plus, une tâche répétitive peut entrainer des erreurs humaines.
 		\item[Le temps de tests] Même en ne testant qu'une partie des variables, cela prend un temps considérable, il faut compter environ une semaine.\newline
 			Or, les tests s'effectuent sur les bancs de tests comme expliqué section \ref{wb}, ces équipements permettent de simuler un environnement véhicule du contrôleur moteur comme
 			l'utilisation de la clé de démarrage, la tension de la batterie, la vitesse de rotation du moteur, \ldots Ces bancs sont peu
-			nombreux dans l'entreprise en raison de leur coût, donc leur disponibilité est compliquée. Il serait intéressant de pouvoir lancer
-			des tests automatisés durant la nuit par exemple afin de les décharger de ce travail.
+			nombreux dans l'entreprise en raison de leur coût, leur disponibilité est donc compliquée. Il serait intéressant de pouvoir lancer
+			des tests automatisés durant la nuit par exemple afin d'optimiser leur utilisation.
 	\end{description}
 	
 \newpage
@@ -48,26 +48,26 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 	
 	\subsection{Génération de tests automatiques}
 	\subsubsection{Les tests d'intégration du plugin Ford}
-	À court terme, cette solution devrait permettre de tester le plugin pour les projets Ford facilement et de façon efficace. Pour cela, les testeurs Continental vont ajouter des colonnes dans le document \textit{Walkthrough}, afin de spécifier la manière de tester les variables. La plateforme, sera capable d'analyser le document \textit{Walkthrough}, et de générer les tests automatiques. Le testeur pourra ensuite planifier son exécution, celle-ci devra prendre une dizaine d'heures pour 800 tests. Une fois l'exécution terminée, le testeur aura tous les résultats de ces tests, il pourra ainsi regarder les rapports détaillés afin de corriger les éventuels problèmes.
+		Depuis Janvier, GreenT est sorti en version 1.0, ainsi cette solution permet de tester le plugin pour les projets Ford facilement et de façon efficace. Pour cela, un testeur de l'équipe à ajouté des colonnes dans le document \textit{Walkthrough}, afin de spécifier la manière de tester les variables. L'outil est capable d'analyser le document \textit{Walkthrough}, et de générer les tests automatiques. Il est ensuite possible de planifier son exécution, celle-ci prendre deux heures pour 270 tests. Une fois l'exécution terminée, le testeur a tous les résultats de ces tests, il peut ainsi regarder les rapports détaillés afin de corriger les éventuels problèmes.
 	
-	Ces tests s'effectueront sur des variables enregistrées lors de stimulation de l'ECU, afin de vérifier que celui-ci réagit de façon approprié.
+	Ces tests s'effectuent sur des variables enregistrées lors de stimulation de l'ECU, afin de vérifier que celui-ci réagit de façon approprié.
 
-	Cette plateforme permettra donc de tester facilement la dizaine de projets Ford, et une fois le test d'une variable spécifié, il n'est plus nécessaire de le réécrire. À chaque nouvelle version du logiciel, ou \textit{release}, il suffira de relancer les tests : l'équipe n'aura à faire le travail qu'une fois, ensuite la réutilisation sera possible, les projets seront testés plus rapidement, plus efficacement, et plus souvent.
+	Cet outil permettra ensuite de tester facilement la dizaine de projets Ford, et une fois le test d'une variable spécifié, il n'est plus nécessaire de le réécrire. À chaque nouvelle version du logiciel, ou \textit{release}, il suffit de relancer les tests : l'équipe n'a à faire le travail qu'une fois en début de projet, ensuite la réutilisation sera possible, les projets seront testés plus rapidement, plus efficacement, et plus souvent.
 
 	\subsubsection{Les autres projets}
-	À moyen terme, cette plateforme pourrait être utilisée pour les projets d'autres clients tel que Renault, afin d'effectuer là aussi des tests d'intégration. Il était nécessaire de concevoir une plateforme qui puisse évoluer facilement, et avoir un fichier de spécification en entrée qui soit légèrement différent d'un client à l'autre.
+	À court terme, cet outil pourrait être utilisée pour les projets d'autres clients tel que Renault, afin d'effectuer là aussi des tests d'intégration. Il était nécessaire de concevoir un outil qui puisse évoluer facilement, et puisse avoir un fichier de spécification en entrée qui soit légèrement différent d'un client à l'autre.
 
 	En effet, les autres clients peuvent aussi fournir une partie du logiciel, avec un document de spécification des variables, celui-ci ne serait pas totalement identique, mais il s'en approchera.
 
 	Il est également envisageable que la plateforme soit utilisée pour des tests d'intégration en interne, indépendamment des spécifications fournies par un client externe à Continental.
-	\newpage
-	\subsection{L'utilisation de \textit{GreenT} comme une bibliothèque}
-	Une autre approche de notre plateforme, serait de s'en servir pour écrire facilement des tests en Java, de façon plus efficace et plus robuste qu'avec la TA3 : notre plateforme doit donc également fonctionner comme une bibliothèque sans utilisation de générateur ou de parser, pour que le testeur puisse effectuer un test rapide. 
-
-	Celui-ci apprendra à se servir de la plateforme, écrira en règle générale des tests assez courts et moins complexes que ceux que nous générerons, ceux-ci doivent être faciles à écrire.
-
-\begin{remarque}
-	\textit{GreenT} fonctionne avec un modèle client-serveur comme cela sera détaillé chapitre \ref{chapGreent}.
-	
-	 Afin de commencer à effectuer une livraison dans l'optique de l'utilisation de \textit{GreenT} en tant que bibliothèque, nous avons déjà fourni les premières versions des serveurs à plusieurs personnes. Celles-ci utilisent nos serveurs en effectuant des scripts simples depuis un an sans problème.
-\end{remarque}
+%	\newpage
+%	\subsection{L'utilisation de \textit{GreenT} comme une bibliothèque}
+%	Une autre approche de notre plateforme, serait de s'en servir pour écrire facilement des tests en Java, de façon plus efficace et plus robuste qu'avec la TA3 : notre plateforme doit donc également fonctionner comme une bibliothèque sans utilisation de générateur ou de parser, pour que le testeur puisse effectuer un test rapide. 
+%
+%	Celui-ci apprendra à se servir de la plateforme, écrira en règle générale des tests assez courts et moins complexes que ceux que nous générerons, ceux-ci doivent être faciles à écrire.
+%
+%\begin{remarque}
+%	\textit{GreenT} fonctionne avec un modèle client-serveur comme cela sera détaillé chapitre \ref{chapGreent}.
+%	
+%	 Afin de commencer à effectuer une livraison dans l'optique de l'utilisation de \textit{GreenT} en tant que bibliothèque, nous avons déjà fourni les premières versions des serveurs à plusieurs personnes. Celles-ci utilisent nos serveurs en effectuant des scripts simples depuis un an sans problème.
+%\end{remarque}
