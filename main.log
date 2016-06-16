@@ -1,14 +1,21 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2016.4.21)  29 MAY 2016 11:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.13)  15 JUN 2016 12:07
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
 **main.tex
-(./main.tex
+(D:\Stage\M2\stage-M2\main.tex
 LaTeX2e <2011/06/27>
-Babel <3.9k> and hyphenation patterns for 3 languages loaded.
-(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+(D:\bin\miktex\tex\latex\base\book.cls
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo
+(D:\bin\miktex\tex\latex\base\bk12.clo
 File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -24,7 +31,7 @@ File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texlive/texmf-dist/tex/latex/lm/lmodern.sty
+(D:\bin\miktex\tex\latex\lm\lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -59,21 +66,21 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(D:\bin\miktex\tex\latex\xcolor\xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+(D:\bin\miktex\tex\latex\00miktex\color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(D:\bin\miktex\tex\latex\pdftex-def\pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(D:\bin\miktex\tex\generic\oberdiek\infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(D:\bin\miktex\tex\generic\oberdiek\ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count88
@@ -88,23 +95,22 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 
-(/usr/share/texlive/texmf-dist/tex/latex/xcolor/svgnam.def
+(D:\bin\miktex\tex\latex\xcolor\svgnam.def
 File: svgnam.def 2007/01/21 v2.11 Predefined colors according to SVG 1.1 (UK)
 ))
-(./styles/couleurs.tex)
-(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+(D:\Stage\M2\stage-M2\styles/couleurs.tex)
+(D:\bin\miktex\tex\latex\base\inputenc.sty
+Package: inputenc 2014/04/30 v1.2b Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+(D:\bin\miktex\tex\latex\base\utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+ (D:\bin\miktex\tex\latex\base\t1enc.dfu
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -253,8 +259,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 )
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+(D:\bin\miktex\tex\latex\base\ot1enc.dfu
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -285,7 +290,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+(D:\bin\miktex\tex\latex\base\omsenc.dfu
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -309,14 +314,14 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(D:\bin\miktex\tex\latex\base\fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+(D:\bin\miktex\tex\latex\base\t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+(D:\bin\miktex\tex\latex\wrapfig\wrapfig.sty
 \wrapoverhang=\dimen103
 \WF@size=\dimen104
 \c@WF@wrappedlines=\count89
@@ -324,23 +329,25 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 \WF@everypar=\toks16
 Package: wrapfig 2003/01/31  v 3.6
 )
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+(D:\bin\miktex\tex\latex\babel\babel.sty
 Package: babel 2014/03/24 3.9k The Babel package
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel-french/frenchb.ldf
-Language: frenchb 2014/03/14 v3.0b French support from the babel system
-\l@french = a dialect from \language\l@nohyphenation 
+(D:\bin\miktex\tex\latex\babel\switch.def
+File: switch.def 2014/03/24 3.9k Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+(D:\bin\miktex\tex\latex\00miktex\bblopts.cfg
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+(D:\bin\miktex\tex\latex\babel-french\frenchb.ldf
+Language: frenchb 2014/04/18 v3.0c French support from the babel system
 
-
-Package babel Warning: No hyphenation patterns were preloaded for
-(babel)                the language `French' into the format.
-(babel)                Please, configure your TeX system to add them and
-(babel)                rebuild the format. Now I will use the patterns
-(babel)                preloaded for \language=nohyphenation instead on input l
-ine 56.
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+(D:\bin\miktex\tex\latex\babel\babel.def
 File: babel.def 2014/03/24 3.9k Babel common definitions
+
+(D:\bin\miktex\tex\generic\config\language.def)
 \babel@savecnt=\count90
 \U@D=\dimen105
 )
@@ -349,10 +356,10 @@ File: babel.def 2014/03/24 3.9k Babel common definitions
 \FBcolonskip=\skip43
 \FBthinskip=\skip44
 \FB@interchartokenstateORI=\count91
-Package babel Info: Making : an active character on input line 367.
-Package babel Info: Making ; an active character on input line 368.
-Package babel Info: Making ! an active character on input line 369.
-Package babel Info: Making ? an active character on input line 370.
+Package babel Info: Making : an active character on input line 371.
+Package babel Info: Making ; an active character on input line 372.
+Package babel Info: Making ! an active character on input line 373.
+Package babel Info: Making ? an active character on input line 374.
 \FBguillskip=\skip45
 \FB@Mht=\dimen106
 \std@mcc=\count92
@@ -362,23 +369,23 @@ Package babel Info: Making ? an active character on input line 370.
 \leftmarginFB=\skip48
 \parindentFFN=\dimen107
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+(D:\bin\miktex\tex\latex\carlisle\scalefnt.sty)
+(D:\bin\miktex\tex\latex\graphics\keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(D:\bin\miktex\tex\latex\geometry\geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+(D:\bin\miktex\tex\generic\oberdiek\ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+(D:\bin\miktex\tex\generic\oberdiek\ifvtex.sty
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(D:\bin\miktex\tex\generic\ifxetex\ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count94
@@ -393,23 +400,24 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen114
 \Gm@layoutvoffset=\dimen115
 \Gm@dimlist=\toks18
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+
+(D:\bin\miktex\tex\latex\geometry\geometry.cfg))
+(D:\bin\miktex\tex\latex\tools\verbatim.sty
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks19
 \verbatim@line=\toks20
 \verbatim@in@stream=\read1
 )
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(D:\bin\miktex\tex\latex\hyperref\hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
-Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+(D:\bin\miktex\tex\generic\oberdiek\hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
 
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
-Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+(D:\bin\miktex\tex\generic\oberdiek\hobsub-generic.sty
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
 Package hobsub Info: Skipping package `ltxcmds' (already loaded).
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
@@ -438,7 +446,7 @@ Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
 )
 Package hobsub Info: Skipping package `hobsub' (already loaded).
 Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
-Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
 Package: xcolor-patch 2011/01/30 xcolor patch
 Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
@@ -446,24 +454,24 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+(D:\bin\miktex\tex\latex\oberdiek\auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(D:\bin\miktex\tex\latex\oberdiek\kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen116
 \Hy@linkcounter=\count97
 \Hy@pagecounter=\count98
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+(D:\bin\miktex\tex\latex\hyperref\pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 \Hy@SavedSpaceFactor=\count99
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+(D:\bin\miktex\tex\latex\00miktex\hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
@@ -476,7 +484,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count100
 
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+(D:\bin\miktex\tex\latex\url\url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -501,65 +509,65 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(D:\bin\miktex\tex\latex\hyperref\hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count105
 \c@bookmark@seq@number=\count106
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+(D:\bin\miktex\tex\latex\oberdiek\rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip49
 )
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+(D:\bin\miktex\tex\latex\pgf\frontendlayer\tikz.sty
+(D:\bin\miktex\tex\latex\pgf\basiclayer\pgf.sty
+(D:\bin\miktex\tex\latex\pgf\utilities\pgfrcs.sty
+(D:\bin\miktex\tex\generic\pgf\utilities\pgfutil-common.tex
 \pgfutil@everybye=\toks21
 \pgfutil@tempdima=\dimen120
 \pgfutil@tempdimb=\dimen121
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
-ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+(D:\bin\miktex\tex\generic\pgf\utilities\pgfutil-common-lists.tex))
+(D:\bin\miktex\tex\generic\pgf\utilities\pgfutil-latex.def
 \pgfutil@abb=\box27
-(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+
+(D:\bin\miktex\tex\latex\ms\everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(D:\bin\miktex\tex\generic\pgf\utilities\pgfrcs.code.tex
 Package: pgfrcs 2013/12/20 v3.0.0 (rcs-revision 1.28)
 ))
 Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
 
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+(D:\bin\miktex\tex\latex\pgf\basiclayer\pgfcore.sty
+(D:\bin\miktex\tex\latex\graphics\graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(D:\bin\miktex\tex\latex\graphics\graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+(D:\bin\miktex\tex\latex\graphics\trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(D:\bin\miktex\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 )
 \Gin@req@height=\dimen122
 \Gin@req@width=\dimen123
 )
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(D:\bin\miktex\tex\latex\pgf\systemlayer\pgfsys.sty
+(D:\bin\miktex\tex\generic\pgf\systemlayer\pgfsys.code.tex
 Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(D:\bin\miktex\tex\generic\pgf\utilities\pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks22
 \pgfkeys@temptoks=\toks23
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
-ex
+(D:\bin\miktex\tex\generic\pgf\utilities\pgfkeysfiltered.code.tex
 \pgfkeys@tmptoks=\toks24
 ))
 \pgf@x=\dimen124
@@ -579,35 +587,33 @@ ex
 \t@pgf@toka=\toks25
 \t@pgf@tokb=\toks26
 \t@pgf@tokc=\toks27
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+
+(D:\bin\miktex\tex\generic\pgf\systemlayer\pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+(D:\bin\miktex\tex\generic\pgf\systemlayer\pgfsys-pdftex.def
 File: pgfsys-pdftex.def 2013/07/18  (rcs-revision 1.33)
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
-f
+(D:\bin\miktex\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
-tex
+(D:\bin\miktex\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
 \pgfsyssoftpath@smallbuffer@items=\count111
 \pgfsyssoftpath@bigbuffer@items=\count112
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
-tex
+(D:\bin\miktex\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 ))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(D:\bin\miktex\tex\generic\pgf\basiclayer\pgfcore.code.tex
 Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+(D:\bin\miktex\tex\generic\pgf\math\pgfmath.code.tex
+(D:\bin\miktex\tex\generic\pgf\math\pgfmathcalc.code.tex
+(D:\bin\miktex\tex\generic\pgf\math\pgfmathutil.code.tex)
+(D:\bin\miktex\tex\generic\pgf\math\pgfmathparser.code.tex
 \pgfmath@dimen=\dimen132
 \pgfmath@count=\count113
 \pgfmath@box=\box28
@@ -615,28 +621,19 @@ Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
 \pgfmath@stack@operand=\toks29
 \pgfmath@stack@operation=\toks30
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
-.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
-ric.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
-e.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
-.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
-tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
-.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
-tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
-thmetics.code.tex)))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+(D:\bin\miktex\tex\generic\pgf\math\pgfmathfunctions.code.tex
+(D:\bin\miktex\tex\generic\pgf\math\pgfmathfunctions.basic.code.tex)
+(D:\bin\miktex\tex\generic\pgf\math\pgfmathfunctions.trigonometric.code.tex)
+(D:\bin\miktex\tex\generic\pgf\math\pgfmathfunctions.random.code.tex)
+(D:\bin\miktex\tex\generic\pgf\math\pgfmathfunctions.comparison.code.tex)
+(D:\bin\miktex\tex\generic\pgf\math\pgfmathfunctions.base.code.tex)
+(D:\bin\miktex\tex\generic\pgf\math\pgfmathfunctions.round.code.tex)
+(D:\bin\miktex\tex\generic\pgf\math\pgfmathfunctions.misc.code.tex)
+(D:\bin\miktex\tex\generic\pgf\math\pgfmathfunctions.integerarithmetics.code.te
+x))) (D:\bin\miktex\tex\generic\pgf\math\pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count114
 ))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
-x
+(D:\bin\miktex\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@picminx=\dimen133
 \pgf@picmaxx=\dimen134
@@ -653,113 +650,100 @@ File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@zx=\dimen145
 \pgf@zy=\dimen146
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
-code.tex
+(D:\bin\miktex\tex\generic\pgf\basiclayer\pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
 \pgf@path@lastx=\dimen147
 \pgf@path@lasty=\dimen148
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
-.tex
+(D:\bin\miktex\tex\generic\pgf\basiclayer\pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
 \pgf@shorten@end@additional=\dimen149
 \pgf@shorten@start@additional=\dimen150
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
-x
+(D:\bin\miktex\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
 \pgfpic=\box29
 \pgf@hbox=\box30
 \pgf@layerbox@main=\box31
 \pgf@picture@serial@count=\count115
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
-ode.tex
+(D:\bin\miktex\tex\generic\pgf\basiclayer\pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
 \pgflinewidth=\dimen151
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
-s.code.tex
+(D:\bin\miktex\tex\generic\pgf\basiclayer\pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
 \pgf@pt@x=\dimen152
 \pgf@pt@y=\dimen153
 \pgf@pt@temp=\dimen154
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+(D:\bin\miktex\tex\generic\pgf\basiclayer\pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
-ex
+(D:\bin\miktex\tex\generic\pgf\basiclayer\pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
-.code.tex
+(D:\bin\miktex\tex\generic\pgf\basiclayer\pgfcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
-x
+(D:\bin\miktex\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
 \pgfarrowsep=\dimen155
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+(D:\bin\miktex\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen156
 \pgf@sys@shading@range@num=\count116
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+(D:\bin\miktex\tex\generic\pgf\basiclayer\pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
-tex
+(D:\bin\miktex\tex\generic\pgf\basiclayer\pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
 \pgfexternal@startupbox=\box32
 ))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
-x
+(D:\bin\miktex\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
-ode.tex
+(D:\bin\miktex\tex\generic\pgf\basiclayer\pgfcoretransparency.code.tex
 File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
-tex
+(D:\bin\miktex\tex\generic\pgf\basiclayer\pgfcorepatterns.code.tex
 File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 )))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+(D:\bin\miktex\tex\generic\pgf\modules\pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2013/10/31  (rcs-revision 1.34)
 \pgfnodeparttextbox=\box33
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+)
+(D:\bin\miktex\tex\generic\pgf\modules\pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
-.sty
+(D:\bin\miktex\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
 \pgf@nodesepstart=\dimen157
 \pgf@nodesepend=\dimen158
 )
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
-.sty
+(D:\bin\miktex\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
-)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+))
+(D:\bin\miktex\tex\latex\pgf\utilities\pgffor.sty
+(D:\bin\miktex\tex\latex\pgf\utilities\pgfkeys.sty
+(D:\bin\miktex\tex\generic\pgf\utilities\pgfkeys.code.tex))
+(D:\bin\miktex\tex\latex\pgf\math\pgfmath.sty
+(D:\bin\miktex\tex\generic\pgf\math\pgfmath.code.tex))
+(D:\bin\miktex\tex\generic\pgf\utilities\pgffor.code.tex
 Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+(D:\bin\miktex\tex\generic\pgf\math\pgfmath.code.tex)
 \pgffor@iter=\dimen159
 \pgffor@skip=\dimen160
 \pgffor@stack=\toks31
 \pgffor@toks=\toks32
 ))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+(D:\bin\miktex\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
 Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
-.code.tex
+(D:\bin\miktex\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
 \pgf@plot@mark@count=\count117
 \pgfplotmarksize=\dimen161
@@ -779,7 +763,7 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
 \tikznumberofcurrentchild=\count120
 \tikz@fig@count=\count121
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+(D:\bin\miktex\tex\generic\pgf\modules\pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 \pgfmatrixcurrentrow=\count122
 \pgfmatrixcurrentcolumn=\count123
@@ -787,11 +771,10 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 )
 \tikz@expandcount=\count125
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarytopaths.code.tex
+(D:\bin\miktex\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.
+code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
-)))
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+))) (D:\bin\miktex\tex\latex\listings\listings.sty
 \lst@mode=\count126
 \lst@gtempboxa=\box38
 \lst@token=\toks33
@@ -805,18 +788,18 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 \lst@lineno=\count131
 \lst@maxwidth=\dimen171
 
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+(D:\bin\miktex\tex\latex\listings\lstmisc.sty
 File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
 \c@lstnumber=\count132
 \lst@skipnumbers=\count133
 \lst@framebox=\box39
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+(D:\bin\miktex\tex\latex\listings\listings.cfg
 File: listings.cfg 2014/03/04 1.5c listings configuration
 ))
 Package: listings 2014/03/04 1.5c (Carsten Heinz)
 
-(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+(D:\bin\miktex\tex\latex\fancyhdr\fancyhdr.sty
 \fancy@headwidth=\skip50
 \f@ncyO@elh=\skip51
 \f@ncyO@erh=\skip52
@@ -827,22 +810,21 @@ Package: listings 2014/03/04 1.5c (Carsten Heinz)
 \f@ncyO@olf=\skip57
 \f@ncyO@orf=\skip58
 )
-(/usr/share/texlive/texmf-dist/tex/latex/multido/multido.sty
+(D:\bin\miktex\tex\latex\multido\multido.sty
 Package: multido 2004/05/17 package wrapper for PSTricks `multido.tex', (HV/RN)
 
 
-(/usr/share/texlive/texmf-dist/tex/generic/multido/multido.tex
- v1.42, 2010/05/14 <tvz>
+(D:\bin\miktex\tex\generic\multido\multido.tex  v1.42, 2010/05/14 <tvz>
 \multido@count=\count134
 \multidocount=\count135
 \multido@stuff=\toks34
 )
 File: multido.tex 2010/05/14 v1.42 `multido' (tvz,hv)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(D:\bin\miktex\tex\latex\amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(D:\bin\miktex\tex\latex\amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks35
 \symAMSa=\mathgroup4
@@ -850,15 +832,15 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+(D:\bin\miktex\tex\latex\float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count136
 \float@exts=\toks36
 \float@box=\box40
 \@float@everytoks=\toks37
 \@floatcapt=\box41
-) (./titlebox.sty
-(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+) (D:\Stage\M2\stage-M2\titlebox.sty
+(D:\bin\miktex\tex\latex\tools\calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count137
 \calc@Bcount=\count138
@@ -866,8 +848,8 @@ Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bdimen=\dimen173
 \calc@Askip=\skip59
 \calc@Bskip=\skip60
-LaTeX Info: Redefining \setlength on input line 76.
-LaTeX Info: Redefining \addtolength on input line 77.
+LaTeX Info: Redefining \setlength on input line 75.
+LaTeX Info: Redefining \addtolength on input line 76.
 \calc@Ccount=\count139
 \calc@Cskip=\skip61
 )
@@ -877,10 +859,10 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \hauteurboitetitre=\skip64
 \largeurtitre=\skip65
 )
-(/usr/share/texlive/texmf-dist/tex/latex/minitoc/minitoc.sty
+(D:\bin\miktex\tex\latex\minitoc\minitoc.sty
 Package: minitoc 2008/07/16 v60 Package minitoc (JPFD)
 
-(/usr/share/texlive/texmf-dist/tex/latex/minitoc/mtcmess.sty
+(D:\bin\miktex\tex\latex\minitoc\mtcmess.sty
 Package: mtcmess 2006/03/14
 )
 Package minitoc Info: I0001
@@ -899,20 +881,12 @@ Package minitoc Info: I0003
 \mtc@hstrutbox=\box44
 Package minitoc Info: I0002
 (minitoc)             Autoconfiguration of extensions.
-\openout4 = `main.mtc0'.
-
-\openout4 = `main.mtc'.
-
- (./main.mtc0)
+ (D:\Stage\M2\stage-M2\main.mtc0)
 Package minitoc Info: I0012
 (minitoc)             Long extensions (Unix-like) will be used.
 Package minitoc Info: I0031
 (minitoc)             ==> this version is configured for UNIX-like 
 (minitoc)                 (long extensions) file names.
-\openout4 = `main.mtc'.
-
-\openout4 = `main.mtc0'.
-
 \c@mtc=\count140
 \c@minitocdepth=\count141
 \c@ptc=\count142
@@ -922,35 +896,35 @@ Package minitoc Info: I0010
 (minitoc)             The english language is selected.
 (minitoc)              on input line 4910.
 
-(/usr/share/texlive/texmf-dist/tex/latex/minitoc/english.mld
+(D:\bin\miktex\tex\latex\minitoc\english.mld
 File: english.mld 2006/01/13
 )
-(/usr/share/texlive/texmf-dist/tex/latex/minitoc/english.mld
+(D:\bin\miktex\tex\latex\minitoc\english.mld
 File: english.mld 2006/01/13
 )
 Package minitoc Info: I0010
 (minitoc)             The francais language is selected.
 (minitoc)              on input line 4911.
 
-(/usr/share/texlive/texmf-dist/tex/latex/minitoc/francais.mld
+(D:\bin\miktex\tex\latex\minitoc\francais.mld
 File: francais.mld 2004/12/14
 Package minitoc Info: I0010
 (minitoc)             The french language is selected.
 (minitoc)              on input line 32.
 
-(/usr/share/texlive/texmf-dist/tex/latex/minitoc/french.mld
+(D:\bin\miktex\tex\latex\minitoc\french.mld
 File: french.mld 2006/03/21
 )))
-(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+(D:\bin\miktex\tex\latex\pdfpages\pdfpages.sty
 Package: pdfpages 2013/08/25 v0.4v Insert pages of external PDF documents (AM)
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+(D:\bin\miktex\tex\latex\base\ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+(D:\bin\miktex\tex\latex\eso-pic\eso-pic.sty
 Package: eso-pic 2013/10/06 v2.0d eso-pic (RN)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
+(D:\bin\miktex\tex\latex\pdfpages\pppdftex.def
 File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box45
@@ -958,46 +932,42 @@ File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
 \c@AM@survey=\count144
 \AM@templatesizebox=\box46
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+(D:\bin\miktex\tex\latex\oberdiek\epstopdf.sty
 Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(D:\bin\miktex\tex\latex\oberdiek\epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+(D:\bin\miktex\tex\latex\oberdiek\grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 )
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-)))
-(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titletoc.sty
+))
+(D:\bin\miktex\tex\latex\titlesec\titletoc.sty
 Package: titletoc 2011/12/15 v1.6 TOC entries
 \ttl@leftsep=\dimen174
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+(D:\bin\miktex\tex\latex\amsmath\amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip69
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(D:\bin\miktex\tex\latex\amsmath\amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+(D:\bin\miktex\tex\latex\amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks40
 \ex@=\dimen175
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(D:\bin\miktex\tex\latex\amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen176
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+(D:\bin\miktex\tex\latex\amsmath\amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count145
@@ -1038,46 +1008,48 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/background/background.sty
+(D:\bin\miktex\tex\latex\background\background.sty
 Package: background 2014/03/04 v2.1 background material
 
-(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
+(D:\bin\miktex\tex\latex\xkeyval\xkeyval.sty
+Package: xkeyval 2014/05/25 v2.7 package option processing (HA)
 
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(D:\bin\miktex\tex\generic\xkeyval\xkeyval.tex
+(D:\bin\miktex\tex\generic\xkeyval\xkvutils.tex
 \XKV@toks=\toks45
 \XKV@tempa@toks=\toks46
+)
 \XKV@depth=\count157
-File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
+File: xkeyval.tex 2014/05/25 v2.7 key=value parser (HA)
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/everypage/everypage.sty
+(D:\bin\miktex\tex\latex\everypage\everypage.sty
 Package: everypage 2007/06/20 1.1 Hooks to run on every page
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tools/afterpage.sty
+(D:\bin\miktex\tex\latex\tools\afterpage.sty
 Package: afterpage 1995/10/27 v1.08 After-Page Package (DPC)
 \AP@output=\toks47
 \AP@partial=\box49
 \AP@footins=\box50
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+(D:\bin\miktex\tex\latex\lipsum\lipsum.sty
 Package: lipsum 2011/04/14 v1.2 150 paragraphs of Lorem Ipsum dummy text
 \c@lips@count=\count158
 )
-(./styles/listings.tex
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+(D:\Stage\M2\stage-M2\styles/listings.tex
+(D:\bin\miktex\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+(D:\bin\miktex\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
+(D:\bin\miktex\tex\latex\listings\lstlang2.sty
 File: lstlang2.sty 2014/03/04 1.5c listings language file
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+(D:\bin\miktex\tex\latex\listings\lstmisc.sty
 File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
 ))
-(./styles/remarquesExempleAttention.tex
-(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+(D:\Stage\M2\stage-M2\styles/remarquesExempleAttention.tex
+(D:\bin\miktex\tex\latex\amscls\amsthm.sty
 Package: amsthm 2004/08/06 v2.20
 \thm@style=\toks48
 \thm@bodyfont=\toks49
@@ -1100,72 +1072,46 @@ Package: amsthm 2004/08/06 v2.20
 \c@remarqueT=\count167
 \c@exempleT=\count168
 
-(/usr/share/texlive/texmf-dist/tex/latex/mdframed/mdframed.sty
+(D:\bin\miktex\tex\latex\mdframed\mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
 
-(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3names.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3bootstrap.sty
-Package: l3bootstrap 2014/01/04 v4640 L3 Experimental bootstrap code
-)
-Package: l3names 2014/01/04 v4640 L3 Namespace for primitives
-)
-(/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
+(D:\bin\miktex\tex\latex\l3packages\xparse\xparse.sty
+(D:\bin\miktex\tex\latex\l3kernel\expl3.sty
+Package: expl3 2014/05/20 v4814 L3 programming layer (loader) 
+
+(D:\bin\miktex\tex\latex\l3kernel\expl3-code.tex
+Package: expl3 2014/05/20 v4814 L3 programming layer (code) 
+L3 Module: l3bootstrap 2014/05/16 v4782 L3 Bootstrap code
+
+(D:\bin\miktex\tex\latex\misc\etex.sty
 Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
 \et@xins=\count169
 )
-Package: expl3 2014/01/07 v4646 L3 Experimental code bundle wrapper
-
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3basics.sty
-Package: l3basics 2014/01/04 v4642 L3 Basic definitions
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3expan.sty
-Package: l3expan 2014/01/04 v4642 L3 Argument expansion
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3tl.sty
-Package: l3tl 2013/12/27 v4625 L3 Token lists
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3seq.sty
-Package: l3seq 2013/12/14 v4623 L3 Sequences and stacks
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3int.sty
-Package: l3int 2013/08/02 v4583 L3 Integers
+L3 Module: l3names 2014/05/04 v4728 L3 Namespace for primitives
+L3 Module: l3basics 2014/05/04 v4728 L3 Basic definitions
+L3 Module: l3expan 2014/04/30 v4712 L3 Argument expansion
+L3 Module: l3tl 2014/05/04 v4728 L3 Token lists
+L3 Module: l3seq 2014/04/30 v4712 L3 Sequences and stacks
+L3 Module: l3int 2014/05/16 v4776 L3 Integers
 \c_max_int=\count170
 \l_tmpa_int=\count171
 \l_tmpb_int=\count172
 \g_tmpa_int=\count173
 \g_tmpb_int=\count174
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3quark.sty
-Package: l3quark 2013/12/14 v4623 L3 Quarks
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3prg.sty
-Package: l3prg 2014/01/04 v4642 L3 Control structures
+L3 Module: l3quark 2014/05/04 v4728 L3 Quarks
+L3 Module: l3prg 2014/05/04 v4728 L3 Control structures
 \g__prg_map_int=\count175
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3clist.sty
-Package: l3clist 2013/07/28 v4581 L3 Comma separated lists
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3token.sty
-Package: l3token 2013/08/25 v4587 L3 Experimental token manipulation
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3prop.sty
-Package: l3prop 2013/12/14 v4623 L3 Property lists
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3msg.sty
-Package: l3msg 2013/07/28 v4581 L3 Messages
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3file.sty
-Package: l3file 2013/10/13 v4596 L3 File and I/O operations
+L3 Module: l3clist 2014/05/04 v4728 L3 Comma separated lists
+L3 Module: l3token 2014/05/04 v4728 L3 Experimental token manipulation
+L3 Module: l3prop 2014/04/30 v4712 L3 Property lists
+L3 Module: l3msg 2014/05/04 v4728 L3 Messages
+L3 Module: l3file 2014/05/05 v4737 L3 File and I/O operations
 \l_iow_line_count_int=\count176
 \l__iow_target_count_int=\count177
 \l__iow_current_line_int=\count178
 \l__iow_current_word_int=\count179
 \l__iow_current_indentation_int=\count180
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3skip.sty
-Package: l3skip 2013/07/28 v4581 L3 Dimensions and skips
+L3 Module: l3skip 2014/05/05 v4738 L3 Dimensions and skips
 \c_zero_dim=\dimen184
 \c_max_dim=\dimen185
 \l_tmpa_dim=\dimen186
@@ -1184,14 +1130,10 @@ Package: l3skip 2013/07/28 v4581 L3 Dimensions and skips
 \l_tmpb_muskip=\muskip15
 \g_tmpa_muskip=\muskip16
 \g_tmpb_muskip=\muskip17
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3keys.sty
-Package: l3keys 2013/12/08 v4614 L3 Experimental key-value interfaces
+L3 Module: l3keys 2014/05/08 v4753 L3 Key-value interfaces
 \g__keyval_level_int=\count181
 \l_keys_choice_int=\count182
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3fp.sty
-Package: l3fp 2014/01/04 v4642 L3 Floating points
+L3 Module: l3fp 2014/04/30 v4712 L3 Floating points
 \c__fp_leading_shift_int=\count183
 \c__fp_middle_shift_int=\count184
 \c__fp_trailing_shift_int=\count185
@@ -1201,17 +1143,13 @@ Package: l3fp 2014/01/04 v4642 L3 Floating points
 \c__fp_Bigg_leading_shift_int=\count189
 \c__fp_Bigg_middle_shift_int=\count190
 \c__fp_Bigg_trailing_shift_int=\count191
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3box.sty
-Package: l3box 2013/07/28 v4581 L3 Experimental boxes
+L3 Module: l3box 2014/05/04 v4728 L3 Experimental boxes
 \c_empty_box=\box51
 \l_tmpa_box=\box52
 \l_tmpb_box=\box53
 \g_tmpa_box=\box54
 \g_tmpb_box=\box55
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3coffins.sty
-Package: l3coffins 2013/12/14 v4624 L3 Coffin code layer
+L3 Module: l3coffins 2014/05/04 v4728 L3 Coffin code layer
 \l__coffin_internal_box=\box56
 \l__coffin_internal_dim=\dimen190
 \l__coffin_offset_x_dim=\dimen191
@@ -1231,17 +1169,11 @@ Package: l3coffins 2013/12/14 v4624 L3 Coffin code layer
 \l__coffin_display_offset_dim=\dimen197
 \l__coffin_display_x_dim=\dimen198
 \l__coffin_display_y_dim=\dimen199
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3color.sty
-Package: l3color 2012/08/29 v4156 L3 Experimental color support
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3luatex.sty
-Package: l3luatex 2013/07/28 v4581 L3 Experimental LuaTeX-specific functions
+L3 Module: l3color 2014/04/30 v4712 L3 Experimental color support
+L3 Module: l3luatex 2014/04/30 v4712 L3 Experimental LuaTeX-specific functions
 \g__cctab_allocate_int=\count192
 \g__cctab_stack_int=\count193
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3candidates.sty
-Package: l3candidates 2014/01/06 v4643 L3 Experimental additions to l3kernel
+L3 Module: l3candidates 2014/05/04 v4734 L3 Experimental additions to l3kernel
 \l__box_top_dim=\dimen200
 \l__box_bottom_dim=\dimen201
 Normal \dimen register pool exhausted, switching to extended pool.
@@ -1260,21 +1192,21 @@ Normal \dimen register pool exhausted, switching to extended pool.
 \l__coffin_scaled_total_height_dim=\dimen267
 \l__coffin_scaled_width_dim=\dimen268
 ))
-Package: xparse 2013/12/31 v4634 L3 Experimental document command parser
+Package: xparse 2014/05/05 v4740 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count194
 \l__xparse_m_args_int=\count195
 \l__xparse_mandatory_args_int=\count196
 \l__xparse_processor_int=\count197
 \l__xparse_v_nesting_int=\count198
 )
-(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+(D:\bin\miktex\tex\latex\etoolbox\etoolbox.sty
 Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
 \etb@tempcnta=\count199
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
+(D:\bin\miktex\tex\latex\oberdiek\zref-abspage.sty
 Package: zref-abspage 2012/04/04 v2.24 Module abspage for zref (HO)
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/zref-base.sty
+(D:\bin\miktex\tex\latex\oberdiek\zref-base.sty
 Package: zref-base 2012/04/04 v2.24 Module base for zref (HO)
 Package zref Info: New property list: main on input line 759.
 Package zref Info: New property: default on input line 760.
@@ -1283,7 +1215,7 @@ Package zref Info: New property: page on input line 761.
 \c@abspage=\count200
 Package zref Info: New property: abspage on input line 62.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/needspace/needspace.sty
+(D:\bin\miktex\tex\latex\needspace\needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
 \mdf@templength=\skip81
@@ -1328,7 +1260,7 @@ Package: needspace 2010/09/12 v1.3d reserve vertical space
 \mdf@subsubtitleinneraboveskip@length=\skip119
 \mdf@subsubtitleinnerbelowskip@length=\skip120
 
-(/usr/share/texlive/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
+(D:\bin\miktex\tex\latex\mdframed\md-frame-0.mdf
 File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 )
 \mdf@frametitlebox=\box66
@@ -1388,12 +1320,14 @@ Normal \count register pool exhausted, switching to extended pool.
 \c@mdf@zref@counter=\count281
 Package zref Info: New property: mdf@pagevalue on input line 895.
 ))
-(./styles/polices.tex
+(D:\Stage\M2\stage-M2\styles/polices.tex
 LaTeX Font Info:    Try loading font information for T1+phv on input line 15.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
+
+(D:\bin\miktex\tex\latex\psnfss\t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
-)) (./styles/affichageChapitre.tex
-(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+))
+(D:\Stage\M2\stage-M2\styles/affichageChapitre.tex
+(D:\bin\miktex\tex\latex\titlesec\titlesec.sty
 Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \ttl@box=\box71
 \beforetitleunit=\skip148
@@ -1407,10 +1341,10 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 )
 \chapnumb=\skip150
 
-(/usr/share/texlive/texmf-dist/tex/latex/titlesec/block.tss
+(D:\bin\miktex\tex\latex\titlesec\block.tss
 File: block.tss 2011/12/15
 )
-(/usr/share/texlive/texmf-dist/tex/latex/titlesec/ttlkeys.def
+(D:\bin\miktex\tex\latex\titlesec\ttlkeys.def
 File: ttlkeys.def 2011/12/15
 \c@ttlp@side=\count282
 \ttlp@side=\count283
@@ -1419,59 +1353,59 @@ File: ttlkeys.def 2011/12/15
 \subsectiontitleindent=\skip152
 \subsubsectiontitleindent=\skip153
 )
-(./styles/headers.tex
+(D:\Stage\M2\stage-M2\styles/headers.tex
 \@indexfile=\write5
-\openout5 = `main.idx'.
-
 
 Writing index file main.idx
 \@glossaryfile=\write6
-\openout6 = `main.glo'.
-
 Writing glossary file main.glo 
 )
 Package minitoc Info: I0017
 (minitoc)             \mtcsettitle redefines the macro 
 (minitoc)             "mtctitle" as 
-(minitoc)             "\hfill Sommaire" on input line 55.
+(minitoc)             "\hfill Sommaire" on input line 54.
 Package minitoc Info: I0008
 (minitoc)             Horizontal rules are inhibited 
-(minitoc)             for the minitocs on input line 56.
+(minitoc)             for the minitocs on input line 55.
 Package minitoc Info: I0014
 (minitoc)             \mtcsetfeature redefines the macro 
 (minitoc)             "beforeminitoc" as 
-(minitoc)             "\vspace {0pt}" on input line 57.
+(minitoc)             "\vspace {0pt}" on input line 56.
 Package minitoc Info: I0014
 (minitoc)             \mtcsetfeature redefines the macro 
 (minitoc)             "afterminitoc" as 
-(minitoc)             "\vspace {-25pt}" on input line 58.
- (./main.aux (./contents/intro.aux) (./contents/conti/conti.aux)
-(./contents/problem/problem.aux) (./contents/organization/organization.aux)
-(./contents/greent/greent.aux) (./contents/greent/collaboration.aux)
-(./contents/bilan/bilan.aux) (./annexes/glossary.aux) (./annexes/references.aux
-) (./annexes/report.aux) (./annexes/generatesFiles.aux))
-\openout1 = `main.aux'.
+(minitoc)             "\vspace {-25pt}" on input line 57.
+ (D:\Stage\M2\stage-M2\main.aux (D:\Stage\M2\stage-M2\contents/intro.aux)
+(D:\Stage\M2\stage-M2\contents/conti/conti.aux)
+(D:\Stage\M2\stage-M2\contents/problem/problem.aux)
+(D:\Stage\M2\stage-M2\contents/organization/organization.aux)
+(D:\Stage\M2\stage-M2\contents/greent/greent.aux)
+(D:\Stage\M2\stage-M2\contents/greent/collaboration.aux)
+(D:\Stage\M2\stage-M2\contents/bilan/bilan.aux)
+(D:\Stage\M2\stage-M2\annexes/glossary.aux)
+(D:\Stage\M2\stage-M2\annexes/references.aux)
+(D:\Stage\M2\stage-M2\annexes/report.aux)
+(D:\Stage\M2\stage-M2\annexes/generatesFiles.aux))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 76.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 77.
-
-(/usr/share/texlive/texmf-dist/tex/latex/lm/t1lmr.fd
+(D:\bin\miktex\tex\latex\lm\t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+(D:\bin\miktex\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count284
 \scratchdimen=\dimen274
@@ -1485,9 +1419,9 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 \makeMPintoPDFobject=\count289
 \everyMPtoPDFconversion=\toks56
 )
-LaTeX Info: Redefining \degres on input line 77.
-LaTeX Info: Redefining \dots on input line 77.
-LaTeX Info: Redefining \up on input line 77.
+LaTeX Info: Redefining \degres on input line 76.
+LaTeX Info: Redefining \dots on input line 76.
+LaTeX Info: Redefining \up on input line 76.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1524,24 +1458,23 @@ LaTeX Info: Redefining \up on input line 77.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box73
-Package hyperref Info: Link coloring ON on input line 77.
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package hyperref Info: Link coloring ON on input line 76.
+(D:\bin\miktex\tex\latex\hyperref\nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+(D:\bin\miktex\tex\generic\oberdiek\gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count290
 )
-LaTeX Info: Redefining \ref on input line 77.
-LaTeX Info: Redefining \pageref on input line 77.
-LaTeX Info: Redefining \nameref on input line 77.
+LaTeX Info: Redefining \ref on input line 76.
+LaTeX Info: Redefining \pageref on input line 76.
+LaTeX Info: Redefining \nameref on input line 76.
 
-(./main.out) (./main.out)
+(D:\Stage\M2\stage-M2\main.out) (D:\Stage\M2\stage-M2\main.out)
 \@outlinefile=\write7
-\openout7 = `main.out'.
 
- ABD: EveryShipout initializing macros
+ABD: EveryShipout initializing macros
 \c@lstlisting=\count291
 Package minitoc(hints) Info: I0049
 (minitoc(hints))             ==> You requested the hints option. 
@@ -1579,7 +1512,7 @@ Package minitoc(hints) Warning: W0023
 (minitoc(hints))                --- It may be the consequence 
 (minitoc(hints))                of loading the ``hyperref'' package.
 
-(./styles/frontPage.tex
+(D:\Stage\M2\stage-M2\styles/frontPage.tex
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1613,24 +1546,23 @@ Package minitoc(hints) Warning: W0023
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 10.
- (/usr/share/texlive/texmf-dist/tex/latex/lm/ot1lmr.fd
+
+(D:\bin\miktex\tex\latex\lm\ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 10.
-
-(/usr/share/texlive/texmf-dist/tex/latex/lm/omllmm.fd
+ (D:\bin\miktex\tex\latex\lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 10.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/lm/omslmsy.fd
+(D:\bin\miktex\tex\latex\lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMX+lmex on input line 10.
 
-
-(/usr/share/texlive/texmf-dist/tex/latex/lm/omxlmex.fd
+ (D:\bin\miktex\tex\latex\lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1640,23 +1572,22 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 10.
 LaTeX Font Info:    Try loading font information for U+msa on input line 10.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+(D:\bin\miktex\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 10.
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+(D:\bin\miktex\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<styles/images/logos/ups.jpg, id=159, 963.6pt x 324.21124pt>
+<styles/images/logos/ups.jpg, id=162, 963.6pt x 324.21124pt>
 File: styles/images/logos/ups.jpg Graphic file (type jpg)
 
 <use styles/images/logos/ups.jpg>
 Package pdftex.def Info: styles/images/logos/ups.jpg used on input line 14.
 (pdftex.def)             Requested size: 227.62204pt x 76.5854pt.
 
-<styles/images/logos/mdl.png, id=160, 1003.75pt x 163.61125pt>
+<styles/images/logos/mdl.png, id=163, 1003.75pt x 163.61125pt>
 File: styles/images/logos/mdl.png Graphic file (type png)
 
 <use styles/images/logos/mdl.png>
@@ -1672,7 +1603,7 @@ Overfull \hbox (11.3844pt too wide) in paragraph at lines 13--16
 [] 
  []
 
-<styles/images/logos/conti.png, id=161, 202.5969pt x 62.27264pt>
+<styles/images/logos/conti.png, id=164, 202.5969pt x 62.27264pt>
 File: styles/images/logos/conti.png Graphic file (type png)
 
 <use styles/images/logos/conti.png>
@@ -1686,12 +1617,11 @@ Overfull \hbox (61.49463pt too wide) in paragraph at lines 21--22
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <38> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 39.
 LaTeX Font Info:    Try loading font information for T1+lmss on input line 39.
-(/usr/share/texlive/texmf-dist/tex/latex/lm/t1lmss.fd
+(D:\bin\miktex\tex\latex\lm\t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 39.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+ (D:\bin\miktex\tex\latex\psnfss\t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 
@@ -1712,16 +1642,16 @@ Overfull \hbox (8.69081pt too wide) in paragraph at lines 54--72
 
 
 
-{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map} <./styles/im
-ages/logos/ups.jpg> <./styles/images/logos/mdl.png (PNG copy)> <./styles/images
-/logos/conti.png>])
+{D:/bin/miktex/pdftex/config/pdftex.map} <D:/Stage/M2/stage-M2/styles/images/lo
+gos/ups.jpg> <D:/Stage/M2/stage-M2/styles/images/logos/mdl.png (PNG copy)> <D:/
+Stage/M2/stage-M2/styles/images/logos/conti.png>])
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] (./contents/thanks.tex
+[2] (D:\Stage\M2\stage-M2\contents/thanks.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
@@ -1733,10 +1663,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3]
-\openout2 = `contents/intro.aux'.
-
- (./contents/intro.tex
+[3] (D:\Stage\M2\stage-M2\contents/intro.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1746,85 +1673,37 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [4
 
 
-]
-Overfull \hbox (29.24034pt too wide) in paragraph at lines 3--4
-\T1/lmr/m/n/12 l'université Toulouse III ^^U Paul Sabatier, j'ai eu la possibil
-ité d'effectuer un contrat de professionnalisation
- []
-
-
-Overfull \hbox (0.96754pt too wide) in paragraph at lines 7--8
-[]\T1/lmr/m/n/12 Ce projet a pour but d'aider une équipe de Continental. Celle-
-ci est face à un problème : l'intégration
- []
-
-
-Overfull \hbox (1.0293pt too wide) in paragraph at lines 7--8
-\T1/lmr/m/n/12 d'un plugin dans un logiciel de contrôle moteur. Celui-ci possèd
-e des centaines de variables interfaces
- []
-
-) [5]
+]) [5]
 Package minitoc Info: I0024
-(minitoc)             PREPARING MINITOCS FROM main.toc on input line 96.
+(minitoc)             PREPARING MINITOCS FROM main.toc on input line 95.
 Package minitoc Info: I0033
 (minitoc)             Writing main.mtc1.
-\openout4 = `main.mtc1'.
-
 Package minitoc Info: I0033
 (minitoc)             Writing main.mtc2.
-\openout4 = `main.mtc2'.
-
 Package minitoc Info: I0033
 (minitoc)             Writing main.mtc3.
-\openout4 = `main.mtc3'.
-
 Package minitoc Info: I0033
 (minitoc)             Writing main.mtc4.
-\openout4 = `main.mtc4'.
-
 Package minitoc Info: I0033
 (minitoc)             Writing main.mtc5.
-\openout4 = `main.mtc5'.
-
 Package minitoc Info: I0033
 (minitoc)             Writing main.mtc6.
-\openout4 = `main.mtc6'.
-
 Package minitoc Info: I0033
 (minitoc)             Writing main.mtc7.
-\openout4 = `main.mtc7'.
-
 Package minitoc Info: I0033
 (minitoc)             Writing main.mtc8.
-\openout4 = `main.mtc8'.
-
-\openout4 = `main.mtc'.
-
 Package minitoc Info: I0033
 (minitoc)             Writing main.mtc9.
-\openout4 = `main.mtc9'.
-
 Package minitoc Info: I0033
 (minitoc)             Writing main.mtc10.
-\openout4 = `main.mtc10'.
-
 Package minitoc Info: I0033
 (minitoc)             Writing main.mtc11.
-\openout4 = `main.mtc11'.
-
 Package minitoc Info: I0033
 (minitoc)             Writing main.mtc12.
-\openout4 = `main.mtc12'.
-
 Package minitoc Info: I0033
 (minitoc)             Writing main.mtc13.
-\openout4 = `main.mtc13'.
-
 Package minitoc Info: I0033
 (minitoc)             Writing main.mtc14.
-\openout4 = `main.mtc14'.
-
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1835,14 +1714,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [6
 
 
-] (./main.toc [7]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 96.
- (/usr/share/texlive/texmf-dist/tex/latex/lm/t1lmtt.fd
+] (D:\Stage\M2\stage-M2\main.toc [7]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 82.
+ (D:\bin\miktex\tex\latex\lm\t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ))
 \tf@toc=\write8
-\openout8 = `main.toc'.
-
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1850,22 +1727,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8]
-\openout2 = `contents/conti/conti.aux'.
-
- (./contents/conti/conti.tex
+[8] (D:\Stage\M2\stage-M2\contents/conti/conti.tex
 Chapitre 1.
 Package mdframed Info: mdframed works in twoside mode on input line 2.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 2.
-\openout4 = `main.mtc'.
-
-\openout4 = `main.mtc'.
-
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 2.
-(./main.mtc3)
+(D:\Stage\M2\stage-M2\main.mtc3)
 Overfull \hbox (2.4667pt too wide) in paragraph at lines 2--2
 []  $[]$ 
  []
@@ -1874,39 +1744,19 @@ Package mdframed Info: mdframed inside float
  mdframed uses option nobreak mdframed on input line 2.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 2.
-
-Underfull \hbox (badness 2809) in paragraph at lines 3--4
-[][]\T1/lmr/m/n/12 Mon stage s'est déroulé au sein
- []
-
-
-Underfull \hbox (badness 3291) in paragraph at lines 3--4
-\T1/lmr/m/n/12 de l'entreprise Continental. Cette
- []
-
-
-Underfull \hbox (badness 7012) in paragraph at lines 3--4
-\T1/lmr/m/n/12 entreprise est, sur les dernières
- []
-
-
-Underfull \hbox (badness 3179) in paragraph at lines 3--4
-\T1/lmr/m/n/12 équipementier automobile mondial
- []
-
 LaTeX Font Info:    Try loading font information for T1+pag on input line 7.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pag.fd
+(D:\bin\miktex\tex\latex\psnfss\t1pag.fd
 File: t1pag.fd 2001/06/04 font definitions for T1/pag.
 )
 
 LaTeX Font Warning: Font shape `T1/pag/bc/n' undefined
 (Font)              using `T1/pag/m/n' instead on input line 7.
 
-<contents/images/caConti.png, id=255, 1065.9825pt x 421.575pt>
+<contents/images/caConti.png, id=258, 1065.9825pt x 421.575pt>
 File: contents/images/caConti.png Graphic file (type png)
 
 <use contents/images/caConti.png>
-Package pdftex.def Info: contents/images/caConti.png used on input line 15.
+Package pdftex.def Info: contents/images/caConti.png used on input line 14.
 (pdftex.def)             Requested size: 483.69684pt x 191.28943pt.
  [9
 
@@ -1916,25 +1766,25 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.21 
-      <./contents/images/caConti.png>]
-<contents/images/repartitionConti.png, id=271, 688.5725pt x 238.8925pt>
+l.20 
+      <D:/Stage/M2/stage-M2/contents/images/caConti.png>]
+<contents/images/repartitionConti.png, id=274, 688.5725pt x 238.8925pt>
 File: contents/images/repartitionConti.png Graphic file (type png)
 
 <use contents/images/repartitionConti.png>
 Package pdftex.def Info: contents/images/repartitionConti.png used on input lin
-e 24.
+e 23.
 (pdftex.def)             Requested size: 512.1496pt x 177.68532pt.
 
-Overfull \hbox (11.38089pt too wide) in paragraph at lines 24--25
+Overfull \hbox (11.38089pt too wide) in paragraph at lines 23--24
  [][] 
  []
 
-<contents/images/logoConti.png, id=273, 198.7425pt x 212.795pt>
+<contents/images/logoConti.png, id=276, 198.7425pt x 212.795pt>
 File: contents/images/logoConti.png Graphic file (type png)
 
 <use contents/images/logoConti.png>
-Package pdftex.def Info: contents/images/logoConti.png used on input line 35.
+Package pdftex.def Info: contents/images/logoConti.png used on input line 34.
 (pdftex.def)             Requested size: 85.35826pt x 91.39615pt.
 
 
@@ -1948,29 +1798,24 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.47 
+l.46 
      pdfTeX warning (ext4): destination with the same identifier (name{figure.1
 .3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.47 
-      <./contents/images/repartitionConti.png> <./contents/images/logoConti.png
->]
-Overfull \hbox (11.69447pt too wide) in paragraph at lines 48--49
-[]\T1/lmr/m/n/12 En 2001, pour renforcer sa position sur les marchés américain 
-et asiatique, l'entreprise fait l'acquisition
- []
-
-<contents/images/structureConti.jpg, id=284, 1395.2125pt x 481.8pt>
+l.46 
+      <D:/Stage/M2/stage-M2/contents/images/repartitionConti.png> <D:/Stage/M2/
+stage-M2/contents/images/logoConti.png>]
+<contents/images/structureConti.jpg, id=287, 1395.2125pt x 481.8pt>
 File: contents/images/structureConti.jpg Graphic file (type jpg)
 
 <use contents/images/structureConti.jpg>
 Package pdftex.def Info: contents/images/structureConti.jpg used on input line 
-61.
+60.
 (pdftex.def)             Requested size: 597.50787pt x 206.33186pt.
 
-Overfull \hbox (44.14378pt too wide) in paragraph at lines 60--62
+Overfull \hbox (44.14378pt too wide) in paragraph at lines 59--61
 []  []
  []
 
@@ -1985,23 +1830,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.71 	\item[Business Unit \textit{Engine Systems}]
-                                                   ChargÃ©e de produire les ...
- <./contents/images/structureConti.jpg>]
-Overfull \hbox (4.95251pt too wide) in paragraph at lines 71--72
-[]\T1/lmr/m/n/12 Chargée de produire les équipements nécessaires au contrôle
- []
-
-
-Overfull \hbox (1.63492pt too wide) in paragraph at lines 94--95
-[]\T1/lmr/m/n/12 Le développement et la maintenance d'outils logiciels notammen
-t en utilisant la TA3 présenté
- []
-
-
-Overfull \hbox (10.74646pt too wide) in paragraph at lines 94--95
-\T1/lmr/m/n/12 permettre aux développeurs de vérifier facilement et correctemen
-t leur travail, particulièrement
+l.64 \newpage
+              <D:/Stage/M2/stage-M2/contents/images/structureConti.jpg>]
+Overfull \hbox (4.95251pt too wide) in paragraph at lines 70--71
+[]\T1/lmr/m/n/12 Chargée de pro-duire les équi-pe-ments né-ces-saires au contrô
+le
  []
 
 
@@ -2011,27 +1844,28 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [12]
+Package mdframed Info: mdframed works in twoside mode on input line 115.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 115.
 Package epstopdf Info: Source file: <contents/images/WB.eps>
-(epstopdf)                    date: 2016-05-28 16:12:26
-(epstopdf)                    size: 165963 bytes
+(epstopdf)                    date: 2016-05-28 15:46:30
+(epstopdf)                    size: 169361 bytes
 (epstopdf)             Output file: <contents/images/WB-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-05-28 16:12:26
+(epstopdf)                    date: 2016-05-28 15:46:30
 (epstopdf)                    size: 100223 bytes
-(epstopdf)             Command: <repstopdf --outfile=contents/images/WB-eps-con
-verted-to.pdf contents/images/WB.eps>
-(epstopdf)             \includegraphics on input line 115.
+(epstopdf)             Command: <epstopdf --outfile=contents/images/WB-eps-conv
+erted-to.pdf contents/images/WB.eps>
+(epstopdf)             \includegraphics on input line 123.
 Package epstopdf Info: Output file is already uptodate.
 
-<contents/images/WB-eps-converted-to.pdf, id=308, 420.57124pt x 503.8825pt>
+<contents/images/WB-eps-converted-to.pdf, id=309, 420.57124pt x 503.8825pt>
 File: contents/images/WB-eps-converted-to.pdf Graphic file (type pdf)
 
 <use contents/images/WB-eps-converted-to.pdf>
 Package pdftex.def Info: contents/images/WB-eps-converted-to.pdf used on input 
-line 115.
-(pdftex.def)             Requested size: 344.27852pt x 412.47897pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+line 123.
+(pdftex.def)             Requested size: 327.20668pt x 392.02725pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2039,18 +1873,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[13]
-Package mdframed Info: mdframed works in twoside mode on input line 119.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 119.
- <contents/images/python.png, id=317, 602.25pt x 602.25pt>
+[13] <contents/images/python.png, id=323, 602.25pt x 602.25pt>
 File: contents/images/python.png Graphic file (type png)
 
 <use contents/images/python.png>
-Package pdftex.def Info: contents/images/python.png used on input line 126.
+Package pdftex.def Info: contents/images/python.png used on input line 130.
 (pdftex.def)             Requested size: 71.13188pt x 71.12737pt.
-
+)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -2062,40 +1891,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.131 
-       <./contents/images/WB-eps-converted-to.pdf> <./contents/images/python.pn
-g>])
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[15]
-\openout2 = `contents/problem/problem.aux'.
-
- (./contents/problem/problem.tex
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[16
-
-
-
-]
+l.99 	\include{contents/conti/conti}
+                                     % ok <D:/Stage/M2/stage-M2/contents/images
+/WB-eps-converted-to.pdf> <D:/Stage/M2/stage-M2/contents/images/python.png>]
+(D:\Stage\M2\stage-M2\contents/problem/problem.tex
 Chapitre 2.
 Package mdframed Info: mdframed works in twoside mode on input line 2.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 2.
-\openout4 = `main.mtc'.
-
-\openout4 = `main.mtc'.
-
-(./main.mtc4)
+(D:\Stage\M2\stage-M2\main.mtc4)
 Overfull \hbox (2.4667pt too wide) in paragraph at lines 2--2
 []  $[]$ 
  []
@@ -2105,18 +1910,18 @@ Package mdframed Info: mdframed inside float
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 2.
 Package epstopdf Info: Source file: <contents/images/plugin.eps>
-(epstopdf)                    date: 2016-05-28 16:12:26
-(epstopdf)                    size: 26303 bytes
+(epstopdf)                    date: 2016-05-28 15:46:30
+(epstopdf)                    size: 27316 bytes
 (epstopdf)             Output file: <contents/images/plugin-eps-converted-to.pd
 f>
-(epstopdf)                    date: 2016-05-28 16:12:26
+(epstopdf)                    date: 2016-05-28 15:46:30
 (epstopdf)                    size: 11096 bytes
-(epstopdf)             Command: <repstopdf --outfile=contents/images/plugin-eps
--converted-to.pdf contents/images/plugin.eps>
+(epstopdf)             Command: <epstopdf --outfile=contents/images/plugin-eps-
+converted-to.pdf contents/images/plugin.eps>
 (epstopdf)             \includegraphics on input line 17.
 Package epstopdf Info: Output file is already uptodate.
 
-<contents/images/plugin-eps-converted-to.pdf, id=350, 308.15125pt x 298.11375pt
+<contents/images/plugin-eps-converted-to.pdf, id=341, 308.15125pt x 298.11375pt
 >
 File: contents/images/plugin-eps-converted-to.pdf Graphic file (type pdf)
  <use contents/images/plugin-eps-converted-to.pdf>
@@ -2126,20 +1931,25 @@ put line 17.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17]
+ [15
+
+
+
+]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[18pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1
+[16pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.40 \newpage
-              <./contents/images/plugin-eps-converted-to.pdf>]
+              <D:/Stage/M2/stage-M2/contents/images/plugin-eps-converted-to.pdf
+>]
 
 LaTeX Font Warning: Font shape `T1/pag/bc/it' undefined
 (Font)              using `T1/pag/bc/n' instead on input line 41.
@@ -2148,17 +1958,6 @@ Package mdframed Info: mdframed works in twoside mode on input line 43.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 43.
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[19]
-Package mdframed Info: mdframed works in twoside mode on input line 69.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 69.
 )
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2166,20 +1965,24 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[20]
-\openout2 = `contents/organization/organization.aux'.
+[17] (D:\Stage\M2\stage-M2\contents/organization/organization.tex
 
- (./contents/organization/organization.tex
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[18
+
+
+
+]
 Chapitre 3.
 Package mdframed Info: mdframed works in twoside mode on input line 2.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 2.
-\openout4 = `main.mtc'.
-
-\openout4 = `main.mtc'.
-
-(./main.mtc5)
+(D:\Stage\M2\stage-M2\main.mtc5)
 Overfull \hbox (2.4667pt too wide) in paragraph at lines 2--2
 []  $[]$ 
  []
@@ -2189,32 +1992,25 @@ Package mdframed Info: mdframed inside float
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 2.
 
-Underfull \hbox (badness 1596) in paragraph at lines 2--3
-\T1/lmr/m/n/12 réfléchie est indispensable. Autant
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \hbox (badness 1946) in paragraph at lines 2--3
-\T1/lmr/m/n/12 certaines technologies nous aidant
- []
-
-[21
-
-
-
-] <contents/images/logoJava.png, id=390, 359.09157pt x 324.46219pt>
+ [19]
+<contents/images/logoJava.png, id=377, 359.09157pt x 324.46219pt>
 File: contents/images/logoJava.png Graphic file (type png)
 
 <use contents/images/logoJava.png>
-Package pdftex.def Info: contents/images/logoJava.png used on input line 35.
+Package pdftex.def Info: contents/images/logoJava.png used on input line 31.
 (pdftex.def)             Requested size: 71.13188pt x 64.27242pt.
 
-<contents/images/logoGit.png, id=391, 384.43625pt x 384.43625pt>
+<contents/images/logoGit.png, id=378, 384.43625pt x 384.43625pt>
 File: contents/images/logoGit.png Graphic file (type png)
 
 <use contents/images/logoGit.png>
-Package pdftex.def Info: contents/images/logoGit.png used on input line 44.
+Package pdftex.def Info: contents/images/logoGit.png used on input line 40.
 (pdftex.def)             Requested size: 71.13188pt x 71.13132pt.
+
+Underfull \vbox (badness 3000) has occurred while \output is active []
+
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2222,20 +2018,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[22 <./contents/images/logoJava.png> <./contents/images/logoGit.png>]
-<contents/images/logoEclipse.png, id=402, 123.3408pt x 123.3408pt>
+[20 <D:/Stage/M2/stage-M2/contents/images/logoJava.png> <D:/Stage/M2/stage-M2/c
+ontents/images/logoGit.png>]
+<contents/images/logoEclipse.png, id=391, 123.3408pt x 123.3408pt>
 File: contents/images/logoEclipse.png Graphic file (type png)
 
 <use contents/images/logoEclipse.png>
-Package pdftex.def Info: contents/images/logoEclipse.png used on input line 61.
+Package pdftex.def Info: contents/images/logoEclipse.png used on input line 57.
 
 (pdftex.def)             Requested size: 71.13188pt x 71.13306pt.
 
-<contents/images/antlr.jpg, id=403, 190.7125pt x 190.7125pt>
+<contents/images/antlr.jpg, id=392, 190.7125pt x 190.7125pt>
 File: contents/images/antlr.jpg Graphic file (type jpg)
 
 <use contents/images/antlr.jpg>
-Package pdftex.def Info: contents/images/antlr.jpg used on input line 69.
+Package pdftex.def Info: contents/images/antlr.jpg used on input line 65.
 (pdftex.def)             Requested size: 71.13188pt x 71.12996pt.
 
 
@@ -2244,37 +2041,38 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[23 <./contents/images/logoEclipse.png> <./contents/images/antlr.jpg>]
-<contents/images/logoEnterpriseArchitect.png, id=414, 513.92pt x 513.92pt>
+[21 <D:/Stage/M2/stage-M2/contents/images/logoEclipse.png> <D:/Stage/M2/stage-M
+2/contents/images/antlr.jpg>]
+<contents/images/logoEnterpriseArchitect.png, id=403, 513.92pt x 513.92pt>
 File: contents/images/logoEnterpriseArchitect.png Graphic file (type png)
 
 <use contents/images/logoEnterpriseArchitect.png>
 Package pdftex.def Info: contents/images/logoEnterpriseArchitect.png used on in
-put line 75.
+put line 71.
 (pdftex.def)             Requested size: 71.13188pt x 71.12491pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
 
-<contents/images/sqlite.png, id=416, 383.4325pt x 181.67876pt>
+<contents/images/sqlite.png, id=405, 383.4325pt x 181.67876pt>
 File: contents/images/sqlite.png Graphic file (type png)
 
 <use contents/images/sqlite.png>
-Package pdftex.def Info: contents/images/sqlite.png used on input line 84.
+Package pdftex.def Info: contents/images/sqlite.png used on input line 80.
 (pdftex.def)             Requested size: 71.13188pt x 33.70152pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 90.
+(Font)              <14.4> on input line 86.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 90.
+(Font)              <10> on input line 86.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 90.
+(Font)              <7> on input line 86.
 
-<contents/images/logoLatex.png, id=417, 1204.5pt x 501.875pt>
+<contents/images/logoLatex.png, id=406, 1204.5pt x 501.875pt>
 File: contents/images/logoLatex.png Graphic file (type png)
 
 <use contents/images/logoLatex.png>
-Package pdftex.def Info: contents/images/logoLatex.png used on input line 92.
+Package pdftex.def Info: contents/images/logoLatex.png used on input line 88.
 (pdftex.def)             Requested size: 71.13188pt x 29.6364pt.
 )
 
@@ -2283,11 +2081,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[24 <./contents/images/logoEnterpriseArchitect.png> <./contents/images/sqlite.p
-ng> <./contents/images/logoLatex.png>]
-\openout2 = `contents/greent/greent.aux'.
-
- (./contents/greent/greent.tex
+[22 <D:/Stage/M2/stage-M2/contents/images/logoEnterpriseArchitect.png> <D:/Stag
+e/M2/stage-M2/contents/images/sqlite.png> <D:/Stage/M2/stage-M2/contents/images
+/logoLatex.png>] (D:\Stage\M2\stage-M2\contents/greent/greent.tex
 Chapitre 4.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <24.88> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1.
@@ -2295,11 +2091,7 @@ Package mdframed Info: mdframed works in twoside mode on input line 2.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 2.
-\openout4 = `main.mtc'.
-
-\openout4 = `main.mtc'.
-
-(./main.mtc6)
+(D:\Stage\M2\stage-M2\main.mtc6)
 Overfull \hbox (2.4667pt too wide) in paragraph at lines 2--2
 []  $[]$ 
  []
@@ -2308,41 +2100,22 @@ Package mdframed Info: mdframed inside float
  mdframed uses option nobreak mdframed on input line 2.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 2.
-
-Underfull \hbox (badness 1043) in paragraph at lines 4--5
-[][]\T1/lmr/m/n/12 Comme nous l'avons montré dans
- []
-
-
-Overfull \hbox (6.6348pt too wide) in paragraph at lines 6--7
-[]\T1/lmr/m/n/12 Nous allons donc voir le développement
- []
-
-[25
+[23
 
 
 
 ]
-Overfull \hbox (2.8524pt too wide) in paragraph at lines 31--32
-[]\T1/lmr/m/n/12 Contient un ou plusieurs scenarii de stimulation
- []
-
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 32.
-
-Overfull \hbox (17.49861pt too wide) in paragraph at lines 36--37
-[]\T1/lmr/m/n/12 Plusieurs colonnes telles que la sévérité, le responsable
- []
-
-<contents/images/walkthrough.png, id=452, 941.76843pt x 682.04813pt>
+ <contents/images/walkthrough.png, id=440, 941.76843pt x 682.04813pt>
 File: contents/images/walkthrough.png Graphic file (type png)
 
 <use contents/images/walkthrough.png>
-Package pdftex.def Info: contents/images/walkthrough.png used on input line 43.
+Package pdftex.def Info: contents/images/walkthrough.png used on input line 42.
 
 (pdftex.def)             Requested size: 569.05511pt x 412.12523pt.
 
-Overfull \hbox (35.7661pt too wide) in paragraph at lines 42--44
+Overfull \hbox (35.7661pt too wide) in paragraph at lines 41--43
 []  []
  []
 
@@ -2352,34 +2125,34 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+[24pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.49 
-      <./contents/images/walkthrough.png>]
+l.48 
+      <D:/Stage/M2/stage-M2/contents/images/walkthrough.png>]
 Package epstopdf Info: Source file: <contents/images/generalDiag.eps>
-(epstopdf)                    date: 2016-05-28 16:12:26
+(epstopdf)                    date: 2016-05-28 15:46:30
 (epstopdf)                    size: 25757 bytes
 (epstopdf)             Output file: <contents/images/generalDiag-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2016-05-28 16:12:26
+(epstopdf)                    date: 2016-05-28 15:46:30
 (epstopdf)                    size: 11112 bytes
-(epstopdf)             Command: <repstopdf --outfile=contents/images/generalDia
-g-eps-converted-to.pdf contents/images/generalDiag.eps>
-(epstopdf)             \includegraphics on input line 55.
+(epstopdf)             Command: <epstopdf --outfile=contents/images/generalDiag
+-eps-converted-to.pdf contents/images/generalDiag.eps>
+(epstopdf)             \includegraphics on input line 54.
 Package epstopdf Info: Output file is already uptodate.
 
-<contents/images/generalDiag-eps-converted-to.pdf, id=466, 1155.31625pt x 756.8
+<contents/images/generalDiag-eps-converted-to.pdf, id=453, 1155.31625pt x 756.8
 275pt>
 File: contents/images/generalDiag-eps-converted-to.pdf Graphic file (type pdf)
  <use contents/images/generalDiag-eps-converted-to.pdf>
 Package pdftex.def Info: contents/images/generalDiag-eps-converted-to.pdf used 
-on input line 55.
+on input line 54.
 (pdftex.def)             Requested size: 569.05511pt x 372.77728pt.
 
-Overfull \hbox (45.80363pt too wide) in paragraph at lines 54--56
+Overfull \hbox (45.80363pt too wide) in paragraph at lines 53--55
 []  []
  []
 
@@ -2389,45 +2162,45 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[27pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+[25pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.69 \end{itemize}
-                  ~\newline <./contents/images/generalDiag-eps-converted-to.pdf
->]
-Package mdframed Info: mdframed works in twoside mode on input line 88.
+l.68 \end{itemize}
+                  ~\newline <D:/Stage/M2/stage-M2/contents/images/generalDiag-e
+ps-converted-to.pdf>]
+Package mdframed Info: mdframed works in twoside mode on input line 89.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 88.
+(mdframed)              on input line 89.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 96.
+(Font)              <5> on input line 97.
 
-Overfull \hbox (398.10335pt too wide) in paragraph at lines 94--104
+Overfull \hbox (398.10335pt too wide) in paragraph at lines 95--105
 []$[]$| 
  []
 
 
-Overfull \hbox (326.97147pt too wide) in paragraph at lines 105--113
+Overfull \hbox (326.97147pt too wide) in paragraph at lines 106--114
 []$[]$| 
  []
 
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+(D:\bin\miktex\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+(D:\bin\miktex\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+(D:\bin\miktex\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
-Overfull \hbox (358.26967pt too wide) in paragraph at lines 114--126
+Overfull \hbox (358.26967pt too wide) in paragraph at lines 115--127
 []$[]$| 
  []
 
 
-Overfull \hbox (1.62991pt too wide) in paragraph at lines 91--127
+Overfull \hbox (1.62991pt too wide) in paragraph at lines 92--128
 [][] 
  []
 
@@ -2437,70 +2210,59 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+[26]
+Package mdframed Info: mdframed works in twoside mode on input line 140.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 140.
+Package mdframed Info: mdframed works in twoside mode on input line 151.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 151.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[27]
+Underfull \vbox (badness 7415) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
 [28]
-Overfull \hbox (7.7452pt too wide) in paragraph at lines 135--136
-[]\T1/lmr/m/n/12 Un scénario particulier doit être spécifié : une précondition 
-qui a pour but d'initialiser les équipements
- []
-
-Package mdframed Info: mdframed works in twoside mode on input line 139.
+Package mdframed Info: mdframed works in twoside mode on input line 194.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 139.
-
-Overfull \hbox (3.23816pt too wide) in paragraph at lines 148--149
-[]\T1/lmr/m/n/12 Une fois que la trace est complète, il est nécessaire de l'éva
-luer : le spécifieur a décrit le comportement
- []
-
-Package mdframed Info: mdframed works in twoside mode on input line 150.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 150.
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[29]
-Package mdframed Info: mdframed works in twoside mode on input line 193.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 193.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[30]
-Package mdframed Info: Not enough space on this page on input line 195.
-
-Overfull \hbox (1.48143pt too wide) in paragraph at lines 198--200
-\T1/lmr/m/n/12 vont communiquer avec une table de test. Actuellement une table 
-est composée de deux équipements
- []
-
+(mdframed)              on input line 194.
 Package epstopdf Info: Source file: <contents/images/network.eps>
-(epstopdf)                    date: 2016-05-28 16:12:26
-(epstopdf)                    size: 231808 bytes
+(epstopdf)                    date: 2016-05-28 15:46:30
+(epstopdf)                    size: 237025 bytes
 (epstopdf)             Output file: <contents/images/network-eps-converted-to.p
 df>
-(epstopdf)                    date: 2016-05-28 16:12:26
+(epstopdf)                    date: 2016-05-28 15:46:30
 (epstopdf)                    size: 136037 bytes
-(epstopdf)             Command: <repstopdf --outfile=contents/images/network-ep
-s-converted-to.pdf contents/images/network.eps>
-(epstopdf)             \includegraphics on input line 207.
+(epstopdf)             Command: <epstopdf --outfile=contents/images/network-eps
+-converted-to.pdf contents/images/network.eps>
+(epstopdf)             \includegraphics on input line 208.
 Package epstopdf Info: Output file is already uptodate.
 
-<contents/images/network-eps-converted-to.pdf, id=539, 725.71124pt x 533.995pt>
+<contents/images/network-eps-converted-to.pdf, id=524, 725.71124pt x 533.995pt>
 File: contents/images/network-eps-converted-to.pdf Graphic file (type pdf)
 <use contents/images/network-eps-converted-to.pdf>
 Package pdftex.def Info: contents/images/network-eps-converted-to.pdf used on i
-nput line 207.
-(pdftex.def)             Requested size: 483.69684pt x 355.92517pt.
+nput line 208.
+(pdftex.def)             Requested size: 426.79134pt x 314.05211pt.
+Package mdframed Info: mdframed works in twoside mode on input line 213.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 213.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2508,21 +2270,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[31pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3
+[29pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.219 \end{itemize}
-                    <./contents/images/network-eps-converted-to.pdf>]
+l.221 	\item D
+              onner accÃ¨s Ã  un maximum de fonctionnalitÃ©s en mode << offl...
+ <D:/Stage/M2/stage-M2/contents/images/network-eps-converted-to.pdf>]
 File: contents/images/logoJava.png Graphic file (type png)
 
 <use contents/images/logoJava.png>
-Package pdftex.def Info: contents/images/logoJava.png used on input line 234.
+Package pdftex.def Info: contents/images/logoJava.png used on input line 240.
 (pdftex.def)             Requested size: 71.13188pt x 64.27242pt.
 File: contents/images/python.png Graphic file (type png)
  <use contents/images/python.png>
-Package pdftex.def Info: contents/images/python.png used on input line 250.
+Package pdftex.def Info: contents/images/python.png used on input line 257.
 (pdftex.def)             Requested size: 71.13188pt x 71.12737pt.
 )
 
@@ -2531,20 +2294,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[32]
-\openout2 = `contents/greent/collaboration.aux'.
-
- (./contents/greent/collaboration.tex
+[30] (D:\Stage\M2\stage-M2\contents/greent/collaboration.tex
 Chapitre 5.
 Package mdframed Info: mdframed works in twoside mode on input line 2.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 2.
-\openout4 = `main.mtc'.
-
-\openout4 = `main.mtc'.
-
-(./main.mtc7)
+(D:\Stage\M2\stage-M2\main.mtc7)
 Overfull \hbox (2.4667pt too wide) in paragraph at lines 2--2
 []  $[]$ 
  []
@@ -2553,64 +2309,23 @@ Package mdframed Info: mdframed inside float
  mdframed uses option nobreak mdframed on input line 2.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 2.
-Package epstopdf Info: Source file: <contents/images/patch-cal_usecase.eps>
-(epstopdf)                    date: 2016-05-28 16:12:26
-(epstopdf)                    size: 172610 bytes
-(epstopdf)             Output file: <contents/images/patch-cal_usecase-eps-conv
-erted-to.pdf>
-(epstopdf)                    date: 2016-05-28 16:12:26
-(epstopdf)                    size: 46829 bytes
-(epstopdf)             Command: <repstopdf --outfile=contents/images/patch-cal_
-usecase-eps-converted-to.pdf contents/images/patch-cal_usecase.eps>
-(epstopdf)             \includegraphics on input line 26.
-Package epstopdf Info: Output file is already uptodate.
 
-<contents/images/patch-cal_usecase-eps-converted-to.pdf, id=577, 760.8425pt x 4
-60.72125pt>
-File: contents/images/patch-cal_usecase-eps-converted-to.pdf Graphic file (type
- pdf)
- <use contents/images/patch-cal_usecase-eps-converted-to.pdf>
-Package pdftex.def Info: contents/images/patch-cal_usecase-eps-converted-to.pdf
- used on input line 26.
-(pdftex.def)             Requested size: 341.43306pt x 206.7532pt.
+LaTeX Warning: Reference `fig:task' on page 31 undefined on input line 13.
 
-[33
+
+LaTeX Warning: Reference `fig:badReport' on page 31 undefined on input line 17.
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31
 
 
 
 ]
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[34pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.41 
-      <./contents/images/patch-cal_usecase-eps-converted-to.pdf>]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 42.
-
-Overfull \hbox (5.19708pt too wide) in paragraph at lines 52--54
-\T1/lmr/m/n/12 Cette fonctionnalité permettra à un testeur de vérifier plusieur
-s stratégies en fonction de calibrations.
- []
-
-<contents/images/script_activite.jpg, id=595, 357.335pt x 990.70125pt>
-File: contents/images/script_activite.jpg Graphic file (type jpg)
-
-<use contents/images/script_activite.jpg>
-Package pdftex.def Info: contents/images/script_activite.jpg used on input line
- 57.
-(pdftex.def)             Requested size: 145.72859pt x 404.02904pt.
-
-Underfull \hbox (badness 6364) in paragraph at lines 58--58
-[]\T1/lmr/m/sc/12 Figure \T1/lmr/m/n/12 5.2 ^^U []Diagramme
- []
+LaTeX Warning: Reference `fig:exreport' on page 32 undefined on input line 24.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2618,91 +2333,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[35pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.75 	L
-       e service du serveur va ainsi appeler le nouveau script de patch, le ...
- <./contents/images/script_activite.jpg>]
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2014/03/04 1.5c listings language file
-)
-Overfull \hbox (0.33553pt too wide) in paragraph at lines 93--94
-[]\T1/lmr/m/n/12 Pour répondre à un besoin de l'équipe cliente, j'ai ajouté une
- sauvegarde de la valeur des calibrations
- []
-
-
-Overfull \hbox (1.61662pt too wide) in paragraph at lines 100--101
-[]\T1/lmr/m/n/12 Tout d'abord, j'ai du modifier un script batch, dans un langag
-e que je ne connaissais pas, manipulant
- []
-
-
-Overfull \hbox (0.7599pt too wide) in paragraph at lines 103--104
-[]\T1/lmr/m/n/12 Un problème plus important à cependant été soulevé assez rapid
-ement. Nous avons choisis d'adapter
- []
-
-
-Overfull \hbox (21.51482pt too wide) in paragraph at lines 105--106
-[]\T1/lmr/m/n/12 En effet, si nous effectuons un patch, que nous coupons l'alli
-mentation de l'ECU, mettons l'allimentation
- []
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[36]
-Overfull \hbox (1.6039pt too wide) in paragraph at lines 124--126
-\T1/lmr/m/n/12 Un autre avantage de cette fonctionnalité, est de pouvoir recopi
-er scrupuleusement les spécifications,
- []
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[37]
-Package epstopdf Info: Source file: <contents/images/usecasearray.eps>
-(epstopdf)                    date: 2016-05-28 16:12:26
-(epstopdf)                    size: 188772 bytes
-(epstopdf)             Output file: <contents/images/usecasearray-eps-converted
--to.pdf>
-(epstopdf)                    date: 2016-05-28 16:12:26
-(epstopdf)                    size: 50828 bytes
-(epstopdf)             Command: <repstopdf --outfile=contents/images/usecasearr
-ay-eps-converted-to.pdf contents/images/usecasearray.eps>
-(epstopdf)             \includegraphics on input line 134.
-Package epstopdf Info: Output file is already uptodate.
-
-<contents/images/usecasearray-eps-converted-to.pdf, id=641, 840.13875pt x 550.0
-55pt>
-File: contents/images/usecasearray-eps-converted-to.pdf Graphic file (type pdf)
-
- <use contents/images/usecasearray-eps-converted-to.pdf>
-Package pdftex.def Info: contents/images/usecasearray-eps-converted-to.pdf used
- on input line 134.
-(pdftex.def)             Requested size: 512.1496pt x 335.31483pt.
-
-Overfull \hbox (11.38089pt too wide) in paragraph at lines 134--135
- [][] 
- []
-
-Package mdframed Info: mdframed works in twoside mode on input line 137.
+[32]
+Package mdframed Info: mdframed works in twoside mode on input line 64.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 137.
-
-Underfull \vbox (badness 4726) has occurred while \output is active []
-
+(mdframed)              on input line 64.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2710,23 +2345,23 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[38pdfTeX warning (ext4): destination with the same identifier (name{figure.5.3
-}) has been already used, duplicate ignored
+[33]
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.155 
-       <./contents/images/usecasearray-eps-converted-to.pdf>]
-<contents/images/alias.jpg, id=654, 924.45375pt x 539.76656pt>
-File: contents/images/alias.jpg Graphic file (type jpg)
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-<use contents/images/alias.jpg>
-Package pdftex.def Info: contents/images/alias.jpg used on input line 162.
-(pdftex.def)             Requested size: 583.2815pt x 340.56537pt.
+[34]
 
-Overfull \hbox (49.99248pt too wide) in paragraph at lines 161--163
-[]  []
- []
+LaTeX Warning: Reference `testKey' on page 35 undefined on input line 113.
+
+
+LaTeX Warning: Reference `fig:tracesSync' on page 35 undefined on input line 13
+2.
+
+
+LaTeX Warning: Reference `fig:syncWb' on page 35 undefined on input line 135.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2734,122 +2369,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[39pdfTeX warning (ext4): destination with the same identifier (name{figure.5.4
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.171 \subsubsection
-                    {L'analyse de l'\textit{Expected Behavior}} <./contents/ima
-ges/alias.jpg>]
-Package epstopdf Info: Source file: <contents/images/array.eps>
-(epstopdf)                    date: 2016-05-28 16:12:26
-(epstopdf)                    size: 12433028 bytes
-(epstopdf)             Output file: <contents/images/array-eps-converted-to.pdf
->
-(epstopdf)                    date: 2016-05-28 16:12:26
-(epstopdf)                    size: 89195 bytes
-(epstopdf)             Command: <repstopdf --outfile=contents/images/array-eps-
-converted-to.pdf contents/images/array.eps>
-(epstopdf)             \includegraphics on input line 181.
-Package epstopdf Info: Output file is already uptodate.
-
-<contents/images/array-eps-converted-to.pdf, id=662, 1014.79124pt x 368.37625pt
->
-File: contents/images/array-eps-converted-to.pdf Graphic file (type pdf)
- <use contents/images/array-eps-converted-to.pdf>
-Package pdftex.def Info: contents/images/array-eps-converted-to.pdf used on inp
-ut line 181.
-(pdftex.def)             Requested size: 398.33858pt x 144.59923pt.
-Package mdframed Info: mdframed works in twoside mode on input line 186.
+[35]
+Package mdframed Info: mdframed works in twoside mode on input line 142.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 186.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[40pdfTeX warning (ext4): destination with the same identifier (name{figure.5.5
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.205 
-       <./contents/images/array-eps-converted-to.pdf>]
-Package mdframed Info: mdframed works in twoside mode on input line 206.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 206.
-
-<contents/images/eb.jpg, id=678, 493.845pt x 606.265pt>
-File: contents/images/eb.jpg Graphic file (type jpg)
-
-<use contents/images/eb.jpg>
-Package pdftex.def Info: contents/images/eb.jpg used on input line 242.
-(pdftex.def)             Requested size: 278.83708pt x 342.3091pt.
-
-Overfull \hbox (1.05862pt too wide) in paragraph at lines 246--247
-\T1/lmr/m/n/12 une liste de variables primaires. L'arbre d'expression logique c
-ontient des références sur nos variables
- []
-
-
-Overfull \hbox (6.61551pt too wide) in paragraph at lines 246--247
-\T1/lmr/m/n/12 primaires, ainsi, si on effectue un \T1/lmtt/m/n/12 setValue \T1
-/lmr/m/n/12 sur une variable donnée, alors cela modifiera correctement
- []
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[41pdfTeX warning (ext4): destination with the same identifier (name{figure.5.6
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.247 \section{
-               La maintenance} <./contents/images/eb.jpg>]
-Overfull \hbox (12.77922pt too wide) in paragraph at lines 262--263
-[]\T1/lmr/m/n/12 Le stockage du message d'erreur n'était pas fait, ainsi que la
- requête SQL permettant
- []
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[42]
-Overfull \hbox (6.18349pt too wide) in paragraph at lines 286--287
-\T1/lmr/m/n/12 venait d'un nouveau fichier à flasher dont nous n'avions pas con
-naissance. Un fichier contenant
- []
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[43]
-Overfull \hbox (13.01057pt too wide) in paragraph at lines 305--306
-[]\T1/lmr/m/n/12 Lorsqu'en développant mes fonctionnalités ou en corrigeant des
- bogues je rencontrais
- []
-
-
-Overfull \hbox (3.2213pt too wide) in paragraph at lines 311--312
-[]\T1/lmr/m/n/12 Les logs fonctionnait déjà, en utilisant \T1/lmtt/m/n/12 log4j
-\T1/lmr/m/n/12 , cependant celui-ci affichait beaucoup
- []
-
+(mdframed)              on input line 142.
+Package mdframed Info: Not enough space on this page on input line 146.
 )
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2857,20 +2382,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[44]
-\openout2 = `contents/bilan/bilan.aux'.
-
- (./contents/bilan/bilan.tex
+[36] (D:\Stage\M2\stage-M2\contents/bilan/bilan.tex
 Chapitre 6.
 Package mdframed Info: mdframed works in twoside mode on input line 2.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 2.
-\openout4 = `main.mtc'.
-
-\openout4 = `main.mtc'.
-
-(./main.mtc8)
+(D:\Stage\M2\stage-M2\main.mtc8)
 Overfull \hbox (2.4667pt too wide) in paragraph at lines 2--2
 []  $[]$ 
  []
@@ -2879,126 +2397,82 @@ Package mdframed Info: mdframed inside float
  mdframed uses option nobreak mdframed on input line 2.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 2.
-[45
+
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 6.
+
+
+
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 16
+.
+
+) [37
 
 
 
 ]
-Overfull \hbox (3.76242pt too wide) in paragraph at lines 25--27
-[]\T1/lmr/m/n/12 Mais j'ai aussi acquis des connaissances humaines avec notamme
-nt le travail en équipe, communiquer
- []
-
-
-Overfull \hbox (12.77278pt too wide) in paragraph at lines 28--29
-\T1/lmr/m/n/12 toujours transmettre leurs connaissances et leur expérience, not
-amment dans le monde de l'automobile
- []
-
-)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[46]
-Underfull \hbox (badness 3240) in paragraph at lines 114--114
-[]\T1/lmr/m/n/12 Ci-après vous trouverez un certain nombre
+[38
+
+
+]
+Underfull \hbox (badness 3240) in paragraph at lines 113--113
+[]\T1/lmr/m/n/12 Ci-après vous trou-ve-rez un cer-tain nombre
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--114
+Underfull \hbox (badness 10000) in paragraph at lines 113--113
 
  []
 
 
-Underfull \hbox (badness 7099) in paragraph at lines 114--114
-\T1/lmr/m/n/12 Vous y trouverez ainsi un glossaire, des
+Underfull \hbox (badness 1158) in paragraph at lines 113--113
+\T1/lmr/m/n/12 Vous y trou-ve-rez ainsi un glos-saire, des ré-
  []
 
-[47
-
-
-] [48]
-\openout2 = `annexes/glossary.aux'.
-
- (./annexes/glossary.tex
+[39] [40] (D:\Stage\M2\stage-M2\annexes/glossary.tex
 Annexe A.
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 15.
-(/usr/share/texlive/texmf-dist/tex/latex/lm/omslmr.fd
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 16.
+(D:\bin\miktex\tex\latex\lm\omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 15.
- [49
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 16.
+ [41
 
 
-]
-Overfull \hbox (5.6609pt too wide) in paragraph at lines 32--34
-\T1/lmr/m/n/12 services pour de nombreux langages. Il est ainsi possible de fai
-re communiquer deux problèmes
- []
-
-)
+])
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[50]
-\openout2 = `annexes/references.aux'.
-
- (./annexes/references.tex
+[42] (D:\Stage\M2\stage-M2\annexes/references.tex
 Annexe B.
 
-Overfull \hbox (4.80942pt too wide) in paragraph at lines 2--3
-\T1/lmr/m/n/12 problème, certains cours enseignés durant mon cursus, et enfin d
-es sites web et forums me permettant
- []
-
-
-Overfull \hbox (2.93373pt too wide) in paragraph at lines 17--18
-[]\T1/lmr/m/n/12 Documentations sur le fonctionnement du debugger lauterbach,
- []
-
-
-Overfull \hbox (38.63635pt too wide) in paragraph at lines 19--20
-[]\T1/lmr/m/n/12 Documentation permettant de comprendre globalement le fonction
-nement
- []
-
-
-Overfull \hbox (5.55618pt too wide) in paragraph at lines 19--20
-\T1/lmr/m/n/12 du calculateur, et permettant de comprendre des problèmes posés 
-par le debugger Lauterbach. 
- []
-
-
-Overfull \hbox (13.43729pt too wide) in paragraph at lines 24--25
-[]\T1/lmr/m/n/12 sixième édition, 2008. Rédigé
- []
-
-
 Overfull \hbox (18.9178pt too wide) in paragraph at lines 25--26
-[]\T1/lmr/m/n/12 Second edition, 1999.
+[]\T1/lmr/m/n/12 Second edi-tion, 1999.
  []
 
 
 Overfull \hbox (14.31067pt too wide) in paragraph at lines 27--28
-[]\T1/lmr/m/n/12 2nd édition, 2004. Rédigé par Franck \T1/lmr/m/sc/12 Mittelbac
-h\T1/lmr/m/n/12 , Michel \T1/lmr/m/sc/12 Goossens\T1/lmr/m/n/12 ,
+[]\T1/lmr/m/n/12 2nd édi-tion, 2004. Ré-digé par Franck \T1/lmr/m/sc/12 Mittelb
+ach\T1/lmr/m/n/12 , Mi-chel \T1/lmr/m/sc/12 Goossens\T1/lmr/m/n/12 ,
  []
 
-[51
+[43
 
 
 
 ]
 Overfull \hbox (2.1306pt too wide) in paragraph at lines 37--39
-[]\T1/lmr/m/n/12 2013, L3 Informatique, Christine \T1/lmr/m/sc/12 Maurel \T1/lm
-r/m/n/12 et Jean-Paul \T1/lmr/m/sc/12 Arcangeli 
+[]\T1/lmr/m/n/12 2013, L3 In-for-ma-tique, Chris-tine \T1/lmr/m/sc/12 Maurel \T
+1/lmr/m/n/12 et Jean-Paul \T1/lmr/m/sc/12 Arcangeli 
  []
 
 )
@@ -3008,21 +2482,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[52]
-\openout2 = `annexes/report.aux'.
-
- (./annexes/report.tex
+[44] (D:\Stage\M2\stage-M2\annexes/report.tex
 Annexe C.
-<contents/images/report.png, id=778, 505.89pt x 721.94719pt>
+<contents/images/report0.png, id=653, 872.50969pt x 435.12563pt>
+File: contents/images/report0.png Graphic file (type png)
+
+<use contents/images/report0.png>
+Package pdftex.def Info: contents/images/report0.png used on input line 4.
+(pdftex.def)             Requested size: 455.24408pt x 227.03017pt.
+
+<contents/images/report.png, id=654, 868.74562pt x 326.72063pt>
 File: contents/images/report.png Graphic file (type png)
 
 <use contents/images/report.png>
-Package pdftex.def Info: contents/images/report.png used on input line 4.
-(pdftex.def)             Requested size: 369.88582pt x 527.8653pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [53
+Package pdftex.def Info: contents/images/report.png used on input line 10.
+(pdftex.def)             Requested size: 455.24408pt x 171.21182pt.
+ [45
 
 
 
@@ -3031,24 +2506,35 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.10 \item D
-            ans la colonne A, nous avons le timestamp, le temps durant leque...
- <./contents/images/report.png>])
+l.19 \item E
+            t enfin, dans la colonne F, le rÃ©sultat de l'Ã©valuation pour c...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.C.2}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.19 \item E
+            t enfin, dans la colonne F, le rÃ©sultat de l'Ã©valuation pour c...
+ <D:/Stage/M2/stage-M2/contents/images/report0.png> <D:/Stage/M2/stage-M2/conte
+nts/images/report.png>])
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[54]
-\openout2 = `annexes/generatesFiles.aux'.
-
- (./annexes/generatesFiles.tex
+[46] (D:\Stage\M2\stage-M2\annexes/generatesFiles.tex
 Annexe D.
-(./contents/stim.java
+(D:\bin\miktex\tex\latex\listings\lstlang1.sty
+File: lstlang1.sty 2014/03/04 1.5c listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 3.
+
+(D:\Stage\M2\stage-M2\contents/stim.java
 Underfull \vbox (badness 2961) has occurred while \output is active []
 
- [55
+ [47
 
 
 
@@ -3072,14 +2558,14 @@ Overfull \hbox (9.502pt too wide) in paragraph at lines 54--55
 LaTeX Font Warning: Font shape `T1/lmtt/bc/n' undefined
 (Font)              using `T1/lmtt/m/n' instead on input line 4.
 
-(./contents/gttest.java
+(D:\Stage\M2\stage-M2\contents/gttest.java
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[56]
+[48]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -3089,20 +2575,18 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[57]))
+[49]))
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[58]
+[50]
 Annexe E.
-(./main.lof)
+(D:\Stage\M2\stage-M2\main.lof)
 \tf@lof=\write9
-\openout9 = `main.lof'.
-
- [59
+ [51
 
 
 ]
@@ -3112,19 +2596,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[60
+[52
 
 ]
 Annexe F.
-(./main.lol)
+(D:\Stage\M2\stage-M2\main.lol)
 \tf@lol=\write10
-\openout10 = `main.lol'.
-
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the main.maf file.
-\openout4 = `main.maf'.
-
 Package minitoc(hints) Info: I0053
 (minitoc(hints))             You have loaded the float package; 
 (minitoc(hints))             please be aware that the minitoc package 
@@ -3136,59 +2616,61 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the main.log file.
 
-[61]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 123.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
- (./main.aux (./contents/intro.aux) (./contents/conti/conti.aux)
-(./contents/problem/problem.aux) (./contents/organization/organization.aux)
-(./contents/greent/greent.aux) (./contents/greent/collaboration.aux)
-(./contents/bilan/bilan.aux) (./annexes/glossary.aux) (./annexes/references.aux
-) (./annexes/report.aux) (./annexes/generatesFiles.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 123.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 123.
+[53]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 122.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 122.
+ (D:\Stage\M2\stage-M2\main.aux (D:\Stage\M2\stage-M2\contents/intro.aux)
+(D:\Stage\M2\stage-M2\contents/conti/conti.aux)
+(D:\Stage\M2\stage-M2\contents/problem/problem.aux)
+(D:\Stage\M2\stage-M2\contents/organization/organization.aux)
+(D:\Stage\M2\stage-M2\contents/greent/greent.aux)
+(D:\Stage\M2\stage-M2\contents/greent/collaboration.aux)
+(D:\Stage\M2\stage-M2\contents/bilan/bilan.aux)
+(D:\Stage\M2\stage-M2\annexes/glossary.aux)
+(D:\Stage\M2\stage-M2\annexes/references.aux)
+(D:\Stage\M2\stage-M2\annexes/report.aux)
+(D:\Stage\M2\stage-M2\annexes/generatesFiles.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 122.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 122.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 752664B8AB6A44DB1B4907662A5B5736;2501.
+(rerunfilecheck)             Checksum: 6BCCBD1F633610D69BE225ACA6979591;2699.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 123.
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 122.
  ) 
 Here is how much of TeX's memory you used:
- 31363 strings out of 494990
- 556542 string characters out of 6180639
- 807845 words of memory out of 5000000
- 33121 multiletter control sequences out of 15000+600000
- 153419 words of font info for 107 fonts, out of 8000000 for 9000
- 34 hyphenation exceptions out of 8191
- 61i,16n,120p,10463b,2014s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/t
-exlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texlive/texmf-di
-st/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/
-lm/lm-rm.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/s
-hare/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/lm/lmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/
-lmbxi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/lm/lmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/lm/lmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/lm/lmri8.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/lm/lmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsso17.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmtt
-12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/urw/avantgar/uagk8a.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on main.pdf (61 pages, 2115782 bytes).
+ 31232 strings out of 493921
+ 548478 string characters out of 3154596
+ 807652 words of memory out of 3000000
+ 33176 multiletter control sequences out of 15000+200000
+ 150110 words of font info for 105 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 61i,16n,120p,10438b,2092s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/bin/miktex/fonts/enc/dvips/lm/lm-mathsy.enc}{D:/bin/miktex/fonts/enc/dvip
+s/lm/lm-mathit.enc}{D:/bin/miktex/fonts/enc/dvips/lm/lm-ec.enc}{D:/bin/miktex/f
+onts/enc/dvips/lm/lm-rm.enc}{D:/bin/miktex/fonts/enc/dvips/fontname/8r.enc}<D:/
+bin/miktex/fonts/type1/public/lm/lmbx10.pfb><D:/bin/miktex/fonts/type1/public/l
+m/lmbx12.pfb><D:/bin/miktex/fonts/type1/public/lm/lmbx8.pfb><D:/bin/miktex/font
+s/type1/public/lm/lmbxi10.pfb><D:/bin/miktex/fonts/type1/public/lm/lmcsc10.pfb>
+<D:/bin/miktex/fonts/type1/public/lm/lmmi10.pfb><D:/bin/miktex/fonts/type1/publ
+ic/lm/lmr10.pfb><D:/bin/miktex/fonts/type1/public/lm/lmr12.pfb><D:/bin/miktex/f
+onts/type1/public/lm/lmr8.pfb><D:/bin/miktex/fonts/type1/public/lm/lmri10.pfb><
+D:/bin/miktex/fonts/type1/public/lm/lmri12.pfb><D:/bin/miktex/fonts/type1/publi
+c/lm/lmri8.pfb><D:/bin/miktex/fonts/type1/public/lm/lmss17.pfb><D:/bin/miktex/f
+onts/type1/public/lm/lmssbx10.pfb><D:/bin/miktex/fonts/type1/public/lm/lmsso17.
+pfb><D:/bin/miktex/fonts/type1/public/lm/lmsy10.pfb><D:/bin/miktex/fonts/type1/
+public/lm/lmsy7.pfb><D:/bin/miktex/fonts/type1/public/lm/lmtk10.pfb><D:/bin/mik
+tex/fonts/type1/public/lm/lmtt10.pfb><D:/bin/miktex/fonts/type1/public/lm/lmtt1
+2.pfb><D:/bin/miktex/fonts/type1/urw/avantgar/uagk8a.pfb><D:/bin/miktex/fonts/t
+ype1/urw/times/utmr8a.pfb>
+Output written on main.pdf (53 pages, 1669346 bytes).
 PDF statistics:
- 1203 PDF objects out of 1440 (max. 8388607)
- 1048 compressed objects within 11 object streams
- 436 named destinations out of 1000 (max. 500000)
- 452 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1052 PDF objects out of 1200 (max. 8388607)
+ 373 named destinations out of 1000 (max. 500000)
+ 435 words of extra memory for PDF output out of 10000 (max. 10000000)
 

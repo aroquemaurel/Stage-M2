@@ -5,14 +5,14 @@ Comme nous l'avons montré dans le chapitre \ref{chapPb}, l'entreprise a besoin 
 
 Nous allons donc voir le développement et la conception de cette plateforme de tests.
 
-Au début de mon stage, le projet ayant un an, les fonctionnalités développées ci-dessous étaient déjà faites. Je suis cependant intervenu
+Au début de mon stage, le projet ayant deux ans, les fonctionnalités développées ci-dessous étaient déjà faites. Je suis cependant intervenu
 sur la plupart d'entre elles soit pour des corrections de bogues d'une part, soit à des fin d'améliorations d'autre parts.
 
 Avant de présenter mon travail, que vous trouverez chapitre \ref{collab}, il est nécessaire de présenter le fonctionnement général de
 cette plateforme afin d'en avoir une vue d'ensemble.
 
 \section{Le fichier Walkthrough}\label{wt}
-Le fichier \textit{Walkthrough} est un fichier qui sera fourni par la personne en charge des tests, c'est un fichier au format Excel qui contient les informations
+Le fichier \textit{Walkthrough} est un fichier spécifique à Ford, qui sera fourni par la personne en charge des tests, c'est un fichier au format Excel qui contient les informations
 de chacune des variables à tester. Il contient ainsi un très grand nombre de colonnes, bien que seule une partie de celles-ci nous
 intéressent. Certaines colonnes ont été remplies par le fournisseur du plugin, d'autres colonnes sont ajoutées dans le seul but de la
 génération de tests automatiques par \textit{GreenT}. Voici les informations les plus intéressantes : 
@@ -38,7 +38,6 @@ génération de tests automatiques par \textit{GreenT}. Voici les informations l
 
 
 \begin{figure}[H]
-	% TODO CHange WT version
 	\hspace{-35px}
 	\includegraphics[width=20cm]{contents/images/walkthrough.png}
 	\caption{Aperçu d'un fichier Walkthrough}
@@ -81,7 +80,9 @@ divers avantages comme le côté multi-plateforme, son typage fort et sa forte c
 \subsection{\textit{Parsing} et Génération}\label{generation}
 Le but premier de la plateforme est d'effectuer des tests automatiques, il est ainsi indispensable d'avoir un système d'automatisation, au travers d'une génération.
 
-Pour cela, nous avons un parser : il analyse un certain type de fichier\footnote{Nous ne commencerons qu'avec le \textit{Walkthrough} pour débuter, mais dans le futur nous pourrions avoir des fichiers XML, des bases de données, \ldots} et en retire pour chaque test, le scénario de précondition, les différents scénarii de stimulations, leur \textit{Expected Behavior}, les données qui devront être enregistrées ainsi que différentes informations sur le test\footnote{Responsable du test, sévérité, commentaires, nom de la variable, \ldots}.
+Pour cela, nous avons un parser : il analyse un fichier, appelé TestPlan. En debut de stage, nous n'avions que le \textit{Walkthrough} pour débuter, mais ensuite, il a rapidement été nécessaire d'avoir un test plan générique. Notre architecture autorise également l'ajout ultérieur de types de fichiers différents, tel que XML, bases de données, \ldots 
+
+Grâce à ce fichier, on en retire pour chaque test, le scénario de précondition, les différents scénarii de stimulations, leur \textit{Expected Behavior}, les données qui devront être enregistrées ainsi que différentes informations sur le test\footnote{Responsable du test, sévérité, commentaires, nom de la variable, \ldots}.
 
 Une fois toutes ces données acquises, il les transmet à un générateur qui est en charge d'écrire les fichiers Java de chaque test, tous sont organisés dans un dossier temporaire avec un dossier par test. Le \texttt{TestManager} peut ensuite traiter ces données.
 
@@ -170,13 +171,13 @@ Afin d'être le plus souple possible, il existe plusieurs modes d'exécution de 
 \end{description}
 
 \subsection{Production de rapport détaillé}\label{report}
-La plateforme a en charge la production d'un rapport détaillé pour chaque test. Ce rapport contiendra un certain nombre d'informations, et permettra au testeur de comprendre pourquoi le test n'est pas passé. Voici les informations que contiendra ce rapport : 
+L'outil a en charge la production d'un rapport détaillé pour chaque test. Ce rapport contiendra un certain nombre d'informations, et permettra au testeur de comprendre pourquoi le test n'est pas passé. Voici les informations que contiendra ce rapport : 
 
 \begin{itemize}
 	\item Nom du test, de la variable à tester
 	\item Nom du responsable du test
 	\item Sévérité du test
-	\item Pourcentage de branches de l'\textit{Expected Behavior} renvoyant faux(Test << Rouge >>), n'ayant pas pu être testé(Test << Gris >>) et étant correct(Test Vert)
+	\item Branches de l'\textit{Expected Behavior} renvoyant faux(Test << Rouge >>), n'ayant pas pu être testé(Test << Gris >>) et étant correct(Test Vert)
 	\item Le testeur aura à sa disposition les expressions concernées par un résultat Rouge ou Gris.
 	\item Les colonnes utiles du \textit{Walkthrough}
 \end{itemize}
@@ -185,13 +186,13 @@ Actuellement, les rapports se font au format Excel avec l'intégralité de notre
 exemple de rapport est accessible en Annexe \ref{apendixReport} page \pageref{apendixReport}. 
 
 Dans un futur proche, ces rapports pourraient être générés dans un format Web avec une possibilité de naviguer entre plusieurs tests, et
-d'avoir un affichage des courbes de manière graphique.
+d'avoir un affichage des courbes de manière graphique. Une autre possibilité serait de générer des documents Word ou PDF afin de pouvoir facilement transmettre un rapport de test à un client externe à Continental.
 
-\subsection{Mise à jour du Walkthrough}
-Une fois l'analyse d'un test exécuté, un verdict global est mis dans le fichier \textit{Walthrought} : ce verdict est consolidé en fonction des rapports détaillés. Ainsi, un test sera vert si l'expression a été validée sur l'ensemble de la trace, le test sera rouge dans le cas contraire.
+\subsection{Mise à jour du TestPlan}
+Une fois l'analyse d'un test exécuté, un verdict global est mis dans le fichier TestPlan original : ce verdict est consolidé en fonction des rapports détaillés. Ainsi, un test sera vert si l'expression a été validée sur l'ensemble des traces, le test sera rouge dans le cas contraire.
 
 \begin{remarque}
-	En cas d'erreur à la génération\footnote{Mauvaise syntaxe, variables inexistantes, \ldots} ou à l'exécution\footnote{Problèmes réseaux, variable non trouvée, communication entre l'ECU et le debugger, \ldots}, la plateforme doit afficher un message d'erreur clair au niveau du test afin que l'utilisateur soit conscient du problème. Libre à lui de corriger le test si nécessaire, ou de le signaler si cela semble être un bogue. Ce message d'erreur est reporté automatiquement dans le \textit{Walkthrough}.
+	En cas d'erreur à la génération\footnote{Mauvaise syntaxe, variables inexistantes, \ldots} ou à l'exécution\footnote{Problèmes réseaux, variable non trouvée, communication entre l'ECU et le debugger, \ldots}, la plateforme doit afficher un message d'erreur clair au niveau du test afin que l'utilisateur soit conscient du problème. Libre à lui de corriger le test si nécessaire, ou de le signaler si cela semble être un bogue. Ce message d'erreur est reporté automatiquement dans le \textit{TestPlan}.
 \end{remarque}
 
 \section{Les fonctionnalités des serveurs}\label{wbgt}
@@ -199,15 +200,20 @@ Comme expliqué précédemment, \textit{GreenT} va avoir en charge l'exécution 
 test. Actuellement une table est composée de deux équipements différents, comportant chacun leur serveur : 
 \begin{itemize}
 	\item Un HiL, Hardware In the Loop, simulateur d'environnement véhicule
-	\item Un Debugger permettant de voir l'état du programme présent dans l'ECU
+	\item Un Debugger permettant de voir l'état du programme présent dans l'ECU	
 \end{itemize}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=17cm]{contents/images/network.eps}
+	\includegraphics[width=15cm]{contents/images/network.eps}
 	\caption{Communications de la plateforme}
 	\label{fig:wbgt}
 \end{figure}
+
+\begin{remarque}
+Un troisième équipement a été ajouté afin de faciliter la synchronisation des traces du HiL et du debugger. L'intérêt de l'analyseur logique est présenté section \ref{synchro}.
+\end{remarque}
+
 
 Au début du développement de la plateforme, il a été décidé que les serveurs devront être le plus simple possible pour plusieurs raisons
 : 
@@ -233,10 +239,11 @@ Le serveur Debugger propose des services basiques permettant de répondre aux be
 	\vspace{-40px}
 	\includegraphics[width=2.5cm]{contents/images/logoJava.png}
 \end{wrapfigure}
-Afin d'effectuer ces actions, le serveur s'appuie sur une API fournie par l'outil Trace32 permettant de contrôler le debugger. Ainsi tous nos services vont s'appuyer sur cette API. C'est pour cette raison que ce serveur est développé en Java afin de pouvoir utiliser
+Afin d'effectuer ces actions, le serveur s'appuie sur une API de l'outil Trace32 permettant de contrôler le debugger. Ainsi tous nos services vont s'appuyer sur cette API. Cette API a été développé en interne chez Continental à l'aide de Java Native Access. C'est pour cette raison que ce serveur est développé en Java afin de pouvoir utiliser
 facilement ces fonctions.
 
 \subsection{Le serveur HiL, contrôle du ControlDesk DSPace}
+\vspace{-10px}
 Le HiL contient une base de données, représentant un modèle simulant l'environnement véhicule. Ce modèle à pour but de se rapprocher au maximum du fonctionnement réel de notre moteur.
 
 Le serveur DSpace va devoir lui aussi répondre aux différentes stimulations, ainsi ces services sont relativement similaire : 
@@ -253,6 +260,8 @@ Ce serveur a été développé en réutilisant une partie de ce qui avait été 
 << réinventer la roue >>. 
 
 À l'instar du serveur Debugger, nous utilisons une API fournie par l'outil permettant de contrôler le HIL : ControlDesk. 
-C'est ainsi que ce serveur est développé en Python afin de répondre à cette contrainte : l'API du ControlDesk est en Python. Ainsi, l'utilisation de Thrift, permettant de faire dialoguer du Java côté client et du Python côté serveur facilement, nous aura particulièrement aidé.
+C'est ainsi que ce serveur est développé en Python afin de répondre à cette contrainte : l'API du ControlDesk est en Python. 
+
+Ainsi, l'utilisation de Thrift, permettant de faire dialoguer du Java côté client et du Python côté serveur facilement, ce sera imposé comme solution.
 
 

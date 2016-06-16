@@ -1,15 +1,151 @@
 \chapter{Ma collaboration au projet}\label{collab}
 \putminitoc
-%Après avoir défini plus en détails les besoins de notre plateforme et son fonctionnement général, nous allons maintenant voir en détail de quelle manière j'ai contribué à ce projet. En parallèle de la maintenance de notre plateforme, j'ai développé deux nouvelles fonctionnalités. Ces deux fonctionnalités ayant un rapport direct avec la notion de << calibration >>, nous allons tout d'abord définir celles-ci avant de voir en détail mon développement et la maintenance que j'ai effectué.
+Après avoir défini plus en détails les besoins de notre outil et son fonctionnement général, nous allons maintenant voir en détail de quelle manière j'ai contribué à ce projet. Le développement s'est effectué en deux grandes étapes. D'une part, la finalisation de la première version via la production de rapports détaillés, et ce jusqu'en Janvier. Suivi par des améliorations afin que l'outil puisse être utilisé par le plus grand nombre, notamment la généralisation de l'outil aux projets Renault. 
 
-\subsection{La difficulté de productions de rapports}
+\section{La difficulté de productions de rapports}
+Au début du développement de l'outil, une solution d'analyse avait été mise en place, cependant cette solution ne pouvait fonctionner comme nous allons le voir. C'est ainsi que nous avons développé un autre algorithme de production de verdicts, basé sur les récurrence de calculs et un concept d'entrée et de sortie de calculs. 
+
+\subsection{Les calculs du logiciel}
+	Un logiciel embarqué temps réel effectue différents tâches de calculs à des récurrences fixes. C'est-à-dire que chaque tâche doit être deterministe et s'exécuter au bout d'un temps donné, moyennant une petite marge d'erreur. Dans les logiciels que nous testons, ces tâches peuvent être exécutés toutes les dix milisecondes par exemple. 
+	
+	% TODO Super task
+
+	Comme le montre la figure \ref{fig:task}, une tâche de calcul prends des donnés en entrée, et écrit un résultat dans une ou plusieurs variables de sortie. Dans le cadre de l'intégration du plugin, un certain nombre de tâche ont pour but la connection de ce plugin. Ainsi, elles vont prendre les des données du plugin en entrée, et écrire le résultat dans une variable de chez Continental. 
+
+\subsection{Le problème de l'existant}
+% TODO capture d'écran ancien rapport foiré
+En début du projet, il avait été décidé que nous allions évaluer une trace à l'ensemble des timestamps, comme le montre la figure \ref{fig:badReport}. Sauf que comme nous pouvons le voir, cette solution ne peut fonctionner. En effet, le debugger enregistre tous les changements des variables durant les stimulations. 
+
+Or, l'expected behavior qui nous est fourni ne peut être vrai à tout instant de la trace, mais doit être vrai à la fin de notre tâche. Pendant l'exécution d'une tâche, ou avant notre tâche, nous pouvons voir des changements sur des variables d'entrée et être dans uné état incohérent : ces états ne nous intéresses pas, et ne doivent donc pas être pris en comptes, dans le cas contraire, nous allons dire RED sur des instants qui ne sont pas significatifs pour l'utilsiateur.
+
+\subsection{Produire un verdict fiable}
+La solution qui a été trouvée est d'utiliser le concept de variables d'entrées et de sortie vu précédemment. Ainsi, nous savons que la tâche de calcul est terminée lorsque la variable de sortie est rafraichie.  
+
+Ainsi, un verdict est prononcé uniquement aux rafraichissement de la variable de sortie, entre temps, si les variables d'entrées changent le verdict est interpolé : nous sommes dans un état intermediaire. Figure \ref{fig:exreport} montre un exemple de prononciation de verdict. 
+% TODO figure
+
+
 
 %Nous avons eu du mal à produire des résultats de tests fiables et efficaces : il a fallut adapter notre "analyzer" produisant ces résultats afin qu'il fonctionne dans tous les cas possible, ceci en se servant du concept des récurrences de calcul, et des variables d'entrée et de sortie d'un calcul. Rapide présentation de la sérialisation au format excel
-\subsection{L'arrivée des projets multi-core}
+
+
+\section{L'arrivée des projets multi-core}
+Jusqu'à maintenant, les calculateurs des contrôles moteur fonctionnaient tous en mono-core. Ainsi un seul c\oe{}ur effectuait les opérations, et il n'y avait pas de parallélisation. Ce type de calculateur était utilisé pour la première phase des projets Ford, le Panther Phase 1. Or, le projet GreenT avait pour but premier d'être utilisable pour tous les projets Ford, et notamment le Panther Phase 2. Le panther phase 2 contient beaucoup de variances logicielles ou hardware, ainsi cette base principale est dérivée en plusieurs projets distincts (FPC, FPD, FPE, FPF, \ldots) en fonction des applications. Tous ces projets utilisent des calculateurs multi-core, possédant 3 c\oe{}ur distincts. 
+
+Or, GreenT ayant été initialement conçu pour le Panther Phase 1, il n'avait jamais été notion de multi-core. Afin de répondre aux besoins de l'équipe, et dans un but de généralisation de notre outil au plus grand nombre, il a été nécessaire d'étudier l'utilisabilité de l'outil sur des ECU multi-core.
+
+\subsection{Analyse d'impacts}\label{analyseimpact}
+Afin de pouvoir mettre en place notre outil sur les projets multi-core, il a d'abord fallut énumérer les actions qui sont faites sur l'ECU par notre plateforme, et ensuite vérifier d'enventuels différences : 
+\begin{itemize}
+	\item Flasher un logiciel
+	\item Lire et écrire sur une adresse RAM
+	\item Changer la valeur d'une calibration en flash
+	\item Démarrer le logiciel (CPU GO)
+	\item Arrêter le logiciel
+	\item Enregistrer une trace
+\end{itemize}
+
+
+\subsubsection{Le fonctionnement d'un calculateur multi-core}
+Tout d'abord, afin de pouvoir observer les eventuels modifications à apporter, il faut connaître les spécifications d'un ECU multi-core. 
+\begin{description}
+	\item[Calculs] Le principal problème de notre calculateur, celui-ci possède 3 coeurs distincts qui sont indépendants, ils se démarrent ou s'arrêtent indépendamment. 
+	\item[RAM] Chaque c\oe{}ur possède une RAM dite << préférentielle >>, ces différentes adresses RAM auront des accès plus rapide. Cependant, chaque coeur peut accéder à l'ensemble des adresses RAM. Cependant, dans le cadre des projets Ford, toutes les variables nécessaires à nos tests sont sur le même c\oe{}ur, le c\oe{}ur 0. 
+	\item[Flash] Une seule mémoire flash, ce stockage est indépendant des différents c\oe{}urs. 
+\end{description}
+
+Ainsi, afin de faire fonctionner notre outil, nous allons devoir : 
+\begin{itemize}
+	\item Démarrer ou arrêter l'ensemble des c\oe{}urs en fonction de l'action qui est souhaitée.
+	\item Lire ou écrire dans les cases RAM depuis le c\oe{}ur 0.
+	\item La flash est indépendant de l'architecture de notre calculateur.
+\end{itemize}
+
+\begin{remarque}
+Actuellement notre outil n'utilise pas le concept de \textit{breakpoints}. Ce type d'utilisation aurait un impact fort sur notre outil, étant donné que pour du multi-core, il serait nécessaire de choisir quel c\oe{}ur arrêter, ceux-ci étant indépendant. Si ce besoin se fait sentir, il sera nécessaire de prévoir ce cas d'utilisation.
+\end{remarque}
+
+\subsubsection{Le fonctionnement du debugger multi-core}
 %Présentation générale du mono-core vs multi-core, en quoi c'était nécessaire rapidement(nouveaux projets)
-\subsection{Généralisation de l'outil à d'autres projets}
+
+\subsection{Les changements de notre outil}
+Comme nous avons pu le voir section \ref{analyseimpact}, ce changement majeur pour les projets n'aura que peu d'impact sur notre outil. 
+\section{Généralisation de l'outil à d'autres projets} \label{gttestplan}
 %Création d'un test plan "générque" permettant d'utiliser autre chose qu'un fichier Walkthrough : ouverture vers les projets Renault
-\subsection{La difficulté de synchronisation des traces}
+
+\section{La difficulté de synchronisation des traces}\label{synchro}	
+Dans le cadre des projets Ford, l'équipe avait un besoin unique, celui de comparer des variables de l'ECU entre elle, plus précisemment des variables du plugin avec des variables du logiciel Continental.
+
+Afin d'ouvrir l'outil au plus de projets possibles, un autre besoin est apparut : pouvoir comparer une variable ECU avec un symbole venant du HiL. Ce besoin implique d'avoir deux traces d'exécution différentes, une du debugger, et une du HiL. Ceci est déjà développé. 
+
+La plus grande difficulté reste dans la synchronisation des temps du HiL et du debugger. En effet, entre le moment où on démarre l'enregistrement côté HiL, et que l'on démarre l'enregistrement côté debugger, nous allons avoir un décalage de temps pouvant être conséquent. Afin que GreenT soit capable de prononcer des verdicts entre deux traces différentes, il est nécessaire d'avoir la même base de temps et le même timestamp 0. 
+
+\subsection{Trouver deux signaux comparables}
+Pour pouvoir synchroniser deux traces, il est nécessaire d'avoir un signal identique enregistré sur les deux traces. En fonction de la forme de ce signal, il est ensuite possible de synchroniser nos deux traces, ceci à l'aide des fronts montants et fronts descendants par exemple. 
+
+Il est donc nécessaire d'avoir un signal qui soit envoyé par le HiL, vers l'ECU. Ce signal sera ensuite relu côté HiL et lu côté ECU, nous aurons alors deux signals identiques des deux côté, moyennant le temps de propagation du materiel, et éventuellement du bruit en fonction de la qualité du signal. 
+
+
+% TODO SCHEMA HiL > ECU
+
+Afin d'être totalement générique, il est nécessaire de trouver un signal qui soit présent sur l'ensemble des projets, afin de ne pas avoir une solution spécifique à un type de projet (Comme pourrai l'être le signal d'embrayage absent des projets de boite automatique par exemple). Il existe deux types de signals que nous allons détailler plus bas. 
+
+
+\subsection{Utiliser un signal analogique : la batterie}
+Dans un premier temps, nous avons pensé à un signal qui soit indispensable à l'ensemble des projets, et qui soit facile à contrôler, sans avoir aucune incidence sur le calculateur, afin d'éviter des effets de bord. 
+
+Le signal batterie nous a ainsi apparu évident, il nous suffisait d'effectuer un \textit{glitch} sur la batterie avec un certain pattern, en début et en fin de scénario. Ce signal serait enregistré côté HiL et côté ECU.
+
+% TODO Figure signals
+
+Comme nous pouvons le voir, le signal de batterie envoyé par le HiL est particulièrement propre, ce qui est normal étant donné que c'est lui qui le génère. Le principal problème vient dans le transport de ce signal jusqu'à l'ECU. Nous pouvons voir que celui-ci est d'une part particulièrement bruité, et d'autre part qu'il est plus faible qu'au départ. Ce bruit provient principalement du boitier d'éclatement qui est présent en sorti de HiL, afin que d'éventuels utilisateurs aient la possibilité de relire différents signaux à l'aide d'un oscilosscope par exemple. 
+
+Au vue de ces traces, il est difficile de pouvoir faire correspondre facilement les signaux, en étant certains de ne pas avoir d'erreurs dues au bruit. 
+
+Ainsi, il a été décidé qu'il serait bien plus simple d'utiliser un signal numérique, ceux-ci ne pouvait être bruité. Il est ainsi facile de comparer deux signaux numériques via leurs fronts montant ou descendants. 
+
+
+\subsection{Utiliser le signal numérique : le signal clé}
+Comme vu précédemment, le signal numérique est bien plus simple à traiter et limite les erreurs dues au bruit. Il est donc nécessaire de trouver un signal numérique qui est disponible sur l'ensemble des projets, et qui n'est aucun impact sur le code du calculateur. En effet, notre signal permettant la synchronisation ne doit pas << polluer >> notre test, afin d'avoir des pré-conditions correctement établies. 
+
+Nous n'avons pas pu trouver un signal correspondant exactement à ces critères, nous avions pensés aux pédales de frein ou d'embrayage, utilisés à l'arrêt, mais d'une part nous ne pouvons garantir l'absence de stratégies en fonction des projets, et d'autre part une voiture automatique ne possedera pas d'embrayage. Une autre solution a été trouvée : la clé.
+
+La clé possède un certain nombre de stratégies (effacer des erreurs par exemple), cependant il n'est pas possible d'avoir un test ou la clé n'est pas mis à 1, le calculateur n'étant pas alimenté sans clé, aucune trace ne pourrait être enregistré. De la même manière, un test doit obligatoirement terminer sur une clef à 0, ainsi tous les tests effectués avec GreenT possederai les étapes montrées figure \ref{testKey}. 
+
+% TODO figure testKey
+
+Tous les tests possédant ces fronts montants et descendant, il est ainsi possible de synchroniser nos deux traces en enregistrant la clé d'une part côté HiL, et d'une part côté debugger. 
+
+\subsection{Le problème de l'enregistrement de la clé}
+Le signal clé semble la solution idéale de synchronisation. Cependant, ce signal est particulier étant donné que c'est sa mise à 1 qui permet d'alimenter le calculateur. Il est donc impossible d'enregistrer un front montant de la clé via le debugger, celui-ci fonctionnant avec le port JTag, il est nécessaire que le calculateur soit alimenté. 
+
+\subsubsection{Les traces d'enregistrement}\label{tracesSync}
+La solution trouvée est d'enregistrer le signal de clé avec un autre équipement fourni par Lauterbach, l'entreprise délivrant le debugger. Cet outil est un analyseur logique, appelé PowerProbe, qui se branche directement sur le debugger via un port série. Il est ainsi possible d'enregistrer le signal clé via un fil allant du HiL jusqu'à l'analyseur logique.
+
+Nous aurons donc trois traces différentes pour la synchronisation : 
+\begin{itemize}
+	\item La trace venant du HiL, contenant le signal clé
+	\item La trace venant du PowerProbe, contenant le signal clé et une pulse de synchronisation
+	\item La trace venant du debugger
+\end{itemize}
+
+Le powerprobe étant branché en série sur le debugger, il est possible de paramétrer le debugger afin d'envoyer une pulse au powerprobe dès que l'ECU est démarré, il suffira ensuite de synchroniser le 0 de la trace debugger avec la pulse du powerprobe. Restera à synchroniser la trace du powerprobe avec la trace du HiL en fonction des fronts du signal clé. Figure \ref{fig:tracesSync} est représenté les 3 traces qui seront synchronisées. 
+
+\subsubsection{La configuration permettant l'enregistrement}
+Afin d'avoir les traces comme présentées section  \ref{tracesSync}, il est nécessaire de brancher correctement les équipements sur la table de tests. Cette configuration est légèrement différentes que lorsque nous n'avons pas de synchronisation, celle-ci est détaillé dans la figure \ref{fig:syncWb}.
+% TODO sync wb
+
+Le powerprobe se branche simplement en série sur le debugger, un port est prévu à cet effet, il faut ensuite configurer correctement le debugger via des commandes spécifiques permettant d'envoyer une pulse au démarrage de l'ECU. 
+
+Le HiL permet de relire les valeurs en sortie du dspace, il est ainsi possible de brancher un fil au niveau de la sortie du signal clé, et de le relier à une entrée du powerprobe. Celui-ci enregistrera à récurrences fixe le signal sur l'entrée correspondante. 
+
+\begin{remarque}
+Il a été necessaire d'avoir un petit étage \textit{hardware} entre le HiL et le powerprobe. En effet, le signal clé d'une voiture est en 13 Volts, et peut monter jusqu'à plus de 20 volts pour un camion. Or notre équipement Powerprobe ne peut accepter des voltages aussi conséquents, une équipe au sein de Continental nous a fabriqué un équipement permettant de sortir une tension bien plus faible afin d'éviter d'endomager le powerprobe. Cet étage est branché entre le HiL et le powerprobe. 
+
+À terme, il sera nécessaire d'avoir plusieurs étages hardware similaires afin de les fournir aux différentes équipes de tests.
+\end{remarque}
+
 %Cette partie n'a été qu'étudiée pour le moment et n'est pas encore développée : cela concerne la possibilité de synchroniser le temps de deux traces différentes. (simulateur + debugger). Ce besoin est nécessaire aux projets Renault. Je pense présenter la solution, même si celle-ci n'aura pas nécessairement été développée lors de la rédaction du rapport. 
-\subsection{Le support et la maintenance}
+
+\section{Le support et la maintenance}
 %Présentation rapide de notre utilisateur, de la quantité de tests à effectuer, de l'utilité de l'outil, du travail que j'ai du faire en terme de formation, de réponses aux besoins, corrections, et les problèmes que j'ai rencontré. 

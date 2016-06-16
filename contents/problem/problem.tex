@@ -32,9 +32,9 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 		\item[La fiabilité des tests manuels] Le test des seules différences ne permet pas nécessairement de détecter tous les problèmes. De plus, une tâche répétitive peut entrainer des erreurs humaines.
 		\item[Le temps de tests] Même en ne testant qu'une partie des variables, cela prend un temps considérable, il faut compter environ une semaine.\newline
 			Or, les tests s'effectuent sur les bancs de tests comme expliqué section \ref{wb}, ces équipements permettent de simuler un environnement véhicule du contrôleur moteur comme
-			l'utilisation de la clé de démarrage, la tension de la batterie, la vitesse de rotation du moteur, \ldots Ces bancs sont peu
+			l'utilisation de la clé de démarrage, la tension de la batterie, la vitesse de rotation du moteur, \ldots Ceux-ci sont peu
 			nombreux dans l'entreprise en raison de leur coût, leur disponibilité est donc compliquée. Il serait intéressant de pouvoir lancer
-			des tests automatisés durant la nuit par exemple afin d'optimiser leur utilisation.
+			des tests automatisés durant la nuit par exemple afin d'optimiser au maximum leur utilisation.
 	\end{description}
 	
 \newpage
@@ -46,20 +46,24 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 		En effet, un test est signalé correct si celui-ci est vert, or le but de notre plateforme est d'automatiser des tests et qu'à la fin de l'exécution, tout ceux-ci soient verts.
 	\end{remarque}
 	
-	\subsection{Génération de tests automatiques}
-	\subsubsection{Les tests d'intégration du plugin Ford}
-		Depuis Janvier, GreenT est sorti en version 1.0, ainsi cette solution permet de tester le plugin pour les projets Ford facilement et de façon efficace. Pour cela, un testeur de l'équipe à ajouté des colonnes dans le document \textit{Walkthrough}, afin de spécifier la manière de tester les variables. L'outil est capable d'analyser le document \textit{Walkthrough}, et de générer les tests automatiques. Il est ensuite possible de planifier son exécution, celle-ci prendre deux heures pour 270 tests. Une fois l'exécution terminée, le testeur a tous les résultats de ces tests, il peut ainsi regarder les rapports détaillés afin de corriger les éventuels problèmes.
+	\subsection{Les tests d'intégration du plugin Ford}
+		Depuis Janvier dernier, GreenT est sorti en version 1.0, ainsi cette solution permet de tester le plugin pour les projets Ford facilement et de façon efficace.
+		
+		 Pour cela, un testeur de l'équipe à ajouté des colonnes dans le document \textit{Walkthrough}, afin de spécifier la manière de tester les variables. L'outil est capable d'analyser le document \textit{Walkthrough}, et de générer les tests automatiques. Il est ensuite possible de planifier son exécution, celle-ci prendre deux heures pour 270 tests. Une fois l'exécution terminée, le testeur a tous les résultats de ces tests, il peut ainsi regarder les rapports détaillés afin de corriger les éventuels problèmes.
 	
 	Ces tests s'effectuent sur des variables enregistrées lors de stimulation de l'ECU, afin de vérifier que celui-ci réagit de façon approprié.
 
 	Cet outil permettra ensuite de tester facilement la dizaine de projets Ford, et une fois le test d'une variable spécifié, il n'est plus nécessaire de le réécrire. À chaque nouvelle version du logiciel, ou \textit{release}, il suffit de relancer les tests : l'équipe n'a à faire le travail qu'une fois en début de projet, ensuite la réutilisation sera possible, les projets seront testés plus rapidement, plus efficacement, et plus souvent.
 
-	\subsubsection{Les autres projets}
-	À court terme, cet outil pourrait être utilisée pour les projets d'autres clients tel que Renault, afin d'effectuer là aussi des tests d'intégration. Il était nécessaire de concevoir un outil qui puisse évoluer facilement, et puisse avoir un fichier de spécification en entrée qui soit légèrement différent d'un client à l'autre.
+	\subsection{Les autres projets}
+	À court terme, cet outil pourrait être utilisée pour les projets d'autres clients tel que Renault, afin d'effectuer là aussi des tests d'intégration. Il était donc nécessaire de concevoir un outil qui puisse évoluer facilement, et puisse avoir un fichier de spécification en entrée qui soit légèrement différent d'un client à l'autre.
+	
+	Afin que notre outil puisse fonctionner sur le maximum de projets différents, et qu'il puisse également servir à effectuer des tests d'intégration indépendamment du cadre d'un \textit{third party software}, j'ai mis en place un fichier de spécification en entrée totalement générique. Plus d'information sur ce fichier section \ref{gttestplan}.
+	
+	Renault à cependant des besoins légèrement différents de ceux de Ford, pouvoir exprimer un test en fonction de variables ECU, tel que Ford, mais également de symboles HiL. Une nouvelle fonctionnalité est donc en développement comme présenté section \ref{synchro}.
+%	En effet, les autres clients peuvent aussi fournir une partie du logiciel, avec un document de spécification des variables, celui-ci ne serait pas totalement identique, mais il s'en approchera.
 
-	En effet, les autres clients peuvent aussi fournir une partie du logiciel, avec un document de spécification des variables, celui-ci ne serait pas totalement identique, mais il s'en approchera.
-
-	Il est également envisageable que la plateforme soit utilisée pour des tests d'intégration en interne, indépendamment des spécifications fournies par un client externe à Continental.
+%	Il est également envisageable que la plateforme soit utilisée pour des tests d'intégration en interne, indépendamment des spécifications fournies par un client externe à Continental.
 %	\newpage
 %	\subsection{L'utilisation de \textit{GreenT} comme une bibliothèque}
 %	Une autre approche de notre plateforme, serait de s'en servir pour écrire facilement des tests en Java, de façon plus efficace et plus robuste qu'avec la TA3 : notre plateforme doit donc également fonctionner comme une bibliothèque sans utilisation de générateur ou de parser, pour que le testeur puisse effectuer un test rapide. 
