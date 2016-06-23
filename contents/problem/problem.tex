@@ -1,6 +1,6 @@
 \chapter{Le problème} \label{chapPb}
 \putminitoc
-Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'intégrations, notamment pour les projets à destination de Ford. Les tests demandaient du temps et de l'argent à l'équipe en charge de ces tests. Ainsi, deux ans avant mon stage de M2, une solution a été trouvée : le développement d'un nouvelle outil, \textit{GreenT}.
+Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'intégrations, notamment pour les projets à destination de Ford. Les tests demandaient du temps et de l'argent à l'équipe en charge de ces tests. Ainsi, deux ans avant mon stage de M2, un projet visant au développement d'un nouvel outil de test, GreenT, a été initié.
 	\section{Composant logiciel tiers}
 	Étant donné la taille grandissante des programmes informatiques, il est de plus en plus rare qu'une seule et unique entité effectue le développement d'un logiciel.
 	
@@ -8,7 +8,7 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 	
 	La principale difficulté de ce mode de fonctionnement est l'intégration, une spécification exhaustive est indispensable afin de pouvoir connecter les différentes interfaces du composant avec le reste du projet. 
 	
-	C'est avec ces contraintes que travaillent plusieurs équipes chez Continental et notamment l'équipe en charge du développement des différents logiciels de contrôle moteur à destination de Ford.
+	C'est avec ces contraintes que travaillent plusieurs équipes chez Continental et notamment l'équipe en charge du développement des différents logiciels de contrôle moteur à destination de Ford. C'est ainsi que cette équipe doit intégrer un plugin en tant que logiciel tiers au sein des logiciels Continental.
 	
 	\section{Les tests du << plugin >> Ford}\label{plugin}
 	Comme dit précédemment, Continental ne développe pas l'intégralité du logiciel pour Ford, une partie étant fournie par le client sous forme de << plugin >>. Ce plugin est un fichier binaire qui est chargé directement dans la mémoire flash de l'ECU sans que Continental n'ait accès au code source. Seule une description des interfaces est fournie. Le \textit{plugin} est supposé correct, et le tester n'est pas de notre ressort. Cependant, celui-ci va être interfacé avec les logiciels Continental : il est indispensable de vérifier que les deux parties fonctionnent ensemble lors de l'intégration.
@@ -30,14 +30,19 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 	Deux problèmes se posent à cette méthode : 
 	\begin{description}
 		\item[La fiabilité des tests manuels] Le test des seules différences ne permet pas nécessairement de détecter tous les problèmes. De plus, une tâche répétitive peut entrainer des erreurs humaines.
-		\item[Le temps de tests] Même en ne testant qu'une partie des variables, cela prend un temps considérable, il faut compter environ une semaine.\newline
+		\item[Le temps de tests] Même en ne testant qu'une partie des variables, cela prend un temps considérable, il faut compter environ une semaine pour l'ensemble des tests.\newline
 			Or, les tests s'effectuent sur les bancs de tests comme expliqué section \ref{wb}, ces équipements permettent de simuler un environnement véhicule du contrôleur moteur comme
 			l'utilisation de la clé de démarrage, la tension de la batterie, la vitesse de rotation du moteur, \ldots Ceux-ci sont peu
 			nombreux dans l'entreprise en raison de leur coût, leur disponibilité est donc compliquée. Il serait intéressant de pouvoir lancer
 			des tests automatisés durant la nuit par exemple afin d'optimiser au maximum leur utilisation.
 	\end{description}
 	
-\newpage
+	\subsection{Le nombre de versions}
+	Un autre problème des projets Ford est la variance. En effet, dans le cadre du développement du moteur Panther, le programme du calculateur est destiné à un grand nombre de véhicules de gammes différentes. Ainsi, l'équipe de développement a choisi d'avoir un système de branches de programme, c'est-à-dire une branche principale, FP2 pour Panther Phase 2, dérivée pour l'ensemble des projets concernés, FPC, FPD, FPF, \ldots
+	
+	Or, pour chacun des projets, il peut y avoir cinq ou six livraisons différentes, ce qui fais un nombre total de livraisons conséquent. Or tous les projets sont basés sur la même branche principale, des tests rédigés pour la branche principale pourrait être réutilisé et exécutés de nouveau pour les branches dérivées, afin d'effectuer des tests de non régression. Cette action est particulièrement compliquée manuellement, c'est en ça que l'équipe à besoin d'un outil leur simplifiant la tâche, et assurant la fiabilité de leurs programmes.
+	
+%\newpage
 	\section{La solution : \textit{GreenT}}
 	Pour répondre aux besoins de l'équipe Ford, une solution a été pensée en étudiant leurs besoins : le développement de \textit{GreenT}
 	\begin{remarque}
@@ -46,16 +51,17 @@ Depuis longtemps, l'entreprise avait un problème afin d'effectuer des tests d'i
 		En effet, un test est signalé correct si celui-ci est vert, or le but de notre plateforme est d'automatiser des tests et qu'à la fin de l'exécution, tout ceux-ci soient verts.
 	\end{remarque}
 	
-	\subsection{Les tests d'intégration du plugin Ford}
+	\subsection{Utilisation de l'outil pour les tests d'intégration du plugin Ford}
 		Depuis Janvier dernier, GreenT est sorti en version 1.0, ainsi cette solution permet de tester le plugin pour les projets Ford facilement et de façon efficace.
 		
-		 Pour cela, un testeur de l'équipe à ajouté des colonnes dans le document \textit{Walkthrough}, afin de spécifier la manière de tester les variables. L'outil est capable d'analyser le document \textit{Walkthrough}, et de générer les tests automatiques. Il est ensuite possible de planifier son exécution, celle-ci prendre deux heures pour 270 tests. Une fois l'exécution terminée, le testeur a tous les résultats de ces tests, il peut ainsi regarder les rapports détaillés afin de corriger les éventuels problèmes.
+		 Pour cela, un testeur de l'équipe à ajouté des colonnes dans le document \textit{Walkthrough}, afin de spécifier la manière de tester les variables. L'outil est capable d'analyser le document \textit{Walkthrough}, et de générer les tests automatiques. Il est ensuite possible de planifier son exécution, celle-ci peut prendre deux heures pour 270 tests. Une fois l'exécution terminée, le testeur a tous les résultats de ces tests, il peut ainsi regarder les rapports détaillés afin de corriger les éventuels problèmes.
 	
 	Ces tests s'effectuent sur des variables enregistrées lors de stimulation de l'ECU, afin de vérifier que celui-ci réagit de façon approprié.
 
 	Cet outil permettra ensuite de tester facilement la dizaine de projets Ford, et une fois le test d'une variable spécifié, il n'est plus nécessaire de le réécrire. À chaque nouvelle version du logiciel, ou \textit{release}, il suffit de relancer les tests : l'équipe n'a à faire le travail qu'une fois en début de projet, ensuite la réutilisation sera possible, les projets seront testés plus rapidement, plus efficacement, et plus souvent.
 
-	\subsection{Les autres projets}
+% TODO mainline
+	\subsection{Utilisation de l'outil pour Les autres projets}
 	À court terme, cet outil pourrait être utilisée pour les projets d'autres clients tel que Renault, afin d'effectuer là aussi des tests d'intégration. Il était donc nécessaire de concevoir un outil qui puisse évoluer facilement, et puisse avoir un fichier de spécification en entrée qui soit légèrement différent d'un client à l'autre.
 	
 	Afin que notre outil puisse fonctionner sur le maximum de projets différents, et qu'il puisse également servir à effectuer des tests d'intégration indépendamment du cadre d'un \textit{third party software}, j'ai mis en place un fichier de spécification en entrée totalement générique. Plus d'information sur ce fichier section \ref{gttestplan}.

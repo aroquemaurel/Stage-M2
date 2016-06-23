@@ -3,29 +3,43 @@
 
 \vspace{-25px}
 \section{L'équipe de développement}
-Au cours de mon stage, deux développeurs travaillaient sur le projet \textit{GreenT} : Alain \bsc{Fernandez}, chef d’équipe et membre de l’équipe \textit{Tests \& Automation Service}, et moi-même.
+Au cours de mon stage, deux développeurs ont travaillés sur le projet \textit{GreenT} : Alain \bsc{Fernandez}, chef d’équipe et membre de l’équipe \textit{Tests \& Automation Service}, et moi-même.
 
-Jusqu'à la livraison de la première version de l'outil en Janvier, nous travillions en coordination afin de finir le développement de l'analyse et de la production des rapports détaillés, celui-ci étant bloquant pour pouvoir livrer la première version de l'outil. 
+Jusqu'à la livraison de la première version de l'outil en Janvier, nous avons travaillé en coordination afin de finir le développement de l'analyse et de la production des rapports détaillés, celui-ci étant bloquant pour pouvoir livrer la première version de l'outil. 
 
-Une fois la livraison de l'outil terminée, nos méthodes de travail ont été légèrement modifié. Alain suivait l'avancée du projet, et notamment mon travail, et était présent aux différentes réunions avec nos clients interne. Cependant, celui-ci n'effectuait que peu de développement, bien que son expertise restait indispensable pour un certain nombre de questionnement sur la continuation du projet. Quant à moi, j'effectuais du support utilisateur ainsi que de la maintenance, notamment en vue de l'utilisation de l'outil sur les différents projets Ford. 
+Une fois la livraison de l'outil terminée, nos méthodes de travail ont été légèrement modifié. Alain a suivi l'avancée du projet, et notamment mon travail, et était présent aux différentes réunions avec nos clients interne. Cependant, celui-ci n'a effectué que peu de développement, bien que son expertise restait indispensable pour un certain nombre de questionnement sur la continuation du projet. Quant à moi, j'ai effectué du support utilisateur ainsi que de la maintenance, notamment en vue de l'utilisation de l'outil sur les différents projets Ford. En parallèle de ce développement, j'ai développé de nouvelles fonctionnalités en vue de l'utilisation de l'outil à d'autres utilisateurs que Ford.
 
 \section{Les méthodes de travail}
 Afin de pouvoir continuer le développement de nouvelles fonctionnalités tout en conservant la base de code en production, nous avons utilisé un workflow Git particulier, permettant d'avoir une branche master correspondant à la branche actuellement en production, et une branche par \textit{release}. Chaque branche de release pouvant éventuellement avoir des branches distinctes par fonctionnalités. 
 
 % TODO SCHEMA
 \subsection{La documentation}
+Deux types de documents sont importants dans le cadre d'un développement en production, les documents à destination de l'utilisateur, et les documents destinés à de la documentation interne. 
+
+Les documents utilisateurs, rédigés en Anglais, sont mis-à-jour pour chaque version de l'application et sont livrés directement avec l'exécutable : 
+\begin{itemize}
+	\item Le manuel utilisateur, contenant le fonctionnement global de l'outil, la syntaxe du langage, la configuration de celui-ci ainsi que son utilisation.
+	\item Une \textit{release note}, spécifique à une version, qui permet de connaître les changements de la version, et les éventuels problèmes de compatibilité.\newline
+\end{itemize}
+
+La documentation interne contient plusieurs documents, rédigés en français au vu de leurs destination, sont mis-à-jour régulièrement en cas de changement de l'outil.
+\begin{itemize}
+	\item Les documents d'exigences, utilisateur ou système, ces documents nous servent de référence quant aux besoins des utilisateurs, et au fonctionnement du système. En cas de nouvelle fonctionnalité, ceux-ci doivent être mis-à-jour
+	\item Les différents modules de l'outil possèdent chacun leurs documents de conception et de fonctionnement, ceux-ci sont mis-à-jour dans la mesure du possible, et certains modules peuvent posséder de la dette technique, dette que j'essaye de régler au fur et à mesure du développement, lorsque j'ai un peu de temps.
+	\item La documentation sur des outils interne, certains outils que nous utilisons, nous avons rédigés des documents permettant de comprendre rapidement le fonctionnement celui-ci et son utilisation dans GreenT. C'est le cas par exemple pour Git, Apache Thrift, Antlr ou Trace32. Ces documentations étaient rédigées par la personne ayant le plus de connaissance ou d'expérience de l'outil, j'ai ainsi rédigé une documentation sur Git, Antlr, Ant ainsi que le fonctionnement du Powerprobe Lauterbach.
+\end{itemize}
 
 \subsection{Les livraisons de l'outil}
 \begin{description}
 \item[Version 1.0.0] Première version fonctionnelle de l'outil, cette version à été livrée en Janvier 2016
-\item[Version 1.1.0] Version contenant différentes corrections de bogues, ainsi que l'utilisation sur ECU multi-core.
+\item[Version 1.1.0] Version contenant différentes corrections de bogues, ainsi que l'utilisation sur ECU multi-core, sa release note est disponible en annexe \ref{releasenote}.
 \item[Version 1.2.0] Cette version n'a pas encore été livrée, mais le sera avant la fin de mon contrat. Celle-ci contiendra la synchronisation des traces qui est nécessaire aux tests Renault. 
 \end{description}
 
 
-\section{Outils de développement}
+\section{Les outils de développement}
 Afin de travailler de façon efficace, nous avons utilisé des outils aidant au développement. Ces outils ont été définis au début du projet, et n'ont pas évolués depuis.
-
+\newpage
 \subsection{Java}
 \begin{wrapfigure}{r}{3cm}
 	\includegraphics[width=2.5cm]{contents/images/logoJava.png}
@@ -49,7 +63,7 @@ récupérer n'importe quelle version du logiciel depuis son commencement. Nous y
 Notre plateforme fonctionne avec une architecture client-serveur, un client et deux serveurs. Le client écrit en Java, un serveur utilise
 Python et le second est lui aussi en Java. Afin de faire communiquer les deux parties de notre application, nous avons utilisé \textit{Apache Thrift}. Il s'agit d'une bibliothèque ayant pour but les communications réseaux inter-langage, dans le même principe que le protocole RMI\footnote{Remote Method Invocation}.
 
-Ainsi, nous avons rédigé un fichier spécifiant les interfaces de notre serveur, c'est-à-dire les méthodes que nous souhaitions appeler en réseau. Une fois ce << contrat >> rédigé, il faut demander à Thrift de générer le code du serveur\footnote{Il est possible de demander la génération en C, C++, Python, Java, C\#, PHP, Ruby, \ldots}, et du client. Côté client, le service s'utilise directement, côté serveur, il faut implémenter une interface afin que notre service effectue les bonnes instructions. C'est donc le code généré qui va se charger de l'abstraction réseau.
+Ainsi, nous avons rédigé un fichier spécifiant les interfaces de notre serveur, c'est-à-dire les méthodes que nous souhaitions appeler en réseau. Une fois ce << contrat >> rédigé, il faut demander à Thrift de générer le code du serveur -- génération qu'il est possible de demander en C, C++, Python, Java, C\#, PHP, Ruby, \ldots -- et du client. Côté client, le service s'utilise directement, côté serveur, il faut implémenter une interface afin que notre service effectue les bonnes instructions. C'est donc le code généré qui va se charger de l'abstraction réseau.
 
 \subsection{Eclipse}
 \begin{wrapfigure}{r}{2.5cm}
@@ -59,13 +73,13 @@ Ainsi, nous avons rédigé un fichier spécifiant les interfaces de notre serveu
 Nous développions tous sous le même environnement de développement Eclipse, avec le plugin \textit{Git} et le plugin \textit{PyDev}. Le
 plugin Git permet d'avoir des outils aidant à la résolution d'éventuels conflits et le plugin PyDev permet de développer avec l'interpréteur
 et la coloration syntaxique Python. 
-
+%\newpage
 \subsection{Antlr}
 \begin{wrapfigure}{l}{2.5cm}
 	\includegraphics[width=2.5cm]{contents/images/antlr.jpg}
 \end{wrapfigure}
 Pour les besoins de notre plateforme, nous avons créé notre propre langage de test. Ce langage est assez riche, et la création d'un parser adéquate aurait pu être particulièrement longue. Afin de nous faire gagner le maximum de temps, nous avons utilisé Antlr4.  \textit{Another Tool For Language Recognition} est un programme permettant de générer automatiquement un parser pour un langage donné. Ainsi, nous avions rédigés notre grammaire, Antlr quant à lui s'est chargé de nous générer un arbre de parcours syntaxique. À notre charge d'effectuer les bonnes actions durant le parcours de notre langage en spécialisant les classes générées par Antlr.
-\newpage
+
 \subsection{UML et \textit{Entreprise Architect}}
 \begin{wrapfigure}{r}{3cm}
 	\includegraphics[width=2.5cm]{contents/images/logoEnterpriseArchitect.png}

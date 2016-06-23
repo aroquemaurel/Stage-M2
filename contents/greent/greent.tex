@@ -3,7 +3,7 @@
 
 Comme nous l'avons montré dans le chapitre \ref{chapPb}, l'entreprise a besoin d'un nouvel outil aidant aux tests d'intégration : \textit{GreenT}. 
 
-Nous allons donc voir le développement et la conception de cette plateforme de tests.
+Nous allons donc voir le développement et la conception de cet outil de tests.
 
 Au début de mon stage, le projet ayant deux ans, les fonctionnalités développées ci-dessous étaient déjà faites. Je suis cependant intervenu
 sur la plupart d'entre elles soit pour des corrections de bogues d'une part, soit à des fin d'améliorations d'autre parts.
@@ -11,20 +11,23 @@ sur la plupart d'entre elles soit pour des corrections de bogues d'une part, soi
 Avant de présenter mon travail, que vous trouverez chapitre \ref{collab}, il est nécessaire de présenter le fonctionnement général de
 cette plateforme afin d'en avoir une vue d'ensemble.
 
-\section{Le fichier Walkthrough}\label{wt}
-Le fichier \textit{Walkthrough} est un fichier spécifique à Ford, qui sera fourni par la personne en charge des tests, c'est un fichier au format Excel qui contient les informations
-de chacune des variables à tester. Il contient ainsi un très grand nombre de colonnes, bien que seule une partie de celles-ci nous
+\section{Le fichier TestPlan}\label{wt}
+\index{TestPlan}
+Le fichier TestPlan est le fichier d'entrée du test, permettant de connaître la manière dont nous devons tester un logiciel. Initialement, GreenT n'était prévu que pour utiliser le fichier Walkthrough, un fichier spécifique à Ford.
+
+Celui-ci sera fourni par la personne en charge des tests, c'est un fichier au format Excel qui contient les informations
+sur chacune des variables à tester. Il contient ainsi un très grand nombre de colonnes, bien que seule une partie de celles-ci nous
 intéressent. Certaines colonnes ont été remplies par le fournisseur du plugin, d'autres colonnes sont ajoutées dans le seul but de la
 génération de tests automatiques par \textit{GreenT}. Voici les informations les plus intéressantes : 
 
 \begin{description} 
 	\item[Nom de la variable] Le nom de la variable testée : il existe un nom court et un nom long.
 	\item[Informations aidant à la conversion des données] Certains équipements\footnote{Vous trouverez plus d'informations sur le fonctionnement d'une table de tests section \ref{wb}}, à l'instar du \textit{debugger} ne fonctionnent qu'avec des
-	valeurs Hexadécimales. À la charge de \textit{GreenT} de convertir ces données vers des valeurs physiques exploitables par
-	le testeur. Ces colonnes contiennent les informations nécessaires au calcul de conversion\footnote{Informations tel que le
-		domaine de définition physique et le domaine de définition hexadécimal, avec ces deux informations il est possible d'effectuer les conversions physique vers hexadécimal}.
+	valeurs hexadécimales. À la charge de \textit{GreenT} de convertir ces données vers des valeurs physiques exploitables par
+	le testeur. Ces colonnes contiennent les informations nécessaires au calcul de conversion, informations tel que le
+		domaine de définition physique et le domaine de définition hexadécimal, avec ces deux informations il est possible d'effectuer les conversions physique vers hexadécimal.
 	\item[Nécessité d'un test automatique] Un \texttt{GreenTTest} ne sera généré que si la colonne vaut \textit{Yes}.
-	\item[Statut du test] La plateforme éditera automatiquement cette colonne afin de reporter le statut du test\footnote{Un test pouvant être \textit{Green} ou \textit{Red}
+	\item[Statut du test] L'outil éditera automatiquement cette colonne afin de reporter le statut du test\footnote{Un test pouvant être \textit{Green} ou \textit{Red}
 		mais peut aussi comporter une erreur, tel qu'un problème d'exécution ou de génération, \ldots}.
 	\item[Précondition (cf section \ref{stim})] Contient un scénario d'initialisation du \textit{workbench} : tension de départ,
 	démarrage de l'ECU, \ldots
@@ -47,18 +50,21 @@ génération de tests automatiques par \textit{GreenT}. Voici les informations l
 Le développement de \textit{GreenT} inclut un certain nombre de fonctionnalités attendues par le client et indispensable à son fonctionnement. D'autres fonctionnalités pourront apparaître plus tard en fonction des besoins.
 
 Les principaux modules sont les suivants, avec leurs interactions schématisées figure \ref{fig:generalDiag} : 
-dans des objets ovales sont représentés des fichiers, les carrés représentent des modules de la plateforme et les flèches en pointillés un transfert réseau, les couleurs représentent les différents modules de la plateforme.
-
-\begin{figure}[H]
-	\hspace{-25px}
-	\includegraphics[width=20cm]{contents/images/generalDiag.eps}
-	\caption{Fonctionnement général de la plateforme \textit{GreenT}}
-	\label{fig:generalDiag}
-\end{figure}	
+dans des objets ovales sont représentés des fichiers, les carrés représentent des modules de l'outil et les flèches en pointillés un transfert réseau, les couleurs représentent les différents modules de la plateforme.
 
 Dans la figure \ref{fig:generalDiag}, vous pouvez voir des flèches en pointillés représentant des échanges réseau. En effet
 l'exécution des stimulations et l'enregistrement des traces se fait par un contrôle distant des bancs de tests\footnote{La
 	schématisation du fonctionnement d'un banc est disponible section \ref{wb} figure \ref{fig:wb}}.
+
+\begin{figure}[H]
+	\centering
+	\vspace{-10px}
+	\includegraphics[width=15.0cm]{contents/images/generalDiag.eps}
+	\caption{Fonctionnement général de la plateforme \textit{GreenT}}
+	\label{fig:generalDiag}
+\end{figure}	
+
+
 
 Les principales fonctionnalités demandées par le client sont disponibles sur le client, la majorité peuvent s'effectuer en local : 
 \begin{itemize}
@@ -73,7 +79,7 @@ Alors que d'autres fonctionnalités vont nécessiter la présence de serveurs et
 	\item Les enregistrements des traces (section \ref{stim})
 \end{itemize}
 \vspace{-10px}
-\section{Les fonctionnalités du Client}
+\section{Les fonctionnalités du client}
 Afin de répondre au mieux aux attentes du client, il a été choisi d'utiliser le langage Java pour développer notre client, ceci en raison de
 divers avantages comme le côté multi-plateforme, son typage fort et sa forte communauté qui permet ainsi une maintenance facilitée. 
 
@@ -182,7 +188,7 @@ L'outil a en charge la production d'un rapport détaillé pour chaque test. Ce r
 	\item Les colonnes utiles du \textit{Walkthrough}
 \end{itemize}
 
-Actuellement, les rapports se font au format Excel avec l'intégralité de notre enregistrement et pour chaque instant d'enregistrement(timestamp), un verdict. Un
+Actuellement, les rapports se font au format Excel avec l'intégralité de notre enregistrement et pour chaque instant d'enregistrement (timestamp), un verdict. Un
 exemple de rapport est accessible en Annexe \ref{apendixReport} page \pageref{apendixReport}. 
 
 Dans un futur proche, ces rapports pourraient être générés dans un format Web avec une possibilité de naviguer entre plusieurs tests, et
@@ -205,7 +211,7 @@ test. Actuellement une table est composée de deux équipements différents, com
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=15cm]{contents/images/network.eps}
+	\includegraphics[width=11.5cm]{contents/images/network.eps}
 	\caption{Communications de la plateforme}
 	\label{fig:wbgt}
 \end{figure}
@@ -262,6 +268,6 @@ Ce serveur a été développé en réutilisant une partie de ce qui avait été 
 À l'instar du serveur Debugger, nous utilisons une API fournie par l'outil permettant de contrôler le HIL : ControlDesk. 
 C'est ainsi que ce serveur est développé en Python afin de répondre à cette contrainte : l'API du ControlDesk est en Python. 
 
-Ainsi, l'utilisation de Thrift, permettant de faire dialoguer du Java côté client et du Python côté serveur facilement, ce sera imposé comme solution.
+L'utilisation de Thrift, permettant de faire dialoguer du Java côté client et du Python côté serveur facilement, ce sera imposé comme solution.
 
 

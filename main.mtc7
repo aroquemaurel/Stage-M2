@@ -1,18 +1,13 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.1}La difficult\IeC {\'e} de productions de rapports}{\reset@font\mtcSfont 31}{section.5.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.1}Les calculs du logiciel}{\reset@font\mtcSSfont 31}{subsection.5.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.2}Le probl\IeC {\`e}me de l'existant}{\reset@font\mtcSSfont 32}{subsection.5.1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.3}Produire un verdict fiable}{\reset@font\mtcSSfont 32}{subsection.5.1.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.2}L'arriv\IeC {\'e}e des projets multi-core}{\reset@font\mtcSfont 32}{section.5.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.1}Analyse d'impacts}{\reset@font\mtcSSfont 32}{subsection.5.2.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Le fonctionnement d'un calculateur multi-core}{\reset@font\mtcSSSfont 33}{section*.5}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Le fonctionnement du debugger multi-core}{\reset@font\mtcSSSfont 33}{section*.6}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.2}Les changements de notre outil}{\reset@font\mtcSSfont 33}{subsection.5.2.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.3}G\IeC {\'e}n\IeC {\'e}ralisation de l'outil \IeC {\`a} d'autres projets}{\reset@font\mtcSfont 33}{section.5.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.4}La difficult\IeC {\'e} de synchronisation des traces}{\reset@font\mtcSfont 33}{section.5.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.4.1}Trouver deux signaux comparables}{\reset@font\mtcSSfont 34}{subsection.5.4.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.4.2}Utiliser un signal analogique : la batterie}{\reset@font\mtcSSfont 34}{subsection.5.4.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.4.3}Utiliser le signal num\IeC {\'e}rique : le signal cl\IeC {\'e}}{\reset@font\mtcSSfont 34}{subsection.5.4.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.4.4}Le probl\IeC {\`e}me de l'enregistrement de la cl\IeC {\'e}}{\reset@font\mtcSSfont 35}{subsection.5.4.4}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Les traces d'enregistrement}{\reset@font\mtcSSSfont 35}{section*.7}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode La configuration permettant l'enregistrement}{\reset@font\mtcSSSfont 35}{section*.8}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.5}Le support et la maintenance}{\reset@font\mtcSfont 36}{section.5.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.1}L'\IeC {\'e}quipe de d\IeC {\'e}veloppement}{\reset@font\mtcSfont 21}{section.3.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2}Les m\IeC {\'e}thodes de travail}{\reset@font\mtcSfont 21}{section.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.1}La documentation}{\reset@font\mtcSSfont 22}{subsection.3.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.2}Les livraisons de l'outil}{\reset@font\mtcSSfont 22}{subsection.3.2.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Les outils de d\IeC {\'e}veloppement}{\reset@font\mtcSfont 22}{section.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.1}Java}{\reset@font\mtcSSfont 23}{subsection.3.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.2}Git}{\reset@font\mtcSSfont 23}{subsection.3.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.3}Thrift et client-serveur}{\reset@font\mtcSSfont 23}{subsection.3.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.4}Eclipse}{\reset@font\mtcSSfont 23}{subsection.3.3.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.5}Antlr}{\reset@font\mtcSSfont 24}{subsection.3.3.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.6}UML et \textit {Entreprise Architect}}{\reset@font\mtcSSfont 24}{subsection.3.3.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.7}SQLite}{\reset@font\mtcSSfont 24}{subsection.3.3.7}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.8}\LaTeX }{\reset@font\mtcSSfont 24}{subsection.3.3.8}}

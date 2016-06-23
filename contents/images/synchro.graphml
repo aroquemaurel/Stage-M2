@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:java="http://www.yworks.com/xml/yfiles-common/1.0/java" xmlns:sys="http://www.yworks.com/xml/yfiles-common/markup/primitives/2.0" xmlns:x="http://www.yworks.com/xml/yfiles-common/markup/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
-  <!--Created by yEd 3.14.3-->
+  <!--Created by yEd 3.14.2-->
   <key attr.name="Description" attr.type="string" for="graph" id="d0"/>
   <key for="port" id="d1" yfiles.type="portgraphics"/>
   <key for="port" id="d2" yfiles.type="portgeometry"/>
@@ -20,7 +20,7 @@
           <y:Geometry height="98.98342175066313" width="128.0" x="403.410166422526" y="441.0438505808513"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" modelName="sandwich" modelPosition="n" textColor="#000000" visible="true" width="64.046875" x="31.9765625" y="-37.40234375">Debugger
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.9375" modelName="sandwich" modelPosition="n" textColor="#000000" visible="true" width="71.83984375" x="28.080078125" y="-35.9375">Debugger
 Lauterbach</y:NodeLabel>
           <y:Image alphaImage="true" refid="1"/>
         </y:ImageNode>
@@ -32,7 +32,7 @@ Lauterbach</y:NodeLabel>
           <y:Geometry height="82.25000000000003" width="109.66666666666674" x="281.480499267578" y="325.5877011617025"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" modelName="sides" modelPosition="w" textColor="#000000" visible="true" width="68.03125" x="-72.03125" y="24.423828125">Calculateur 
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.9375" modelName="sides" modelPosition="w" textColor="#000000" visible="true" width="76.3984375" x="-80.3984375" y="25.15625">Calculateur 
 ECU</y:NodeLabel>
           <y:Image alphaImage="true" refid="2"/>
         </y:ImageNode>
@@ -44,7 +44,7 @@ ECU</y:NodeLabel>
           <y:Geometry height="158.0" width="138.5964912280702" x="363.96084112870057" y="110.63155174255371"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" modelName="sandwich" modelPosition="n" textColor="#000000" visible="true" width="153.0390625" x="-7.221285635964904" y="-37.40234375">Simulateur d'environnement
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.9375" modelName="sandwich" modelPosition="n" textColor="#000000" visible="true" width="175.966796875" x="-18.685152823464875" y="-35.9375">Simulateur d'environnement
 HIL</y:NodeLabel>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="67.29824561403512" y="77.0">
             <y:LabelModel>
@@ -59,16 +59,33 @@ HIL</y:NodeLabel>
       </data>
     </node>
     <node id="n3">
-      <data key="d5"/>
       <data key="d6">
         <y:ImageNode>
           <y:Geometry height="82.25" width="101.160166422526" x="415.25" y="589.3710787037007"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="68.705078125" x="16.227544148763002" y="86.25">Powerprobe
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.9375" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="75.6015625" x="12.779301961263002" y="86.25">Powerprobe
 Lauterbach</y:NodeLabel>
           <y:Image alphaImage="true" refid="4"/>
         </y:ImageNode>
+      </data>
+    </node>
+    <node id="n4">
+      <data key="d5"/>
+      <data key="d6">
+        <y:GenericNode configuration="BevelNode3">
+          <y:Geometry height="58.0" width="119.59649122807014" x="38.5" y="323.0"/>
+          <y:Fill color="#FF9900" transparent="false"/>
+          <y:BorderStyle hasColor="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.9375" modelName="custom" textColor="#000000" visible="true" width="118.416015625" x="0.5902378015350678" y="13.03125">Hardware
+diviseur de tension<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+        </y:GenericNode>
       </data>
     </node>
     <edge id="e0" source="n2" target="n1">
@@ -79,7 +96,7 @@ Lauterbach</y:NodeLabel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="86.03125" x="-115.88071695963549" y="51.4522015253703">Stimulations     <y:LabelModel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="97.94921875" x="-121.83970133463549" y="52.0015179316203">Stimulations     <y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -103,24 +120,20 @@ Lauterbach</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e2" source="n2" target="n3">
-      <data key="d9"/>
+    <edge id="e2" source="n2" target="n4">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-0.009086742735689768" sy="-26.63155174255371" tx="0.0" ty="0.0">
-            <y:Point x="236.25" y="163.0"/>
-            <y:Point x="185.25" y="163.0"/>
-            <y:Point x="185.25" y="189.6315517425537"/>
-            <y:Point x="185.25" y="622.7520792224996"/>
-            <y:Point x="236.25" y="622.7520792224996"/>
+          <y:Path sx="-0.009086742735689768" sy="-26.63155174255371" tx="4.201754385964932" ty="-15.0">
+            <y:Point x="103.25" y="164.75207922249956"/>
+            <y:Point x="102.25" y="286.75207922249956"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="56.03125" x="-155.709716796875" y="-39.3505859375">Signal clé<y:LabelModel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="61.990234375" x="-107.71838290811729" y="-38.577454316149925">Signal clé<y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
             <y:ModelParameter>
-              <y:SmartEdgeLabelModelParameter angle="0.0" distance="30.0" distanceToCenter="true" position="right" ratio="0.0" segment="1"/>
+              <y:SmartEdgeLabelModelParameter angle="0.0" distance="30.0" distanceToCenter="true" position="right" ratio="0.18128463344190054" segment="0"/>
             </y:ModelParameter>
             <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
           </y:EdgeLabel>
@@ -129,13 +142,12 @@ Lauterbach</y:NodeLabel>
       </data>
     </edge>
     <edge id="e3" source="n0" target="n3">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="101.37109375" x="-119.71822735200124" y="15.300615947295114">Pulse on CPU GO<y:LabelModel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="105.34375" x="-121.70455547700129" y="15.666826884795114">Pulse on CPU GO<y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -143,6 +155,19 @@ Lauterbach</y:NodeLabel>
             </y:ModelParameter>
             <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
           </y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e4" source="n4" target="n3">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="8.201754385964932" sy="10.0" tx="0.0" ty="0.0">
+            <y:Point x="106.5" y="630.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
