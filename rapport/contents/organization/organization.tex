@@ -1,0 +1,113 @@
+\chapter{Organisation du développement}\label{chapOrganization}
+\putminitoc \'Etant donné la complexité du projet et son importance, une organisation réfléchie est indispensable. Autant d'un point de vue humain, avec une gestion de projet et une gestion de l'équipe, que technique en utilisant certaines technologies nous aidant dans la tâche.  Nous allons voir l'organisation qui a été mise en place afin d'être le plus efficace possible.
+
+\vspace{-25px}
+\section{L'équipe de développement}\index{Equipe}\index{GreenT}\index{TAS}
+Au cours de mon stage, deux développeurs ont travaillés sur le projet \textit{GreenT} : Alain \bsc{Fernandez}, chef d’équipe et membre de l’équipe \textit{Tests \& Automation Service}, et moi-même.
+
+\index{Outil}
+Jusqu'à la livraison de la première version de l'outil en Janvier, nous avons travaillé en coordination afin de finir le développement de l'analyse et de la production des rapports détaillés, celui-ci étant bloquant pour pouvoir livrer la première version de l'outil. 
+
+\index{Livraison}\index{Maintenance}\index{Ford}\index{Renault}
+Une fois la livraison de l'outil terminée, nos méthodes de travail ont été légèrement modifié. Alain a suivi l'avancée du projet, et notamment mon travail, et était présent aux différentes réunions avec nos clients interne. Cependant, celui-ci n'a effectué que peu de développement, bien que son expertise restait indispensable pour un certain nombre de questionnement sur la continuation du projet. Quant à moi, j'ai effectué du support utilisateur ainsi que de la maintenance, notamment en vue de l'utilisation de l'outil sur les différents projets Ford. En parallèle de ce développement, j'ai développé de nouvelles fonctionnalités en vue de l'utilisation de l'outil à d'autres utilisateurs que Ford.
+
+\section{Les méthodes de travail}\index{Release}\index{Git}
+Afin de pouvoir continuer le développement de nouvelles fonctionnalités tout en conservant la base de code en production, nous avons utilisé un workflow Git particulier, permettant d'avoir une branche master correspondant à la branche actuellement en production, et une branche par \textit{release}. Chaque branche de release pouvant éventuellement avoir des branches distinctes par fonctionnalités. 
+
+
+\subsection{La documentation}\index{Manuel utilisateur}\index{Release note}
+Deux types de documents sont importants dans le cadre d'un développement en production, les documents à destination de l'utilisateur, et les documents destinés à de la documentation interne. 
+
+Les documents utilisateurs, rédigés en Anglais, sont mis-à-jour pour chaque version de l'application et sont livrés directement avec l'exécutable : 
+\begin{itemize}
+	\item Le manuel utilisateur, contenant le fonctionnement global de l'outil, la syntaxe du langage, la configuration de celui-ci ainsi que son utilisation.
+	\item Une \textit{release note}, spécifique à une version, qui permet de connaître les changements de la version, et les éventuels problèmes de compatibilité.\newline
+\end{itemize}
+
+\index{Exigences}
+\index{Module}
+\index{Documentation}
+\index{Outil}
+La documentation interne contient plusieurs documents, rédigés en français au vu de leurs destination, sont mis-à-jour régulièrement en cas de changement de l'outil.
+\begin{itemize}
+	\item Les documents d'exigences, utilisateur ou système, ces documents nous servent de référence quant aux besoins des utilisateurs, et au fonctionnement du système. En cas de nouvelle fonctionnalité, ceux-ci doivent être mis-à-jour.
+	\item Les différents modules de l'outil possèdent chacun leurs documents de conception et de fonctionnement, ceux-ci sont mis-à-jour dans la mesure du possible, et certains modules peuvent posséder de la dette technique, dette que j'essaye de régler au fur et à mesure du développement, lorsque j'ai un peu de temps.
+	\item La documentation sur des outils interne, certains outils que nous utilisons, nous avons rédigés des documents permettant de comprendre rapidement le fonctionnement celui-ci et son utilisation dans GreenT. C'est le cas par exemple pour Git, Apache Thrift, Antlr ou Trace32. Ces documentations étaient rédigées par la personne ayant le plus de connaissance ou d'expérience de l'outil, j'ai ainsi rédigé une documentation sur Git, Antlr, Ant ainsi que le fonctionnement du Powerprobe Lauterbach.
+\end{itemize}
+
+\subsection{Les livraisons de l'outil}\index{Livraison}\index{Renault}\index{Multi-core}\index{ECU}
+\vspace{-15px}
+Nous avons livrés plusieurs version de l'outil, comme fixé dans la \textit{roadmap} que nous avons mis au point avec l'équipe cliente.
+\vspace{-15px}
+\begin{description}
+\item[Version 1.0.0] Première version fonctionnelle de l'outil, cette version à été livrée en Janvier 2016
+\item[Version 1.1.0] Version contenant différentes corrections de bogues, ainsi que l'utilisation sur ECU multi-core, sa release note est disponible en annexe \ref{releasenote}.
+\item[Version 1.2.0] Cette version n'a pas encore été livrée, mais le sera avant la fin de mon contrat. Celle-ci contiendra la synchronisation des traces qui est nécessaire aux tests Renault. 
+\end{description}
+
+\section{Les outils de développement}
+Afin de travailler de façon efficace, nous avons utilisé des outils aidant au développement. Ces outils ont été définis au début du projet, et n'ont pas évolués depuis.
+%\newpage
+\subsection{Java}\index{Java}
+\begin{wrapfigure}{r}{3cm}
+	\includegraphics[width=2.5cm]{contents/images/logoJava.png}
+\end{wrapfigure}
+À mon arrivée, la partie client de notre plateforme était développée en Java dans sa version 6.0, Java nous permettant d'avoir un langage fortement typé, très puissant au niveau du paradigme Objet, connu de l'équipe, assez simple de déploiement et multiplateforme. 
+
+Une de mes collaboration a été le passage à Java 8 nous permettant d'utiliser toute la puissance de Java, et d'avoir une plateforme qui soit à jour au niveau technologique.
+
+\subsection{Git}\index{Git}
+\begin{wrapfigure}{l}{3.5cm}
+\vspace{-15px}
+	\includegraphics[width=2.5cm]{contents/images/logoGit.png}
+\end{wrapfigure}
+Nous avons utilisé \textit{Git} afin de faciliter le travail collaboratif d'une part, et de versionner le code du logiciel d'autre part. Git permet de fusionner les
+modifications de plusieurs développeurs, tant que nous ne modifions pas le même fichier en même temps. Ainsi, la fusion de nos modifications était faite automatiquement. 
+
+De plus, à chaque nouvelle modification, un << commit >>, permet de créer un point de restauration : il est alors possible de
+récupérer n'importe quelle version du logiciel depuis son commencement. Nous y insérons un message clair expliquant ce qui a été fait, cela permet aux autres développeurs de l'équipe de se tenir au courant de l'avancement.
+
+\subsection{Thrift et client-serveur}\label{thrift}\index{Thrift}
+Notre plateforme fonctionne avec une architecture client-serveur, un client et deux serveurs. Le client écrit en Java, un serveur utilise
+Python et le second est lui aussi en Java. Afin de faire communiquer les deux parties de notre application, nous avons utilisé \textit{Apache Thrift}. Il s'agit d'une bibliothèque ayant pour but les communications réseaux inter-langage, dans le même principe que le protocole RMI\footnote{Remote Method Invocation}.
+
+Ainsi, nous avons rédigé un fichier spécifiant les interfaces de notre serveur, c'est-à-dire les méthodes que nous souhaitions appeler en réseau. Une fois ce << contrat >> rédigé, il faut demander à Thrift de générer le code du serveur -- génération qu'il est possible de demander en C, C++, Python, Java, C\#, PHP, Ruby, \ldots -- et du client. Côté client, le service s'utilise directement, côté serveur, il faut implémenter une interface afin que notre service effectue les bonnes instructions. C'est donc le code généré qui va se charger de l'abstraction réseau.
+
+\subsection{Eclipse}\index{Eclipse}
+\begin{wrapfigure}{r}{2.5cm}
+	\vspace{-30px}
+	\includegraphics[width=2.5cm]{contents/images/logoEclipse.png}
+\end{wrapfigure}
+Nous développions tous sous le même environnement de développement Eclipse, avec le plugin \textit{Git} et le plugin \textit{PyDev}. Le
+plugin Git permet d'avoir des outils aidant à la résolution d'éventuels conflits et le plugin PyDev permet de développer avec l'interpréteur
+et la coloration syntaxique Python. 
+%\newpage
+\subsection{Antlr}\index{Antlr}
+\begin{wrapfigure}{l}{2.5cm}
+	\includegraphics[width=2.5cm]{contents/images/antlr.jpg}
+\end{wrapfigure}
+Pour les besoins de notre plateforme, nous avons créé notre propre langage de test. Ce langage est assez riche, et la création d'un parser adéquate aurait pu être particulièrement longue. Afin de nous faire gagner le maximum de temps, nous avons utilisé Antlr4.  \textit{Another Tool For Language Recognition} est un programme permettant de générer automatiquement un parser pour un langage donné. Ainsi, nous avions rédigés notre grammaire, Antlr quant à lui s'est chargé de nous générer un arbre de parcours syntaxique. À notre charge d'effectuer les bonnes actions durant le parcours de notre langage en spécialisant les classes générées par Antlr.
+
+\subsection{UML et \textit{Entreprise Architect}}\index{UML}
+\begin{wrapfigure}{r}{3cm}
+	\includegraphics[width=2.5cm]{contents/images/logoEnterpriseArchitect.png}
+\end{wrapfigure}
+Nous avons travaillé avec la norme UML\footnote{Unified Modelling Language}~2 afin de concevoir la plateforme, en utilisant particulièrement des diagrammes de classes, mais aussi des diagrammes de cas d'utilisation ou d'activité. 
+
+Pour dessiner ces diagrammes, et les noter dans la documentation, nous les pensions d'abord sur tableau blanc, mais ensuite nous avions besoin d'un outil puissant afin de les dessiner sur informatique. Pour cela nous avons utilisé \textit{Enterprise Architect}, un logiciel propriétaire permettant de créer tous les diagrammes de la norme UML~2.\\~
+
+\subsection{SQLite}\index{SQL}\index{SQLite}
+\begin{wrapfigure}{l}{2.5cm}
+	\vspace{-20px}
+	\includegraphics[width=2.5cm]{contents/images/sqlite.png}
+\end{wrapfigure}
+SQLite est un moteur de base de données relationnelle. Sa particularité est de ne pas reproduire le schéma habituel client-serveur mais d'être directement intégré aux programmes, la base de données étant stockée dans un simple fichier.
+
+Nous nous en sommes servis afin de pouvoir stocker les différentes informations d'un test, ceci afin de pouvoir redémarrer une exécution grâce à cet état intermédiaire conservé en base de données.
+
+\subsection{\LaTeX}\index{LaTeX}
+\begin{wrapfigure}{r}{2.5cm}
+	\includegraphics[width=2.5cm]{contents/images/logoLatex.png}
+\end{wrapfigure}
+Afin de rédiger ce rapport, et le diaporama de soutenance, j'ai utilisé \LaTeX{}, un langage et un système de composition de documents fonctionnant à l'aide de
+macro-commandes. Son principal avantage est de privilégier le contenu à la mise en forme, celle-ci étant réalisée automatiquement par le système une fois un style défini. 

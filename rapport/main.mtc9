@@ -1,0 +1,20 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.1}La difficult\IeC {\'e} de productions de rapports}{\reset@font\mtcSfont 33}{section.5.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.1}Les calculs du logiciel}{\reset@font\mtcSSfont 33}{subsection.5.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.2}Le probl\IeC {\`e}me de l'existant}{\reset@font\mtcSSfont 34}{subsection.5.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.3}Produire un verdict fiable}{\reset@font\mtcSSfont 34}{subsection.5.1.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.2}L'arriv\IeC {\'e}e des projets multi-c\IeC {\oe }urs}{\reset@font\mtcSfont 35}{section.5.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.1}Analyse d'impacts}{\reset@font\mtcSSfont 35}{subsection.5.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Le fonctionnement d'un calculateur multi-c\IeC {\oe }ur}{\reset@font\mtcSSSfont 36}{section*.8}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Le fonctionnement du \textit {debugger} multi-c\IeC {\oe }ur}{\reset@font\mtcSSSfont 36}{section*.9}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.2}Les changements de notre outil}{\reset@font\mtcSSfont 36}{subsection.5.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Le d\IeC {\'e}marrage et l'arr\IeC {\^e}t du programme}{\reset@font\mtcSSSfont 37}{section*.10}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Les temps de r\IeC {\'e}actions}{\reset@font\mtcSSSfont 37}{section*.11}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Les autres actions}{\reset@font\mtcSSSfont 37}{section*.12}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.3}Ouverture de l'outil \IeC {\`a} d'autres projets}{\reset@font\mtcSfont 37}{section.5.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.4}La synchronisation des traces}{\reset@font\mtcSfont 38}{section.5.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.4.1}Trouver deux signaux comparables}{\reset@font\mtcSSfont 38}{subsection.5.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.4.2}Utiliser un signal analogique : la batterie}{\reset@font\mtcSSfont 39}{subsection.5.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.4.3}Utiliser le signal logique : le signal cl\IeC {\'e}}{\reset@font\mtcSSfont 40}{subsection.5.4.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.4.4}Le probl\IeC {\`e}me de l'enregistrement de la cl\IeC {\'e}}{\reset@font\mtcSSfont 40}{subsection.5.4.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Les traces d'enregistrement}{\reset@font\mtcSSSfont 41}{section*.13}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode La configuration permettant l'enregistrement}{\reset@font\mtcSSSfont 42}{section*.14}}
