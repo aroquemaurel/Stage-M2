@@ -1,54 +1,80 @@
 \beamer@endinputifotherversion {3.33pt}
 \headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
 \headcommand {\beamer@framepages {1}{1}}
-\headcommand {\sectionentry {1}{L'entreprise}{2}{L'entreprise}{0}}
-\headcommand {\beamer@sectionpages {1}{1}}
-\headcommand {\beamer@subsectionpages {1}{1}}
-\headcommand {\slideentry {1}{0}{2}{2/2}{}{0}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
 \headcommand {\beamer@framepages {2}{2}}
-\headcommand {\beamer@subsectionentry {0}{1}{1}{3}{Continental}}\headcommand {\beamer@subsectionpages {2}{2}}
-\headcommand {\slideentry {1}{1}{1}{3/4}{Continental}{0}}
-\headcommand {\beamer@framepages {3}{4}}
-\headcommand {\beamer@subsectionentry {0}{1}{2}{5}{Le groupe Tests Automation Service}}\headcommand {\beamer@subsectionpages {3}{4}}
-\headcommand {\slideentry {1}{2}{1}{5/7}{Le groupe Tests Automation Service}{0}}
-\headcommand {\beamer@framepages {5}{7}}
-\headcommand {\sectionentry {2}{Le projet}{8}{Le projet}{0}}
-\headcommand {\beamer@sectionpages {2}{7}}
-\headcommand {\beamer@subsectionpages {5}{7}}
-\headcommand {\slideentry {2}{0}{2}{8/8}{}{0}}
-\headcommand {\beamer@framepages {8}{8}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{9}{Le probl\IeC {\`e}me}}\headcommand {\beamer@subsectionpages {8}{8}}
-\headcommand {\slideentry {2}{1}{1}{9/10}{Le probl\IeC {\`e}me}{0}}
-\headcommand {\beamer@framepages {9}{10}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{11}{La solution : GreenT}}\headcommand {\beamer@subsectionpages {9}{10}}
-\headcommand {\slideentry {2}{2}{1}{11/11}{La solution : GreenT}{0}}
-\headcommand {\beamer@framepages {11}{11}}
-\headcommand {\slideentry {2}{2}{2}{12/12}{La solution : GreenT}{0}}
+\headcommand {\sectionentry {1}{L'entreprise}{3}{L'entreprise}{0}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\slideentry {1}{0}{3}{3/3}{}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{4}{Continental}}\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\slideentry {1}{1}{1}{4/5}{Continental}{0}}
+\headcommand {\beamer@framepages {4}{5}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{6}{Le groupe Tests Automation Service}}\headcommand {\beamer@subsectionpages {4}{5}}
+\headcommand {\slideentry {1}{2}{1}{6/8}{Le groupe Tests Automation Service}{0}}
+\headcommand {\beamer@framepages {6}{8}}
+\headcommand {\sectionentry {2}{Le projet}{9}{Le projet}{0}}
+\headcommand {\beamer@sectionpages {3}{8}}
+\headcommand {\beamer@subsectionpages {6}{8}}
+\headcommand {\slideentry {2}{0}{2}{9/9}{}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{10}{Le probl\IeC {\`e}me}}\headcommand {\beamer@subsectionpages {9}{9}}
+\headcommand {\slideentry {2}{1}{1}{10/11}{Le probl\IeC {\`e}me}{0}}
+\headcommand {\beamer@framepages {10}{11}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{12}{La solution : GreenT}}\headcommand {\beamer@subsectionpages {10}{11}}
+\headcommand {\slideentry {2}{2}{1}{12/12}{La solution : GreenT}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\slideentry {2}{2}{3}{13/13}{La solution : GreenT}{0}}
+\headcommand {\slideentry {2}{2}{2}{13/13}{La solution : GreenT}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\slideentry {2}{2}{4}{14/21}{La solution : GreenT}{0}}
-\headcommand {\beamer@framepages {14}{21}}
-\headcommand {\sectionentry {3}{Travail \IeC {\`a} r\IeC {\'e}aliser}{22}{Travail \IeC {\`a} r\IeC {\'e}aliser}{0}}
-\headcommand {\beamer@sectionpages {8}{21}}
-\headcommand {\beamer@subsectionpages {11}{21}}
-\headcommand {\slideentry {3}{0}{5}{22/22}{}{0}}
-\headcommand {\beamer@framepages {22}{22}}
-\headcommand {\beamer@subsectionentry {0}{3}{1}{23}{D\IeC {\'e}veloppement}}\headcommand {\beamer@subsectionpages {22}{22}}
-\headcommand {\slideentry {3}{1}{1}{23/23}{D\IeC {\'e}veloppement}{0}}
+\headcommand {\slideentry {2}{2}{3}{14/14}{La solution : GreenT}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\slideentry {2}{2}{4}{15/22}{La solution : GreenT}{0}}
+\headcommand {\beamer@framepages {15}{22}}
+\headcommand {\sectionentry {3}{Travail r\IeC {\'e}alis\IeC {\'e}}{23}{Travail r\IeC {\'e}alis\IeC {\'e}}{0}}
+\headcommand {\beamer@sectionpages {9}{22}}
+\headcommand {\beamer@subsectionpages {12}{22}}
+\headcommand {\slideentry {3}{0}{5}{23/23}{}{0}}
 \headcommand {\beamer@framepages {23}{23}}
-\headcommand {\slideentry {3}{1}{2}{24/25}{D\IeC {\'e}veloppement}{0}}
-\headcommand {\beamer@framepages {24}{25}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{26}{M\IeC {\'e}thodologie}}\headcommand {\beamer@subsectionpages {23}{25}}
-\headcommand {\slideentry {3}{2}{1}{26/27}{M\IeC {\'e}thodologie}{0}}
-\headcommand {\beamer@framepages {26}{27}}
-\headcommand {\beamer@subsectionentry {0}{3}{3}{28}{Objectifs}}\headcommand {\beamer@subsectionpages {26}{27}}
-\headcommand {\slideentry {3}{3}{1}{28/29}{Objectifs}{0}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{24}{La production de rapports}}\headcommand {\beamer@subsectionpages {23}{23}}
+\headcommand {\slideentry {3}{1}{1}{24/24}{La production de rapports}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\slideentry {3}{1}{2}{25/27}{La production de rapports}{0}}
+\headcommand {\beamer@framepages {25}{27}}
+\headcommand {\slideentry {3}{1}{3}{28/29}{La production de rapports}{0}}
 \headcommand {\beamer@framepages {28}{29}}
-\headcommand {\slideentry {3}{3}{2}{30/30}{Objectifs}{0}}
-\headcommand {\beamer@framepages {30}{30}}
-\headcommand {\beamer@partpages {1}{30}}
-\headcommand {\beamer@subsectionpages {28}{30}}
-\headcommand {\beamer@sectionpages {22}{30}}
-\headcommand {\beamer@documentpages {30}}
-\headcommand {\def \inserttotalframenumber {16}}
+\headcommand {\slideentry {3}{1}{4}{30/31}{La production de rapports}{0}}
+\headcommand {\beamer@framepages {30}{31}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{32}{Les projets multi-c\IeC {\oe }urs}}\headcommand {\beamer@subsectionpages {24}{31}}
+\headcommand {\slideentry {3}{2}{1}{32/32}{Les projets multi-c\IeC {\oe }urs}{0}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\slideentry {3}{2}{2}{33/34}{Les projets multi-c\IeC {\oe }urs}{0}}
+\headcommand {\beamer@framepages {33}{34}}
+\headcommand {\slideentry {3}{2}{3}{35/39}{Les projets multi-c\IeC {\oe }urs}{0}}
+\headcommand {\beamer@framepages {35}{39}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{40}{La synchronisation des traces}}\headcommand {\beamer@subsectionpages {32}{39}}
+\headcommand {\slideentry {3}{3}{1}{40/40}{La synchronisation des traces}{0}}
+\headcommand {\beamer@framepages {40}{40}}
+\headcommand {\slideentry {3}{3}{2}{41/42}{La synchronisation des traces}{0}}
+\headcommand {\beamer@framepages {41}{42}}
+\headcommand {\slideentry {3}{3}{3}{43/43}{La synchronisation des traces}{0}}
+\headcommand {\beamer@framepages {43}{43}}
+\headcommand {\slideentry {3}{3}{4}{44/44}{La synchronisation des traces}{0}}
+\headcommand {\beamer@framepages {44}{44}}
+\headcommand {\slideentry {3}{3}{5}{45/47}{La synchronisation des traces}{0}}
+\headcommand {\beamer@framepages {45}{47}}
+\headcommand {\slideentry {3}{3}{6}{48/50}{La synchronisation des traces}{0}}
+\headcommand {\beamer@framepages {48}{50}}
+\headcommand {\slideentry {3}{3}{7}{51/51}{La synchronisation des traces}{0}}
+\headcommand {\beamer@framepages {51}{51}}
+\headcommand {\slideentry {3}{3}{8}{52/52}{La synchronisation des traces}{0}}
+\headcommand {\beamer@framepages {52}{52}}
+\headcommand {\slideentry {3}{3}{9}{53/53}{La synchronisation des traces}{0}}
+\headcommand {\beamer@framepages {53}{53}}
+\headcommand {\slideentry {3}{3}{10}{54/54}{La synchronisation des traces}{0}}
+\headcommand {\beamer@framepages {54}{54}}
+\headcommand {\beamer@partpages {1}{54}}
+\headcommand {\beamer@subsectionpages {40}{54}}
+\headcommand {\beamer@sectionpages {23}{54}}
+\headcommand {\beamer@documentpages {54}}
+\headcommand {\def \inserttotalframenumber {29}}

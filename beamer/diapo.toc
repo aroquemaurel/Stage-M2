@@ -1,12 +1,12 @@
 \beamer@endinputifotherversion {3.33pt}
 \select@language {french}
-\beamer@sectionintoc {1}{L'entreprise}{2}{0}{1}
-\beamer@subsectionintoc {1}{1}{Continental}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{Le groupe Tests Automation Service}{5}{0}{1}
-\beamer@sectionintoc {2}{Le projet}{8}{0}{2}
-\beamer@subsectionintoc {2}{1}{Le probl\IeC {\`e}me}{9}{0}{2}
-\beamer@subsectionintoc {2}{2}{La solution : GreenT}{11}{0}{2}
-\beamer@sectionintoc {3}{Travail \IeC {\`a} r\IeC {\'e}aliser}{22}{0}{3}
-\beamer@subsectionintoc {3}{1}{D\IeC {\'e}veloppement}{23}{0}{3}
-\beamer@subsectionintoc {3}{2}{M\IeC {\'e}thodologie}{26}{0}{3}
-\beamer@subsectionintoc {3}{3}{Objectifs}{28}{0}{3}
+\beamer@sectionintoc {1}{L'entreprise}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Continental}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Le groupe Tests Automation Service}{6}{0}{1}
+\beamer@sectionintoc {2}{Le projet}{9}{0}{2}
+\beamer@subsectionintoc {2}{1}{Le probl\IeC {\`e}me}{10}{0}{2}
+\beamer@subsectionintoc {2}{2}{La solution : GreenT}{12}{0}{2}
+\beamer@sectionintoc {3}{Travail r\IeC {\'e}alis\IeC {\'e}}{23}{0}{3}
+\beamer@subsectionintoc {3}{1}{La production de rapports}{24}{0}{3}
+\beamer@subsectionintoc {3}{2}{Les projets multi-c\IeC {\oe }urs}{32}{0}{3}
+\beamer@subsectionintoc {3}{3}{La synchronisation des traces}{40}{0}{3}

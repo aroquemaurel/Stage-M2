@@ -15,7 +15,7 @@
 \newcommand{\firstlogo}{images/conti.png}
 \newcommand{\secondlogo}{ups.jpg}
 \newcommand{\thirdlogo}{mdl.png}
-\newcommand{\footsubject}{Développement d'un outil de tests automatisés pour un logiciel de contrôle moteur} 
+\newcommand{\footsubject}{Développement d'un outil de tests automatisés d'un logiciel de contrôle moteur} 
 \newcommand{\rgbcolortheme}{230,146,26}
 
 \makeatletter
@@ -26,7 +26,7 @@
 }
 
 \title[] % (facultatif, \`a utiliser uniquement si le titre de l'article est trop long)
-{Développement d'un outil de tests automatisés pour un logiciel de contrôle moteur}
+{Développement d'un outil de tests automatisés d'un logiciel de contrôle moteur}
 \subtitle {}
 
 \newcommand{\authors}{%
@@ -58,8 +58,8 @@ Antoine de \bsc{Roquemaurel}
 	\vspace{-10px}
 }
 
-\date[ ~ ~ ~ 14 / 01 / 2016] % (facultatif, peut être une abr\'eviation du nom de la conf\'erence)
-{Jeudi 14 Janvier 2016}
+\date[ ~ ~ ~ 01 / 07 / 2016] % (facultatif, peut être une abr\'eviation du nom de la conf\'erence)
+{Vendredi 1 Juillet 2016}
 
 \pgfdeclareimage[width=2.5cm]{le-logo}{images/conti.png}
 \logo{\pgfuseimage{le-logo}}
@@ -81,20 +81,171 @@ Antoine de \bsc{Roquemaurel}
 
 	%\input{contents/intro.tex}
 
+	\begin{frame}{Plan}
+		\tableofcontents
+		\end{frame}
 	\sidetoc{yes}
-	\section{L'entreprise} % Intro + Projet &=&  4'
+	\section{L'entreprise} 
 	\input{contents/entreprise.tex}
-	\section{Le projet} %  Méthodo = 8'
+	\section{Le projet}
 	\subsection{Le problème}
 	\input{contents/probleme.tex}
-	\subsection{La solution : GreenT} % Résultats = 5'
+	\subsection{La solution : GreenT} 
 	\input{contents/solution.tex}
-	\section{Travail à réaliser}
-	\input{contents/objectifs.tex}
+	\AtBeginSubsection[] {
+		\begin{frame}<beamer>{Plan}
+			\tableofcontents[currentsubsection]
+		\end{frame}
+	}
+	\section{Travail réalisé}
+	\subsection{La production de rapports}
+	\begin{frame}{Le besoin}
+%		\begin{block}{Le besoin}
+		\begin{itemize}
+			\item Tester le fonctionnement d'une tâche
+%	\begin{itemize}
+%		\item Récurrente
+%	\end{itemize}			
+	\pause
+	\vfill
+			\item Prononcer des verdicts fiables
+				\begin{itemize}
+			\item Pas de faux rouge
+			\item Pas de faux verts
+		\end{itemize}
+			\pause
+				\end{itemize}
+				\vfill
+		Solution déjà développée insatisfaisante
+	\end{frame}
+	\begin{frame}{\normalsize Problème de l'existant : échantillonnage trop rapide}
+	\begin{itemize}
+		\item Verdict à chaque instant
+		\item Mais échantillonnage plus rapide que la récurrence
+	\end{itemize}
+\begin{figure}
+\centering
+\only<1>{
+\includegraphics[width=1.00\linewidth]{images/badReport}
+}
+\only<2>{
+	\includegraphics[width=1.00\linewidth]{images/badReportZoom}
+}
+\caption{Rapport avec erreurs de verdicts}
+\label{fig:badReport}
+\end{figure}
+	\end{frame}
+
+	\begin{frame}{\normalsize La solution : utilisation des variables de sorties}		
+		\begin{itemize}
+			\item Verdict au rafraichissement de la variable de sortie
+			\item Interpolation les autres instants
+		\end{itemize}
+		\begin{figure}
+		\centering
+		\only<1>{
+			\includegraphics[width=0.9\linewidth]{images/goodReport}
+		}
+		\only<2>{
+			\includegraphics[width=0.9\linewidth]{images/goodReportZoom}
+		}
+		\caption{Rapport après correction}
+		\label{fig:goodReport}
+		\end{figure}
+	\end{frame}
+	
+	\subsection{Les projets multi-cœurs}
+	\begin{frame}{Le besoin}
+		\begin{itemize}
+			\item Utiliser l'outil sur les derniers projets\newline
+			$\Rightarrow$ calculateur multi-cœur
+			\item Développer rapidement la fonctionnalité
+			\item Iso-fonctionnement
+		\end{itemize}
+		\pause
+		Fonctionnement d'un ECU multi-cœur : 
+		\begin{itemize}
+			\item 3 cœurs indépendants
+			\item RAM indépendante
+			\item Une seule mémoire flash
+		\end{itemize}
+		
+		
+
+		%		Impact serveur debugger
+%		Drivers
+%		\begin{tabular}{|p{4cm}|c|}
+%			Pas d'impact sur l'outil & Modifications à apporter\\
+%			Flasher un logiciel & Démarrer et arrêter le logiciel\\
+%			Lire et écrire sur une adresse RAM & \\
+%			Changer la valeur de calibrations en flash&\\
+%			Enregistrer une trace&\\
+%		\end{tabular}
+		% Analyse d'impact
+	\end{frame}
+	
+	\begin{frame}{Analyse d'impacts}
+		Fonctionnalités  de debug présentes dans l'outil: 
+		
+		\begin{tabular}{|p{5cm}|l|}
+			\hline
+			Démarrer le debugger & \begin{minipage}{3.5cm}~\only<2->{\newline Une fenêtre de debug par cœur\newline}\end{minipage}\\
+			\hline
+			Accès à la mémoire Flash & \only<3->{Pas d'impact}\\
+%			\hline
+%			Changer une calibration en flash & Pas d'impact\\
+			\hline
+			Accès à la mémoire RAM & \only<4->{Accéder à la RAM du cœur 0}\\
+%			\hline
+%			Enregistrer une trace & Pas d'impact\\
+			\hline
+			Démarrer et arrêter le logiciel & \begin{minipage}{3.5cm}\only<5->{~\newline Démarrer ou arrêter chacun des cœurs\newline}\end{minipage}\\
+			\hline
+		\end{tabular}
+	\end{frame}
+
+	\subsection{La synchronisation des traces}	
+	\begin{frame}{La synchronisation des traces}
+		\begin{block}{Le besoin}
+		\begin{itemize}
+			\item \textit{Expected Behavior} en fonction de variables ECU et HiL\newline
+			$\Rightarrow$ Synchroniser les traces des deux \textit{devices}
+		\end{itemize}
+		\end{block}
+						\pause
+		\begin{itemize}
+			\item Utilisation d'un symbole présente dans les deux traces
+			\begin{itemize}
+				\item Présent sur l'ensemble des projets
+				\item Sans impact de fonctionnement sur le logiciel testé
+				\item Acquis rapidement
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{\normalsize Première solution : un signal analogique, la batterie}		
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{images/sync1}
+\caption{Courbes de synchronisation avec le signal batterie}
+\label{fig:sync1}
+\end{figure}
+	\end{frame}
+	\begin{frame}{\normalsize Seconde solution : un signal logique, la clé}		
+		\begin{figure}
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/sync2}
+		\caption{Courbes de synchronisation avec le signal clé}
+		\label{fig:sync2}
+		\end{figure}		
+	\end{frame}
+
+
+%\input{contents/objectifs.tex}
 
 	\sidetoc{no}
 %	\section{} % 3'
-%	\input{contents/conclude.tex}
+	\input{contents/conclude.tex}
 
 	% Slide for questions
 	\begin{frame}{Avez-vous des questions ?}
@@ -102,5 +253,33 @@ Antoine de \bsc{Roquemaurel}
 			\centering
 			\includegraphics[width=5cm]{images/interrogation.jpg}
 		\end{figure}
+	\end{frame}
+
+	\begin{frame}{\normalsize Seconde solution : un signal logique, la clé}
+		Calculateur non alimenté sans clé\\
+		\begin{itemize}
+			\item Impossible d'enregistre ce signal via le debugger
+			\item Utiliser un analyseur logique
+		\end{itemize}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.37\linewidth]{images/synchro.eps}
+			\caption{Montage permettant de lire la clé}
+			\label{fig:synchro}
+		\end{figure}
+	\end{frame}		
+	\begin{frame}[plain]
+		\begin{tikzpicture}[remember picture,overlay]
+		\node[at=(current page.center)] {
+			\includegraphics[width=0.75\textwidth]{images/synchro.eps}
+		};
+		\end{tikzpicture}
+	\end{frame}
+	\begin{frame}[plain]
+		\begin{tikzpicture}[remember picture,overlay]
+		\node[at=(current page.center)] {
+			\includegraphics[height=0.95\textheight]{images/sync3.png}
+		};
+		\end{tikzpicture}
 	\end{frame}
 \end{document}

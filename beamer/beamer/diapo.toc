@@ -1,0 +1,13 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {french}
+\beamer@sectionintoc {1}{L'entreprise}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Continental}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Le groupe Tests Automation Service}{5}{0}{1}
+\beamer@sectionintoc {2}{Le projet}{8}{0}{2}
+\beamer@subsectionintoc {2}{1}{Le probl\IeC {\`e}me}{9}{0}{2}
+\beamer@subsectionintoc {2}{2}{La solution : GreenT}{11}{0}{2}
+\beamer@sectionintoc {3}{Travail r\IeC {\'e}alis\IeC {\'e}}{22}{0}{3}
+\beamer@subsectionintoc {3}{1}{La difficult\IeC {\'e} de production de rapports}{23}{0}{3}
+\beamer@subsectionintoc {3}{2}{Les projets multi-c\IeC {\oe }urs}{27}{0}{3}
+\beamer@subsectionintoc {3}{3}{La g\IeC {\'e}n\IeC {\'e}ralisation de l'outil}{28}{0}{3}
+\beamer@subsectionintoc {3}{4}{La synchronisation des traces}{29}{0}{3}

@@ -1,0 +1,151 @@
+\documentclass{beamer}
+\usepackage{listings}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usepackage{pdfpages}
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage[overlay,absolute]{textpos}
+
+\newcommand{\firstlogo}{images/conti.png}
+\newcommand{\secondlogo}{ups.jpg}
+\newcommand{\thirdlogo}{mdl.png}
+\newcommand{\footsubject}{Développement d'un outil de tests automatisés pour un logiciel de contrôle moteur} 
+\newcommand{\rgbcolortheme}{230,146,26}
+
+\makeatletter
+\hypersetup{pdfpagemode=FullScreen}
+
+\mode<presentation> {
+	\usepackage{../beamer-theme/beamerthemeUNLTheme}
+}
+
+\title[] % (facultatif, \`a utiliser uniquement si le titre de l'article est trop long)
+{Développement d'un outil de tests automatisés pour un logiciel de contrôle moteur}
+\subtitle {}
+
+\newcommand{\authors}{%
+	\large
+Antoine de \bsc{Roquemaurel}\newline
+\scriptsize {
+Universit\'e Toulouse III -- Paul Sabatier \\
+M2 Informatique -- Développement Logiciel 
+}
+}
+
+\author[
+Antoine de \bsc{Roquemaurel}
+]{\authors}
+
+\institute[] 
+{
+	Maître de stage: Alain \bsc{Fernandez}\newline
+	Tuteur universitaire: Jean-Baptiste \bsc{Raclet}
+
+	\hspace{-15px}
+	\includegraphics[height=0.8cm]{ups.jpg}
+	\hfill
+	\hspace{15px}
+	\includegraphics[height=0.7cm]{mdl.png}
+	\hfill
+	\hspace{15px}
+	\includegraphics[height=0.8cm]{images/conti.png}
+	\vspace{-10px}
+}
+
+\date[ ~ ~ ~ 14 / 01 / 2016] % (facultatif, peut être une abr\'eviation du nom de la conf\'erence)
+{Jeudi 14 Janvier 2016}
+
+\pgfdeclareimage[width=2.5cm]{le-logo}{images/conti.png}
+\logo{\pgfuseimage{le-logo}}
+
+
+\AtBeginSection[] {
+\begin{frame}<beamer>{Plan}
+	\tableofcontents[currentsection]
+\end{frame}
+}
+
+\setbeamerfont*{section in sidebar}{size=\fontsize{8px}{2.3em}\selectfont }
+\setbeamerfont*{subsection in sidebar}{size=\fontsize{5px}{1.5em}\selectfont }
+\begin{document}
+	\sidetoc{no}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	%\input{contents/intro.tex}
+
+	\sidetoc{yes}
+	\section{L'entreprise} 
+	\input{contents/entreprise.tex}
+	\section{Le projet}
+	\subsection{Le problème}
+	\input{contents/probleme.tex}
+	\subsection{La solution : GreenT} 
+	\input{contents/solution.tex}
+	\AtBeginSubsection[] {
+		\begin{frame}<beamer>{Plan}
+			\tableofcontents[currentsubsection]
+		\end{frame}
+	}
+	\section{Travail réalisé}
+	\subsection{La difficulté de production de rapports}
+	\begin{frame}{Les tâches de calcul}
+		% Récurrence
+		% Variables d'entrées, de sorties
+
+	\end{frame}
+	\begin{frame}{\normalsize Problème de l'existant : échantillonnage trop rapide}
+\begin{block}{Tâche de calcul}
+			\begin{itemize}
+				\item s'exécute dans une fenêtre temporelle
+				\item récurrente
+			\end{itemize}
+		\end{block}
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{images/badReport}
+\caption{}
+\label{fig:badReport}
+\end{figure}
+	\end{frame}
+
+	\begin{frame}{\normalsize La solution : utilisation des variables de sorties}		
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{../rapport/contents/images/goodReport}
+\caption{}
+\label{fig:goodReport}
+\end{figure}
+
+	\end{frame}
+	\subsection{Les projets multi-cœurs}
+	\subsection{La généralisation de l'outil}
+	\subsection{La synchronisation des traces}
+	\begin{frame}{Le besoin}
+	\end{frame}
+	\begin{frame}{\normalsize Première solution : un signal analogique, la batterie}
+	\end{frame}
+	\begin{frame}{\normalsize Seconde solution : un signal logique, la clé}
+	\end{frame}
+		
+%\input{contents/objectifs.tex}
+
+	\sidetoc{no}
+%	\section{} % 3'
+	\input{contents/conclude.tex}
+
+	% Slide for questions
+	\begin{frame}{Avez-vous des questions ?}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=5cm]{images/interrogation.jpg}
+		\end{figure}
+	\end{frame}
+\end{document}
